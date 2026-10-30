@@ -1,0 +1,96 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>Sieve of Eratosthenes (simplified)</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<TABLE>
+<TR>
+<TD VALIGN="TOP" ROWSPAN=2>
+<A HREF="../../../../ricks-2000/Default.htm">
+<IMG SRC="logo.gif" WIDTH="100" HEIGHT="100" ALT="Ricks College Home Page" BORDER="0"></A>
+</TD>
+<TD VALIGN="TOP" COLSPAN=2>
+<A HREF="about.html">
+<IMG SRC="name.gif" WIDTH="197" HEIGHT="27" ALT="Kevin E. Twitchell" BORDER="0"></A>
+</TD>
+</TR>
+<TR>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+<I>
+Department of<BR>
+Mathematics and<BR>
+Computer Science
+</I>
+</FONT>
+</TD>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+<A HREF="mailto:TwitchellK@ricks.edu">
+TwitchellK@ricks.edu</A><BR>
+208-356-1938
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<H3>Sieve of Eratosthenes (simplified)</H3>
+
+<HR>
+<BR>
+
+<P>The Sieve of Eratosthenes is an algorithm for generating tables of primes numbers.
+A modified version is as follows:</P>
+
+<P>1) Sequentially write down the integers from 2 to the highest number <B>n</B>
+you wish to include in the table.</P>
+
+<P>2) Cross out all numbers greater than 2 that are divisible by 2
+(i.e., every second number).</P>
+
+<P>3) Cross out all numbers greater than 3 that are divisible by 3
+(i.e., every third number).</P>
+
+<P>4) Continue until you have crossed out all numbers divisible by
+the square root of <B>n</B>.</P>
+
+<P>5) The remaining numbers are prime.</P>
+
+<P>For example, to generate a table of prime numbers up to 25 (i.e., n = 25):</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+start<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+divisible by 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2 3 <FONT COLOR="#C0C0C0"><STRIKE>4</STRIKE></FONT> 5 <FONT COLOR="#C0C0C0"><STRIKE>6</STRIKE></FONT> 7 <FONT COLOR="#C0C0C0"><STRIKE>8</STRIKE></FONT> 9 <FONT COLOR="#C0C0C0"><STRIKE>10</STRIKE></FONT> 11 <FONT COLOR="#C0C0C0"><STRIKE>12</STRIKE></FONT> 13 <FONT COLOR="#C0C0C0"><STRIKE>14</STRIKE></FONT> 15 <FONT COLOR="#C0C0C0"><STRIKE>16</STRIKE></FONT> 17 <FONT COLOR="#C0C0C0"><STRIKE>18</STRIKE></FONT> 19 <FONT COLOR="#C0C0C0"><STRIKE>20</STRIKE></FONT> 21 <FONT COLOR="#C0C0C0"><STRIKE>22</STRIKE></FONT> 23 <FONT COLOR="#C0C0C0"><STRIKE>24</STRIKE></FONT> 25</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+divisible by 3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2 3 <FONT COLOR="#C0C0C0"><STRIKE>4</STRIKE></FONT> 5 <FONT COLOR="#C0C0C0"><STRIKE>6</STRIKE></FONT> 7 <FONT COLOR="#C0C0C0"><STRIKE>8</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>9</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>10</STRIKE></FONT> 11 <FONT COLOR="#C0C0C0"><STRIKE>12</STRIKE></FONT> 13 <FONT COLOR="#C0C0C0"><STRIKE>14</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>15</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>16</STRIKE></FONT> 17 <FONT COLOR="#C0C0C0"><STRIKE>18</STRIKE></FONT> 19 <FONT COLOR="#C0C0C0"><STRIKE>20</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>21</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>22</STRIKE></FONT> 23 <FONT COLOR="#C0C0C0"><STRIKE>24</STRIKE></FONT> 25</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+divisible by 5 (the square root of <B>n</B>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2 3 <FONT COLOR="#C0C0C0"><STRIKE>4</STRIKE></FONT> 5 <FONT COLOR="#C0C0C0"><STRIKE>6</STRIKE></FONT> 7 <FONT COLOR="#C0C0C0"><STRIKE>8</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>9</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>10</STRIKE></FONT> 11 <FONT COLOR="#C0C0C0"><STRIKE>12</STRIKE></FONT> 13 <FONT COLOR="#C0C0C0"><STRIKE>14</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>15</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>16</STRIKE></FONT> 17 <FONT COLOR="#C0C0C0"><STRIKE>18</STRIKE></FONT> 19 <FONT COLOR="#C0C0C0"><STRIKE>20</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>21</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>22</STRIKE></FONT> 23 <FONT COLOR="#C0C0C0"><STRIKE>24</STRIKE></FONT> <FONT COLOR="#C0C0C0"><STRIKE>25</STRIKE></FONT></P>
+
+<P>The prime numbers are 2, 3, 5, 7, 11, 13, 17, 19, and 23.</P>
+
+<HR>
+
+<FONT SIZE="-1"><A href="../../../../ricks-2000/Default.htm">Ricks College</A> | <A HREF="default.htm">Twitchell</A></FONT>
+<BR>
+<FONT SIZE="-2"><I>August 18, 2000</I></FONT>
+
+</BODY>
+</HTML>

@@ -1,0 +1,357 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<script src="../_archive/compat.js"></script>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+   <meta name="Author" content="Layne Hymas">
+   <title>BYU-I Payroll</title>
+<script>
+        appName = 'Payroll Office'
+</script>
+<LINK href="../navbar/sitenavbar11.css" type=text/css rel=stylesheet>
+
+</head>
+
+
+<body>
+<script src="../navbar/sitenavbar.js"></script>
+
+
+
+<!--Navigation Bar-->
+
+<p align="center">&nbsp; </p>
+
+<table BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="95%" bordercolor="#808080">
+  <tr>
+    <td VALIGN="TOP" WIDTH="9%" bgcolor="#000066">
+    
+    <p align="center">&nbsp;
+    
+    </td>
+    <td VALIGN="TOP" WIDTH="17%" bgcolor="#000066">
+    
+    </td>
+    <td VALIGN="TOP" WIDTH="39%" bgcolor="#000066">
+      <p align="left"><b><font face="Times New Roman" color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Payroll Information</font></b>
+      </p>
+    </td>
+    <td VALIGN="TOP" WIDTH="114%" bgcolor="#000066">
+    <p align="left">
+    <b><font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Payroll Procedures</font></b>
+    </p>
+    </td>
+  </tr>
+  <tr>
+<!--Student Information-->
+    <td VALIGN="middle" WIDTH="9%">
+    
+    <img border="0" src="Kimball.jpg" width="173" height="192">
+    
+    </td>
+    <td VALIGN="TOP" WIDTH="17%">
+    <script language="JavaScript1.2">
+
+/*
+Pausing updown message scroller- 
+Last updated: 99/07/05 (Bugs fixed, ability to specify background image for scroller)
+© Dynamic Drive (www.dynamicdrive.com)
+For full source code, installation instructions,
+100's more DHTML scripts, and Terms Of
+Use, visit dynamicdrive.com
+*/
+
+//configure the below five variables to change the style of the scroller
+var scrollerwidth=150
+var scrollerheight=120
+var scrollerbgcolor='white'
+//set below to '' if you don't wish to use a background image
+var scrollerbackground='scrollerback.gif'
+
+//configure the below variable to change the contents of the scroller
+var messages=new Array()
+messages[0]="<strong><font face='Times New Roman'>Welcome to the Payroll Office Home Page</font></Strong>"
+messages[1]="<strong><font face='Times New Roman'><a href='https://web.archive.org/web/2001/http://www.byui.edu/payroll/notify/'>Payroll Notification</a></font></Strong>"
+messages[2]="<strong><font face='Times New Roman'><a href='https://web.archive.org/web/2001/https://www.byui.edu/payroll/timelogon'>Time Sheets and Time and Attendance</a></font></Strong>"
+messages[3]="<strong><font face='Times New Roman'><a href='Pay_sched2001.htm'>Pay Schedule Year 2002</a></font></Strong>"
+messages[4]="<strong><font face='Times New Roman'><a href='../Personnel/Personnel/holiday.htm'>Holiday Schedule</a></font></Strong>"
+
+///////Do not edit pass this line///////////////////////
+
+if (messages.length>1)
+i=2
+else
+i=0
+
+function move1(whichlayer){
+tlayer=eval(whichlayer)
+if (tlayer.top>0&&tlayer.top<=5){
+tlayer.top=0
+setTimeout("move1(tlayer)",3000)
+setTimeout("move2(document.main.document.second)",3000)
+return
+}
+if (tlayer.top>=tlayer.document.height*-1){
+tlayer.top-=5
+setTimeout("move1(tlayer)",100)
+}
+else{
+tlayer.top=scrollerheight
+tlayer.document.write(messages[i])
+tlayer.document.close()
+if (i==messages.length-1)
+i=0
+else
+i++
+}
+}
+
+function move2(whichlayer){
+tlayer2=eval(whichlayer)
+if (tlayer2.top>0&&tlayer2.top<=5){
+tlayer2.top=0
+setTimeout("move2(tlayer2)",3000)
+setTimeout("move1(document.main.document.first)",3000)
+return
+}
+if (tlayer2.top>=tlayer2.document.height*-1){
+tlayer2.top-=5
+setTimeout("move2(tlayer2)",100)
+}
+else{
+tlayer2.top=scrollerheight
+tlayer2.document.write(messages[i])
+tlayer2.document.close()
+if (i==messages.length-1)
+i=0
+else
+i++
+}
+}
+
+function move3(whichdiv){
+tdiv=eval(whichdiv)
+if (tdiv.style.pixelTop>0&&tdiv.style.pixelTop<=5){
+tdiv.style.pixelTop=0
+setTimeout("move3(tdiv)",3000)
+setTimeout("move4(second2)",3000)
+return
+}
+if (tdiv.style.pixelTop>=tdiv.offsetHeight*-1){
+tdiv.style.pixelTop-=5
+setTimeout("move3(tdiv)",100)
+}
+else{
+tdiv.style.pixelTop=scrollerheight
+tdiv.innerHTML=messages[i]
+if (i==messages.length-1)
+i=0
+else
+i++
+}
+}
+
+function move4(whichdiv){
+tdiv2=eval(whichdiv)
+if (tdiv2.style.pixelTop>0&&tdiv2.style.pixelTop<=5){
+tdiv2.style.pixelTop=0
+setTimeout("move4(tdiv2)",3000)
+setTimeout("move3(first2)",3000)
+return
+}
+if (tdiv2.style.pixelTop>=tdiv2.offsetHeight*-1){
+tdiv2.style.pixelTop-=5
+setTimeout("move4(second2)",100)
+}
+else{
+tdiv2.style.pixelTop=scrollerheight
+tdiv2.innerHTML=messages[i]
+if (i==messages.length-1)
+i=0
+else
+i++
+}
+}
+
+function startscroll(){
+if (document.all){
+move3(first2)
+second2.style.top=scrollerheight
+second2.style.visibility='visible'
+}
+else if (document.layers){
+document.main.visibility='show'
+move1(document.main.document.first)
+document.main.document.second.top=scrollerheight+5
+document.main.document.second.visibility='show'
+}
+}
+
+window.onload=startscroll
+
+</script>
+
+
+
+
+<ilayer id="main" width=&{scrollerwidth}; height=&{scrollerheight}; bgColor=&{scrollerbgcolor}; background=&{scrollerbackground}; visibility=hide>
+<layer id="first" left=0 top=1 width=&{scrollerwidth};>
+<script language="JavaScript1.2">
+if (document.layers)
+document.write(messages[0])
+</script>
+</layer>
+<layer id="second" left=0 top=0 width=&{scrollerwidth}; visibility=hide>
+<script language="JavaScript1.2">
+if (document.layers)
+document.write(messages[1])
+</script>
+</layer>
+</ilayer>
+
+<script language="JavaScript1.2">
+if (document.all){
+document.writeln('<span id="main2" style="position:relative;width:'+scrollerwidth+';height:'+scrollerheight+';overflow:hiden;background-color:'+scrollerbgcolor+' ;background-image:url('+scrollerbackground+')">')
+document.writeln('<div style="position:absolute;width:'+scrollerwidth+';height:'+scrollerheight+';clip:rect(0 '+scrollerwidth+' '+scrollerheight+' 0);left:0;top:0">')
+document.writeln('<div id="first2" style="position:absolute;width:'+scrollerwidth+';left:0;top:1;">')
+document.write(messages[0])
+document.writeln('</div>')
+document.writeln('<div id="second2" style="position:absolute;width:'+scrollerwidth+';left:0;top:0;visibility:hidden">')
+document.write(messages[1])
+document.writeln('</div>')
+document.writeln('</div>')
+document.writeln('</span>')
+}
+</script>
+    </td>
+    <td VALIGN="TOP" WIDTH="39%">
+<ul>
+<li>
+<a href="https://web.archive.org/web/2001/http://www.byui.edu/payroll/notify/">Payroll Notification</a>&nbsp; 
+        
+
+<li>
+<a href="direct_deposit.htm">Direct Deposit</a>
+
+<li>
+<a href="mailto:bollandi@byui.edu">
+Request Duplicate W-2</a>&nbsp;&nbsp; (E-mail request, include SS#) 
+        
+
+<li>
+<a href="Pay_sched2001.htm">Pay Schedule Year 2002</a>&nbsp; 
+        
+
+<li>
+<font color="#0000ff"><a href="../Personnel/Personnel/holiday.htm">Holiday
+Schedule</a></font>
+
+<li>
+<a href="https://web.archive.org/web/2001/http://www.irs.gov/pub/irs-fill/fw4_02.pdf">IRS W4 Form</a> <font color="#ff0000">(Fill
+In form and print) </font><i><a href="https://web.archive.org/web/2001/http://www.adobe.com/products/acrobat/readstep.html">(Adobe
+PDF)</a></i>
+
+<li>
+<font color="#0000ff"><a href="https://web.archive.org/web/2001/http://www.dmba.com/">DMBA</a></font></li>
+
+</ul>
+    </td>
+<!--Employee Information-->
+    <td VALIGN="TOP" WIDTH="114%">
+<ul>
+<li>
+<a href="https://web.archive.org/web/2001/http://www.byui.edu/FinServices/Policies_Procedures/PAYROLL.HTM#DPP">Payroll
+Procedures</a>
+
+<li>
+<a href="https://web.archive.org/web/2001/http://www.byui.edu/FinServices/Policies_Procedures/PAYROL.HTM#PD">Payroll
+Distribution</a>
+
+<li>
+<a href="https://web.archive.org/web/2001/http://www.byui.edu/FinServices/Policies_Procedures/RELEAS.HTM#RPFI">Release
+of Payroll Information</a></li>
+</ul>
+
+    </td>
+  </tr>
+</table>
+<!--Adobe-->
+
+<table border="0" cellpadding="0" cellspacing="1" width="95%" bgcolor="#000066">
+  <tr>
+    <td width="29%">
+      <p align="center"><font color="#FFFFFF"><b>BYU-Idaho Payroll Office</b></font></p>
+    </td>
+    <td width="71%"><strong><font size="3" color="#FFFFFF">130 Kimball
+    Building, Rexburg, Idaho 83460-1620&nbsp; Phone: (208) 496-1060</font></strong></td>
+  </tr>
+</table>
+
+<p>&nbsp; </p>
+
+<table BORDER="1" CELLSPACING=0 CELLPADDING=0 WIDTH="88%" bordercolor="#000000" >
+<tr>
+<td WIDTH="50%" BGCOLOR="#00ff00"><font color="#ff0000">Authorized Users
+Only:</font>
+  <ul>
+    <li>
+<a href="https://web.archive.org/web/2001/https://www.byui.edu/payroll/timelogon">Time Sheets and Time and
+Attendance</a>&nbsp;&nbsp;&nbsp;&nbsp;(Both can be accessed through this link)</li>
+  </ul>
+  <p>&nbsp;(<i><A href="time_sheet_help.htm">Time Sheet Help Page</A>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(<A href="time_sheet_quick_reference.htm">Time Sheet Quick Reference</A>)</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(<A href="time_attendance_help.htm"><i>Time and Attendance Help Page</i></A>)</p>
+</td>
+</tr>
+</table>
+
+<p><a href="../accountingoffice/index.html"><font color="#003399">Accounting
+Office Home Page</font></a>
+
+<p><a href="https://web.archive.org/web/2001/http://www.adobe.com/products/acrobat/readstep.html">Download
+free Adobe Acrobat Reader</a>
+<p><a href="https://web.archive.org/web/2001/http://www.adobe.com/acrobat/readstep.html"><IMG height=31 src="acrobat.gif"  width=88 align=top  naturalsizeflag="3"></a>
+<p><font color="#ff0000"><font size=+2>Payroll Staff:</font></font>
+<br>&nbsp;
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="96%" >
+  <TBODY>
+<tr>
+<td WIDTH="33%">
+<center><IMG height=150 src="BOLLANDI.jpg" width=107 align=center></CENTER>
+</td>
+
+<td WIDTH="33%" align="middle">
+<IMG src="BRIGGSM.jpg" border=0 width="107" height="150">
+</td>
+
+<td WIDTH="34%">
+<center><IMG height=150 alt="RCLogo1.gif (2590 bytes)" src="HYMASl.jpg" width=107 align=center></CENTER>
+</td>
+</tr>
+
+<tr>
+<td WIDTH="33%">
+<center><font color="#ff0000">Ina Kay Bolland</font><br>
+<font color="#ff0000">Payroll Accountant</font><br>
+<font color="#0000ff"><a href="mailto:bollandI@byui.edu">bollandi@byui.edu</a></font></center></TD>
+
+<td WIDTH="33%">
+<center><font color="#ff0000">Marla Briggs</font><br>
+<font color="#ff0000">Payroll Clerk</font><br>
+<font color="#0000ff"><a href="mailto:briggsm@byui.edu">briggsm@byui.edu</a></font></center></TD>
+
+<td WIDTH="34%">
+<center><font color="#ff0000">Layne Hymas</font><br>
+<font color="#ff0000">Disbursement Manager</font><br>
+<font color="#0000ff"><a href="mailto:hymasl@byui.edu">hymasl@byui.edu</a></font></center></TD></TR></TBODY></TABLE>
+
+<br>&nbsp;<b>Visitors since April 19, 2001:&nbsp;</b>&nbsp;&nbsp;&nbsp; 
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+</body>
+</html>
+

@@ -1,0 +1,274 @@
+<!-- 
+This schedule planner program was designed and written by
+Karl Parkinson in the summer of 2000.  Jeff Hillman revised
+the design and all the code to accomodate the new four-year 
+bachelor degrees, and then converted the perl code produced 
+by Karl to an ASP.  All this was done in the summer of 2001.
+The code was further revised to fix certain errors and to 
+make the program more user-friendly.  This revision was done
+by Sterling Porter in the fall of 2001.
+-->
+
+
+
+<HTML>
+  <HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <SCRIPT LANGUAGE="JavaScript">
+    <!--
+      function isValid( majorString )
+      //Purpose: checks for a major number consisting of three digits
+      {
+         var majorNumberRegExp = /\d{3}/;
+         return( majorNumberRegExp.test( majorString ) );
+      }
+      function checkMajor()
+      {
+      //Purpose: confirms that a major has been selected
+         var majorIndex
+         var flag = false
+         
+         for ( i = 0; i < 5; i++ )
+         {
+            majorIndex = document.aasp.MAJORNUM[ i ].selectedIndex;
+         
+            if( isValid( document.aasp.MAJORNUM[ i ][ majorIndex ].value ) )
+            {
+               flag = true
+               
+               if ( i == 4 )
+                  document.aasp.SPECIALIZED.value = 1;
+               else
+                  document.aasp.SPECIALIZED.value = 0;
+               
+               break;   
+            }
+         }
+         if ( !flag )
+         {
+            alert("Please check your selection!");
+         }
+         
+         return flag;
+      }
+      // -->
+    </SCRIPT>
+    <TITLE>
+      Schedule Planner
+    </TITLE>
+  </HEAD>
+  <BODY BACKGROUND="background.gif" BGCOLOR="WHITE">
+  <FORM NAME="aasp" method="POST" onsubmit="return false">
+  <UL>  
+    
+    <TABLE>
+      <TR>
+        <TD COLSPAN=3 ALIGN=left>
+         <FONT SIZE=5 FACE="Arial" COLOR="navy">Schedule Planner &#151; <FONT SIZE=3><B>BYU-Idaho</B></FONT></FONT> <HR WIDTH=780 SHADE="#616161">
+      </TR>
+      <TR>
+        <TD COLSPAN=3 ROWSPAN=1 ALIGN=left>
+          <!-- <A HREF="../../../ricks-2000/Default.htm"><img src="https://web.archive.org/web/1998im_/http://www.byui.edu/logos/university_mono.gif" BORDER=0 ></A> -->
+      </TR>
+      <TR>
+        <TD COLSPAN=3 ALIGN=left>
+          <BR><BR>
+          <FONT FACE=Arial SIZE=3 COLOR=red><B>STEP 1</B> &nbsp; &nbsp; &nbsp;
+          <FONT SIZE=2 COLOR=black><B>Choose the educational track you will be following:</B></FONT></FONT>
+      </TR>
+      <TR>
+        <TD COLSPAN=3 BGCOLOR=lightgrey ALIGN=left>
+         <BR>
+         <FONT FACE=Arial SIZE=2>
+         <INPUT TYPE="RADIO" NAME="TRACK" VALUE="1" CHECKED>Fall/Winter &nbsp; &nbsp;  
+         <INPUT TYPE="RADIO" NAME="TRACK" VALUE="2">Winter/Summer &nbsp; &nbsp;  
+         <INPUT TYPE="RADIO" NAME="TRACK" VALUE="3">Summer/Fall 
+         </FONT>
+         <BR><BR>
+      </TR>
+      <TR>
+        <TD COLSPAN=3 ALIGN=left>
+          <BR><BR>
+          <FONT FACE=Arial SIZE=3 COLOR=red><B>STEP 2</B> &nbsp; &nbsp; &nbsp;
+          <FONT SIZE=2 COLOR=black><B>Select a major:</B></FONT></FONT>
+      </TR>
+      <TR>
+        <TD BGCOLOR=lightgrey>
+        <TABLE><TR>
+
+        <TD COLSPAN=1 ALIGN="CENTER">
+
+          <SELECT NAME="MAJORNUM">
+           <OPTION VALUE="-1">SPECIALIZED BACHELORS
+           <OPTION VALUE="-1">BUSINESS MANAGEMENT:
+           <OPTION VALUE="430A">&nbsp;&nbsp;FINANCE EMPHASIS
+           <OPTION VALUE="430B">&nbsp;&nbsp;MARKETING EMPHASIS
+           <OPTION VALUE="430C">&nbsp;&nbsp;GENERAL MANAGEMENT
+           <OPTION VALUE="460">CONSTRUCTION MANAGEMENT
+<!--           <OPTION VALUE="450">COMPUTER ENGINEERING-->
+           <OPTION VALUE="440">COMPUTER SCIENCE
+           <OPTION VALUE="420">INTERIOR DESIGN
+           <OPTION VALUE="400">NURSING
+<!--           <OPTION VALUE="470">MECHANICAL ENGINEERING-->
+<!--           <OPTION VALUE="500">SOCIAL WORK-->
+          </SELECT>
+        </TD>
+        <TD COLSPAN=1  ALIGN="CENTER">
+          <SELECT NAME="MAJORNUM">
+           <OPTION VALUE="-1">INTEGRATED BACHELORS
+           <OPTION VALUE="600">ACCOUNTING
+           <OPTION VALUE="640">AGRONOMY
+<!--           <OPTION VALUE="645">ANIMAL SCIENCE-->
+           <OPTION VALUE="-1">ART (BA):
+           <OPTION VALUE="660A">&nbsp;&nbsp;ART HISTORY
+           <OPTION VALUE="660B">&nbsp;&nbsp;INTEGRATED STUDIO ARTS
+           <OPTION VALUE="-1">ART (BFA):
+           <OPTION VALUE="665A">&nbsp;&nbsp;TWO-DIMENTIONAL STUDIES
+           <OPTION VALUE="665B">&nbsp;&nbsp;THREE-DIMENTIONAL STUDIES
+           <OPTION VALUE="665C">&nbsp;&nbsp;GRAPHIC DESIGN
+           <OPTION VALUE="665D">&nbsp;&nbsp;ILLUSTRATION
+           <OPTION VALUE="665E">&nbsp;&nbsp;PHOTOGRAPHY
+           <OPTION VALUE="700">BIOLOGY
+<!--           <OPTION VALUE="710">CHEMISTRY-->
+<!--           <OPTION VALUE="720">ECONOMICS-->
+<!--           <OPTION VALUE="670">COMMUNICATION-->
+           <OPTION VALUE="-1">ENGLISH:
+           <OPTION VALUE="630A">&nbsp;&nbsp;LITERARY STUDIES
+           <OPTION VALUE="630B">&nbsp;&nbsp;PROFESSIONAL WRITING
+           <OPTION VALUE="630C">&nbsp;&nbsp;CREATIVE WRITING
+           <OPTION VALUE="630D">&nbsp;&nbsp;ENGLISH EDUCATION
+<!--           <OPTION VALUE="730">FAMILY SCIENCE-->
+<!--           <OPTION VALUE="740">GEOLOGY-->
+<!--           <OPTION VALUE="750">HEALTH SCIENCE-->
+           <OPTION VALUE="620">HISTORY
+<!--           <OPTION VALUE="680">INFORMATION SYSTEMS-->
+<!--           <OPTION VALUE="798">INTEGRATED STUDIES (BA)-->
+<!--           <OPTION VALUE="799">INTEGRATED STUDIES (BS)-->
+           <OPTION VALUE="-1">LANDSCAPE HORTICULTURE:
+           <OPTION VALUE="695A">&nbsp;&nbsp;PRODUCTION EMPHASIS
+           <OPTION VALUE="695B">&nbsp;&nbsp;FLORAL DESIGN EMPHASIS
+<!--           <OPTION VALUE="650">MATHEMATICS-->
+<!--           <OPTION VALUE="770">PHYSICS-->
+<!--           <OPTION VALUE="690">PIANO PEDAGOGY-->
+<!--           <OPTION VALUE="760">PSYCHOLOGY-->
+           <OPTION VALUE="610">RECREATION EDUCATION
+<!--           <OPTION VALUE="780">SOCIOLOGY-->
+<!--           <OPTION VALUE="790">TECHNOLOGY MANAGEMENT-->
+          </SELECT>
+        </TD>
+        <TD COLSPAN=1  ALIGN="CENTER">
+          <SELECT NAME="MAJORNUM">
+           <OPTION VALUE="-1">SECONDARY EDUCATION
+           <OPTION VALUE="660C">ART EDUCATION
+           <OPTION VALUE="800">BIOLOGY EDUCATION
+<!--           <OPTION VALUE="930">BUSINESS EDUCATION-->
+<!--           <OPTION VALUE="810">CHEMISTRY EDUCATION-->
+<!--           <OPTION VALUE="980">EARLY CHILDHOOD EDUCATION-->
+           <OPTION VALUE="990">ELEMENTARY EDUCATION
+           <OPTION VALUE="840">EARTH SCIENCE EDUCATION
+           <OPTION VALUE="940">FAMILY AND CONSUMER EDUCATION
+           <OPTION VALUE="920">HEALTH EDUCATION
+           <OPTION VALUE="820">HISTORY EDUCATION
+           <OPTION VALUE="850">MATHEMATICS EDUCATION
+<!--           <OPTION VALUE="890">MUSIC EDUCATION-->
+<!--           <OPTION VALUE="870">PHYSICS EDUCATION-->
+           <OPTION VALUE="880">SOCIAL SCIENCE EDUCATION
+<!--           <OPTION VALUE="910">SPANISH EDUCATION-->
+          </SELECT>
+        </TD>
+      </TR>
+      <TR>
+        <TD COLSPAN=3  ALIGN="CENTER">
+          <SELECT NAME="MAJORNUM">
+           <OPTION VALUE="-1">ASSOCIATES
+           <OPTION VALUE="339">AGRICULTURAL MANAGEMENT
+           <OPTION VALUE="047">ARCHITECTURAL TECHNOLOGY
+           <OPTION VALUE="195B">AUTOMOTIVE TECHNOLOGY
+           <OPTION VALUE="209">BEEF PRODUCTION
+           <OPTION VALUE="338">CAD TECHNOLOGY
+           <OPTION VALUE="039">CHEMISTRY
+           <OPTION VALUE="198">CHEMICAL ENGINEERING
+           <OPTION VALUE="199">CIVIL ENGINEERING
+           <OPTION VALUE="237">COMPUTER SCIENCE 
+           <OPTION VALUE="335">COMPUTER SYSTEMS TECHNOLOGY
+           <OPTION VALUE="247">CRIMINAL JUSTICE
+           <OPTION VALUE="296">CULINARY ARTS
+           <OPTION VALUE="100">ECONOMICS
+           <OPTION VALUE="200">ELECTRICAL ENGINEERING
+           <OPTION VALUE="223">FAMILY SCIENCE
+           <OPTION VALUE="398">GENERAL STUDIES (AA)
+           <OPTION VALUE="399">GENERAL STUDIES (AS)
+           <OPTION VALUE="071">HEALTH SCIENCE
+           <OPTION VALUE="-1">HORTICULTURE MANAGEMENT:
+           <OPTION VALUE="151A">&nbsp;&nbsp;LANDSCAPE DESIGN EMPHASIS
+           <OPTION VALUE="151B">&nbsp;&nbsp;PRODUCTION EMPHASIS
+           <OPTION VALUE="083">HUMANITIES
+           <OPTION VALUE="244">INFORMATION SYSTEMS
+           <OPTION VALUE="310">INTERNATIONAL STUDIES
+           <OPTION VALUE="087">MANUFACTURING ENGINEERING TECH.
+           <OPTION VALUE="201">MECHANICAL ENGINEERING
+           <OPTION VALUE="095">MEN'S PHYSICAL EDUCATION
+           <OPTION VALUE="093">NURSING 
+           <OPTION VALUE="098">PHYSICS
+           <OPTION VALUE="127">PIANO PEDAGOGY
+           <OPTION VALUE="240">PRE-SCHOOL EDUCATION
+           <OPTION VALUE="266">PSYCHOLOGY
+           <OPTION VALUE="250">SOCIAL WORK
+           <OPTION VALUE="252">SOCIOLOGY
+           <OPTION VALUE="241">SPORTS MEDICINE
+           <OPTION VALUE="257">TECHNICAL THEATRE
+           <OPTION VALUE="258">THEATRE
+           <OPTION VALUE="110">WELDING
+           <OPTION VALUE="096">WOMEN'S PHYSICAL EDUCATION
+          </SELECT>
+          <SELECT NAME="MAJORNUM">
+           <OPTION VALUE="-1">SPECIALIZED ASSOCIATES
+           <OPTION VALUE="195A">AUTOMOTIVE TECHNOLOGY
+           <OPTION VALUE="162">COMPUTER SYSTEMS TECHNOLOGY
+           <OPTION VALUE="056">ELECTRONICS ENGINEERING TECH.
+           <OPTION VALUE="217">FLORAL DESIGN
+           <OPTION VALUE="225">PARAMEDICINE
+           <OPTION VALUE="125">PHOTOGRAPHY
+          </SELECT>
+        </TD>
+        </TR>
+        </TABLE>
+      </TR>
+      <TR><TD> <BR></TD></TR>
+      <TR>
+        <TD COLSPAN=3 ALIGN=left>
+          <BR><BR>
+          <FONT FACE=Arial SIZE=3 COLOR=red><B>STEP 3</B> &nbsp; &nbsp; &nbsp;
+          <FONT SIZE=2 COLOR=black><B>Select a minor:</B></FONT></FONT>
+      </TR>
+      <TR>
+        <TD COLSPAN=3 BGCOLOR=lightgrey ALIGN=left>
+          <SELECT NAME="MINORNUM" MULTIPLE SIZE=3>
+           <OPTION VALUE="006">ACCOUNTING
+           <OPTION VALUE="933B">AGRIBUSINESS
+           <OPTION VALUE="501B">AMERICAN GOVERNMENT EDUCATION
+           <OPTION VALUE="660D">ART
+           <OPTION VALUE="016A">COMMERCIAL RECREATION
+           <OPTION VALUE="101A">GEOGRAPHY
+           <OPTION VALUE="101B">GEOGRAPHY EDUCATION
+           <OPTION VALUE="029">HEALTH EDUCATION
+           <OPTION VALUE="026A">HISTORY
+           <OPTION VALUE="026B">HISTORY TEACHING
+           <OPTION VALUE="380">HUMANITIES
+           <OPTION VALUE="058">MATHEMATICS
+           <OPTION VALUE="501A">POLITICAL SCIENCE
+           <OPTION VALUE="933A">SCIENCE
+          </SELECT>
+          <BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD COLSPAN=3 ALIGN=left><BR>
+          <INPUT TYPE="SUBMIT" NAME="submit" VALUE="Submit">
+          <INPUT TYPE="RESET" NAME="reset" VALUE="Reset Form">
+          <INPUT TYPE=HIDDEN NAME="SPECIALIZED" VALUE=0>
+      </TR>
+    </TABLE>
+    </CENTER>
+  </BODY>
+</HTML>

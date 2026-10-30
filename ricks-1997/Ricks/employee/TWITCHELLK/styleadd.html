@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>Adding two integers supplied by a user</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<TABLE>
+<TR>
+<TD VALIGN="TOP" ROWSPAN=2>
+<A HREF="../../../../ricks-2000/Default.htm">
+<IMG SRC="logo.gif" WIDTH="100" HEIGHT="100" ALT="Ricks College Home Page" BORDER="0"></A>
+</TD>
+<TD VALIGN="TOP" COLSPAN=2>
+<A HREF="about.html">
+<IMG SRC="name.gif" WIDTH="197" HEIGHT="27" ALT="Kevin E. Twitchell" BORDER="0"></A>
+</TD>
+</TR>
+<TR>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+<I>
+Department of<BR>
+Mathematics and<BR>
+Computer Science
+</I>
+</FONT>
+</TD>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+<A HREF="mailto:TwitchellK@ricks.edu">
+TwitchellK@ricks.edu</A><BR>
+208-356-1938
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<H3>Adding two integers supplied by a user</H3>
+
+<PRE>
+/***********************************************************************
+* Program:
+*    Homework 0, Add Integers
+* Author:
+*    Brother Twitchell, 2 September 1998;
+*    revised by same, 18 December 1998
+*    revised by same, 2 July 1999
+* Summary: 
+*    Demonstrates the amazing ability to add a positive integer and a
+*    negative integer and to display the resulting sum.
+***********************************************************************/
+
+#include &lt;iostream&gt;
+
+void main ()
+/***********************************************************************
+* Prompts the user for a positive and a negative integer.
+* If required input is supplied, the two integers are added and the
+* sum is displayed.
+***********************************************************************/
+{
+   int positiveIntegerFromUser;
+   int negativeIntegerFromUser;
+   int sumOfIntegersFromUser;
+
+   cout &lt;&lt; "Enter a positive integer" &lt;&lt; endl;
+   cin >> positiveIntegerFromUser;
+
+   if (positiveIntegerFromUser > 0)
+   {
+      cout &lt;&lt; "Enter a negative integer" &lt;&lt; endl;
+      cin >> negativeIntegerFromUser;
+
+      if (negativeIntegerFromUser &lt; 0)
+      {
+         // amazing! we have both a positive and a negative integer
+         // add them and output the results
+         sumOfIntegersFromUser = positiveIntegerFromUser + 
+                                 negativeIntegerFromUser;
+         cout &lt;&lt; "The sum of " &lt;&lt; positiveIntegerFromUser;
+         cout &lt;&lt; " and " &lt;&lt; negativeIntegerFromUser;
+         cout &lt;&lt; " is " &lt;&lt; sumOfIntegersFromUser &lt;&lt; endl;
+      }
+      else
+      {
+         // while the user has demonstrated his/her ability to enter a
+         //    positive integer, he/she failed to supply a negative
+         //    integer; give up!
+         cout &lt;&lt; negativeIntegerFromUser &lt;&lt; " is not negative" &lt;&lt; endl;
+         cout &lt;&lt; "Next time please enter a number less than zero (0)." &lt;&lt; endl;
+         cout &lt;&lt; "Program terminating." &lt;&lt; endl;
+      }
+   }
+   else
+   {
+      // the user has not supplied a positive integer; give up!
+      cout &lt;&lt; positiveIntegerFromUser &lt;&lt; " is not positive" &lt;&lt; endl;
+      cout &lt;&lt; "Next time please enter a number greater than zero (0)." &lt;&lt; endl;
+      cout &lt;&lt; "Program terminating." &lt;&lt; endl;
+   }
+}
+</PRE>
+
+<HR>
+
+<FONT SIZE="-1"><A href="../../../../ricks-2000/Default.htm">Ricks College</A> | <A HREF="default.htm">Twitchell</A></FONT>
+<BR>
+<FONT SIZE="-2"><I>January 8, 2001</I></FONT>
+
+</BODY>
+</HTML>

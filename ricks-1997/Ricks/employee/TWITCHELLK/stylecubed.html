@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>Cubing an integer read from a file</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<TABLE>
+<TR>
+<TD VALIGN="TOP" ROWSPAN=2>
+<A HREF="../../../../ricks-2000/Default.htm">
+<IMG SRC="logo.gif" WIDTH="100" HEIGHT="100" ALT="Ricks College Home Page" BORDER="0"></A>
+</TD>
+<TD VALIGN="TOP" COLSPAN=2>
+<A HREF="about.html">
+<IMG SRC="name.gif" WIDTH="197" HEIGHT="27" ALT="Kevin E. Twitchell" BORDER="0"></A>
+</TD>
+</TR>
+<TR>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+<I>
+Department of<BR>
+Mathematics and<BR>
+Computer Science
+</I>
+</FONT>
+</TD>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+<A HREF="mailto:TwitchellK@ricks.edu">
+TwitchellK@ricks.edu</A><BR>
+208-356-1938
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<H3>Cubing an integer read from a file</H3>
+
+<PRE>
+/***********************************************************************
+* Program:
+*    Homework 0, Cube a Number
+* Author:
+*    Brother Twitchell, 2 July 1999
+* Summary: 
+*    This program reads a number from a text file, cubes the number,
+*    and outputs the result.
+***********************************************************************/
+
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+
+int cubedInteger (int *integerPointer)
+/***********************************************************************
+* Returns the cube of the supplied integer value.
+* Receives a pointer to the value to be cubed.
+* Returns the cube of the passed value.
+***********************************************************************/
+{
+   // return the cube the supplied value
+   return (*integerPointer * *integerPointer * *integerPointer);
+}
+
+void main (void)
+/***********************************************************************
+* Opens the input file and reads the number to be cubed. Outputs the
+* original and cubed values. Closes the input file.
+***********************************************************************/
+{
+   int integerValueFromInputFile (0);
+
+   // open the input file, read a single integer from it, and close it
+   ifstream inputFile ("number.txt");
+   inputFile >> integerValueFromInputFile;
+   inputFile.close ();
+
+   // output the original value and its cube
+   cout &lt;&lt; "Impress your date! ";
+   cout &lt;&lt; "The cube of " &lt;&lt; integerValueFromInputFile &lt;&lt; " is "
+        &lt;&lt; cubedInteger (&integerValueFromInputFile) &lt;&lt; "." &lt;&lt; endl;
+}
+</PRE>
+
+<HR>
+
+<FONT SIZE="-1"><A href="../../../../ricks-2000/Default.htm">Ricks College</A> | <A HREF="default.htm">Twitchell</A></FONT>
+<BR>
+<FONT SIZE="-2"><I>January 8, 2001</I></FONT>
+
+</BODY>
+</HTML>

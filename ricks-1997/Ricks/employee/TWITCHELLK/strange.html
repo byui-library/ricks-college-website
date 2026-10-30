@@ -1,0 +1,133 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>Strange C++ Code</TITLE>
+</HEAD>
+<BODY>
+
+<H2>Strange C++ Code<BR><HR></H2>
+
+<P>
+<a href="#commutative">Array notation is commutative</a><br>
+<a href="#output">Order of output</a><br>
+<a href="#swap">Swapping values without a third variable</a><br>
+<a href="#thisNull">This is null</a>
+
+<P>
+<HR>
+<P>
+
+<a name="commutative"><B>Array notation is commutative</B></a>
+<P>
+<PRE>
+#include &lt;iostream&gt;
+
+void main()
+{
+   int array[5] = {0, 1, 2, 3, 4};
+
+   // each of the following is syntactically correct
+   //  and produces the same output
+   cout &lt;&lt; array[3] &lt;&lt; endl;
+   cout &lt;&lt; *(array + 3) &lt;&lt; endl;
+   cout &lt;&lt; *(3 + array) &lt;&lt; endl;
+   cout &lt;&lt; 3[array] &lt;&lt; endl;
+}
+</PRE>
+
+<P>
+<HR>
+<P>
+
+<a name="output"><B>Order of output</B></a>
+<P>
+<PRE>
+#include &lt;iostream&gt;
+
+void main ()
+{
+   int i (0);
+   int j (5);
+   cout &lt;&lt; i &lt;&lt; " - " &lt;&lt; (i = j * j) &lt;&lt; " - " &lt;&lt; i &lt;&lt; endl;
+   // output is 25 - 25 - 0
+}
+</PRE>
+
+<P>
+<HR>
+<P>
+
+<a name="swap"><B>Swapping values without a third variable</B></a>
+<P>
+<PRE>
+#include &lt;iostream&gt;
+
+void main ()
+{
+   int i (2);
+   int j (4);
+   cout &lt;&lt; "before: " &lt;&lt; i &lt;&lt; " = i, " &lt;&lt; j &lt;&lt; " = j" &lt;&lt; endl;
+   i = (j = j) + (j = i) - j;
+   cout &lt;&lt; " after: " &lt;&lt; i &lt;&lt; " = i, " &lt;&lt; j &lt;&lt; " = j" &lt;&lt; endl;
+   // output is before: 2 = i, 4 = j
+   //            after: 4 = i, 2 = j
+}
+</PRE>
+
+<P>
+<HR>
+<P>
+
+<a name="thisNull"><B>This is null</B></a>
+<P>
+<i>contributed by Kevin Henry</i>
+<PRE>
+#include &lt;iostream&gt;
+
+class ThisIsNull
+{
+  public:
+    void test (void);
+};
+
+void ThisIsNull::test (void)
+{
+  if (this == NULL)
+    cout &lt;&lt; "this is NULL!!\n"; // this is actually output
+}
+
+void main (void)
+{
+  ThisIsNull *nullPointer = NULL;
+  nullPointer-&gt;test ();
+}
+</PRE>
+<P>
+
+<HR>
+
+<table>
+<tr valign=bottom>
+<td>
+<FONT SIZE="-1">
+<b><a href="default.htm">Kevin E. Twitchell</a></b><BR>
+<A href="../../../../ricks-2000/Default.htm">BYU-Idaho</A><BR>
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+</FONT>
+</td>
+<td>
+</td>
+<td>
+<FONT SIZE="-1">
+<A HREF="mailto:TwitchellK@byui.edu">
+TwitchellK@byui.edu</A><BR>
+208-496-1938 voice<BR>
+208-496-5938 fax
+</FONT>
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>

@@ -1,0 +1,368 @@
+;======ENCDR.ASM==============================Rex N. Fisher===4/14/98====
+
+;Adaptation of a program originally published as an application note by 
+;Parallax, Inc.  
+
+;This program accepts input from a rotary encoder through bits RA0 and RA1,
+;determines the direction of rotation, and increments or decrements a 
+;counter appropriately.  It displays the hexadecimal contents of the 4-bit
+;counter on a 7-segment LED display connected to port B.
+
+;Hardware connections:
+;
+;    *Pin 1 (RA2) to +5V
+;    *Pin 2 (RA3) to +5V
+;    *Pin 3 (RTCC) to +5V
+;    *Pin 4 (_MCLR) to +5V
+;    *Pin 5 (Vss) to GND
+;    *Pin 6 (RB0) to 470 ohm resistor (470 to g of 7-seg CC display)
+;    *Pin 7 (RB1) to 470 ohm resistor (470 to f of 7-seg CC display)
+;    *Pin 8 (RB2) to 470 ohm resistor (470 to e of 7-seg CC display)
+;    *Pin 9 (RB3) to 470 ohm resistor (470 to d of 7-seg CC display)
+;    *Pin 10 (RB4) to 470 ohm resistor (470 to c of 7-seg CC display)
+;    *Pin 11 (RB5) to 470 ohm resistor (470 to b of 7-seg CC display)
+;    *Pin 12 (RB6) to 470 ohm resistor (470 to a of 7-seg CC display)
+;    *Pin 13 (RB7) n/c
+;    *Pin 14 (Vdd) to +5V
+;    *Pin 15 (OSC2) nc
+;    *Pin 16 (OSC1) to 10K & 220pF (10K to +5V, 220pF to GND)
+;    *Pin 17 (RA0) to 1K & pin 4 of GH6102 rotary encoder (1K to +5V)
+;    *Pin 18 (RA1) to 1K & pin 5 of GH6102 rotary encoder (1K to +5V)
+;
+;    Notes:         Pin 1 of GH6102 rotary encoder to GND
+;                   Pin 6 of GH6102 rotary encoder to +5V
+;                   Cathode(s) of 7-segment LED to GND
+
+;Theory of operation:
+;
+;    Incremental rotary encoders provide a pair of digital signals that 
+;    allow a microcontroller to determine the speed and direction of 
+;    a shaft's rotation.  They can be used to monitor the speed, direction,
+;    and position of motors and mechanisms.  A well-known application for 
+;    rotary encoders is the mouse, which contains two encoders that track
+;    the x- and y-axis movements of a ball in the device's underside. 
+;    Another common application is to provide a control-knob user 
+;    interface.  The control-knob application is demonstrated here with 
+;    a GH6102 rotary encoder and a common-cathode seven-segment LED.
+;    
+;    Rotary encoders generally contain a simple electro-optical
+;    mechanism consisting of a slotted wheel, two LEDs, and two light
+;    sensors.  Each LED/sensor pair is arranged so that the devices face
+;    each other through the slots in the wheel.  As the wheel turns, it 
+;    alternately blocks and passes light, resulting in square wave 
+;    outputs from the sensors.
+;
+;    The LED/sensor pairs are mounted offset relative to one another, so
+;    that the output square waves are offset 90 degrees in phase.  This is 
+;    known as quadrature, because 90 degrees amount to one-quarter of a
+;    full 360-degree cycle.  
+;
+;    This phase relationship provides the information needed to determine
+;    the encoder's direction of rotation.  If phase 1 is high and phase 2 
+;    is rising, the direction is clockwise (CW).  If phase 1 is low and 
+;    phase 2 is rising, the direction is counterclockwise (CCW).  
+;    Quadrature waveforms from encoder & resulting 2-bit binary outputs:
+;
+;    ---+   +---+   +---+   +-
+;       |   |   |   |   |   |     Phase 1
+;       +---+   +---+   +---+
+;     1 1 0 0 1 1 0 0 1 1 0 0  
+;
+;     +---+   +---+   +---+  
+;     |   |   |   |   |   |       Phase 2
+;    -+   +---+   +---+   +--- 
+;     0 1 1 0 0 1 1 0 0 1 1 0
+;:
+;    For the sake of interpreting this output with a microcontroller, it 
+;    is probably more useful to look at the changing states of the phases
+;    as a series of 2-bit numbers. 
+;
+;    =====> CW Rotation =====>
+;
+;    <==== CCW Rotation <=====
+;
+;    110011001100   Phase 1
+;    011001100110   Phase 2
+;
+;    When the encoder shaft is turning CW, you get a different sequence of
+;    numbers (10, 11, 01, 00) than when turning CCW (00, 01, 11, 10).  You 
+;    may recognize this sequence as Gray code.  It is distinguished by the 
+;    fact that only one bit changes in any transition.
+;
+;    Interpreting the code amounts to comparing the incoming sequence to
+;    the known sequences for CW and CCW rotation.  A lookup table would 
+;    do the trick.  However, this approach, while easy to understand, is 
+;    inefficient.  The shortcut method uses an interesting property of 
+;    the 2-bit Gray code sequence.
+;
+;    Pick any pair of 2-bit numbers from the CW sequence shown above; 
+;    for instance, the first two: 10, 11.  Compute the XOR of the righthand bit 
+;    of the first number with the lefthand bit of the second.  In this
+;    case, that would be 0 XOR 1 = 1.  Try this for any CW pair of 
+;    numbers from the sequence, and you will always get 1.  Now reverse the 
+;    order of the number pair: 11, 10.  XOR the right bit of the first with 
+;    the left bit of the second (1 XOR 1 = 0).  Any CCW pair of numbers will
+;    produce a 0.
+;
+;    In this example, a GH6102 rotary encoder is connected to the lower two
+;    bits of port RA and a 7-segment LED display is on port RB.  The count 
+;    displayed on the LED goes up when the control is turned CW, and down 
+;    when it is turned CCW.  The display is in hexadecimal, using 7-segment
+;    approximations of the letters: A, b, C, d, E, F.
+;
+;    The program begins by clearing the variable COUNTER and setting up the
+;    I/O ports.  It gets an initial input form the rotary encoder, which is 
+;    assigned to the variable OLD, and strips off all but the two 
+;    least-significant bits (LSBs).
+;
+;    The body of the program, starting with the label called Repeat, calls
+;    a subroutine called Check_Encoder and then displays the latest value
+;    of COUNTER on the LED.
+;
+;    Most of the interesting things happen in Check_Encoder.  Here, the 
+;    program gets the latest value at the encoder inputs, strips all but
+;    the two LSBs, and XORs the result into a copy of the old value.  If
+;    the result is zero, the encoder has not moved since its last reading,
+;    and the routine returns without changing the value of COUNTER.
+;
+;    If the value has changed, the routine moves the value in OLD one bit 
+;    to the left in order to align its LSB with the high bit of the 2-bit 
+;    value in NEW.  It XORs the variables together.  It then examines bit 
+;    1 in OLD.  If the bit is 1, COUNTER is incremented; if it is 0,
+;    COUNTER is decremented.
+;
+;    The lookup table, in the subroutine called Seven_Segment, simply
+;    determines which segments of the LED must be illuminated to display
+;    the desired hexadecimal number.
+
+     
+;=======Programming Instructions===========================================
+
+;Select the following settings at time of programming:
+
+;    	Device = 84
+;    	Oscillator = RC
+;    	Watchdog = OFF
+;    	Timer = ON
+;    	Code Protect = OFF
+
+
+;=======Program Hierarchy================================================
+
+;    	Main
+;          Initialize
+;          Check_Encoder
+;          Seven_Segment
+
+
+;=======Header Section===================================================
+
+;Select PIC16C84 processor and default radix.
+
+	processor	16F84	;Assemble for specific features of PIC16F84.
+     	radix      	HEX     ;Default number system is hexadecimal.
+
+;P16C84.INC defines configurations, registers, and other useful bits of 
+;information for the PIC16F84 microcontroller.  The names assigned to registers
+;and pins match the Microchip data sheets as closely as possible.
+
+     include <P16F84.INC>
+
+
+;=======Equate Section===================================================
+
+;Register equates:
+SRAM	equ	0C	;RAM locations (GP registers) start at 0Ch.
+ENCODER equ  	05      ;ENCODER is another name for PORTA.
+DISPLAY equ  	06      ;DISPLAY is another name for PORTB.
+
+;Bit equates:
+
+;No bit equates for this program.
+
+
+;=======Variable Section==================================================
+
+    	cblock	SRAM 	;Assign variable names to data memory locations
+                        ;Starting at the address defined by SRAM.
+          	TEMP    ;Temporary variable used for comparisons.
+          	COUNTER	;Number to be displayed on LED.
+          	OLD     ;Old (previous) encoder value.
+          	NEW     ;New (latest) encoder value.
+
+     	endc            ;End of data memory assingnments.
+
+
+;=======Vector Section===================================================
+
+     	org  	00	;Program memory locations start at 00h.
+                        ;Reset vector is 00h.  Start here after reset.
+     	goto 	Main    ;Branch to program (starting at Main).
+
+     	org  	04      ;Interrupt vector is 04.
+Int                     ;Start here after interrupt.
+     	goto 	Int     ;Endless loop (stops program on interrupt).
+
+
+;=======Table Section====================================================
+
+;-----------Seven_Segment Subroutine (Table)-----------------------------
+;
+;Converts the 4 LSBs of the counter value (in W) to 7-segment display patterns.
+
+Seven_Segment
+
+ 	addwf	PCL,0FF		;Add the counter value (in W) to the program
+                         	;counter.  The resulting address will contain
+                         	;LED bit pattern for that value.
+
+     	retlw	0x7E            ;Display 0.  This is at address PCL + 00h.
+     	retlw   0x30            ;Display 1.  PCL + 01h.
+     	retlw   0x6D            ;Display 2.  PCL + 02h.
+     	retlw   0x79            ;Display 3.  PCL + 03h.
+     	retlw   0x33            ;Display 4.  PCL + 04h.
+     	retlw   0x5B            ;Display 5.  PCL + 05h.
+     	retlw   0x5F            ;Display 6.  PCL + 05h.
+     	retlw   0x70            ;Display 7.  PCL + 05h.
+     	retlw   0x7F            ;Display 8.  PCL + 05h.
+     	retlw   0x73            ;Display 9.  PCL + 05h .
+     	retlw   0x77            ;Display A.  PCL + 05h.
+     	retlw   0x1F            ;Display B.  (lower case [b]).  PCL + 05h.
+     	retlw   0x4E            ;Display C.  PCL + 05h.
+     	retlw   0x3D            ;Display D.  (lower case [d]).  PCL + 05h.
+     	retlw   0x4F            ;Display E.  PCL + 05h.
+     	retlw   0x47            ;Display F.  PCL + 0FH.
+
+;=======Program Section==================================================
+
+;-----------Main Program--------------------------------------------------------------------------------------
+
+Main                         	;Start program here.
+     	call 	Initialize      ;Initialize variables & registers.
+
+Repeat                      	;Start of main loop in program.
+     	call 	Check_Encoder  	;Read ENCODER & see if direction is CW or CWW.
+                                ;COUNTER is incremented if direction is CW,
+                            	;and decremented if direction is CCW.
+     	movf 	COUNTER,W 	;Use value in COUNTER as address offset
+                            	;(held in W) for lookup table.
+     	call  	Seven_Segment  	;Get LED pattern for COUNTER from lookup table.
+     	movwf   DISPLAY        	;Write LED pattern (stored in W) to DISPLAY.
+     
+     	goto    Repeat         	;Go read ENCODER again.
+
+
+;-----------Initialize Subroutine-------------------------------------------------------------------------------
+;
+;Zero Counters, configure I/O ports, read initial encoder value.
+
+Initialize
+     
+	;Clear variables.
+     
+     	clrf 	TEMP
+     	clrf 	COUNTER
+     	clrf 	OLD
+     	clrf 	NEW
+
+     	;Clear ENCODER (PORTA) & DISPLAY (PORTB) before setting I/O direction.
+
+     	clrf 	ENCODER
+     	clrf 	DISPLAY
+
+     	;Set direction register for ENCODER & DISPLAY.
+
+     	bsf	STATUS,RP0 	;Access bank 1 of register files.
+     	movlw   0FF             ;Make all bits inputs.
+     	movwf   TRISA           ;Program I/O bits of ENCODER.
+     	movlw   00              ;Make all bits outputs.
+     	movwf   TRISB           ;Program I/O bits of DISPLAY.
+     	bcf     STATUS,RP0      ;Return to bank 0 of register file.
+
+	;Get intitial input from ENCODER & put the value in OLD.
+
+     	movf	ENCODER,W
+     	movlw   OLD
+
+     	;Strip off all but the 2 LSBs in OLD.
+
+     	movlw	B'00000011' 	;Create bit mask for 2 LSBs (bits 1 & 0).
+     	andwf	OLD,F          	;Zero bits 7 thru 2.
+
+     	return
+
+
+;-----------Check_Encoder Subroutine----------------------------------------------------------------------
+;
+;Read the latest encoder inputs into NEW, strip off unused bits, and XOR the 
+;result with the inputs from the previous reading (in OLD).  If the new inputs 
+;are different, it XORs bit 1 of OLD with bit 0 of NEW.  If the result is 
+;1 (CW), COUNTER is incremented.  If it is 0 (CCW), COUNTER is decremented.
+
+Check_Encoder
+
+	;Read latest input from ENCODER & put the value in NEW.
+
+     	movf    ENCODER,W
+     	movwf	NEW
+
+     	;Strip off all but the 2 LSBs in OLD.
+
+     	movlw	B'00000011'	;Create bit mask for 2 LSBs (bits 1 & 0).
+     	andwf   NEW,F     	;Zero bits 7 thru 2.
+
+     	;Compare previous encoder inputs (OLD) with latest ones (NEW).
+
+     	movf	NEW,W		;Move the contents of NEW to TEMP and OLD to W
+     	movwf   TEMP      	;in order to compare them with XOR.
+     	movf    OLD,W     
+     	xorwf   TEMP,F    	;XOR previous inputs (in W) with latest inputs 
+                         	;(in TEMP) to see if they are equal.
+     	btfsc   STATUS,Z  	;Test result and skip next line if 0.
+
+     	goto    Rtrn      	;Result is 0.  Previous inputs equal latest 
+                         	;inputs.  Rotary encoder did not move.  Return
+                         	;to loop.
+
+     	;Result is 1.  Rotary encoder moved.  Determine direction.  
+
+     	bcf	STATUS,C  	;Clear the carry bit in the status register and
+     	rlf     OLD,F     	;left shift it into OLD to align bit 1 of OLD
+                         	;with bit 0 of NEW.
+     	movf    NEW,W     	;Move the contents of NEW to W in order to XOR.
+     	xorwf   OLD,F    	;XOR previous inputs (in OLD) with latest
+                         	;inputs (in W) to determine CW or CCW.
+     	btfsc   OLD,1     	;Test bit 1 of result (in OLD).  Skip next line
+                         	;if it is 0 (direction is CCW).
+     	goto    Up        	;Bit is 1 (direction is CW).  Go around Down
+                         	;and increment counter.
+
+Down
+     	;Decrements COUNTER because encoder moved CCW.
+
+     	decf	COUNTER,F 
+     	goto    Continue  	;Branch around UP.
+
+Up
+     	;Increments COUNTER because encoder moved CW.
+
+     	incf    COUNTER,F
+
+Continue 
+     	;Strip off 4 MSBs of counter.  DISPLAY uses only the 4 LSBs.
+
+     	movlw	B'00001111'	;Create bit mask for 2 LSBs (bits 1 & 0).
+     	andwf   COUNTER,F 	;Zero bits 7 thru 4.
+
+     	;Assign the latest encoder inputs (in NEW) to OLD, because they will
+     	;be the previous inputs next time Check_Encoder is called.
+
+     	movf 	NEW,W
+     	movwf   OLD
+
+Rtrn return                   	;Return to loop and do it again.
+
+     	end                 	;End of program.
+
+
+;=====================================================================

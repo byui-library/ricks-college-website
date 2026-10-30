@@ -1,0 +1,45 @@
+<html>
+
+<head>
+<SCRIPT LANGUAGE = "JavaScript">
+
+ <!--// hide from older browsers
+bName = navigator.appName;
+bVer = parseInt(navigator.appVersion);
+
+// Determine which browser is being used.
+if (bName == "Netscape" && bVer >= 4) br = "n4";
+else if (bName == "Netscape" && bVer == 3) br = "n3";
+else if (bName == "Microsoft Internet Explorer") br = "e3";
+else br = "n3";
+        
+if (br == "n4" && navigator.mimeTypes["application/x-shockwave-flash"]) {        
+        window.location.href = "introduction1.html";
+} 
+        else if (br == "n4") {
+        window.location.href = "default2.html";
+}
+        else if (br == "n3" && navigator.mimeTypes["application/x-shockwave-flash"]) {
+        window.location.href = "introduction1.html";
+}
+        else if (br == "n3") {
+        window.location.href = "default2.html";
+}
+        else if (br == "e3") {
+        window.location.href = "introduction1.html";
+}
+        
+//--> 
+
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>New Page 1</title>
+</head>
+
+<body>
+
+</body>
+
+</html>

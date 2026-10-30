@@ -1,0 +1,125 @@
+        Name            Electronic Dice Project;
+        Designer        Rex N. Fisher;
+        Device          G16V8;
+
+        /* Dice.SI = Simulation Input File */              
+
+        /* Function Specifications */
+        
+            /*  
+                Refer to the Electronic Dice Game Design Notes.
+                
+                The derived equations for the eight D flip flops are:
+                         __
+                    D1 = Q1 Q2 Q3   
+                         __      __
+                    D2 = Q1 Q3 + Q1 Q4
+                         __
+                    D3 = Q3
+                         __      __
+                    D4 = Q1 Q2 + Q1 Q4
+                         __         __
+                    D5 = Q1 Q5 + Q1 Q5 Q6 Q7
+                         __         __         __
+                    D6 = Q1 Q6 + Q1 Q5 Q7 + Q1 Q5 Q8
+                         __         __
+                    D7 = Q1 Q7 + Q1 Q7
+                         __         __         __
+                    D8 = Q1 Q8 + Q1 Q5 Q6 + Q1 Q5 Q8
+            */         
+                         
+     
+        /* Define Device: G16V8 Generic Array Logic (MS = Registered Mode) */
+
+           Device  G16V8MS;
+
+        /* Logic Equations */
+
+            /*
+
+            Q1.d = !Q1 & Q2 & Q3 # CLR; 
+                
+            Q2.d = !Q1 & Q3 & !CLR # !Q1 & Q4 & !CLR; 
+
+            Q3.d = !Q3 & !CLR;
+
+            Q4.d = !Q1 & Q2 & !CLR # !Q1 & Q4 & !CLR;
+    
+            Q5.d = Q1 & !Q5 & Q6 & Q7 & !CLR # !Q1 & Q5 & !CLR;
+    
+            Q6.d = Q1 & !Q5 & Q7 & !CLR # Q1 & !Q5 & Q8 & !CLR # !Q1 & Q6 
+                   & !CLR;
+    
+            Q7.d = Q1 & !Q7 & !CLR # !Q1 & Q7 & !CLR;
+    
+            Q8.d = Q1 & !Q5 & Q6 & !CLR # Q1 & !Q5 & Q8 & !CLR # !Q1 & Q8 
+                   & !CLR;
+
+
+		NOTE: CLR is called INIT in the design notes.  It is 
+		      needed only for simulation and does not affect 
+                      normal operation.
+            
+            */    
+
+
+        /* Define Test Vectors */
+        
+            Order:
+            
+            CLK, %4, !OE, %4, CLR, %7, 
+            !Q1, %4, !Q2, %4, !Q3, %4, !Q4, %4, !Q5, %4, !Q6, %4, !Q7, %4, !Q8;
+            
+            Vectors:
+            
+                $msg "";
+                $msg "Electronic Dice Game Simulation";
+                $msg "";
+                $msg "CLK !OE CLR    !Q1 !Q2 !Q3 !Q4 !Q5 !Q6 !Q7 !Q8";
+                
+                      C   0   1      L   H   H   H   H   H   H   H
+                      C   0   0      H   H   L   H   H   H   L   H
+                      C   0   0      H   L   H   H   H   H   L   H
+                      C   0   0      H   H   L   L   H   H   L   H
+                      C   0   0      H   L   H   L   H   H   L   H
+                      C   0   0      H   L   L   L   H   H   L   H
+                      C   0   0      L   L   H   L   H   H   L   H
+                      C   0   0      H   H   L   H   H   L   H   H
+                      C   0   0      H   L   H   H   H   L   H   H
+                      C   0   0      H   H   L   L   H   L   H   H
+                      C   0   0      H   L   H   L   H   L   H   H
+                      C   0   0      H   L   L   L   H   L   H   H
+                      C   0   0      L   L   H   L   H   L   H   H
+                      C   0   0      H   H   L   H   H   H   L   L
+                      C   0   0      H   L   H   H   H   H   L   L
+                      C   0   0      H   H   L   L   H   H   L   L
+                      C   0   0      H   L   H   L   H   H   L   L
+                      C   0   0      H   L   L   L   H   H   L   L
+                      C   0   0      L   L   H   L   H   H   L   L
+                      C   0   0      H   H   L   H   H   L   H   L
+                      C   0   0      H   L   H   H   H   L   H   L
+                      C   0   0      H   H   L   L   H   L   H   L
+                      C   0   0      H   L   H   L   H   L   H   L
+                      C   0   0      H   L   L   L   H   L   H   L
+                      C   0   0      L   L   H   L   H   L   H   L
+                      C   0   0      H   H   L   H   H   L   L   L
+                      C   0   0      H   L   H   H   H   L   L   L
+                      C   0   0      H   H   L   L   H   L   L   L
+                      C   0   0      H   L   H   L   H   L   L   L
+                      C   0   0      H   L   L   L   H   L   L   L
+                      C   0   0      L   L   H   L   H   L   L   L
+                      C   0   0      H   H   L   H   L   L   H   L
+                      C   0   0      H   L   H   H   L   L   H   L
+                      C   0   0      H   H   L   L   L   L   H   L
+                      C   0   0      H   L   H   L   L   L   H   L
+                      C   0   0      H   L   L   L   L   L   H   L
+                      C   0   0      L   L   H   L   L   L   H   L
+                      C   1   X      Z   Z   Z   Z   Z   Z   Z   Z
+
+
+
+
+
+
+
+

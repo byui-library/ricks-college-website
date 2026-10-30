@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>Adding complex numbers</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<TABLE>
+<TR>
+<TD VALIGN="TOP" ROWSPAN=2>
+<A HREF="../../../../ricks-2000/Default.htm">
+<IMG SRC="logo.gif" WIDTH="100" HEIGHT="100" ALT="Ricks College Home Page" BORDER="0"></A>
+</TD>
+<TD VALIGN="TOP" COLSPAN=2>
+<A HREF="about.html">
+<IMG SRC="name.gif" WIDTH="197" HEIGHT="27" ALT="Kevin E. Twitchell" BORDER="0"></A>
+</TD>
+</TR>
+<TR>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+<I>
+Department of<BR>
+Mathematics and<BR>
+Computer Science
+</I>
+</FONT>
+</TD>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+<A HREF="mailto:TwitchellK@ricks.edu">
+TwitchellK@ricks.edu</A><BR>
+208-356-1938
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<H3>Adding complex numbers</H3>
+
+<PRE>
+/***********************************************************************
+* Program:
+*    Homework 0, Adding Complex Numbers
+* Author:
+*    Brother Twitchell, 7 July 1999
+* Summary: 
+*    Provides an example of a class and operator overloading.
+*    Instantiates two Complex objects, adds them, and outputs the sum.
+***********************************************************************/
+
+#include &lt;iostream&gt;
+
+class Complex
+/***********************************************************************
+* Each instantiation contains exactly one complex number. Both the
+* real and imaginary parts of the complex number are floating-point
+* values. For the complex number a+bi, a is represented by variable
+* real and b is represented by variable imaginary.
+***********************************************************************/
+{
+   private:
+      float real;      // real part of the imaginary number
+      float imaginary; // imaginary part of the imaginary number
+   public:
+      // the constructor has default values of 0.0 for the two parameters
+      Complex (float suppliedReal = 0.0, float suppliedImaginary = 0.0);
+      float getReal (void) const;      // returns the real portion
+      float getImaginary (void) const; // returns the imaginary portion
+};
+
+Complex::Complex (float suppliedReal = 0.0, float suppliedImaginary = 0.0)
+/***********************************************************************
+* Initializes real and imaginary when a complex number object is
+* instantiated. Receives the values intended for the real and imaginary
+* portions of the complex number. Each of these has a value of 0.0 if
+* no value is supplied. The received values are assigned to private
+* data members real and imaginary.
+***********************************************************************/
+{
+   // store supplied (or default) real and imaginary values
+   real = suppliedReal;
+   imaginary = suppliedImaginary;
+}
+
+float Complex::getReal (void) const
+/***********************************************************************
+* Returns the real portion of the complex number (i.e., a of a+bi)
+* stored in private data member real.
+***********************************************************************/
+{
+   return (real);
+}
+
+float Complex::getImaginary (void) const
+/***********************************************************************
+* Returns the imaginary portion of the complex number (i.e., b of a+bi)
+* stored in private data member imaginary.
+***********************************************************************/
+{
+   return (imaginary);
+}
+
+Complex operator + (const Complex &operand1, const Complex &operand2)
+/***********************************************************************
+* Receives two Complex objects and returns the sums of the values. The
+* sum is obtained by adding the real portions of the two objects and by
+* adding the imaginary portions of the two objects. The sum is returned
+* as a Complex object.
+***********************************************************************/
+{
+   // get the real values of the two complex objects and add them
+   // get the imaginary values of the two complex objects and add them
+   // use the summed real and imaginary values and instantiate a new
+   //    complex object
+   // return the instantiated complex object containing the sum
+   return (Complex ((operand1.getReal () + operand2.getReal ()),
+                    (operand1.getImaginary () + operand2.getImaginary ())));
+}
+
+ostream &operator &lt;&lt; (ostream &outFile, const Complex &number)
+/***********************************************************************
+* Output to the received ostream object the received complex number,
+* in the form of a+bi, where a is the real part and b is the imaginary
+* part. The destination of the output (outFile) is returned so output
+* can be chained
+***********************************************************************/
+{
+   // output the complex number in the form of a+bi
+   outFile &lt;&lt; number.getReal () &lt;< "+" &lt;&lt; number.getImaginary () &lt;&lt; "i";
+   return (outFile);
+}
+
+void main (void)
+/***********************************************************************
+* Instantiate two complex number objects, output the complex numbers
+* and their sum. Demonstrates that class Complex works as intended.
+***********************************************************************/
+{
+   Complex complexNumber1 (3.4, 7.2);
+   Complex complexNumber2 (2.8, 19.0);
+
+   // output the two complex numbers and their sum; by performing the
+   //    addition in the cout statement, we demonstrate that the operator
+   //    overloading of + correctly returns a Complex object
+   cout &lt;&lt; complexNumber1 &lt;&lt; " + "
+        &lt;&lt; complexNumber2 &lt;&lt; " = "
+        &lt;&lt; (complexNumber1 + complexNumber2) &lt;&lt; endl;
+}
+</PRE>
+
+<HR>
+
+<FONT SIZE="-1"><A href="../../../../ricks-2000/Default.htm">Ricks College</A> | <A HREF="default.htm">Twitchell</A></FONT>
+<BR>
+<FONT SIZE="-2"><I>January 8, 2001</I></FONT>
+
+</BODY>
+</HTML>

@@ -1,0 +1,560 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>CS145 - Software Design and Development Homework</TITLE>
+</HEAD>
+<BODY>
+
+<H2>CS145 - Software Design and Development<BR>Homework<HR></H2>
+
+<P>
+
+<FONT SIZE="-1">
+<A HREF="#00">00</A> |
+<A HREF="#01">01</A> |
+<A HREF="#02">02</A> |
+<A HREF="#03">03</A> |
+<A HREF="#04">04</A> |
+<A HREF="#05">05</A> | 
+<A HREF="#06">06</A> |
+<A HREF="#07">07</A> |
+<A HREF="#08">08</A> |
+<A HREF="#09">09</A> |
+<A HREF="#10">10</A> |
+<A HREF="#11">11</A> |
+<A HREF="#12">12</A> |
+<A HREF="#13">13</A> 
+</FONT>
+
+<H4>General Instructions</H4>
+<UL>
+<LI>All assignments except 00 and 02 shall be submitted electronically.
+Copy files to /home/twitchellk/cs145/hw##/,
+where ## is the two-digit homework number
+(be sure to include leading zeros when necessary).
+It is best to use <B>submit145</B> to submit your homework
+when there is only <i>one</i> file per extension to submit.
+However, you may also use the Linux copy command (cp)
+to copy your files to the homework directory;
+this is required if you are submitting <i>multiple</i> files with the same extension.
+Examples where whateverYouNamedIt is your file to be submitted
+and xyz99001 is your user ID):
+<UL>
+<LI>submit145 whatever.java
+<LI>cp whatever.java /home/twitchellk/cs145/hw##/xyz99001.java
+<LI>submit145 whatever.txt
+<LI>cp whatever.cpp /home/twitchellk/cs145/hw##/xyz99001.txt
+</UL>
+<LI>All assignments submitted electronically shall be submitted as ASCII text files
+(i.e., submit the source code rather than the compiled binary).
+<LI>Homework shall not be submitted using e-mail.
+<LI>The name of the submitted file shall have the appropriate extension (i.e.,
+Java source code files shall be submitted using the .java extension,
+HTML files with the .html extension, and text files with the .txt extension).
+<LI>Homework 02 shall be submitted on paper.
+If you submit your homework after I leave for the day, you do so at your own risk.
+I am not responsible for homework assignments I do not receive.
+<LI>Make sure your submitted assignment satisfies all specified requirements.
+<LI>Each line in each submitted file shall be less than 80 characters long.
+<LI>All programs shall include error handling,
+shall execute without uncaught exceptions, and shall terminate gracefully.
+<LI>Each program shall be written in Java.
+Each shall compile and execute using Sun's Java software development kits.
+<LI>For all character input, you must allow for the input of any case,
+including mixed case.
+<LI><b>Java programs shall be graded on working correctly <i>and</i>
+on compliance with coding conventions.</b> Use the coding conventions
+specified in <a href="style.html">Elements of Style</a>.
+<LI>The .java filename must match the public class name.
+To comply with my submission rules both must be your user ID.
+Even though it is contrary to coding conventions,
+always start your user ID with a lower case letter.
+<i>(All other class names must start with an upper case letter.)</i>
+</UL>
+<HR>
+
+<TABLE>
+<TR VALIGN="top">
+<TD>
+<A NAME="00"><FONT SIZE="+3"><B>00</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Scriptures in Class</B></font><BR>
+<I>50 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Each class shall start with at least one brief presentation of a scripture.
+You are required to present <B>two</B> scriptures from the
+Standard Works during the semester.
+Each scripture (one or more verses) shall be pertinent
+to our class, to our course of study,
+or to life at Brigham Young University-Idaho.
+Just as Nephi, you are encouraged to
+"liken all scriptures unto us" (1 Nephi 19:23).
+Each scripture shall be one that has not been presented before in this class.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+You will be penalized for presenting a duplicate scripture.
+Standard late penalties apply each time you are not prepared
+on your assigned (or reassigned) day.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Information to help you successfully complete
+this homework assignment is available at
+<a href="https://web.archive.org/web/1998/http://joshua.byui.edu/cgi-bin/twitchellk/scriptures/studentTracker.pl">
+http://joshua.byui.edu/cgi-bin/twitchellk/scriptures/studentTracker.pl</a>
+<i>(on campus only)</i>.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="01"><FONT SIZE="+3"><B>01</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Pinewood Derby Simulator Requirements</B></font><BR>
+<I>200 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Work with others in groups to specify requirements
+for a pinewood derby simulator.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://web.archive.org/web/1998/http://joshua.byui.edu/~twitchellk/cs145hw01groups.txt">
+Group assignments</a> (on campus only).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The requirements specification shall consist of bulleted lists,
+with brief descriptions, in the following categories:
+<OL>
+<LI>Design car
+<LI>Schedule races in a tournament (one track with a maximum of five lanes;
+	could include quarter-finals, semi-finals, and a final)
+<LI>Execute scheduled races
+<LI>Output: results of each race in the tournament <b>and</b> tournament winners (first-, second-, and third-place).
+</OL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The user shall interact with your software
+by means of a graphical user interface (GUI).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Include the names of group members.
+For each group member, indicate the percentage of total effort for that group member.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Submit one set of requirements per group.
+<i>(Use the user ID of one group member.)</i>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Reference material is available at
+<a href="https://web.archive.org/web/1998/http://directory.google.com/Top/Kids_and_Teens/People_and_Society/Organizations/Personal_Development/Scouting/Resources/Pinewood_Derby/">Google</a> and
+<a href="https://web.archive.org/web/1998/http://dir.yahoo.com/Recreation/Outdoors/Scouting/Boy_Scouts_of_America/Pinewood_Derbies/">Yahoo</a>.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="02"><FONT SIZE="+3"><B>02</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>What is the Future of Java?</B></font><BR>
+<I>200 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Write a research paper titled, "What is the Future of Java?"
+You may investigate the future acceptance/utilization of Java,
+features to be incorporated into Java,
+the long-term impacts of Sun vs. Microsoft legal actions, or
+how Java will fair against Microsoft products.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Document your research with a minimum of four unique sources.
+Information from the Web shall be from reputable sources.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The text of your paper shall be a minimum of 81 and
+a maximum of 108 lines of single-spaced text
+with 78 columns per line.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="03"><FONT SIZE="+3"><B>03</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Pinewood Derby Simulator Design</B></font><BR>
+<I>300 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Work with others in groups to design a pinewood derby simulator.
+Base your design on the <a href="PinewoodDerbySimulatorRequirements.txt">
+Pinewood Derby Simulator Requirements</a>.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://web.archive.org/web/1998/http://joshua.byui.edu/~twitchellk/cs145hw02groups.txt">
+Group assignments</a> (on campus only).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The design shall include, at a minimum, a class diagram and CRC cards.
+Each class shall be represented on the class diagram and on a CRC card.
+You may use 3x5 or 4x6 cards for CRC cards.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Supply additional text to enhance understanding of your design.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Provide requirements-design traceability.
+For each numbered requirement, specify the class, class attributes, <b>and</b>
+class operations that satisfy that requirement.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Submit the design and traceability information, one per group, on paper.
+Include the names of group members.
+For each group member, indicate the percentage of total effort for that group member.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="04"><FONT SIZE="+3"><B>04</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Hello World!</B></font><BR>
+<I>25 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a Java application to output the text "Hello World!",
+your name, your major, and where you are from.
+Sample source code is in the text on page 22.
+The purpose of this assignment is not to demonstrate
+your programming prowess,
+but to help you become acquainted with the mechanics of Java.
+Be sure to document your program as specified in
+the <a href="style.html">Elements of Style</a>.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="05"><FONT SIZE="+3"><B>05</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Change Maker</B></font><BR>
+<I>50 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a Java application to output the change from a purchase.
+Prompt the user to enter a non-negative integer
+less than or equal to 100 (e.g., 85).
+After reading the number from the user,
+instantiate a ChangeMaker object
+(passing the constructor the user input).
+The object calculates the amount of change from $1 (100),
+assuming that the user input represents the cost of an item in cents and
+determines the least number quarters, dimes, nickels, and pennies
+to be used as change.
+Invoke an accessor method to output
+"The item costs ### cents."
+where ### is the value input by the user.
+Follow this with the change specified as quantities of
+quarters, dimes, nickels, and pennies.
+<i>You may not use any selection or iteration structures.</i>
+Assume user input is valid.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Examples (user input is shown in <B>bold</B>):
+<UL>
+<LI>Enter the cost of an item in whole cents (0-100): <B>59</B><BR>
+The item costs 59 cents.<br>
+Your change is 1 quarter(s), 1 dime(s), 1 nickel(s), and 1 penny(ies).
+<LI>Enter the cost of an item in whole cents (0-100): <B>5</B><BR>
+The item costs 5 cents.<br>
+Your change is 3 quarter(s), 2 dime(s), 0 nickel(s), and 0 penny(ies).
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="06"><FONT SIZE="+3"><B>06</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Hello World! Applet</B></font><BR>
+<I>100 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a Java Applet with a single text field and four buttons.
+The text field shall contain the text "Hello World!"
+The four buttons shall be labeled "Hello World!,"
+"My Name," "My Major," and "Where I am From."
+Clicking on a button results in the appropriate text
+being displayed in the text field.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Submit two files: one containing the Java source code
+and one containing the HTML for the applet.
+Be sure that the HTML file contains the correct .class filename
+(i.e., your user ID).
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="07"><FONT SIZE="+3"><B>07</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>This is Super!</B></font><BR>
+<I>100 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a Java applet that calculates the volume of a rectangular solid (i.e. a box).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+In init(), instantiate three Volume objects,
+one with three parameters (3.0, 4.0, and 5.0),
+one with two parameters (6.0 and 7.0), and
+one with one parameter (8.0).
+Use overloaded constructors to handle the different parameter lists.
+If two parameters are supplied,
+use the second parameter for the third parameter.
+If one parameter is supplied, use it for all three parameters.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+In paint(), output the three volumes using an accessor method.
+(The correct answers are 60.0, 294.0, and 512.0.)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The class extending Applet can only be used to instantiate Volume objects,
+invoke the accessor method to obtain a volume, and 
+output the three volumes.
+For all other classes, each class can use at most one assignment (=) and
+one multiplication (*).
+Each class can have no more variable names than the number of parameters
+used to instantiate an object from that class.
+If an object is instantiated with one parameter,
+the class shall use exactly one variable name.
+If an object is instantiated with two parameters,
+the class shall use exactly two variable names.
+If an object is instantiated with three parameters,
+the class shall use exactly three variable names.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Provide an HTML page to display your applet.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="08"><FONT SIZE="+3"><B>08</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Stack Lock and Unlock</B></font><BR>
+<I>150 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a stack class in which each instance of the class (object) can
+access a stack – not one stack per instance, but one stack period.
+Any instance of the class can lock the stack
+for its own exclusive use and unlock it later.
+The object that locked the stack is the only one that can push values
+onto the stack, pop values off of the stack, and unlock the stack.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Define instance methods to perform the push, pop, lock, and unlock functions.
+These methods also output information regarding their operations.
+Each object must be able to determine, completely on its own, who it is
+(i.e., you may not provide an identifier to the object when you instantiate it).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+In main, instantiate four Stack objects;
+instantiate each immediately before it is first used.
+I refer to them as aStack, bStack, cStack, and dStack.
+Perform the operations specified in the first column of
+<a href="stack.txt">/home/ket/examples/stack.txt</a>.
+Use the same order of operations and values.
+Do not output this information.
+Exactly match the output specified in the second column of
+<a href="stack.txt">/home/ket/examples/stack.txt</a>.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="09"><FONT SIZE="+3"><B>09</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Multiplication Table</B></font><BR>
+<I>150 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a Java applet that accepts as input the minimum and
+maximum numbers for a multiplication table.
+The minimum number is the smallest number
+that is used to create a product.
+The maximum number is the largest number
+that is used to create a product.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Calculate and output the calculated values (products)
+for the multiplication table.
+Use loops and methods wherever possible.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Use a textarea and a fixed pitch font (Monospaced) for the output.
+Assuming that the user input is one for the minimum and
+ten for the maximum,
+the table should be formatted to look exactly like the table in
+<a href="table.txt">/home/twitchellk/examples/table.txt</a>.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Provide appropriate labels for input text fields.
+Provide appropriate user instructions.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Remember to provide full error detection and handling.
+No product shall exceed three characters.
+Negative numbers are valid for minimum and maximum numbers.
+The maximum number cannot be less than the minimum number.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="10"><FONT SIZE="+3"><B>10</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Split an Expression</B></font><BR>
+<I>200 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a Java application to accept as input an
+arithmetic expression using fractions.
+The input shall not contain any spaces
+(this is a constraint, not an error condition).
+The only valid operators are +, -, *, and /.
+Output an error message if an invalid operator is used.
+Output the following information as shown in the example:
+first numerator, first denominator, operator,
+second numerator, and second denominator.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Be sure to provide correct answers for arithmetic expressions
+such as -3/-4--9/-5 and 2/1/7/6.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+In main, instantiate an object whose class definition
+provides all string processing.
+Use the string, not character, manipulation capabilities of Java.
+Output the result from main.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Exactly match output as shown in the following example
+(user input is shown in <B>bold</B>):
+<PRE>
+   Enter an arithmetic expression using fractions
+      (such as 1/2+3/4) or quit
+   Input: <B>11/52+30/104</B>
+   First numerator: 11
+   First denominator: 52
+   Operator: +
+   Second numerator: 30
+   Second denominator: 104
+   Input: <B>11/52%30/104</B>
+   Parse error
+   Input: <B>11+52/30/104</B>
+   Parse error
+   Input: <B>11</B>
+   Parse error
+   Input: <B>11/52</B>
+   Parse error
+   Input: <B>11/52/104</B>
+   Parse error
+   Input: <B>11/a52+30/104</B>
+   Parse error
+   Input: <B>11/52+30a/104</B>
+   Parse error
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="11"><FONT SIZE="+3"><B>11</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Sorts of All Sorts</B></font><BR>
+<I>600 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a (stand-alone) Java application that
+sorts <b>two</b>-dimensional arrays.
+Implement the following three sorting algorithms:
+bubble, selection, and insertion.
+Implement the algorithms explained in class.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Use inheritance to avoid duplication of code.
+The super class shall have all common code
+required by all three sorting algorithms.
+There shall be one subclass for each sorting algorithm.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a three (row) by five (column) two-dimensional array.
+Fill it with random numbers ranging from 32 to 64.
+Sort the array so that 
+<ul>
+<li>the smallest value is at index [0][0],
+<li>the next smallest value is at index [0][1],
+<li>the third smallest value is at index [0][2],<br>
+	...,
+<li>the third largest value is at index [2][2],
+<li>the second largest value is at index [2][3],
+<li>and the largest value is at index [2][4].
+</ul>
+&nbsp;&nbsp;&nbsp;&nbsp;
+For each sort, output
+<ul>
+<li>the array before the sort as three rows and five columns and
+<li>the array after the sort as three rows and five columns.
+</ul>
+Appropriately identify each section of your output to maximize readability.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+You may <b>not</b> use a one-dimensional array, or anything like unto it,
+anywhere in your program.
+Your implementation will not be considered to be anything like unto
+a one-dimensional array as long as the initialization, sorting, and output
+of the two-dimensional array always uses both dimensions  (row and column) <b>and</b>
+you always use nested loops to set the row and column coordinates.</i>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="12"><FONT SIZE="+3"><B>12</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Containers and Components and Layouts, Oh My!</B></font><BR>
+<I>250 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create an HTML page displaying four Java applets that exactly match the following:
+<a href="Par95002.html">HTML page</a>,
+<a href="Par95002Calc.class">layout 1</a>,
+<a href="Par95002Grid.class">layout 2</a>,
+<a href="Par95002Color.class">layout 3</a>, and
+<a href="Par95002Print.class">layout 4</a>.
+<i>These will <b>not</b> display in your browser.
+You may want to download these and display them using appletviewer.</i>
+Supply your name as the programmer.
+Functionality is not required.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+This assignment requires you to submit five files
+(one HTML and four Java).
+Name the .html file using standard conventions;
+you may use submit145 to copy this file to the homework directory.
+The name for each of the four .java files shall
+be unique and shall begin with your user ID.
+<b>Do not use submit145 to submit the .java files</b>;
+use the cp command instead (see the General Instructions
+section at the top of this page).
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="13"><FONT SIZE="+3"><B>13</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Pinewood Derby Simulator</B></font><BR>
+<I>800 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Work with others in groups to program a pinewood derby simulator
+using the design developed in homework <a href="#03">03</a> and
+satisfying the requirements specified in homework <a href="#01">01</a>.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://web.archive.org/web/1998/http://joshua.byui.edu/~twitchellk/cs145hw03groups.txt">
+Group assignments</a> (on campus only).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Submit the Java files to the subdirectory created for your group
+in /home/twitchellk/cs145/hw13/.
+Provide any other required files and subdirectories.
+Do <b>not</b> provide any predefined cars.
+Provide user instructions including how to compile and execute
+your program.
+Include the names of group members.
+For each group member, indicate the percentage
+of total effort for that group member.
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<HR>
+
+<table>
+<tr valign=bottom>
+<td>
+<FONT SIZE="-1">
+<b><a href="default.htm">Kevin E. Twitchell</a></b><BR>
+<A href="../../../../ricks-2000/Default.htm">BYU-Idaho</A><BR>
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+</FONT>
+</td>
+<td>
+</td>
+<td>
+<FONT SIZE="-1">
+<A HREF="mailto:TwitchellK@byui.edu">
+TwitchellK@byui.edu</A><BR>
+208-496-1938 voice<BR>
+208-496-5938 fax
+</FONT>
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>

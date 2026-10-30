@@ -1,0 +1,140 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>Elements of Style</TITLE>
+</HEAD>
+<BODY>
+
+<H2>Elements of Style<BR><HR></H2>
+
+<P>A technical report consists of introductory material and definitions of terms and acronyms
+followed by the body of the report. The body of the report is divided into sections with section
+headings; the organization of the report aids the reader in understanding the report. A technical
+report should be readable and understandable. A software program is no different.</P>
+
+<P>The introductory material of a software program consists of a comment block identifying the
+program and its author. A brief explanation of what the program is supposed to do should also be
+included.</P>
+
+<P>The definitions of terms and acronyms of a software program typically consist of variable
+declarations. While variables are declared in more than one location (e.g., more global variables are
+declared separately from more local variables), the format should be the same, with the exception of
+subroutine parameters. Each variable should be declared on a separate line with an explanatory
+comment (if necessary). To maintain readability,  subroutine parameters are declared after the
+subroutine name and explanatory comments are contained in the  subroutine comment block.
+Using descriptive identifiers reduces or eliminates the need for explanatory comments. For
+example, <EM>sum</EM> tells us we are adding something; <EM>sumOfSquares</EM>
+tells us specifically what we are adding.
+Use of descriptive identifiers also reduces the need for comments in the body of the
+source code. For example, <EM>sum += x * x;</EM> requires explanation. On the other hand,
+<EM>sumOfSquares
++= userInput * userInput;</EM> not only tells us where the item we are squaring came from, but also
+that we are creating a sum of the squares of those items. If identifiers are chosen carefully, it
+is possible to write understandable code with very few, if any, comments.</P>
+
+<P>The following convention shall be using for identifiers:
+Class and structure (struct) identifiers begin with an uppercase letter (ThisIsAClass).
+Subroutine (function) and variable identifiers begin with a lowercase letter
+(thisIsASubroutine (), thisIsAVariable).
+Note that if an identifier consists of more than one word,
+the words are joined together and each word after the first
+begins with an uppercase letter.
+Underscores are not used.
+All the letters in the constant identifiers are capitalized;
+underscores are used to separate words (THIS_IS_A_CONSTANT).</P>
+
+<P>A technical paper is divided into sections; the sections of a software program consist of
+subroutines and classes. <EM>Main</EM> is a subroutine, although one with special meaning.
+The section titles consist of additional comment blocks identifying the subroutine or class and
+explaining the functionality it provides to the program. Subroutine comment blocks also include
+an explanation of the data passed to the subroutine (inputs)
+and returned by the subroutine (outputs). Use of white
+space between subroutines as well as within subroutines enhances readability.</P>
+
+<P>Readability is also enhanced by placing white space around operators. Because of the way
+printers and video displays handle text, readability is improved by keeping each line of code less
+than 80 characters long.</P>
+
+<P>Subroutines and classes should be ordered in a program such that they are easy to locate by
+the reader of the source code. For larger programs, an alphabetical arrangement works well. For
+shorter programs, following the order in which the subroutines are invoked or objects are
+instantiated is useful.</P>
+
+<P>To aid the reader in following the structure of the source code, statements should be
+consistently indented. Because tab stops are not consistent from one editor to another, spaces
+shall be used instead of tabs. Three spaces work well for an indentation. Each statement within a
+block of code, defined by curly braces ({}), should be indented the same number of spaces. Each
+curly brace should be on its own line; this makes them easier to match up. A block of code nested
+within another block of code should be further indented to distinguish it from other code within
+the same block.</P>
+
+<P>Comments serve many purposes. Since a comment can be easily read
+by a programmer and source code, in many
+cases, must be decoded, one purpose of comments is to clarify complicated code. Comments can
+be used to convey information to those who will maintain the code. For example, a comment
+might provide warning that a certain value cannot be changed without impacting other portions
+of the program. Comments can provide documentation of the logic used in a program. Above all
+else, comments should add "value" to the code and should not simply restate what is obvious
+from the source code. The following are meaningless comments and add no value to the source
+code:
+<UL>
+<EM>int i; // declare i to be an integer</EM><BR>
+<EM>i = 2; // set i to 2</EM>
+</UL>
+On the other hand, the following comments add value:
+<UL>
+<EM>int i; // indexing variable for loops</EM><BR>
+<EM>i = 2; // skip cases 0 and 1 in the loop since they were processed earlier</EM></P>
+</UL>
+
+<P>"Commenting out" portions of the source code can be an effective debugging technique.
+However, these sections can be confusing to those who read the source code. The final version of
+the program should not contain segments of code that have been commented out.</P>
+
+<P>Just as one would expect correct spelling in a technical paper, one should also find correct
+spelling within a program.</P>
+
+<P>
+Examples of source code meeting the above style guidelines:
+<LI><A HREF="styleadd.html">Adding two integers supplied by a user</A>
+<LI><A HREF="stylecubed.html">Cubing an integer read from a file</A>
+<LI><A HREF="stylecomplex.html">Adding complex numbers</A>
+</P>
+
+<P>
+Templates for comments blocks are available on joshua at
+/home/twitchellk/examples/style/.
+</P>
+
+<P>
+A <A HREF="stylechecklist.html">checklist</A>
+of style elements used in grading source code follows the examples of source code.
+</P>
+
+<HR>
+
+<table>
+<tr valign=bottom>
+<td>
+<FONT SIZE="-1">
+<b><a href="default.htm">Kevin E. Twitchell</a></b><BR>
+<A href="../../../../ricks-2000/Default.htm">BYU-Idaho</A><BR>
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+</FONT>
+</td>
+<td>
+</td>
+<td>
+<FONT SIZE="-1">
+<A HREF="mailto:TwitchellK@byui.edu">
+TwitchellK@byui.edu</A><BR>
+208-496-1938 voice<BR>
+208-496-5938 fax
+</FONT>
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>

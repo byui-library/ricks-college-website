@@ -1,0 +1,48 @@
+ALLREDP,Philip A. Allred, Professor,TAYLOR,274, (208) 356-1565
+MARCUMR,Robert Marcum,Professor / Department Chair,TAYLOR,202B,(208) 356-1508, Yes
+NORDFELTD,Dixie W. Nordfelt,Secretary,TAYLOR,202,(208) 356-1430,Yes
+ANDERSONR,Ronald D. Anderson,Professor,TAYLOR,220,(208) 356-1564
+BROOKSK,Kent Brooks,Professor,TAYLOR,230,(208) 356-1446
+CHRISTENSEND,David Christensen,Professor,TAYLOR,226,(208) 356-1449
+CLARKS,Stephen E. Clark,Professor,TAYLOR,221,(208) 356-1441
+FERGUSONS,P. Scott Ferguson,Professor,TAYLOR,234,(208) 356-1221
+GLENNJ,Jerry L. Glenn,Professor,TAYLOR,214,(208) 356-1504
+HAMMONDT,Todd M. Hammond,Professor,TAYLOR,224,(208) 356-1437
+HANSENG,Gerald E. Hansen,Professor,TAYLOR,223,(208) 356-1429
+HAYESR,Randy Hayes,Professor,TAYLOR,212,(208) 356-1443
+HUFFR,Roy Huff,Professor,TAYLOR,235,(208) 356-1445
+JENSENB,Clarence G. Jensen,Professor,TAYLOR,232,(208) 356-1448
+KELLERJ,W. James Keller,Professor,TAYLOR,202C,(208) 356-1431
+KINGHORNBR,Brian W. Kinghorn,Professor,TAYLOR,228,(208) 356-1536
+LADLED,Douglas S. Ladle,Professor,TAYLOR,202A,(208) 356-1481
+MARROTTR,Robert L. Marrott,Professor,TAYLOR,208,(208) 356-1450
+PALMERG,Greg G. Palmer,Professor,TAYLOR,216,(208) 356-2236
+PYPERL,Lon A. Pyper,Professor,TAYLOR,202E,(208) 356-1442
+ROMNEYJ,Joseph B. Romney,Professor,TAYLOR,226,(208) 356-1438
+SATTERFIELDB,Bruce K. Satterfield,Professor,TAYLOR,216,(208) 356-1566
+SOUTHWICKN,Neal S. Southwick,Professor,MCK,225,(208) 356-2353
+THOMASJ,John C. Thomas,Professor,TAYLOR,210,(208) 356-1539
+THURGOODL,Larry L. Thurgood,Professor,TAYLOR,213,(208) 356-1503
+TORNGRENW,William N. Torngren,Professor,TAYLOR,218,(208) 356-1439
+WIGHTMANG,Gregory B. Wightman,Professor,TAYLOR,229,(208) 356-1941
+WILLIAMSG,Greg K. Williams,Professor,TAYLOR,225,(208) 356-1447, Yes
+WILLIAMSN,Nathan H. Williams,Professor,TAYLOR,250,(208) 356-1432
+PURSEG,Gary A. Purse,Professor,TAYLOR,222,(208) 356-1568
+taylibrary,,,,,,Yes
+ddsstudent1,,,,,,Yes
+ddsstudent2,,,,,,Yes
+ddsstudent4,,,,,,Yes
+GEDDESC
+JEXG
+SMITHW
+DAVISR
+GALBRAITHJ
+ANDERSONK
+HOLTJ
+CHECKETTSM
+BEDNARD
+STEPHENSL
+SESSIONSJ
+BAKEB
+WOODLANDL
+KUMFERMANE

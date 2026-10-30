@@ -1,0 +1,810 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>CS273 - Web Engineering Homework</TITLE>
+</HEAD>
+<BODY>
+
+<H2>CS273 - Web Engineering<BR>Homework<BR><HR></H2>
+
+<P>
+
+<FONT SIZE="-1">
+<A HREF="#00">00</A> |
+<A HREF="#01">01</A> |
+<A HREF="#02">02</A> |
+<A HREF="#03">03</A> |
+<A HREF="#04">04</A> |
+<A HREF="#05">05</A> |
+<A HREF="#06">06</A> |
+<A HREF="#07">07</A> |
+<A HREF="#08">08</A> |
+<A HREF="#09">09</A> |
+<A HREF="#10">10</A> |
+<A HREF="#11">11</A> |
+<A HREF="#12">12</A> |
+<A HREF="#13">13</A> |
+<A HREF="#14">14</A> |
+<A HREF="#15">15</A> |
+<A HREF="#16">16</A> |
+<A HREF="#17">17</A> |
+<A HREF="#18">18</A> |
+<A HREF="#19">19</A> |
+<A HREF="#20">20</A> |
+<A HREF="#21">21</A>
+</FONT>
+
+<H4>General Instructions</H4>
+<UL>
+<LI>Each homework assignment, except 00, shall include a
+<a href="workLog.html">work log</a>.
+<LI><B>Homework is graded using Netscape Navigator
+version 4.77 on a Windows 2000 PC.</B> Make sure your
+Web pages and programs work in this environment.
+<I>Using other browsers to develop software is strongly discouraged!</I>
+<LI>CGI programming assignments shall execute using
+joshua.byui.edu as the Web server.
+<LI>All assignments except 00, 01, and 14 shall be submitted by copying files to
+/home/twitchellk/cs273/hw##/, where ## is the two-digit homework number
+(be sure to include leading zeros when necessary).
+It is best to use <b>submit273t</b> to submit your homework.
+Examples where <I>whateverYouNamedIt</I> is your file to be submitted
+and <I>xyz99001</I> is your user ID):
+<UL>
+<LI>submit273t whatever.txt
+<LI>submit273t whatever.html
+<LI>submit273t whatever.pl
+</UL>
+You may also copy your files to the homework directory.
+Examples:
+<UL>
+<LI>cp whatever.txt /home/twitchellk/cs273/hw02/xyz99001.txt
+<LI>cp whatever.html /home/twitchellk/cs273/hw02/xyz99001.html
+<LI>cp whatever.pl /home/twitchellk/cs273/hw02/xyz99001.pl
+</UL>
+<LI>All assignments shall be submitted as ASCII text files.
+An assignment that is resubmitted because the file is not an
+ASCII text file is subject to late penalties.
+<LI>Do <i>not</i> use absolute path names in your CGI (Perl) scripts;
+always use relative path names.
+<LI>Except for homework <a href="#12">12</a>,
+submit <B>only one file</B> for each homework assignment.
+<LI>Each file name shall include an appropriate extension
+(.html for HTML, .pl for Perl, and .txt for text).
+<LI>Do <I>not</I> link to any files in your directories;
+link only to submitted files.
+<LI>Homework shall not be submitted using e-mail.
+<LI>Make sure your submitted program satisfies all specified requirements.
+<LI>All programs shall include error handling,
+shall execute without run-time errors, and shall terminate gracefully.
+<LI>Each line in each file, regardless of type,
+shall be less than 80 characters long <I>(except for long URLs)</I>.
+<LI>You may <B>not</B> use Microsoft Front Page or any Perl modules.
+<LI>Web pages shall not contain any of the following:
+<UL>
+<LI>Frames
+<LI>Blinking text
+<LI>Non-terminating animated GIFs
+<LI>Scrolling text/marquees
+<LI>Non-standard link colors
+</UL>
+</UL>
+<HR>
+
+<TABLE>
+<TR VALIGN="top">
+<TD>
+<A NAME="00"><FONT SIZE="+3"><B>00</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Scriptures in Class</B></font><BR>
+<I>75 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Each class shall start with at least one brief presentation of a scripture.
+You are required to present <B>three</B> scriptures from the
+Standard Works during the semester.
+Each scripture (one or more verses) shall be pertinent
+to our class, to our course of study, or to life at Brigham Young University-Idaho.
+Just as Nephi, you are encouraged to
+"liken all scriptures unto us" (1 Nephi 19:23).
+Each scripture shall be one that has not been presented before in this class.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+You will be penalized for presenting a duplicate scripture.
+Please note that the start of class is not delayed to
+wait for you or your scripture.
+If you are late to class or unprepared on your assigned day,
+you will not deliver a scripture on that day.
+The standard late penalty applies each time you are scheduled
+to provide a scripture but do not.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Information to help you successfully complete this homework assignment
+is available at
+<a href="https://web.archive.org/web/1998/http://joshua.byui.edu/cgi-bin/twitchellk/scriptures/studentTracker.pl?class=CS273">
+http://joshua.byui.edu/cgi-bin/twitchellk/scriptures/studentTracker.pl?class=CS273</a>
+<I>(on campus only)</I>.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="01"><FONT SIZE="+3"><B>01</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Now Presenting</B></font><BR>
+<I>100 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Prepare a 6-7 minute presentation on an Internet topic of your choice.
+The topic must be pre-approved (to avoid duplication) and
+cannot duplicate any material covered in this class.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Sample topics: XML, FTP, gopher, telnet (particularly secure shell),
+streaming audio or video, freedom of speech, privacy, search engines,
+and electronic commerce.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Since the presentations will be made in a random order,
+you should be prepared to present on the first of the two classes
+scheduled for presentations.
+If you are not prepared, a 50% late penalty will be applied.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="02"><FONT SIZE="+3"><B>02</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Internet and Web Jargon</B></font><BR>
+<I>100 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Expand acronyms, if appropriate, and <i>briefly</i> define
+the following terms (as they relate to the Internet).
+State the source(s) of your definitions.
+Submit as a text file.
+<OL>
+<LI>applet
+<LI>CGI
+<LI>client
+<LI>DHTML
+<LI>DNS
+<LI>ethernet
+<LI>FTP
+<LI>gopher
+<LI>HTML
+<LI>HTTP
+<LI>Internet
+<LI>IP address
+<LI>MIME
+<LI>ping
+<LI>router
+<LI>SSL
+<LI>SGML
+<LI>server
+<LI>T1
+<LI>TCP/IP
+<LI>telnet
+<LI>traceroute
+<LI>W3C
+<LI>XHTML
+<LI>XML
+</OL>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="03"><FONT SIZE="+3"><B>03</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>IP Address Shortage</B></font><BR>
+<I>100 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The current IP addressing scheme should be able to address
+approximately 4,294,967,296 computers.
+Even though there are not that many computers,
+we may run out of IP addresses within the next five years.
+Answer the following questions; submit as a text file.
+<OL>
+<LI>Why will we run out of IP addresses?
+<LI>What has been done to solve this problem?<br>
+	Discuss IPv6, CIDR, and NAT.
+<LI>What are the advantages of these solutions?
+<LI>What are the disadvantages of these solutions?
+<LI>Do you think any of these solutions will be implemented
+	within the next five years? Why or why not?
+</OL>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="04"><FONT SIZE="+3"><B>04</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>HTML Hello World!</B></font><BR>
+<I>25 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create an HTML page that displays, at a minimum, the following:
+<UL>
+<LI>a title of "Hello World!" in the browser title bar
+<LI>the text "Hello World!" as the heading of the web page
+(use larger text for the heading)
+<LI>your name
+<LI>your major
+<LI>where you are from
+</UL>
+Test your page by placing the html file
+in a directory named public_html.
+Your public_html directory must be in
+your home directory. Your public_html <B>and</B>
+home directories must have permissions of
+755 (rwxr-xr-x). The URL for your page is
+http://joshua.byui.edu/~yourUserID/yourFileName.html
+where yourUserID is the user ID you use to log in to
+lab computers and yourFileName is the name you
+gave to your html file.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="05"><FONT SIZE="+3"><B>05</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Hello World! Form</B></font><BR>
+<I>25 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create an HTML form with a single text field and four buttons.
+Functionality is required in homework <a href="#16">16</a>.
+The text field shall contain the text "Hello World!"
+One button is a reset button and shall be labeled "Hello World!"
+The other three buttons are JavaScript buttons and shall be labeled
+"My Name," "My Major," and "Where I am From."<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Include a title of "Hello World!" in the browser title bar <B>and</B>
+the text "Hello World!" as the heading of the web page
+(use larger text for the page heading).
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="06"><FONT SIZE="+3"><B>06</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>CGI (and Perl) Hello World!</B></font><BR>
+<I>50 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create a Perl script that creates an HTML page
+that includes, at a minimum, the same information
+required for homework <a href="#04">04</a>.
+&nbsp;&nbsp;&nbsp;&nbsp;
+Test your CGI Perl script using the following URL:
+<UL>
+<LI>http://joshua.byui.edu/cgi-bin/yourUserID/whateverYouNamedIt.pl
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+After submitting your CGI Perl script, test it using the following URL:
+<UL>
+<LI>http://joshua.byui.edu/cgi-bin/cs273/hw06/yourUserID.pl
+<UL>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="07"><FONT SIZE="+3"><B>07</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Change Maker</B></font><BR>
+<I>75 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Write a CGI Perl script that accepts a non-negative
+integer less than or equal to 100 (e.g., 59).
+The input value shall be part of the URL
+<I>(e.g., http://joshua.byui.edu/cgi-bin/.../whatever.pl?59)</I>
+and will be available
+to your Perl script in $ENV{'QUERY_STRING'}
+<i>(use this as you would a variable</i>).<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Assume the value entered by the user is the cost of something.
+Calculate the change from $1 (100).
+Determine the least number of coins (quarters,
+dimes, nickels, and pennies) to be used as change.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create a <B>plain text</B> <I>(Content-type: text/plain)</I>
+page containing your output.
+Output shall include the value input by the user and
+the change as quantities of quarters, dimes, nickels, and pennies.
+If the input was 59, the output is "The item cost 59 cents.
+Your change includes 1 quarter(s), 1 dime(s), 1 nickel(s), and 1 penny(ies)."<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+You may not use any conditionals or loops.
+Assume user input is valid.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="08"><FONT SIZE="+3"><B>08</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Can You Really Do That?</B></font><BR>
+<I>75 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create a CGI Perl script that generates <B>plain text</B> output
+of three random lower case letters.
+The script may have at exactly one line of code, containing at
+most one executable statement
+(an expression that would be terminated with a semi-colon),
+following #!/usr/bin/perl.
+The line may not exceed 80 characters.
+Please note that there is no need to seed the random number
+generator in Perl version 5.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="09"><FONT SIZE="+3"><B>09</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>CGI Environment Variables</B></font><BR>
+<I>100 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create a CGI Perl script that generates an HTML document
+containing a single HTML form with two submit buttons.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+When the user clicks the button labeled "Show Environment Variables",
+the same CGI Perl script generates a dynamic HTML document
+listing all environment variables and their values,
+formatted as a table.
+Output an appropriate title, page header, and column headers.
+The environment variables shall be output in ascending alphabetical order.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+When the user clicks the button labeled "Show Perl Script",
+the same Perl CGI script displays itself as a plain text document.
+You may not "hard code" any path or file names into your Perl script;
+however, you may use environment variables to determine
+the name and location of your Perl script.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Sample code for opening and reading a file is located at
+<a href="file.txt">/home/twitchellk/examples/file.pl</a>.
+You may want to use the code contained in
+<a href="read.txt">/home/twitchellk/examples/read.pl</a>
+to process data from the HTML form.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="10"><FONT SIZE="+3"><B>10</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>File List</B></font><BR>
+<I>100 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create a CGI Perl script that lists file names and
+information about all of the text (.txt) files in the parent directory.
+Your solution shall not include the use of regular expressions.
+Format the data in a table.
+Output an appropriate title, page header, and column headers.
+Organize your output as follows
+(clearly label and separate the three groups):
+<OL>
+<LI>all text (.txt) files with a name of three characters in ascending sort order
+<LI>all text (.txt) files with a name of four characters in ascending sort order
+<LI>all other text (.txt) files in ascending sort order
+</OL>
+For each file name, provide the following information:
+<UL>
+<LI>plain file or directory
+<LI>size (in bytes)
+<LI>permission (rwx) - if the permission is not set, output a hyphen (-)
+<LI>number of days since last modification, to one decimal place
+</UL>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="11"><FONT SIZE="+3"><B>11</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Credit Tally</B></font><BR>
+<I>125 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create a CGI Perl script that displays a list of
+student names (use &lt;SELECT&gt;).
+The names shall come from four digit text files
+located in the parent directory.
+These files contain the student's name in the first line
+and the student's transcript in the rest of the file.
+When the user selects a name and clicks on an
+appropriately labeled button, the same CGI Perl script
+reports the number of credits that the student has earned.
+Note that classes with a grade of "F" or "W"
+are not included in the total.
+A class that is repeated does not add to the total number of credits.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="12"><FONT SIZE="+3"><B>12</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Graduation Progress Report</B></font><BR>
+<I>400 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create a CGI application, consisting of one or more Perl scripts,
+that generates a graduation progress report for any (available) student
+with any (defined) major.
+The report shall match the format and
+provide the information specified in the
+<a href="gradProgressSample.html">sample output file</a>.
+Please note the following:
+<UL>
+<LI>The required number of credits is always 64.0.
+<LI>The total number of earned credits is calculated from classes
+	completed with a passing grade (exclude "F" and "W").
+<LI>The remaining number of credits shall be non-negative.
+<LI>You are not required to process incompletes.
+<LI>A repeated class simply replaces the previous grade.
+	No additional credits are earned for a repeated class.
+<LI>You are not required to process transfer and AP credits;
+	assume all classes are BYU-I classes.
+<LI>You do not need to consider ACT and SAT scores for the math requirement.
+<LI>Assume that all students are required to take four religion classes.
+<LI>Some major required classes dictate which general education classes
+	the student should take; use what the major requires (i.e., major
+	requirements supercede general education requirements).
+<LI>There shall be a minimum of four credits of physical science and
+	a minimum of four credits of biological science.
+<LI>Your name shall appear on the output.
+<LI>You may use more specific terminology than "n/a" (e.g. "completed").
+<LI>You may list specific classes rather than specify "see catalog."
+<LI>Use the title in the general education file (genEd.txt) for
+the title of the general education category in the output.
+<LI>Once a general education requirement is satisfied,
+no additional classes should appear in that general education section.
+If there are additional classes in that general education category
+that are required by the major, they should be listed in the "Major" row
+("Classes Taken" or "Classes to Take" column).
+<LI>Create an additional category (row) to list classes taken that
+don't fit anywhere else.
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The following files are available as inputs to your CGI application.
+They are located at /home/twitchellk/cs273/hw12/.
+<UL>
+<LI>student transcript file(s) named ####.txt
+	where #### represents any four digits -
+	the first line is the student's name
+	followed by a list of classes and grades for those classes
+<LI>major requirements file(s) named ###.txt
+	where ### represents any three digits -
+	the first line is the name of the major
+	followed by a list of required classes;
+	a choice of classes is expressed using a
+	pipe character (|)
+<LI>general education requirements file named genEd.txt -
+	each line starts with the category name and is followed
+	by a list of classes that satisfy that category;
+	please note that the requirements for the basic skills option
+	has been simplified
+<LI>classes file specifying the course number followed by
+	the minimum and maximum number of credits for that course;
+	always use the maximum number of credits possible
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The interface shall allow the user to select a student and
+a major for that student.
+Use only the available students and majors.
+List the students and majors by name.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The files provided in /home/twitchellk/cs273/hw12/ are for your testing.
+Another set of files shall be used to grade the homework.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Submit your completed scripts to /home/twitchellk/cs273/hw12/yourUserID/ where
+yourUserID is your userID. Because you are submitting your homework to
+a directory, you are not required to name your files using your
+user ID. Use relative path names (everything is in your directory or
+in the parent directory).
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="13"><FONT SIZE="+3"><B>13</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Web Site Review</B></font><BR>
+<I>100 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Review the <A HREF="../../../../ricks-2000/Default.htm">BYU-I external web site</A>
+relative to the design principles discussed in class
+and contained in the <a href="cs273Reading.html#usability">reading assignments</a>.
+Be careful to limit your review to www.byui.edu
+(i.e., www.byui.edu <I>must</I> be part of the URL).<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+List ten specific <I>unique</I> things done well.
+<B>Use the following format</B> for each good thing:
+<ul>
+<li>Good thing:
+<li>Reason it is a good thing:
+<li>URL(s):
+<li>Rating:
+</ul>
+The rating is one to five stars (asterisks).
+Five stars for exceptionally good and
+one star for barely good.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+List ten specific <I>unique</I> problem/improvement pairs.
+Improvements are changes that would bring the web page(s)
+into conformance with the design principles previously referenced.
+<B>Use the following format</B> for each problem/improvement pair:
+<ul>
+<li>Problem:
+<li>Reason it is a problem:
+<li>Recommended Improvement:
+<li>URL(s):
+<li>Rating:
+</ul>
+The rating is one to five stars.
+Five stars for a problem that severely impacts usability and
+one star for a problem that is merely annoying.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<I>You may not include any URLs used in class.</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Submit as a text file.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="14"><FONT SIZE="+3"><B>14</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Rewrite</B></font><BR>
+<I>100 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Rewrite the <a href="CSisLong.html">article describing Computer Science</a>
+using the principles discussed in class
+and contained in the <a href="cs273Reading.html#usability">reading assignments</a>.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Submit this homework assignment on paper.
+Use a word processor to provide the necessary formatting.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="15"><FONT SIZE="+3"><B>15</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Web Server Log File Analysis</B></font><BR>
+<I>200 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a Perl program to read Web server log files and report the following:
+<OL>
+<LI>Pages and number of hits (for each page),
+	listed in descending order of number of hits.
+<LI>Top sixteen IP addresses with the most hits.
+	<i>Note: the IP address with the most hits is probably Brother Twitchell's.</i>
+<LI>Number of IP addresses with only one hit.
+<LI>Percent of access by browser/major version in descending order.
+	Correctly report "stealth" browsers.<br>
+	<i>Categories of browsers are
+		Mozilla, MSIE, Konqueror, Netscape, Opera, and other
+		(including robots). Remember reporting is by browser/version.</i>
+</OL>
+Be sure to exclude GET's resulting in status codes ranging from 400-599.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The log files are located at /home/twitchellk/cs273/hw15/logFiles/.
+The Twitchell Web Site files are located at /home/twitchellk/cs273/hw15/omni/.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<i>Please note that the server for Twitchell's web site is a Windows box using IIS.
+Consequently, there is <b>no</b> case sensitivity.</i>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+There will be some successful hits (status code 200) in the log files
+without corresponding files in the omni directory.
+Ignore these files for reporting purposes.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+For purposes of this homework assignment,
+a page has an extension of .htm, .html, or .txt.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Process <b>all</b> available Web server log files (collectively).
+</UL>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="16"><FONT SIZE="+3"><B>16</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Redesign the Twitchell Web Site</B></font><BR>
+<I>100 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Given the principles of usability, information architecture,
+and the results from homework <a href="#15">15</a>,
+redesign Brother Twitchell's Web site.
+<i>Use the Web site at
+<a href="https://web.archive.org/web/1998/http://joshua.byui.edu/~twitchellk/omni/default.htm">
+http://joshua.byui.edu/~twitchellk/omni/default.htm</a>.</i>
+Recommend at least 10 changes.
+Explain the reason for each change.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+List at least 10 things that should <b>not</b> change
+and explain why they should not change.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Submit as a text file.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="17"><FONT SIZE="+3"><B>17</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>JavaScript Buttons Hello World!</B></font><BR>
+<I>25 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Provide functionality for the HTML form created in
+homework <a href="#05">05</a>.
+<TABLE>
+<TR VALIGN=bottom>
+<TD><B>When I click<BR>on this button...</B></TD>
+<TD><B>...this is the result</B></TD>
+</TR>
+<TR VALIGN=top>
+<TD>My Name</TD>
+<TD>replace the text in the text field with your name</TD>
+</TR>
+<TR VALIGN=top>
+<TD>My Major</TD>
+<TD>replace the text in the text field with your major</TD>
+</TR>
+<TR VALIGN=top>
+<TD>Where I am From</TD>
+<TD>replace the text in the text field with information
+	regarding where you are from</TD>
+</TR>
+<TR VALIGN=top>
+<TD>Hello World!</TD>
+<TD>restore the original text in the text field</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="18"><FONT SIZE="+3"><B>18</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>JavaScript Grades</B></font><BR>
+<I>75 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create an HTML form that allows the user to enter
+a numeric grade, an integer between 0 and 100, inclusive.
+Output on the same HTML page the corresponding letter grade
+using the following grading scale:
+<UL>
+<LI>A - nineties and one hundred
+<LI>B - eighties
+<LI>C - seventies
+<LI>D - sixties
+<LI>F - 59 and below
+</UL>
+If the final digit is 7-9, output a "+" (e.g., 88 is a B+).<BR>
+If the final digit is 0-2, output a "-" (e.g., 61 is a D-).<BR>
+There is no A+, F+, nor F-.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Be sure to provide appropriate error messages.
+Error conditions include:
+<UL>
+<LI>A number outside of the specified range.
+<LI>User input that starts with something other than a digit.
+<LI>No input.
+</UL>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="19"><FONT SIZE="+3"><B>19</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>More JavaScript Grades</B></font><BR>
+<I>125 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create an HTML form that allows the user to enter up to eight
+numeric grades (each an integer between 0 and 100, inclusive).
+Each numeric grade represents a percentage of a number of
+possible points.
+Use the following as the possible number of
+points: 100, 100, 100, 50, 50, 100, 50, and 450 (in this order).
+For the number of grades entered (eight or less), calculate
+the total number of points earned and the total number of
+points possible.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Do not assume that the grades will be entered
+from first to last (i.e., there may be gaps in data entry).
+Output on the same HTML page the total number of points
+earned (do not round or truncate this value),
+the total number of points possible,
+the percentage of points earned (this should be a whole
+number; be sure to round), and the corresponding letter grade
+(using the scale specified in homework <a href="#17">17</a>).
+Only average the grades that have been entered
+(wherever they have been entered);
+do not assume that all eight grades have been entered
+or that they have been entered in consecutive text fields.
+Provide the same error handling as specified in homework <a href="#17">17</a>).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+If the user enters the following values:
+<OL>
+<LI>100
+<LI>0
+<LI>81
+<LI>
+<LI>90
+<LI>
+<LI>
+<LI>79
+</OL>
+the following values should be output to the user:
+<UL>
+<LI>581.5 for the total number of earned points
+<LI>800 for the total number of possible points
+<LI>73% for the average numerical grade
+<LI>C for the corresponding letter grade
+</UL>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="20"><FONT SIZE="+3"><B>20</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Persistence</B></font><BR>
+<I>75 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Modify your program for homework <a href="#18">18</a> to
+automatically save the entered data as a cookie and
+automatically retrieve the cookie so the user does
+not have to enter data again.
+All text fields should be empty the first time the page is accessed.
+You may use one cookie; the name for the cookie is your user ID.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="21"><FONT SIZE="+3"><b>21</b></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Mirror, Mirror</B></font><BR>
+<I>75 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create an HTML form without buttons.
+Title the page "Mirror, Mirror on the wall."
+Provide one text field with the text of your question
+to the mirror (e.g., "Who is the best programmer of them all?").
+Provide two radio buttons, each one labeled with possible answers.
+One is labeled that you are the best (this one is selected)
+and the other is labeled that you are the worst.
+Don't allow the user to make <B>any</B> changes,
+regardless how temporary, to the default values.
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<table>
+<tr valign=bottom>
+<td>
+<FONT SIZE="-1">
+<b><a href="default.htm">Kevin E. Twitchell</a></b><BR>
+<A href="../../../../ricks-2000/Default.htm">BYU-Idaho</A><BR>
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+</FONT>
+</td>
+<td>
+</td>
+<td>
+<FONT SIZE="-1">
+<A HREF="mailto:TwitchellK@byui.edu">
+TwitchellK@byui.edu</A><BR>
+208-496-1938 voice<BR>
+208-496-5938 fax
+</FONT>
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>

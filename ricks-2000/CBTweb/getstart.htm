@@ -1,0 +1,187 @@
+<html>
+<head>
+<BODY BGCOLOR="#FFFFFF">
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<meta NAME="Version" CONTENT="8.0.3410">
+<meta NAME="Date" CONTENT="10/11/96">
+<meta NAME="Template" CONTENT="C:\Program Files\Microsoft Office\Office\HTML.DOT">
+<title>Getting Started with CBTWeb</title>
+<SCRIPT>
+//Start Primary Page language buttons
+var bLspanInstalled=0;
+var bBrazilInstalled=0;
+var bJapanInstalled=0;
+var bItalianInstalled=0;
+var bFinnishInstalled=0;
+var bFrenchInstalled=0;
+var bGermanInstalled=0;
+var bEnglishInstalled=0;
+var sDefaultLang="english";
+var sLanguage="english";
+
+function WritePrimaryLangButton(sLangPg, sLangDir)
+{
+	if (sLanguage != sLangDir) {
+		document.write ('<A HREF="../../');
+		document.write (sLangDir);
+		document.write ('/cbtweb/');
+		document.write (sLangPg);
+		document.write ('"><IMG WIDTH=83 HEIGHT=15 BORDER=0 SRC="../../');
+		document.write (sLangDir);
+		document.write ('/cbtweb/images/lang.gif"></A>');
+	}
+}
+
+function WritePrimaryLangButtons()
+{
+	if (bEnglishInstalled==1) {
+		WritePrimaryLangButton("getstart.htm", "english");
+	}
+	if (bFrenchInstalled==1) {
+		WritePrimaryLangButton("getstart.htm", "french");
+	}
+	if (bFinnishInstalled==1) {
+		WritePrimaryLangButton("getstart.htm", "finnish");
+	}
+	if (bGermanInstalled==1) {		
+		WritePrimaryLangButton("getstart.htm", "german");
+	}
+	if (bBrazilInstalled==1) {
+		WritePrimaryLangButton("getstart.htm", "brazil");
+	}
+	if (bLspanInstalled==1) {
+		WritePrimaryLangButton("getstart.htm", "lspan");
+	}
+
+	if (bItalianInstalled==1) {
+		WritePrimaryLangButton("getstart.htm", "italian");
+	}
+}
+//End Primary Page Language Buttons
+</SCRIPT>
+</head>
+
+<body LINK="#0000ff" VLINK="#800080">
+<font SIZE="2">
+
+<CENTER> <IMG WIDTH=552 HEIGHT=90 BORDER=0 SRC="images/gstrip.gif" 
+USEMAP="#GSTRIP-map"><BR><BR>
+<MAP NAME="GSTRIP-map">
+
+<AREA SHAPE="RECT" COORDS="465,71,528,87" HREF="whatsnew.htm">
+<AREA SHAPE="RECT" COORDS="417,70,465,85" HREF="feedback.htm">
+<AREA SHAPE="RECT" COORDS="330,70,417,85" HREF="support.htm">
+<AREA SHAPE="RECT" COORDS="238,70,331,85" HREF="partners.htm">
+<AREA SHAPE="RECT" COORDS="187,70,238,85" HREF="aboutcbt.htm">
+<AREA SHAPE="RECT" COORDS="125,70,187,85" HREF="catalog.htm">
+<AREA SHAPE="RECT" COORDS="48,70,125,85" HREF="getstart.htm">
+<AREA SHAPE="RECT" COORDS="16,70,48,85" HREF="index.htm">
+
+</MAP></CENTER>
+<CENTER><SCRIPT>
+WritePrimaryLangButtons();
+</SCRIPT></CENTER>
+<HR>
+
+<p><img SRC="images/cbtwebr2.gif" ALIGN="RIGHT" HSPACE="18" VSPACE="18" WIDTH="215" HEIGHT="178">
+<img SRC="images/hd01.gif" WIDTH="269" HEIGHT="46"></p>
+
+<P><FONT SIZE="-1">CBTWeb&#0153; is a system for deploying CBT Systems&#0153; courseware over an intranet or the Internet. It has been designed to allow students to locate and launch CBT Systems courses easily using their web browsers. It also allows administrators to track student usage of their training library.</FONT>
+
+<p><img SRC="images/hd02.gif" WIDTH="275" HEIGHT="46"></p>
+
+<P><FONT SIZE="-1">CBTWeb is presented like a typical web site, with linked&nbsp; HTML pages, so that students and administrators can navigate their way around the product easily . Once the student has found a course they want to study, they simply click the <B>LivePlay</B> button. If they choose to play the course, the course immediately starts up on screen.</FONT>
+
+<P><FONT SIZE="-1">This page briefly describes CBTWeb. For more detailed information, see the <I>CBTWeb Installation and Administration Guide</I> or the <I>CBTWeb Student’s Guide</I>. </FONT>
+
+<p><img SRC="images/hd03.gif" WIDTH="271" HEIGHT="47"></p>
+
+<P><B><FONT SIZE="-1">It takes just three steps to get started:</B></FONT>
+
+<OL>
+<LI><FONT SIZE="-1" FACE="Times New Roman,Times,Times NewRoman">First, you download and install some components needed on your workstation for launching courses. (This is described in the <A HREF= "#Required">Required components section</A> below). </FONT>
+<P><img SRC="images/curric.gif" ALIGN="RIGHT" HSPACE="18" VSPACE="18" WIDTH="323" HEIGHT="107">
+
+<LI><FONT SIZE="-1" FACE="Times New Roman,Times,Times NewRoman">You can then find a course quickly to take online by viewing the <A HREF="curicula/custom.htm">list of courses available from this site</A> page.</FONT>
+
+<P><I><FONT SIZE="-1">or</I></FONT>
+
+<P><FONT SIZE="-1">You can go straight to the <A HREF="catalog.htm#csmodel">Courseware</A> page to view information on any course in the CBT Systems courseware library. The Courseware page contains links to <B>Curriculum Planners</B>, which you can use to plan your course of study. Each Curriculum Planner is in turn linked to <B>Course Descriptions</B>, which provide useful information on each course, for example the topics covered and the study time entailed.</FONT>
+<P>
+<LI><FONT SIZE="-1">When you’ve found a course to launch, simply click the <B>LivePlay</B> button. The course can then be taken online.</FONT>
+</OL>
+<P><FONT SIZE="-1">The sections that follow provide more detailed instructions on how to complete these steps. </FONT>
+
+
+
+
+<p><a NAME="Required"><img SRC="images/hd04.gif" WIDTH="282" HEIGHT="45"></a></p>
+
+<P><FONT SIZE="-1">If this is the first time you’ve used CBTWeb, you will need to download and then install the CBTPlayer&#0153;.</FONT>
+
+<P><FONT SIZE="-1">To download the CBTPlayer, click the appropriate link below:</FONT>
+
+
+<table CELLSPACING="0" BORDER="0" CELLPADDING="7" WIDTH="590">
+  <tr>
+    <td WIDTH="50%" VALIGN="TOP"><p ALIGN="CENTER"><img SRC="images/cbtlogo.gif" WIDTH="65"
+    HEIGHT="57"></td>
+    <td WIDTH="50%" VALIGN="TOP"><p ALIGN="CENTER"><img SRC="images/cbtlogo.gif" WIDTH="65"
+    HEIGHT="57"></td>
+  </tr>
+  <tr>
+    <td WIDTH="50%" VALIGN="TOP"><p ALIGN="CENTER"><a HREF="https://web.archive.org/web/2001/http://www.ricks.edu/CBTweb/cbtutili/plyplg32.exe"><FONT SIZE="-1">Windows® 95 and Windows NT® users click here to download the CBTPlayer (32-bit)</a></td>
+    <td WIDTH="50%" VALIGN="TOP"><p ALIGN="CENTER"><a HREF="https://web.archive.org/web/2001/http://www.ricks.edu/CBTweb/cbtutili/plyplg16.exe"><FONT SIZE="-1">Windows® 3.x users<U> click here to download the CBTPlayer (16-bit)</FONT></U></A></td>
+  </tr>
+</table>
+</center></div>
+
+<p><B>Note:</B> Once you have downloaded the file you should double-click it to start the installation process.</p> </FONT>
+
+<p><a NAME="Accessing"><img SRC="images/hd05.gif" WIDTH="282" HEIGHT="48"></a></p>
+
+<P><FONT SIZE="-1">CBTWeb is accessed using your web browser. On the CBTWeb home page, you can click the <A HREF="catalog.htm" >Courseware</A> link, which will bring you to the CBT Systems courseware library.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Times New Roman,Times,Times NewRoman">On the Courseware page, you can quickly find a course to take online by clicking the <A HREF="curicula/custom.htm"  >list of courses available from this site</A> link.</FONT>
+
+<p><img SRC="images/corecncp.gif" ALIGN="RIGHT" HSPACE="18" VSPACE="18" WIDTH="313" HEIGHT="265">
+<P><FONT SIZE="-1">Alternatively, by clicking one of the hotspots on the graphic, you can navigate through CBTWeb, browsing information on curricula and the courses in each curriculum. You can even find out exactly which topics are covered in a course and the number of study hours it entails. For example, here we have navigated to the Course Description for a course on Internet concepts. </FONT>
+
+
+<P><FONT SIZE="-1">To take a course online, you navigate to its Course Description page and click the <B>LivePlay</B> button. The course starts up, its front screen displays, and you can start working through the units.</FONT>
+
+<P><B><FONT SIZE="-1">Note:</FONT></B><FONT SIZE="-1"> If the course has not been made available to you, there will be no <B>LivePlay</B> button on the Course Description page. You can request the course from your training administrator. </FONT>
+
+
+<p><a NAME="Complete"><img SRC="images/hd07.gif" WIDTH="282" HEIGHT="48"></a></p>
+
+<BR>
+<P>
+
+<P><FONT SIZE="-1">When you take a course online, your progress is automatically sent to your training administrator when you exit the course.</FONT>
+<BR>
+<P>
+<P>
+<br>
+
+<HR>
+<CENTER> <IMG WIDTH=521 HEIGHT=25 BORDER=0 SRC="./images/gbstr.gif" 
+USEMAP="#GBSTR-map"><BR><BR>
+<MAP NAME="GBSTR-map">
+
+<AREA SHAPE="RECT" COORDS="452,5,515,21" HREF="whatsnew.htm">
+<AREA SHAPE="RECT" COORDS="404,3,452,19" HREF="feedback.htm">
+<AREA SHAPE="RECT" COORDS="317,3,404,19" HREF="support.htm">
+<AREA SHAPE="RECT" COORDS="225,3,317,19" HREF="partners.htm">
+<AREA SHAPE="RECT" COORDS="174,3,225,19" HREF="aboutcbt.htm">
+<AREA SHAPE="RECT" COORDS="112,3,174,19" HREF="catalog.htm">
+<AREA SHAPE="RECT" COORDS="34,3,112,19" HREF="getstart.htm">
+<AREA SHAPE="RECT" COORDS="4,3,35,19" HREF="index.htm">
+
+</MAP></CENTER>
+ <P></P>
+ <CENTER><FONT SIZE=-1>CBT Systems&#0153; is a trademark of CBT Group
+ PLC. All others trademarks are the property of their respective owners.</FONT></CENTER>
+</body>
+</html>

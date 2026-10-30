@@ -1,7 +1,9 @@
 {
   "collectionName": "BYU-Idaho Faculty Content",
-  "title": "REPLACE THIS - your resource title",
-  "description": "REPLACE THIS - a short description of your resource.",
-  "restrictToByui": "true",
-  "mediaTypes": ["Web Page"]
+  "title": "Ricks College Website Archive, 1997–2001",
+  "description": "Restored copy of the Ricks College website (ricks.edu) from 1997 to 2001, before the college became BYU-Idaho.",
+  "restrictToByui": "Public",
+  "mediaTypes": ["Web Page"],
+  "creators": ["Ricks College"],
+  "subjects": ["Ricks College", "Brigham Young University-Idaho", "Rexburg (Idaho)"]
 }

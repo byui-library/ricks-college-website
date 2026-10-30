@@ -1,0 +1,259 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script src="../../../_archive/compat.js"></script>
+<TITLE>College Life</TITLE>
+</HEAD>
+
+<!-- ONE STEP TO INSTALL ELASTIC BULLETS:
+
+  1.  Copy the coding into the BODY of your HTML document  -->
+
+<!-- STEP ONE: Paste this code into the BODY of your HTML document  -->
+
+<BODY>
+
+<div id="dot0" style="position: absolute; visibility: hidden; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+<div id="dot1" style="position: absolute; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+<div id="dot2" style="position: absolute; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+<div id="dot3" style="position: absolute; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+<div id="dot4" style="position: absolute; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+<div id="dot5" style="position: absolute; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+<div id="dot6" style="position: absolute; height: 11; width: 11;"><img src="bullet.gif" height=11 width=11></div>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Philip Winston (pwinston@yahoo.com) -->
+<!-- Web Site:  http://members.xoom.com/ebullets -->
+<!-- 'Scrolling Fix' by Troels Jakobsen <tjak@get2net.dk> -->
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+var nDots = 7;
+var Xpos = 0;
+var Ypos = 0;
+
+var DELTAT = .01;
+var SEGLEN = 10;
+var SPRINGK = 10;
+var MASS = 1;
+var GRAVITY = 50;
+var RESISTANCE = 10;
+var STOPVEL = 0.1;
+var STOPACC = 0.1;
+var DOTSIZE = 11;
+var BOUNCE = 0.75;
+var isNetscape = navigator.appName=="Netscape";
+var followmouse = true;
+var dots = new Array();
+init();
+function init() {
+var i = 0;
+for (i = 0; i < nDots; i++) {
+dots[i] = new dot(i);
+}
+if (!isNetscape) {
+// I only know how to read the locations of the 
+// <LI> items in IE
+//skip this for now
+// setInitPositions(dots)
+}
+for (i = 0; i < nDots; i++) {
+dots[i].obj.left = dots[i].X;
+dots[i].obj.top = dots[i].Y;
+}
+if (isNetscape) {
+startanimate();
+} else {
+// let dots sit there for a few seconds
+// since they're hiding on the real bullets
+setTimeout("startanimate()", 3000);
+   }
+}
+function dot(i) {
+this.X = Xpos;
+this.Y = Ypos;
+this.dx = 0;
+this.dy = 0;
+if (isNetscape) {	
+this.obj = eval("document.dot" + i);
+} else {
+this.obj = eval("dot" + i + ".style");
+   }
+}
+function startanimate() {	
+setInterval("animate()", 20);
+}
+function setInitPositions(dots) {
+var startloc = document.all.tags("LI");
+var i = 0;
+for (i = 0; i < startloc.length && i < (nDots - 1); i++) {
+dots[i+1].X = startloc[i].offsetLeft
+startloc[i].offsetParent.offsetLeft - DOTSIZE;
+dots[i+1].Y = startloc[i].offsetTop +
+startloc[i].offsetParent.offsetTop + 2*DOTSIZE;
+}
+dots[0].X = dots[1].X;
+dots[0].Y = dots[1].Y - SEGLEN;
+}
+function MoveHandler(e) {
+Xpos = e.pageX;
+Ypos = e.pageY;	  
+return true;
+}
+function MoveHandlerIE() {
+Xpos = window.event.x + document.body.scrollLeft;
+Ypos = window.event.y + document.body.scrollTop;	  
+}
+if (isNetscape) {
+document.captureEvents(Event.MOUSEMOVE);
+document.onMouseMove = MoveHandler;
+} else {
+document.onmousemove = MoveHandlerIE;
+}
+function vec(X, Y)
+{
+this.X = X;
+this.Y = Y;
+}
+
+// adds force in X and Y to spring for dot[i] on dot[j]
+function springForce(i, j, spring)
+{
+var dx = (dots[i].X - dots[j].X);
+var dy = (dots[i].Y - dots[j].Y);
+var len = Math.sqrt(dx*dx + dy*dy);
+if (len > SEGLEN) {
+var springF = SPRINGK * (len - SEGLEN);
+spring.X += (dx / len) * springF;
+spring.Y += (dy / len) * springF;
+   }
+}
+function animate() {	
+var start = 0;
+if (followmouse) {
+dots[0].X = Xpos;
+dots[0].Y = Ypos;	
+start = 1;
+}
+for (i = start ; i < nDots; i++ ) {
+var spring = new vec(0, 0);
+if (i > 0) {
+springForce(i-1, i, spring);
+}
+if (i < (nDots - 1)) {
+springForce(i+1, i, spring);
+}
+var resist = new vec(-dots[i].dx * RESISTANCE, -dots[i].dy * RESISTANCE);
+var accel = new vec((spring.X + resist.X)/ MASS, (spring.Y + resist.Y)/ MASS + GRAVITY);
+dots[i].dx += (DELTAT * accel.X);
+dots[i].dy += (DELTAT * accel.Y);
+if (Math.abs(dots[i].dx) < STOPVEL &&
+Math.abs(dots[i].dy) < STOPVEL &&
+Math.abs(accel.X) < STOPACC &&
+Math.abs(accel.Y) < STOPACC) {
+dots[i].dx = 0;
+dots[i].dy = 0;
+}
+dots[i].X += dots[i].dx;
+dots[i].Y += dots[i].dy;
+var height, width;
+if (isNetscape) {
+height = window.innerHeight + document.scrollTop;
+width = window.innerWidth + document.scrollLeft;
+} else {	
+height = document.body.clientHeight + document.body.scrollTop;
+width = document.body.clientWidth + document.body.scrollLeft;
+}
+if (dots[i].Y >=  height - DOTSIZE - 1) {
+if (dots[i].dy > 0) {
+dots[i].dy = BOUNCE * -dots[i].dy;
+}
+dots[i].Y = height - DOTSIZE - 1;
+}
+if (dots[i].X >= width - DOTSIZE) {
+if (dots[i].dx > 0) {
+dots[i].dx = BOUNCE * -dots[i].dx;
+}
+dots[i].X = width - DOTSIZE - 1;
+}
+if (dots[i].X < 0) {
+if (dots[i].dx < 0) {
+dots[i].dx = BOUNCE * -dots[i].dx;
+}
+dots[i].X = 0;
+}
+dots[i].obj.left = dots[i].X;			
+dots[i].obj.top =  dots[i].Y;		
+   }
+}
+// End -->
+</script>
+
+<p><center>
+<font face="arial, helvetica" size="-2">Free JavaScripts provided<br>
+by <a href="https://web.archive.org/web/2001/http://javascriptsource.com">The JavaScript Source</a></font>
+</center><p>
+
+<!-- Script Size:  6.05 KB -->
+
+<BODY BACKGROUND="bluestripe.gif"><CENTER><IMG SRC="rickscollege.jpg" width="500" height="81"></FONT>
+<P>
+<IMG SRC="ricksleg.jpg" width="391" height="245">
+<P><CENTER>
+<IMG SRC="turningstar.gif" width="52" height="51"><FONT SIZE="+2" COLOR="#FAEBD7"><font face="COMIC SANS MS"><U>STARTING Out Strong</U></FONT>
+<TABLE ALIGN="Center" BORDER="0" CELLSPACING="8" CELLPADDING="2" WIDTH="40%">
+<P>
+<TR>
+<TD><A HREF="stairroomies.jpg" ><IMG SRC="stairroomies.jpg" BORDER="0" HEIGHT 
+60 WIDTH="87"></TD>
+<TD><A HREF="katiewed.gif"><IMG SRC="katiewed.gif"  BORDER="0" WIDTH=87 HEIGHT 60>
+</TD>
+<TD><A HREF="firstroomies.gif"><IMG SRC="firstroomies.gif"  BORDER="0" WIDTH=87 HEIGHT 60>
+</TD>
+<TD><A HREF="roomiesstatue.gif"><IMG SRC="roomiesstatue.gif"  BORDER="0" WIDTH=87 HEIGHT 60></TD>
+<TD><A HREF="rickssign.gif"><IMG SRC="rickssign.gif"  BORDER="0" WIDTH=87 HEIGHT 60></TD></TR>
+</TABLE>
+
+
+
+<CENTER><IMG SRC="turningstar.gif" width="52" height="51"><FONT SIZE="+2" COLOR="#FAEBD7"><font face="COMIC SANS MS"><U>Bringing up the REAR</U></FONT></CENTER><P>
+
+<TABLE ALIGN="Center" BORDER="0" CELLSPACING="8" CELLPADDING="2" WIDTH="40%">
+<TR>
+<TD><A HREF="funkyroomies.gif"><IMG SRC="funkyroomies.gif"  BORDER="0" WIDTH=87 HEIGHT 60>
+</TD>
+<TD><A HREF="bedroomies.gif"><IMG SRC="bedroomies.gif"  BORDER="0" WIDTH=87 HEIGHT 60>
+</TD>
+<TD><A HREF="bumscamera.jpg"><IMG SRC="bumscamera.jpg"  BORDER="0" WIDTH=87 HEIGHT 60>
+</TD>
+
+<TD><A HREF="roomies.gif"><IMG SRC="roomies.gif"  BORDER="0" WIDTH=87 HEIGHT 60>
+</TD>
+<TD><A HREF="hamuscamera.jpg"><IMG SRC="hamuscamera.jpg"  BORDER="0" WIDTH=87 HEIGHT 60>
+</TD></TR>
+</TABLE>
+
+<CENTER><IMG SRC="turningstar.gif" width="52" height="51"><FONT SIZE="+2" COLOR="#FAEBD7"><font face="COMIC SANS MS"><U>The GANG</U></FONT></CENTER><P>
+<TABLE ALIGN="Center" BORDER="0" CELLSPACING="8" CELLPADDING="2" WIDTH="40%">
+
+<TR>
+<TD><A HREF="neds.gif"><IMG SRC="neds.gif"  BORDER="0" WIDTH=87 HEIGHT 60>
+</TD>
+<TD><A HREF="group.gif"><IMG SRC="group.gif"  BORDER="0" WIDTH=87 HEIGHT 60>
+</TD>
+<TD><A HREF="guys.gif"><IMG SRC="guys.gif"  BORDER="0" WIDTH=87 HEIGHT 60>
+</TD> 
+<TD><A HREF="FHEuscamera.jpg"><IMG SRC="FHEuscamera.jpg"  BORDER="0" WIDTH=87 HEIGHT 60>
+</TD>
+<TD><A HREF="FHEcamera.jpg"><IMG SRC="FHEcamera.jpg"  BORDER="0" WIDTH=87 HEIGHT 60>
+</TD>
+
+
+
+
+
+</TR>
+</TABLE>
+</CENTER>

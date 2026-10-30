@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>Testing a complex number class</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<TABLE>
+<TR>
+<TD VALIGN="TOP" ROWSPAN=2>
+<A HREF="../../../../ricks-2000/Default.htm">
+<IMG SRC="logo.gif" WIDTH="100" HEIGHT="100" ALT="Ricks College Home Page" BORDER="0"></A>
+</TD>
+<TD VALIGN="TOP" COLSPAN=2>
+<A HREF="about.html">
+<IMG SRC="name.gif" WIDTH="197" HEIGHT="27" ALT="Kevin E. Twitchell" BORDER="0"></A>
+</TD>
+</TR>
+<TR>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+<I>
+Department of<BR>
+Mathematics and<BR>
+Computer Science
+</I>
+</FONT>
+</TD>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+<A HREF="mailto:TwitchellK@ricks.edu">
+TwitchellK@ricks.edu</A><BR>
+208-356-1938
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<H3>Testing a complex number class</H3>
+
+class Complex<BR>
+&nbsp;&nbsp;&nbsp;private:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;floating point variable for the real part of the complex number<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;floating point variable for the imaginary part of the complex number<BR>
+&nbsp;&nbsp;&nbsp;public:<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constructor with default values of 0.0 for the two parameters<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;receives two floating point values: the real and imaginary parts of the complex number<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;copy supplied (or default) real and imaginary values into private data variables<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end constructor with default values of 0.0 for the two parameters<BR>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function getReal with no parameters<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the real portion of the complex number<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end function getReal<BR>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function getImaginary with no parameters<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the imaginary portion of the complex number<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end function getImaginary<BR>
+end class Complex<BR>
+<BR>
+operator overload of + for complex numbers<BR>
+&nbsp;&nbsp;&nbsp;receives two complex objects<BR>
+&nbsp;&nbsp;&nbsp;get the real values of the two complex objects and add them<BR>
+&nbsp;&nbsp;&nbsp;get the imaginary values of the two complex objects and add them<BR>
+&nbsp;&nbsp;&nbsp;use the summed real and imaginary values as parameters to instantiate a new complex object<BR>
+&nbsp;&nbsp;&nbsp;return the instantiated complex object containing the sum<BR>
+end operator overload of + for complex numbers<BR>
+<BR>
+operator overload of &lt;&lt; for complex numbers<BR>
+&nbsp;&nbsp;&nbsp;receives an object of the destination of the output and a complex number<BR>
+&nbsp;&nbsp;&nbsp;get the real value of the complex object (the a of a+bi)<BR>
+&nbsp;&nbsp;&nbsp;get the imaginary value of the complex object (the b of a+bi)<BR>
+&nbsp;&nbsp;&nbsp;output the complex number in the form of a+bi<BR>
+&nbsp;&nbsp;&nbsp;return the object of the destination of the output (so output can be chained)<BR>
+end operator overload of &lt;&lt; for complex numbers<BR>
+<BR>
+function main<BR>
+&nbsp;&nbsp;&nbsp;[purpose is to test complex class and operator overloading]<BR>
+&nbsp;&nbsp;&nbsp;instantiate a complex object using arbitrary values<BR>
+&nbsp;&nbsp;&nbsp;instantiate a second complex object using arbitrary values<BR>
+&nbsp;&nbsp;&nbsp;output each complex number to demonstrate operator overload of &lt;&lt;<BR>
+&nbsp;&nbsp;&nbsp;output their sum in the cout statement to demonstrate operator overload of +<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(and that it correctly returns a Complex object)<BR>
+end function main<BR>
+<BR>
+
+<HR>
+
+<FONT SIZE="-1"><A href="../../../../ricks-2000/Default.htm">Ricks College</A> | <A HREF="default.htm">Twitchell</A></FONT>
+<BR>
+<FONT SIZE="-2"><I>July 23, 1999</I></FONT>
+
+</BODY>
+</HTML>

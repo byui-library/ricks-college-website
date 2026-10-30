@@ -1,0 +1,322 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script language="JavaScript">
+function CalculateAudio(AFirst, ASecond, AThird, AFourth, AFifth, VFirst, VSecond, VThird, VFourth, VFifth, KFirst, KSecond, KThird, KFourth, KFifth)
+{
+
+for(i=0; i <= 4; ++i)
+{
+   if (AFirst[i].status == true)
+   {
+      AFirstValue = AFirst[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (ASecond[i].status == true)
+   {
+      ASecondValue = ASecond[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (AThird[i].status == true)
+   {
+      AThirdValue = AThird[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (AFourth[i].status == true)
+   {
+      AFourthValue = AFourth[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (AFifth[i].status == true)
+   {
+      AFifthValue = AFifth[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (VFirst[i].status == true)
+   {
+      VFirstValue = VFirst[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (VSecond[i].status == true)
+   {
+      VSecondValue = VSecond[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (VThird[i].status == true)
+   {
+      VThirdValue = VThird[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (VFourth[i].status == true)
+   {
+      VFourthValue = VFourth[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (VFifth[i].status == true)
+   {
+      VFifthValue = VFifth[i].value;
+   }
+}
+
+for(i=0; i <= 4; ++i)
+{
+   if (KFirst[i].status == true)
+   {
+      KFirstValue = KFirst[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (KSecond[i].status == true)
+   {
+      KSecondValue = KSecond[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (KThird[i].status == true)
+   {
+      KThirdValue = KThird[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (KFourth[i].status == true)
+   {
+      KFourthValue = KFourth[i].value;
+   }
+}
+for(i=0; i <= 4; ++i)
+{
+   if (KFifth[i].status == true)
+   {
+      KFifthValue = KFifth[i].value;
+   }
+}
+Avar1 = eval(AFirstValue)
+Avar2 = eval(ASecondValue)
+Avar3 = eval(AThirdValue)
+Avar4 = eval(AFourthValue)
+Avar5 = eval(AFifthValue)
+Vvar1 = eval(VFirstValue)
+Vvar2 = eval(VSecondValue)
+Vvar3 = eval(VThirdValue)
+Vvar4 = eval(VFourthValue)
+Vvar5 = eval(VFifthValue)
+Kvar1 = eval(KFirstValue)
+Kvar2 = eval(KSecondValue)
+Kvar3 = eval(KThirdValue)
+Kvar4 = eval(KFourthValue)
+Kvar5 = eval(KFifthValue)
+
+ATotalValue = Avar1 + Avar2 + Avar3 + Avar4 + Avar5;
+VTotalValue = Vvar1 + Vvar2 + Vvar3 + Vvar4 + Vvar5;
+KTotalValue = Kvar1 + Kvar2 + Kvar3 + Kvar4 + Kvar5;
+
+if(ATotalValue > VTotalValue)
+{
+	if (ATotalValue > KTotalValue)
+	{
+      alert("You are an Auditory Learner, you scored " + ATotalValue );
+      results = window.open("Auditory.html");
+	}
+	else
+	{
+		alert("You are a Kinesthetic Learner, you scored " + KTotalValue);
+		results = window.open("Kinesthetic.html");
+	}
+}
+else
+{
+	if (VTotalValue > KTotalValue)
+	{
+		alert("You are a Visual Learner, you scored " + VTotalValue);
+      	results = window.open("Visual.html");
+	}
+	else
+	{
+		alert("You are a Kinesthetic Learner, you scored " + KTotalValue + "Your Visual Score is " + VTotalValue + " Your Auditory Score is " + ATotalValue);
+		results = window.open("Kinesthetic.html");
+	}
+}
+
+/*
+alert(ATotalValue)
+alert(VTotalValue)
+alert(KTotalValue)
+*/
+/*
+results = window.open("results.html", "Results", "width=200, heigth=2000, resizable=yes")
+// results = window.open("bigal's.html","Preview", "toolbar=1,location=0,directories=0,menubar=1,scrollbars=1,resizable=yes");
+results.document.writeln("<html><head>");
+results.document.writeln("<title>Results Page</title>");
+results.document.writeln("</head><body bgcolor=0000ff text=ffffff>");
+results.document.writeln("This is going to be ");
+results.document.writeln("tough");
+
+results = window.open("results.html", "Preview", "toolbar=1,location=0,directories=0,status=yes,menubar=0,scrollbars=0,resizable=yes,copyhistory=0,width=300,height=255");
+
+        myWindow.document.write("<HTML><HEAD>");
+        myWindow.document.write("<TITLE>Preview</TITLE>");
+        myWindow.document.write("</HEAD><BODY BGCOLOR=000000 TEXT=FFFFFF>");
+        myWindow.document.write("<FORM><CENTER><B><FONT SIZE=+1>" +
+            selection.name + "</FONT></B><HR>");
+            myWindow.document.write("<IMG HSPACE=0 VSPACE=0 " +
+       "SRC='results.html" + selection.value + "'>");
+        myWindow.document.write("</CENTER>");
+        myWindow.document.write("</BODY></HTML>");
+        myWindow.document.close();
+*/
+}
+
+</script>
+
+<title>Ricks College Reading Center</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<style fprolloverstyle>A:hover {color: #FF0000; font-weight: bold}
+</style>
+</head>
+
+<body bgproperties="fixed" text="#800080">
+
+<p align="center"><img border="0" src="images/RicksLogo.gif" width="81" height="106"></p>
+
+<p align="center"><font color="#000000"><strong><big><big><big>Learning Characteristics
+Scale</big></big></big></strong></font></p>
+
+<p align="center"><font color="#000000">Directions:&nbsp; Read each statement and check
+where you feel you fall on the grid in relation to your own personal experience.&nbsp; Be
+sure to answer every question.</font></p>
+
+<form name="learn" method="POST" webbot- WEBBOT-onSubmit onsubmit="return false">
+  <!--webbot bot="SaveResults" startspan U-File="_private/form_results.txt"
+  S-Format="TEXT/CSV" S-Label-Fields="TRUE" --><input TYPE="hidden" NAME="VTI-GROUP" VALUE="0"><!--webbot
+  bot="SaveResults" endspan i-checksum="43374" --><p><font
+  color="#000000">&nbsp;I am talkative, and often accused of talking too much.<br>
+  <input type="radio" name="R1" value="5" id="fp2"><label for="fp2">Always </label>&nbsp;
+  &nbsp; <input type="radio" name="R1" value="4" id="fp3"><label for="fp3">Usually</label>&nbsp;&nbsp;&nbsp;
+  <input type="radio" name="R1" value="3" id="fp4"><label for="fp4">Sometimes</label>
+  &nbsp;&nbsp; <input type="radio" name="R1" value="2" id="fp5"><label for="fp5">Occasionally
+  </label>&nbsp;&nbsp; <input type="radio" name="R1" value="1" id="fp6"><label for="fp6">Never</label></font></p>
+  <p><font color="#000000">2.&nbsp; If I pay careful attention to a lecture, I can remember
+  its main points without taking many notes.<br>
+  <input type="radio" name="R2" value="5" id="fp7"><label for="fp7">Always</label>&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" name="R2" value="4" id="fp8"><label for="fp8">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R2" value="3" id="fp9"><label for="fp9">Sometimes</label>
+  &nbsp;&nbsp; <input type="radio" name="R2" value="2" id="fp10"><label for="fp10">Occasionally</label>
+  &nbsp;&nbsp; <input type="radio" name="R2" value="1" id="fp11"><label for="fp11">Never</label></font></p>
+  <p><font color="#000000">3.&nbsp; I can remember directions when someone tells them to me.<br>
+  <input type="radio" name="R3" value="5" id="fp12"><label for="fp12">Always</label>
+  &nbsp;&nbsp; <input type="radio" name="R3" value="4" id="fp13"><label for="fp13">Usually </label>&nbsp;&nbsp;
+  <input type="radio" name="R3" value="3" id="fp14"><label for="fp14">Sometimes</label>
+  &nbsp;&nbsp; <input type="radio" name="R3" value="2" id="fp15"><label for="fp15">Occasionally
+  </label>&nbsp;&nbsp; <input type="radio" name="R3" value="1" id="fp16"><label for="fp16">Never</label></font></p>
+  <p><font color="#000000">4.&nbsp; I learn easily music, lyrics, rhymes, vocabulary, and/or
+  foreign languages.<br>
+  <input type="radio" name="R4" value="5" id="fp17"><label for="fp17">Always</label>
+  &nbsp;&nbsp; <input type="radio" name="R4" value="4" id="fp18"><label for="fp18">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R4" value="3" id="fp19"><label for="fp19">Sometimes</label>
+  &nbsp;&nbsp; <input type="radio" name="R4" value="2" id="fp20"><label for="fp20">Occasionally</label>
+  &nbsp;&nbsp; <input type="radio" name="R4" value="1" id="fp21"><label for="fp21">Never</label></font></p>
+  <p><font color="#000000">5.&nbsp; I usually remember a person's name after hearing it
+  once.<br>
+  <input type="radio" name="R5" value="5" id="fp22"><label for="fp22">Always</label>
+  &nbsp;&nbsp; <input type="radio" name="R5" value="4" id="fp23"><label for="fp23">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R5" value="3" id="fp24"><label for="fp24">Sometimes</label>
+  &nbsp;&nbsp; <input type="radio" name="R5" value="2" id="fp25"><label for="fp25">Occasionally</label>
+  &nbsp;&nbsp; <input type="radio" name="R5" value="1" id="fp26"><label for="fp26">Never</label></font></p>
+  <p><font color="#000000">6.&nbsp; I prefer written or diagrammed directions, rather than
+  oral.<br>
+  <input type="radio" name="R6" value="5" id="fp27"><label for="fp27">Always</label>
+  &nbsp;&nbsp; <input type="radio" name="R6" value="4" id="fp28"><label for="fp28">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R6" value="3" id="fp29"><label for="fp29">Sometimes
+  </label>&nbsp;&nbsp; <input type="radio" name="R6" value="2" id="fp30"><label for="fp30">Occasionally</label>
+  &nbsp;&nbsp; <input type="radio" name="R6" value="1" id="fp31"><label for="fp31">Never</label></font></p>
+  <p><font color="#000000">7.&nbsp; Taking notes, and writing words and names down so I can
+  see them, helps me remember.<br>
+  <input type="radio" name="R7" value="5" id="fp32"><label for="fp32">Always</label>
+  &nbsp;&nbsp; <input type="radio" name="R7" value="4" id="fp33"><label for="fp33">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R7" value="3" id="fp34"><label for="fp34">Sometimes</label>
+  &nbsp;&nbsp; <input type="radio" name="R7" value="2" id="fp35"><label for="fp35">Occasionally</label>
+  &nbsp;&nbsp; <input type="radio" name="R7" value="1" id="fp36"><label for="fp36">Never</label></font></p>
+  <p><font color="#000000">8.&nbsp; I remember faces easily, but forget names.<br>
+  <input type="radio" name="R8" value="5" id="fp37"><label for="fp37">Always</label>
+  &nbsp;&nbsp; <input type="radio" name="R8" value="4" id="fp38"><label for="fp38">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R8" value="3" id="fp39"><label for="fp39">Sometimes</label>
+  &nbsp;&nbsp; <input type="radio" name="R8" value="2" id="fp40"><label for="fp40">Occasionally</label>
+  &nbsp;&nbsp; <input type="radio" name="R8" value="1" id="fp41"><label for="fp41">Never</label>r</font></p>
+  <p><font color="#000000">9.&nbsp; I learn more from reading the textbook than listening to
+  the lecture.<br>
+  <input type="radio" name="R9" value="5" id="fp42"><label for="fp42">Always</label>
+  &nbsp;&nbsp; <input type="radio" name="R9" value="4" id="fp43"><label for="fp43">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R9" value="3" id="fp44"><label for="fp44">Sometimes</label>
+  &nbsp;&nbsp; <input type="radio" name="R9" value="2" id="fp45"><label for="fp45">Occasionally</label>
+  &nbsp;&nbsp; <input type="radio" name="R9" value="1" id="fp46"><label for="fp46">Never</label></font></p>
+  <p><font color="#000000">10.&nbsp; I learn well from charts, maps, videos, illustrations,
+  and diagrams.<br>
+  <input type="radio" name="R10" value="5" id="fp1"><label for="fp1">Always</label>
+  &nbsp;&nbsp; <input type="radio" name="R10" value="4" id="fp47"><label for="fp47">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R10" value="3" id="fp48"><label for="fp48">Sometimes
+  </label>&nbsp;&nbsp; <input type="radio" name="R10" value="2" id="fp49"><label for="fp49">Occasionally</label>
+  &nbsp;&nbsp; <input type="radio" name="R10" value="1" id="fp50"><label for="fp50">Never</label></font></p>
+  <p><font color="#000000">11.&nbsp; I like to walk around, snack, chew gum, etc when I
+  study.<br>
+  <input type="radio" name="R11" value="5" id="fp51"><label for="fp51">Always</label>
+  &nbsp;&nbsp; <input type="radio" name="R11" value="4" id="fp52"><label for="fp52">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R11" value="3" id="fp53"><label for="fp53">Sometimes</label>
+  &nbsp;&nbsp; <input type="radio" name="R11" value="2" id="fp54"><label for="fp54">Occasionally
+  </label>&nbsp;&nbsp; <input type="radio" name="R11" value="1" id="fp55"><label for="fp55">Never</label></font></p>
+  <p><font color="#000000">12.&nbsp; If someone is showing me how to make or do something, I
+  want to grab it and try it myself.<br>
+  <input type="radio" name="R12" value="5" id="fp56"><label for="fp56">Always</label>
+  &nbsp;&nbsp; <input type="radio" name="R12" value="4" id="fp57"><label for="fp57">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R12" value="3" id="fp58"><label for="fp58">Sometimes</label>
+  &nbsp;&nbsp; <input type="radio" name="R12" value="2" id="fp59"><label for="fp59">Occasionally</label>
+  &nbsp;&nbsp; <input type="radio" name="R12" value="1" id="fp60"><label for="fp60">Never</label></font></p>
+  <p><font color="#000000">13.&nbsp; When I am learning a new activity, such as golf,
+  skiing, tennis, or a dance step, I imagine my body moving--or I actually move--to
+  understand it.<br>
+  <input type="radio" name="R13" value="5" id="fp61"><label for="fp61">Always</label>
+  &nbsp;&nbsp;&nbsp;<input type="radio" name="R13" value="4" id="fp62"><label for="fp62">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R13" value="3" id="fp63"><label for="fp63">Sometimes</label>
+  &nbsp;&nbsp; <input type="radio" name="R13" value="2" id="fp64"><label for="fp64">Occasionally
+  </label>&nbsp;&nbsp; <input type="radio" name="R13" value="1" id="fp65"><label for="fp65">Never</label></font></p>
+  <p><font color="#000000">14.&nbsp; I do my best, most profound thinking, while walking,
+  doing dishes, showering, or some other activity.<br>
+  <input type="radio" name="R14" value="5" id="fp66"><label for="fp66">Always</label>
+  &nbsp;&nbsp; <input type="radio" name="R14" value="4" id="fp67"><label for="fp67">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R14" value="3" id="fp68"><label for="fp68">Sometimes
+  </label>&nbsp;&nbsp; <input type="radio" name="R14" value="2" id="fp69"><label for="fp69">Occasionally</label>
+  &nbsp;&nbsp; <input type="radio" name="R14" value="1" id="fp70"><label for="fp70">Never</label></font></p>
+  <p><font color="#000000">15.&nbsp; I feel restless while sitting still in a classroom, or
+  reading a book.<br>
+  <input type="radio" name="R15" value="5" id="fp71"><label for="fp71">Always</label>
+  &nbsp;&nbsp; <input type="radio" name="R15" value="4" id="fp72"><label for="fp72">Usually</label>
+  &nbsp;&nbsp; <input type="radio" name="R15" value="3" id="fp73"><label for="fp73">Sometimes</label>
+  &nbsp;&nbsp; <input type="radio" name="R15" value="2" id="fp74"><label for="fp74">Occasionally</label>
+  &nbsp;&nbsp; <input type="radio" name="R15" value="1" id="fp75"><label for="fp75">Never</label></font></p>
+  <div align="center"><center><p><font color="#000000"><input type="reset" value="Reset"
+  name="B2"><input type="button" value="Submit" name="B3"
+  OnClick="CalculateAudio(R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15)"></font></p>
+  </center></div>
+</form>
+</body>
+</html>

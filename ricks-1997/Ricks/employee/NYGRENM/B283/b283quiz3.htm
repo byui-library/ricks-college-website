@@ -1,0 +1,132 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>B283 Quiz #3</title>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- //BEGIN SCRIPT
+function scorequiz(form) {
+ tally=0
+ if(form.Q1.value!=null && form.Q1.value=="*") {tally=tally+1}
+ if(form.Q2.value!=null && form.Q2.value=="*") {tally=tally+1}
+ if(form.Q3.value!=null && form.Q3.value=="*") {tally=tally+1}
+ if(form.Q4.value!=null && form.Q4.value=="*") {tally=tally+1}
+ if(form.Q5.value!=null && form.Q5.value=="*") {tally=tally+1}
+ 
+ form.SCORE.value =eval(tally)
+}
+
+function clearquiz(form) {
+ tally=0
+ form.Q1.value="?"
+ form.Q2.value="?"
+ form.Q3.value="?"
+ form.Q4.value="?"
+ form.Q5.value="?"
+ 
+ form.SCORE.value =eval(tally)
+}
+
+function msg() {
+ alert("Your quiz tally is being e-mailed to the instructor. Thank you!")
+ }
+// -->
+</SCRIPT>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Online Quiz</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="1">| <a href="../default.htm"> HOME</a> | <a href="../b283quizzes.htm"> B283 Quizzes</a> |
+<a href="b283syllabus.htm">B283 Syllabus</a> |</font></b></p>
+
+<h1 align="center"><b>ONLINE QUIZ #3</b></h1>
+<p align="center">CHAPTER 5 READING</p>
+<hr width="65%" size="4" noshade color="#000000">
+<Form name="quiz1" method="post" enctype="text/plain" 
+ onLoad="clearquiz(this.form)" onsubmit="return false">
+<table border="0" width="100%">
+  <tr>
+    <td width="28%" align="right">
+Please enter your name:&nbsp;</td>
+    <td width="72%"><INPUT TYPE="text" NAME="Name" VALUE="" size="40"></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right">
+Please enter your Email address:&nbsp;</td>
+    <td width="72%"><input type="text" name="email" value="" size="40"></td>
+  </tr>
+</table>
+<p><br>
+</p>
+<hr>
+
+1. In marketing terms, a focus strategy depends upon market segmentation.
+<ol>
+<INPUT TYPE="radio" NAME="Q1" value="*True" onclick=Q1.value="*">True<br>
+<INPUT TYPE="radio" NAME="Q1" value="False" onclick=Q1.value="F">False<br>
+</ol>
+
+2. The macro environment is more narrowly defined than the industry environment
+because it focuses on specific segments, such as those relating to the economy,
+sociocultural trends, and geopolitical developments.
+<ol>
+<INPUT TYPE="radio" NAME="Q2" value="*True" onclick=Q2.value="T">True<br>
+<INPUT TYPE="radio" NAME="Q2" value="False" onclick=Q2.value="*">False<br>
+</ol>
+
+3. Marketplace Farms is a regional cooperative of apple and orange growers.  In order to compete against larger regional growers, Marketplace Farms relies on low-cost migrant workers instead of machines and inexpensive
+packaging processes.&nbsp; (That is, it uses individual hand-packaging instead
+of assembly line.)&nbsp; Marketplace Farms is relying on a(n)
+____________________.
+<ol>
+<INPUT TYPE="radio" NAME="Q3" value="price-advantage strategy" onclick=Q3.value="A">price-advantage
+strategy<br>
+<INPUT TYPE="radio" NAME="Q3" value="marketing-advantage strategy" onclick=Q3.value="B">marketing-advantage
+strategy.<br>
+<INPUT TYPE="radio" NAME="Q3" value="efficiency-advantage strategy." onclick=Q3.value="C">efficiency-advantage
+strategy.<br>
+<INPUT TYPE="radio" NAME="Q3" value="*cost-advantage strategy" onclick=Q3.value="*">cost-advantage
+strategy.<br>
+</ol>
+ 
+4. A firm's competitive advantage will never _____________________.
+<ol>
+<INPUT TYPE="radio" NAME="Q4" value="*last forever" onclick=Q4.value="*">last forever.<br>
+<INPUT TYPE="radio" NAME="Q4" value="be duplicated by bompetitors" onclick=Q4.value="B">be duplicated by competitors.<br>
+<INPUT TYPE="radio" NAME="Q4" value="lead to superior performance" onclick=Q4.value="C">lead to superior performance<br>
+<INPUT TYPE="radio" name="Q4" value="cost as much to develop as anticipated" onclick=Q4.value="D">cost as much to develop as anticipated..</ol>
+
+5. All of the following are specified by Michael Porter as factors that determine the nature and degree of competition in an industry&nbsp;<br>
+ except ___________________..
+<ol>
+<INPUT TYPE="radio" NAME="Q5" value="threat of new competitors" onclick=Q5.value="A">threat
+of new competitors.<br>
+<INPUT TYPE="radio" NAME="Q5" value="rivalry among existing competitors" onclick=Q5.value="B">rivalry among
+existing competitors.<br>
+<INPUT TYPE="radio" NAME="Q5" value="industry cost/price structure" onclick=Q5.value="*">industry
+cost/price structure.<br>
+<INPUT TYPE="radio" name="Q5" value="bargaining power of buyers and/or suppliers" onclick=Q5.value="D">bargaining
+power of buyers and/or suppliers.
+</ol>
+
+<hr>
+
+<B>Your Quiz Score is:  </B><INPUT  NAME="SCORE" TYPE="text" size="4">
+<p><INPUT TYPE="reset" NAME="reset" VALUE="Clear Quiz" onclick=clearquiz(this.form)>
+<INPUT TYPE="submit" VALUE="Send Quiz to Instructor" onclick=scorequiz(this.form)>
+</p>
+<p><INPUT TYPE="button" NAME="submit" VALUE="Compute Quiz tally" onclick=scorequiz(this.form)>
+
+<BR><BR>
+</p>
+</form>
+
+</body>
+
+</html>

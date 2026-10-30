@@ -1,0 +1,58 @@
+/* From the Heart Web Site.  This is the style Sheet. */
+/* These styles are used for the home page */
+
+	.blackrow {font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: gray; font-weight: bold; text-indent: 3; text-decoration: none}
+	a.blackrow:hover {color=#F5F5DC}
+
+	.blackrowthin {font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: gray; text-indent: 3; text-decoration: none}
+	a.blackrowthin:hover {color=#F5F5DC}
+
+
+	.menu {font-family: Arial, Helvetica, sans-serif; font-size: 16pt; color: #000072; text-decoration: none}
+	a.menu:hover {color=red}
+
+	.navcoltext {font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #000072; text-decoration: none}
+	a.navcoltext:hover {color=red}
+
+	.navcoltextc {font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #000072; text-decoration: none; font-weight: bold}
+
+	.navcolhead {font-family: Arial, Helvatica, sans-serif; font-size: 16pt; color: #000000; text-decoration: none}
+
+	.copyright {font-family: Arial, Helvetica, sans-serif; font-size: 8pt; color: #FFFFFF; text-decoration: none}
+	a.copyright:hover {color=#EFEEAF}
+
+	.copyright2 {font-family: Arial, Helvetica, sans-serif; font-size: 8pt; color: #000072; text-decoration: none}
+	a.copyright2:hover {color=#000000}
+
+
+	.quote {font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #000072; text-decoration: none; font-style: italic}
+
+	.blankhead {font-family: Arial, Helvetica, sans-serif; font-size: 16pt; color: #000000; text-decoration: none; font-style: bold; text-indent: 20px}
+
+	.blankpage {font-family: Arial, Helvetica, sans-serif; font-size: 12pt; color: #000000}
+	
+	.caption {font-size: 15pt; color: #FFFFFF; font-weight: bold}
+
+	.scaption {font-size: 10pt; color: #FFFFFF}
+
+/* These styles are for the names page and the standard navigation bars */
+
+
+	.names {font-family: Arial, Helvetica, sans-serif; font-size: 8pt; color: #000000; text-decoration: none}
+	a.names:hover {color=red}
+	
+	.headline {font-family: Arial, Helvetica, sans-serif; font-size: 16pt; color: #000000; text-decoration: bold}
+
+	.navbartext {font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #000072; text-decoration: none}
+	a.navbartext:hover {color=red}
+
+	.stats {font-family: Arial, Helvetica, sans-serif; font-size: 8pt; color: black; margin-left: 5px}
+
+	.mstats {font-family: Arial, Helvetica, sans-serif; font-size: 8pt; color: red; margin-left: 5px}
+
+	.stats2 {font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #FFFFFF; margin-left: 5px}
+	
+	.stathead {font-family: Arial, Helvetica, sans-serif; font-size: 14pt; color: black; margin-left: 5px}
+
+	.alumni {font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: white; text-indent: 3; text-decoration: none}
+	a.alumni:hover {color=#F5F5DC}

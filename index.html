@@ -1,14 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Replace me with your content</title>
-  </head>
-  <body>
-    <h1>Replace me</h1>
-    <p>
-      Delete this file and add your own content files (for example, your
-      .html pages) to this repository.
-    </p>
-  </body>
+<head>
+<meta charset="us-ascii">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ricks College Website Archive, 1997&ndash;2001</title>
+<style>
+  body {
+    margin: 0;
+    padding: 24px 12px;
+    background: #ffffff url(_archive/rickswater.gif);
+    color: #312921;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .page {
+    max-width: 620px;
+    margin: 0 auto;
+    background: #fff7de;
+    border: 1px solid #312921;
+  }
+  .mast {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid #312921;
+  }
+  .mast .logo {
+    flex: 0 0 auto;
+    background: #313163;
+    padding: 10px 14px;
+  }
+  .mast .logo img { display: block; width: 76px; height: 101px; }
+  .mast .title {
+    flex: 1 1 auto;
+    padding: 0 18px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .mast h1 {
+    margin: 0;
+    padding-top: 8px;
+    border-top: 1px solid #312921;
+    font-size: 22px;
+    font-weight: normal;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+  }
+  .mast .sub { margin: 4px 0 0; font-style: italic; font-size: 15px; }
+  .eras { padding: 18px 18px 4px; }
+  a.era {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #313163;
+    color: #313163;
+    text-decoration: none;
+  }
+  a.era:hover, a.era:focus { background: #313163; color: #fff7de; }
+  a.era img {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 150px;
+    border: 1px solid #312921;
+  }
+  a.era strong {
+    display: block;
+    font-size: 21px;
+    font-weight: normal;
+    font-variant: small-caps;
+  }
+  a.era span { display: block; margin-top: 6px; font-size: 15px; }
+  .note {
+    margin: 0 18px;
+    padding: 4px 0 14px;
+    border-top: 1px solid #312921;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .note a { color: #313163; }
+  @media (max-width: 480px) {
+    body { padding: 10px 8px; }
+    .mast .logo { padding: 8px 10px; }
+    .mast .logo img { width: 57px; height: 76px; }
+    .mast h1 { font-size: 18px; }
+    .eras { padding: 12px 10px 2px; }
+    .note { margin: 0 10px; }
+    a.era { flex-direction: column; align-items: stretch; text-align: center; }
+    a.era img { width: 100%; height: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="mast">
+    <div class="logo"><img src="_archive/rclogo.gif" alt="Ricks College"></div>
+    <div class="title">
+      <h1>Ricks College Website Archive</h1>
+      <p class="sub">www.ricks.edu, 1997&ndash;2001</p>
+    </div>
+  </div>
+
+  <div class="eras">
+    <a class="era" href="ricks-1997/Ricks/Ricks.html">
+      <img src="_archive/era-1997.jpg" width="200" height="150" alt="">
+      <div>
+        <strong>Ricks College, 1997</strong>
+        <span>The original Ricks College home page, with academics, admissions, college services, news and student life.</span>
+      </div>
+    </a>
+    <a class="era" href="ricks-2000/default.html">
+      <img src="_archive/era-2000.jpg" width="200" height="150" alt="">
+      <div>
+        <strong>Becoming BYU-Idaho, 2000&ndash;2001</strong>
+        <span>The site from the year Ricks College announced it would become Brigham Young University&ndash;Idaho, with departmental sites.</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="note">
+    <p>This is a restored copy of the Ricks College website (ricks.edu) as it stood between 1997 and 2001,
+    before Ricks College became BYU-Idaho in 2001.</p>
+    <p>It was rebuilt from a backup of the college&rsquo;s web server. About 1,060 files missing from the backup were
+    recovered from the Internet Archive&rsquo;s <a href="https://web.archive.org/">Wayback Machine</a>, and links to
+    other websites open the Wayback Machine&rsquo;s copy from that time.</p>
+    <p>Many images and pages were never preserved, so some links and images are broken.</p>
+  </div>
+</div>
+</body>
 </html>

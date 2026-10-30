@@ -1,0 +1,94 @@
+        Name            Electronic Dice Project;
+        Designer        Rex N. Fisher;
+        Device          G16V8;
+
+        /* Function Specifications */
+        
+            /*  
+                Refer to the Electronic Dice Game Design Notes.
+                
+                The derived equations for the eight D flip flops are:
+                
+                         __
+                    D1 = Q1 Q2 Q3   
+                         __      __
+                    D2 = Q1 Q3 + Q1 Q4
+                         __
+                    D3 = Q3
+                         __      __
+                    D4 = Q1 Q2 + Q1 Q4
+                         __         __
+                    D5 = Q1 Q5 + Q1 Q5 Q6 Q7
+                         __         __         __
+                    D6 = Q1 Q6 + Q1 Q5 Q7 + Q1 Q5 Q8
+                         __         __
+                    D7 = Q1 Q7 + Q1 Q7
+                         __         __         __
+                    D8 = Q1 Q8 + Q1 Q5 Q6 + Q1 Q5 Q8
+            */         
+                         
+
+        /* Define Logic Operators */
+       
+            /* 
+                AND = &
+                OR = # 
+                NOT = !  
+            */     
+
+
+        /* Define Output Pins */
+
+            /*
+                 These outputs correspond to the schematic diagram shown in
+                 the "Design Notes" for this project.                 
+            */
+            
+            Pin 16 = !Q1;     /* LSB */
+            Pin 19 = !Q2;
+            Pin 18 = !Q3;
+            Pin 17 = !Q4;
+            Pin 12 = !Q5;
+            Pin 15 = !Q6;
+            Pin 14 = !Q7;
+            Pin 13 = !Q8;     /* MSB */
+                    
+        /* Define Input Pins */
+        
+             /*
+                 Except for Pin 2, these inputs correspond to the schematic
+                 diagram shown in the "Design Notes" for this project.  The
+                 CLR input may be omitted if no simulation will be run.  
+             */
+  
+            Pin 1  = CLK;   /* Clock Input */
+            Pin 2  = CLR;   /* Clear Input -- This input can be disabled by
+                                              grounding it.  Alternatively,
+                                              it can be connected to a switch
+                                              and used for a manual reset by
+                                              switching it high.  This input
+                                              allows the counter to be
+                                              initialized to a known state,
+                                              which is necessary for
+                                              simulation, but not for actual
+                                              circuit operation. */  
+            Pin 11 = !OE;   /* Output Enable Input -- Ground this pin. */
+
+        /* Logic Equations */
+
+            /*
+                Omit the CLR signal if it isn't defined in the previous
+                section.
+            */
+
+            Q1.d = !Q1 & Q2 & Q3 # CLR; 
+            Q2.d = !Q1 & Q3 & !CLR # !Q1 & Q4 & !CLR; 
+            Q3.d = !Q3 & !CLR;
+            Q4.d = !Q1 & Q2 & !CLR # !Q1 & Q4 & !CLR;
+            Q5.d = Q1 & !Q5 & Q6 & Q7 & !CLR # !Q1 & Q5 & !CLR;
+            Q6.d = Q1 & !Q5 & Q7 & !CLR # Q1 & !Q5 & Q8 & !CLR # !Q1 & Q6 
+                   & !CLR;
+            Q7.d = Q1 & !Q7 & !CLR # !Q1 & Q7 & !CLR;
+            Q8.d = Q1 & !Q5 & Q6 & !CLR # Q1 & !Q5 & Q8 & !CLR # !Q1 & Q8 
+                   & !CLR;
+

@@ -1,0 +1,84 @@
+<html>
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<script language="JavaScript">
+<!--BEGIN Script
+function validate_form() {
+  validity = true; // assume valid
+  if (!check_empty(document.form.SENDERS_NAME.value))
+        { validity = false; alert('Name field is empty!'); }
+  if (!check_email(document.form.SENDERS_EMAIL.value))
+        { validity = false; alert('Email address is invalid!'); }
+  if (validity)
+        alert ("Needed entries have been verified. "
+                + "Your form is now being passed to your browser's "
+                + "Mail Delivery Sub-System.");
+  return validity;
+}
+
+function check_empty(text) {
+  return (text.length > 0); // returns false if empty
+}
+
+function check_email(address) {
+  if ((address == "")
+    || (address.indexOf ('@') == -1)
+    || (address.indexOf ('.') == -1))
+      return false;
+  return true;
+}
+// -->
+</script>
+
+	<title>Send a Message</title>
+	</head>
+
+	<body>
+	
+	<form name="form"
+ method="post"
+ enctype="text/plain"
+ <INPUT TYPE="hidden" NAME="jumpURL" VALUE="index.html"  onsubmit="return false">
+
+<p><font size="1"><a style=text-decoration:none href="javascript:back(-1)">RETURN TO PREVIOUS PAGE</a></font></p>
+
+<h1>SEND A MESSAGE TO MARK NYGREN!</h1>
+<table border="0" width="100%">
+  <tr>
+    <td width="50%">
+<p>
+
+<!-- PLAIN HTML FORM ELEMENTS --><b>Your Name:&nbsp; <input type="text" size=39 name="SENDERS_NAME"><br>
+<br>
+Your E-mail: <input type="text" size=39 name="SENDERS_EMAIL"><br>
+<br>This is concerning:
+<select>
+<option value>------- SELECT -------</option>
+<option value="B101 Student">B101 Intro to Business</option>
+<option value="B283 Student">B283 Small Business Management</option>
+<option value="B284 Student">B284 Entrepreneurship Practicum</option>
+<option value="B296 Student">B296 SIFE Leadership</option>
+<option value="GS101">GS101 Principles of Achievement</option>
+<option value="An Advisee">An advisee</option>
+<option value="A Teacher">Faculty member</option>
+<option value="Other">Other</option>
+</b>
+</select>
+</p>
+<p>
+<b>Message:<BR>
+<TEXTAREA NAME="COMMENTS" ROWS=8 COLS=40 wrap=virtual></TEXTAREA>
+<br>
+
+</b>
+      </td>
+      <td width="50%">
+        <p align="center"><b><br>
+        After you click 'Send Message' click on return home.<br>
+<input type="submit" value="Send Message" onClick="window.location='default.htm'" style="font-weight: bold"></form></b></td>
+    </tr>
+  </table>
+</form>
+
+</body>
+</html>

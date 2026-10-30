@@ -1,0 +1,70 @@
+<!--This is a template HTML file for the perl script "list.pl"-->
+<!--Everything to be uncluded in the $Professors loop must be in ***
+*** between two --LOOP-- comments at the beginning of lines with ***
+*** nothing following them. Anything to be seen only by Religion ***
+*** Faculty must be in between two --4FAC-- comments as well. It ***
+*** is imperative that the --LOOP-- and --4FAC-- comments are at ***
+*** the beginning of a line. The--ACCESS-- comment surrounds the ***
+*** link that will only be shown to those that have edit rights. ***
+*** It need not be at the beginning of a line as the LOOP & 4FAC *** -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<base TARGET="main">
+<title>Faculty Member List</title>
+</head>
+<body BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#0000FF">
+<table BORDER="0">
+  <tr>
+    <td>
+    <a TARGET="_top" HREF="default.htm">
+    	<img src="DPTHeader.gif" BORDER="0" width="150" height="150" ALT="Religion Department Home">
+     </a><hr>
+    </td>
+  </tr>
+<!--Everything between the 4Fac comments will only be shown to Religion Faculty-->
+<!--4FAC-->
+  <tr>
+    <td><p align="center"><font SIZE="-1"><a target="_top" href="msgboard/default.asp.html">Message
+    Board</a> <br>
+    <br>
+    <a target="_top" href="webdev/index.html">Web Development</a> 
+  <!--ACCESS--> <br>
+    <br>
+    <a TARGET="_top" HREF="https://web.archive.org/web/1998/http://www.ricks.edu/Ricks/Academics/division/divReligion/dptReligion/edit.pl">Edit Faculty Listing</a> <br>
+    <br>
+    <a TARGET="_top" HREF="msgboard/delete.asp.html">Edit Message Board</a> <br>
+  <!--ACCESS-->    </font></td>
+  </tr>
+  <tr>
+    <td><hr>
+    </td>
+  </tr>
+<!--4FAC-->
+  <tr>
+    <td><b>Department Chair</b> <br>
+    <small>&nbsp;&nbsp;&nbsp;&nbsp; <font color="#000000"><a
+    href="https://web.archive.org/web/1998/http://www.ricks.edu/Ricks/Academics/division/divReligion/dptReligion/display.pl?NAME=$CHAIRUSERNAME">$CHAIRNAME</a></font> </small></td>
+  </tr>
+  <tr>
+    <td><p align="left"><b>Secretary</b> <br>
+    <small>&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://web.archive.org/web/1998/http://www.ricks.edu/Ricks/Academics/division/divReligion/dptReligion/display.pl?NAME=$SECUSERNAME">$SECNAME</a> </small></td>
+  </tr>
+  <tr>
+    <td><b>Professors</b> </td>
+  </tr>
+<!--All lines between the LOOP comments will be looped/repeated for each professor-->
+<!--LOOP-->
+  <tr>
+    <td><p align="left"><small>&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://web.archive.org/web/1998/http://www.ricks.edu/Ricks/Academics/division/divReligion/dptReligion/display.pl?NAME=$KEY">$PROF{$KEY}</a>
+    </small></td>
+  </tr>
+<!--LOOP-->
+  <tr>
+    <td><hr>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

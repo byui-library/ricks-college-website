@@ -1,0 +1,168 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Tutor Recommendation/Approval Form</title>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- begin hiding JavaScript code
+
+function isValidId(string)
+{
+	var  re = new RegExp("[0-9]{9}");
+	return re.test(string);
+}	
+
+function isValidPin(string)
+{
+	var  re = new RegExp("[0-9]{3}");
+	return re.test(string);
+}	
+
+function confirmrec(form)
+{
+//	if (form.apprv.value != "Y" && form.apprv.value != "N")
+//	{
+//		alert("Please enter whether you approve or not");
+//		return false;
+//    }	
+    if (form.DEPT1.value == "")
+	{
+		alert("No courses entered");
+		form.DEPT1.focus();
+		return false;
+    }		
+		
+	if (!isValidId(form.IDNO.value))
+	{
+		alert("Id number format is not valid");
+		form.IDNO.focus();
+		return false;
+    }		
+
+	if (!isValidPin(form.PIN.value))
+	{
+		alert("Pin number format is not valid");
+		form.PIN.focus();
+		return false;
+    }		
+
+    if (!isValidId(form.IDNO1.value) && form.DEPT1.value != "")
+	{
+		alert("No ID number for first student");
+		form.IDNO1.focus();
+		return false;
+    }		
+        if (!isValidId(form.IDNO2.value) && form.DEPT2.value != "")
+	{
+		alert("No ID number for second student");
+		form.IDNO2.focus();
+		return false;
+    }	
+        if (!isValidId(form.IDNO3.value) && form.DEPT3.value != "")
+	{
+		alert("No ID number for third student");
+		form.IDNO3.focus();
+		return false;
+    }		
+
+        if (!isValidId(form.IDNO4.value) && form.DEPT4.value != "")
+	{
+		alert("No ID number for fourth student");
+		form.IDNO4.focus();
+		return false;
+    }	
+    	
+    	if (isValidId(form.IDNO1.value) && form.DEPT1.value == "")
+	{
+		alert("No Course for first student");
+		form.DEPT1.focus();
+		return false;
+    }		
+        if (isValidId(form.IDNO2.value) && form.DEPT2.value == "")
+	{
+		alert("No Course for second student");
+		form.DEPT2.focus();
+		return false;
+    }	
+        if (isValidId(form.IDNO3.value) && form.DEPT3.value == "")
+	{
+		alert("No Course for third student");
+		form.DEPT3.focus();
+		return false;
+    }		
+
+        if (isValidId(form.IDNO4.value) && form.DEPT4.value == "")
+	{
+		alert("No Course for fourth student");
+		form.DEPT4.focus();
+		return false;
+    }	
+
+ 	return true;
+}	
+// End hiding JavaScript code -->
+</SCRIPT>
+</head>
+
+<body bgcolor=#ffffff BACKGROUND="https://web.archive.org/web/1998im_/http://www.BYUI.edu/spencer/WEBIMG/BYU-IdahoWATER.GIF">
+<center><h3>Tutor Recommendation/Approval Form</h3>
+<form method=post onsubmit="return false">
+</center><font face="CG Omega" size="2">
+<p>&nbsp; &nbsp; &nbsp;A primary concern of the BYU-Idaho Tutoring Center is to attract
+ the most skilled and qualified students available as tutors.</p>
+<p>&nbsp; &nbsp; &nbsp;We welcome your input as to how we can help your students achieve the
+academic success they desire.  Since a number of your students do come to the Tutoring Center
+ for help, your recommendation or approval of students who might be qualified to tutor would
+ be greatly appreciated.</p>
+<p>&nbsp; &nbsp; &nbsp;Could you please refer two or three returning students, who have done
+ well in your class(es), or would you approve of the applicant in question to tutor for
+ the course(s) you teach?</p>
+<p>&nbsp; &nbsp; &nbsp;<b>Please be aware that while the Tutoring Center seriously considers
+ your recommendations, there is no guarantee that the student(s) that you recommend will be
+ hired.&nbsp; Listed below are some considerations for candidate tutors.</b></p>
+<h3>&nbsp; &nbsp; &nbsp; Some Considerations for Tutors</h3>
+<ol><li>Tutors should be qualified and prepared in every aspect to
+ give assistance to students who seek their help.<br>Being qualified includes:<ul>
+ <li>Previously taken the class.
+ <li>Received an "A-" or better.
+ <li>Is presently a full-time student?
+ <li>Does not already hold a campus job.
+ <li>Can dedicate at least 10-12 hrs per week to tutoring.
+ <li>Cannot be a dependent of an employee.</ul>
+ <li>Tutors should be persons who will be dependable in keeping their commitments and
+ appointments.
+ <li>Tutors should be fully living the standards of the Church.
+ <li>Tutors should be willing to communicate with the teacher in question on an ongoing
+basis, to keep abreast of the class homework, tests, expectations, etc.
+ <li>Tutors should recognize that they are accountable to the Director of Tutoring and
+ that their employment is conditional upon their willingness to abide by the Tutoring
+ Center’s policies. <b>  Tutors must be willing to complete a one-credit tutor-training course.</b>
+</ol>
+<center>
+<table border="1"><tr><td>Name</td><td>Student I.D. #&nbsp;</td>
+<td>Department & Course&nbsp;&nbsp;</td><td>Additional Course</td></tr>
+<tr><td><INPUT name="Name1" size="25" maxlength="25" type="text"></td>
+<td><INPUT name="IDNO1" size="9" maxlength="9" type="text"></td>
+<td><INPUT name="DEPT1" size="9" maxlength="9" type="text"></td>
+<td><INPUT name="DEPT11" size="9" maxlength="9" type="text"></td></tr>
+<tr><td><INPUT name="Name2" size="25" maxlength="25" type="text"></td>
+<td><INPUT name="IDNO2" size="9" maxlength="9" type="text"></td>
+<td><INPUT name="DEPT2" size="9" maxlength="9" type="text"></td>
+<td><INPUT name="DEPT22" size="9" maxlength="9" type="text"></td></tr>
+<tr><td><INPUT name="Name3" size="25" maxlength="25" type="text"></td>
+<td><INPUT name="IDNO3" size="9" maxlength="9" type="text"></td>
+<td><INPUT name="DEPT3" size="9" maxlength="9" type="text"></td>
+<td><INPUT name="DEPT33" size="9" maxlength="9" type="text"></td></tr>
+<tr><td><INPUT name="Name4" size="25" maxlength="25" type="text"></td>
+<td><INPUT name="IDNO4" size="9" maxlength="9" type="text"></td>
+<td><INPUT name="DEPT4" size="9" maxlength="9" type="text"></td>
+<td><INPUT name="DEPT44" size="9" maxlength="9" type="text"></td></tr>
+</table>
+<br>&nbsp; I <input type="radio" name="apprv" value="Y"><b>DO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="apprv" value="N">DO NOT</b> approve of these persons being
+tutors for these courses because:<br></font>
+<textarea ROWS="4" COLS="70" NAME="APRTXT" WRAP="SOFT"> </textarea>
+<br>Your ID#<INPUT name="IDNO" size="9" maxlength="9" type="password">&nbsp; &nbsp; &nbsp;
+ &nbsp; Your PIN <INPUT name="PIN" size="5" maxlength="5" type="password">
+ &nbsp; &nbsp; &nbsp; <INPUT type="SUBMIT" value="Submit Recommendation">
+
+<h3>THANKS FOR YOUR HELP!</h3>
+</form></center></body></html>

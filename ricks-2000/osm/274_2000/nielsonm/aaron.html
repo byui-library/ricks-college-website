@@ -1,0 +1,190 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script src="../../../_archive/compat.js"></script>
+<TITLE>My Page--Aaron</TITLE>
+</HEAD>
+<BODY BACKGROUND="checkered.gif">
+
+<TABLE ALIGN="center" BORDER=0 BGCOLOR=#33000>
+<TR>
+<TD><FONT FACE="COMIC SANS MS"><FONT SIZE=7><FONT COLOR=#FF000><CENTER><B>Aaron Curtis Hobson</B></CENTER></FONT>
+</TD>
+</TR>
+</TABLE>
+
+<CENTER><IMG SRC="hobson.JPG" HEIGHT=300 WIDTH=350></CENTER><P>
+
+<TABLE ALIGN="center" BORDER=0 BGCOLOR=#FFFFF>
+<TR>
+<TD><FONT COLOR=#FF000><FONT SIZE=4><B><CENTER>Check out more cool pictures of us!</CENTER></B></FONT></TD>
+</TR>
+</TABLE>
+
+<TABLE ALIGN="center" BORDER=0 BGCOLOR=#FFFFF>
+<TR>
+<TD><FONT COLOR=#FF000><FONT SIZE=4><B><CENTER>Just click the pictures if you want to get up close and personal!</CENTER></B></FONT></TD>
+</TR>
+</TABLE><P>
+
+<TABLE ALIGN="center">
+<TR>
+<TD ALIGN="center"><A HREF="aaron1.JPG"><IMG SRC="aaron1sm1.JPG" WIDTH=125 HEIGTH=150 BORDER=0></A></TD>
+<TD ALIGN="center"><A HREF="aaron2.JPG"><IMG SRC="aaron2sm1.JPG" WIDTH=125 HEIGTH=200 BORDER=0></A></TD>
+<TD ALIGN="center"><A HREF="aaron3.JPG"><IMG SRC="aaron3sm1.JPG" WIDTH=125 HEIGTH=200 BORDER=0></A></TD>
+<TD ALIGN="center"><A HREF="Aaron4.JPG"><IMG SRC="aaron4sm.JPG" WIDTH=125 HEIGTH=200 BORDER=0></A></TD>
+</TR>
+<TR>
+<TD ALIGN="center"><A HREF="aaron5.JPG"><IMG SRC="aaron5sm.JPG" WIDTH=125 HEIGTH=200 BORDER=0></A></TD>
+<TD ALIGN="center"><A HREF="aaron6.JPG"><IMG SRC="aaron6sm.JPG" WIDTH=125 HEIGTH=200 BORDER=0></A></TD>
+<TD ALIGN="center"><A HREF="aaron7.JPG"><IMG SRC="aaron7sm.JPG" WIDTH=125 HEIGTH=200 BORDER=0></A></TD>
+<TD ALIGN="center"><A HREF="aaron8.JPG"><IMG SRC="aaron8sm.JPG" WIDTH=125 HEIGTH=200 BORDER=0></A></TD>
+</TR>
+<TR>
+<TD ALIGN="center" COLSPAN=4><A HREF="aaron9.JPG"><IMG SRC="aaron9sm.JPG" WIDTH=125 HEIGTH=200 BORDER=0></A></TD>
+</TR>
+</TABLE>
+
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!-- Original:  Altan (snow@altan.hr) -->
+<!-- Web Site:  http://www.altan.hr/snow -->
+
+<!-- Modified By:  Homer (homer_adm@yahoo.it) -->
+<!-- Web Site:  http://start.at/the_simpsons -->
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+var no = 8; // number of hearts
+var speed = 15; // smaller number moves the hearts faster
+var heart = "heart.gif"
+var flag;
+var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+var ie4up = (document.all) ? 1 : 0;
+
+var dx, xp, yp;    // coordinate and position variables
+var am, stx, sty;  // amplitude and step variables
+var i, doc_width = 800, doc_height = 600;
+if (ns4up) {
+doc_width = self.innerWidth;
+doc_height = self.innerHeight;
+} else if (ie4up) {
+doc_width = document.body.clientWidth;
+doc_height = document.body.clientHeight;
+}
+dx = new Array();
+xp = new Array();
+yp = new Array();
+amx = new Array();
+amy = new Array();
+stx = new Array();
+sty = new Array();
+flag = new Array();
+for (i = 0; i < no; ++ i) {
+dx[i] = 0;                        // set coordinate variables
+xp[i] = Math.random()*(doc_width-30)+10;  // set position variables
+yp[i] = Math.random()*doc_height;
+amy[i] = 12+ Math.random()*20;         // set amplitude variables
+amx[i] = 10+ Math.random()*40;
+stx[i] = 0.02 + Math.random()/10; // set step variables
+sty[i] = 0.7 + Math.random();     // set step variables
+flag[i] = (Math.random()>0.5)?1:0;
+if (ns4up) {                      // set layers
+if (i == 0) {
+document.write("<layer name=\"dot"+ i +"\" left=\"15\" ");
+document.write("top=\"15\" visibility=\"show\"><img src=\"");
+document.write(heart+ "\" border=\"0\"></layer>");
+} else {
+document.write("<layer name=\"dot"+ i +"\" left=\"15\" ");
+document.write("top=\"15\" visibility=\"show\"><img src=\"");
+document.write(heart+ "\" border=\"0\"></layer>");
+}
+} else
+if (ie4up) {
+if (i == 0) {
+document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
+document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
+document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\"");
+document.write(heart+ "\" border=\"0\"></div>");
+} else {
+document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
+document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
+document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\"");
+document.write(heart+ "\" border=\"0\"></div>");
+}
+}
+}
+
+function snowNS() {  // Netscape main animation function
+for (i = 0; i < no; ++ i) {  // iterate for every dot
+if (yp[i] > doc_height-50) {
+xp[i] = 10+ Math.random()*(doc_width-amx[i]-30);
+yp[i] = 0;
+flag[i]=(Math.random()<0.5)?1:0;
+stx[i] = 0.02 + Math.random()/10;
+sty[i] = 0.7 + Math.random();
+doc_width = self.innerWidth;
+doc_height = self.innerHeight;
+}
+if (flag[i])
+dx[i] += stx[i];
+else
+dx[i] -= stx[i];
+if (Math.abs(dx[i]) > Math.PI) {
+yp[i]+=Math.abs(amy[i]*dx[i]);
+xp[i]+=amx[i]*dx[i];
+dx[i]=0;
+flag[i]=!flag[i];
+}
+document.layers["dot"+i].top = yp[i] + amy[i]*(Math.abs(Math.sin(dx[i])+dx[i]));
+document.layers["dot"+i].left = xp[i] + amx[i]*dx[i];
+
+}
+setTimeout("snowNS()", speed);
+}
+
+function snowIE() {  // IE main animation function
+for (i = 0; i < no; ++ i) {  // iterate for every dot
+if (yp[i] > doc_height-50) {
+xp[i] = 10+ Math.random()*(doc_width-amx[i]-30);
+yp[i] = 0;
+stx[i] = 0.02 + Math.random()/10;
+sty[i] = 0.7 + Math.random();
+flag[i]=(Math.random()<0.5)?1:0;
+doc_width = document.body.clientWidth;
+doc_height = document.body.clientHeight;
+}
+if (flag[i])
+dx[i] += stx[i];
+else
+dx[i] -= stx[i];
+if (Math.abs(dx[i]) > Math.PI) {
+yp[i]+=Math.abs(amy[i]*dx[i]);
+xp[i]+=amx[i]*dx[i];
+dx[i]=0;
+flag[i]=!flag[i];
+}
+
+document.all["dot"+i].style.pixelTop = yp[i] + amy[i]*(Math.abs(Math.sin(dx[i])+dx[i]));
+document.all["dot"+i].style.pixelLeft = xp[i] + amx[i]*dx[i];
+}
+setTimeout("snowIE()", speed);
+}
+
+if (ns4up) {
+snowNS();
+} else if (ie4up) {
+snowIE();
+}
+// End -->
+</script>
+
+<TABLE BGCOLOR=#FFFFF ALIGN="center">
+<TR>
+<TD ALIGN="center"><FONT COLOR=#FF000><FONT SIZE=3><B>Enough of the Cheese, back to my Home Page!<br></B></FONT>
+<CENTER><A HREF="homepage.html"><IMG SRC="lips.gif" BORDER=0 width="132" height="70"></A></CENTER></TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

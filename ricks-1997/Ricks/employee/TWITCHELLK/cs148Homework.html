@@ -1,0 +1,494 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>CS148 - Computer Science Review Homework</TITLE>
+</HEAD>
+<BODY>
+
+<H2>CS148 - Computer Science Review<BR>Homework<BR><HR></H2>
+
+<FONT SIZE="-1">
+<A HREF="#00">00</A> |
+<A HREF="#01">01</A> |
+<A HREF="#02">02</A> |
+<A HREF="#03">03</A> |
+<A HREF="#04">04</A> |
+<A HREF="#05">05</A> |
+<A HREF="#06">06</A> |
+<A HREF="#07">07</A> |
+<A HREF="#08">08</A> |
+<A HREF="#09">09</A> |
+<A HREF="#10">10</A>
+</FONT>
+
+<H4>General Instructions</H4>
+<UL>
+<LI>All assignments except 00 shall be submitted by copying files to
+/home/twitchellk/cs148/hw##/, where ## is the two-digit homework number
+(be sure to include leading zeros when necessary).
+It is best to use <B>submit148</B> to submit your homework.
+However, you may also use the Linux copy command (cp)
+to copy your files to the homework directory.
+Examples where whateverYouNamedIt is your file to be submitted
+and xyz99001 is your user ID):
+<UL>
+<LI>submit148 whatever.cpp
+<LI>cp whatever.cpp /home/twitchellk/cs148/hw##/xyz99001.cpp
+</UL>
+<LI>All assignments shall be submitted as ASCII text files
+	(i.e., submit the source code, not the executable).
+<LI>C++ source code files shall be submitted using the .cpp extension.
+<LI>Homework shall not be submitted using e-mail.
+<LI>Make sure your submitted program satisfies all specified requirements.
+<LI>Output shall <b>exactly match</b> the examples, with the only variation being
+	output values that are calculated from input values.
+<LI>All programs shall include error handling and shall terminate gracefully.
+<LI>Whenever the homework specifies that the program is to loop until the
+	user specifies to quit, the input from the user shall be the word "quit".
+	Nothing more and nothing less.
+<LI>For <b>all</b> character input, you must allow for the input of any case,
+	including mixed case.
+<LI>You may <B>not</B> use the system function in your programs.
+<LI>Use C++ I/O (e.g., cout); do not use C I/O (e.g., printf).
+<LI>Each program shall compile and execute using ROM 272 (Linux) lab computers.
+<LI>Each line in each submitted file shall be less than 80 characters long.
+<LI>Placing a portion of your source code in a header (.h) file is discouraged.
+<LI>Homework is graded strictly on correctness of output.
+	Be sure to <b>thoroughly</b> test your program before submitting it for grading.
+</UL>
+<HR>
+
+<TABLE>
+<TR VALIGN="top">
+<TD>
+<A NAME="00"><FONT SIZE="+3"><B>00</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Scriptures in Class</B></font><BR>
+<I>50 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Each class shall start with at least one brief presentation of a scripture.
+You are required to present <B>five</B> scriptures from the
+Standard Works during the semester.
+Each scripture (one or more verses) shall be pertinent
+to our class, to our course of study,
+or to life at Brigham Young University-Idaho.
+Just as Nephi, you are encouraged to
+"liken all scriptures unto us" (1 Nephi 19:23).
+Each scripture shall be one that has not been presented before in this class.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+You will be penalized for presenting a duplicate scripture.
+Standard late penalties apply each time you are not prepared
+on your assigned (or reassigned) day.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Information to help you successfully complete
+this homework assignment is available at
+<a href="https://web.archive.org/web/1998/http://joshua.byui.edu/cgi-bin/twitchellk/scriptures/studentTracker.pl">
+http://joshua.byui.edu/cgi-bin/twitchellk/scriptures/studentTracker.pl</a>
+<i>(on campus only)</i>.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="01"><FONT SIZE="+3"><B>01</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Hello World!</B></font><BR>
+<I>25 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Output the text "Hello World!",
+your name, your major, and where you are from.
+The purpose of this assignment is not to demonstrate
+your programming prowess,
+but to help you become acquainted with the lab in ROM 272.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="02"><FONT SIZE="+3"><B>02</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Vending Machine</B></font><BR>
+<I>75 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a vending machine filled with items priced as specified in
+<a href="vm.txt">/home/twitchellk/examples/vm.txt</a>.
+Assume that the customer has already successfully supplied $1 to the machine.
+Allow the customer to select a grid location (such as C5).
+Allow for both upper and lower case input (i.e. C5 and c5 are both valid).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+You may not use any selection or iteration structures.
+Assume valid user input.
+Process only one transaction.
+You do not need to output the vending machine grid.
+Deliver the correct amount of change using
+the least number quarters, dimes, and nickels.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is shown in <B>bold</B>):
+<PRE>
+   Please enter a grid location (such as B2): <b>C5</b>
+   Item C5 costs 60 cents.
+   Change is 1 quarter(s), 1 dime(s), and 1 nickel(s).
+</PRE>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="03"><FONT SIZE="+3"><B>03</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Grades</B></font><BR>
+<I>75 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Output the letter grade given an integer between 0 and 100 (inclusive).
+Use the following grading scale:<BR>
+<TABLE>
+<TR VALIGN=top>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<TD>
+A - nineties and one hundred<BR>
+B - eighties<BR>
+C - seventies<BR>
+D - sixties<BR>
+F - 59 and below
+</TD>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<TD>
+If the final digit is 7-9, output a "+" (e.g., 88 is a B+).<BR>
+If the final digit is 0-2, output a "-" (e.g., 61 is a D-).<BR>
+There is no A+, F+, or F-.
+</TD>
+</TR>
+</TABLE>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Continue to accept input until the user enters an invalid value (e.g., -1 or 101).
+Assume integer input.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is shown in <B>bold</B>):
+<PRE>
+   Please enter a numeric grade ranging from 0 to 100
+     (an invalid value terminates the program)
+   Numeric grade: <B>100</B>
+   The letter grade for 100 is A
+   Numeric grade: <B>72</B>
+   The letter grade for 72 is C-
+   Numeric grade: <B>-1</B>
+</PRE>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="04"><FONT SIZE="+3"><B>04</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Day of the Week</B></font><BR>
+<I>150 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a program to output the day of the week given a date.
+Prompt the user for a date composed of a numeric month, day, and year.
+Output the day of the week that date falls on.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Continue to accept input until the user specifies to quit
+(by entering a single zero (0) -- nothing else).
+Provide specific instructions on how to quit the program.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+No date shall be earlier than Monday, January 1, 1753
+(an earlier date is an error condition).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Provide full error detection and handling.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+While the Unix cal utility may be used to assist algorithm design,
+it may not be used in the execution of the program.
+<b>Use Zeller's Congruence or the C++ time function library.</b>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The program shall utilize functions.
+Use the main () function supplied in
+<a href="dayOfWeekMain.txt">/home/twitchellk/examples/dayOfWeekMain.cpp</a>.
+You may not modify the supplied main () function.
+Note that the names of some of your functions are dictated
+by the supplied main () function.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is shown in <B>bold</B>):
+<PRE>
+   Enter date (MM/DD/YYYY) or 0 (zero) to quit: <B>2/29/2000</B>
+   2/29/2000 is a Tuesday
+   Enter date (MM/DD/YYYY) or 0 (zero) to quit: <B>2/29/1900</B>
+   Input error: the day must range from 1 to 28
+   Enter date (MM/DD/YYYY) or 0 (zero) to quit: <B>13/1/1999</B>
+   Input error: the month must range from 1 to 12
+   Enter date (MM/DD/YYYY) or 0 (zero) to quit: <B>1/1/1752</B>
+   Input error: the year must be greater than 1752
+   Enter date (MM/DD/YYYY) or 0 (zero) to quit: <B>0</B>
+</PRE>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="05"><FONT SIZE="+3"><B>05</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Object Oriented Hello World!</B></font><BR>
+<I>75 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create a class named Hello.
+The constructor shall output "Hello " followed by the string passed to the constructor.
+The destructor shall output "Goodbye cruel " followed by the same string.
+Provide six member functions to store a name, store a major, store a location,
+output "My name is " followed by the stored name,
+output "My major is " followed by the stored major, and
+output "I am from " followed by the stored location.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+From main(), instantiate a hello object with the string "World!"
+Send six messages to your object to
+<OL>
+<LI>set your name (pass your name from main()),
+<LI>set your major (pass your major from main()),
+<LI>set where you are from (pass the location from main()),
+<LI>display your name,
+<LI>display your major, and
+<LI>display where you are from.
+</OL>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="06"><FONT SIZE="+3"><B>06</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Rational Number Calculator</B></font><BR>
+<I>125 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a class named Rational for performing arithmetic with fractions.
+Use integer variables for the numerator and denominator.
+Each instantiated object shall contain exactly one fraction.
+Provide public member functions for each of the following:
+<OL>
+<LI>Setting the value for a Rational number.
+<LI>Addition of two Rational numbers.
+<LI>Subtraction of two Rational numbers.
+<LI>Multiplication of two Rational numbers.
+<LI>Division of two Rational numbers.
+<LI>Displaying Rational numbers in the form i/j
+	where i is the numerator and j is the denominator.
+</OL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Allow the user to enter an arithmetic expression
+(as shown in the examples below).
+Continue to accept input until the user specifies to quit
+(by entering a single zero (0) -- nothing else).
+Provide specific instructions on how to quit the program.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Each operand shall be entered in the form of i/j,
+where i and j are integers (e.g., -11/52).
+Output the result as a (non-reduced) rational number.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+No friends.
+No operator overloading.
+The only valid operators are +, -, *, and /.
+Assume a complete arithmetic expression will be entered by the user.
+Assume that the first numerator will not be a zero
+(to avoid confusion with the quit command).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is shown in <B>bold</B>):
+<PRE>
+   Enter an arithmetic expression using fractions or 0 to quit
+   Input: <b>11/52+30/104</b>
+   2704/5408
+   Input: <b>3/4*4/3</b>
+   12/12
+   Input: <b>7/11+0/3</b>
+   21/33
+   Input: <b>17/-5/-17/-5</b>
+   -85/85
+   Input: <b>7/3-36/-12</b>
+   -192/-36
+   Input: <b>1/2%3/4</b>
+   Input error
+   Input: <b>1/0+9/7</b>
+   Error: cannot divide by zero
+   Input: <b>5/8/0/3</b>
+   Error: cannot divide by zero
+   Input: <b>0</b>
+</PRE>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="07"><FONT SIZE="+3"><B>07</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Operator Overloading</B></font><BR>
+<I>125 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Modify your <a href="#06">Rational Number Calculator</a> to use operator overloading
+to perform arithmetic operations.
+Overload the following operators:
+<UL>
++<BR>
+-<BR>
+*<BR>
+/<BR>
+&lt;&lt; (output)<BR>
++=<BR>
+-=<BR>
+*=<BR>
+/=<BR>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Do the following to demonstrate that your program functions correctly
+(assuming that you have two Rational objects named operand1 and operand2):<BR>
+<PRE>
+   cout &lt;&lt; operand1 + operand2 &lt;&lt; endl;
+   operand1 += operand2;
+   cout &lt;&lt; operand1 &lt;&lt; endl;
+</PRE>
+This means that you will output the (correct) answer twice.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+No friends.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="08"><FONT SIZE="+3"><B>08</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Reduce the Rational Number</B></font><BR>
+<I>100 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Modify your <a href="#07">Rational Number Calculator</a> to 
+output the fraction in reduced form.
+Implement your reduction algorithm as a private member function.
+Use Euclid's algorithm to find the greatest common divisor.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="09"><FONT SIZE="+3"><B>09</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Split an Expression</B></font><BR>
+<I>150 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Modify your <a href="#08">Rational Number Calculator</a> to 
+accept as input an arithmetic expression using fractions or a command to quit;
+there shall be only one prompt for the arithmetic expression or quit command
+(i.e., input a single string).
+The input shall not contain any spaces
+(this is a constraint, not an error condition).
+Continue to accept input until the user specifies to quit.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Be sure to provide correct answers for arithmetic expressions
+such as -3/-4--9/-5 and 2/1/7/6.
+Provide error handling for incomplete expressions
+and for a misplaced operator.
+Assume there will be no extraneous characters in an expression.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is shown in <B>bold</B>):
+<PRE>
+   Enter an arithmetic expression using fractions or quit
+   Input: <b>11/52+30/104</b>
+   1/2
+   Input: <b>3/4*4/3</b>
+   1/1
+   Input: <b>7/11+0/3</b>
+   7/11
+   Input: <b>17/-5/-17/-5</b>
+   -1/1
+   Input: <b>7/3-36/-12</b>
+   16/3
+   Input: <b>1+2/3/4</b>
+   Input error
+   Input: <b>1/2+3/</b>
+   Input error
+   Input: <b>1/2+3</b>
+   Input error
+   Input: <b>1/2+</b>
+   Input error
+   Input: <b>1/2</b>
+   Input error
+   Input: <b>1/</b>
+   Input error
+   Input: <b>1</b>
+   Input error
+   Input: <b>Quit</b>
+</PRE>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="10"><FONT SIZE="+3"><B>10</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Linked List</B></font><BR>
+<I>250 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a program that accepts integers from the user.
+Positive integers are added to a linked list
+in ascending sort order.
+Input of a negative number results in the corresponding node
+being deleted from the linked list.
+An error message is output if there is no corresponding node.
+User entry of a zero terminates the program.
+The linked list is output after every non-zero user input.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Use two classes: Node and LinkedList.
+The LinkedList class has insertNode and deleteNode member functions.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is shown in <B>bold</B>):
+<PRE>
+   Enter an integer or 0 to quit: <b>-8</b>
+   Error: 8 is not found
+   Enter an integer or 0 to quit: <b>4</b>
+   4
+   Enter an integer or 0 to quit: <b>1</b>
+   1 4
+   Enter an integer or 0 to quit: <b>3</b>
+   1 3 4
+   Enter an integer or 0 to quit: <b>5</b>
+   1 3 4 5
+   Enter an integer or 0 to quit: <b>3</b>
+   1 3 3 4 5
+   Enter an integer or 0 to quit: <b>-3</b>
+   1 3 4 5
+   Enter an integer or 0 to quit: <b>-2</b>
+   Error: 2 is not found
+   1 4 5
+   Enter an integer or 0 to quit: <b>0</b>
+</PRE>
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<table>
+<tr valign=bottom>
+<td>
+<FONT SIZE="-1">
+<b><a href="default.htm">Kevin E. Twitchell</a></b><BR>
+<A href="../../../../ricks-2000/Default.htm">BYU-Idaho</A><BR>
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+</FONT>
+</td>
+<td>
+</td>
+<td>
+<FONT SIZE="-1">
+<A HREF="mailto:TwitchellK@byui.edu">
+TwitchellK@byui.edu</A><BR>
+208-496-1938 voice<BR>
+208-496-5938 fax
+</FONT>
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>

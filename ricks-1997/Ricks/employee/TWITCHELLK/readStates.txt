@@ -1,0 +1,17 @@
+#include <fstream>
+
+void main (void)
+{
+   const int STATECOUNT (50);  // number of states
+   char states[STATECOUNT][20];  // array of state names
+
+   // open the file containing the names of the states
+   ifstream statesFile ("/home/twitchellk/examples/states.txt");
+   for (int i = 0; i < STATECOUNT; ++i)
+   {
+      // read each line of the input file
+      statesFile.getline (states[i], sizeof (states[i]));
+   }
+   statesFile.close (); // close the input file
+}
+

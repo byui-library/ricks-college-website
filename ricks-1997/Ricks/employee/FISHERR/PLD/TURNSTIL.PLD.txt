@@ -1,0 +1,49 @@
+        Name            Subway Turnstile;
+        Designer        Rex N. Fisher;
+        Device          G16V8; 
+
+        /* Function Specifications */
+        
+            /*
+                Refer to the state diagram on the lab handout.
+
+                State Table  (Assume Gate = 1 when locked):
+
+                COIN   WALK_THRU   GATE   GATE+   GATE.D (D input to GATE)
+
+                0      0           0      0       0
+                0      0           1      1       1
+                0      1           0      1       1
+                0      1           1      1       1
+                1      0           0      0       0
+                1      0           1      0       0
+                1      1           0      1       1
+                1      1           1      0       0
+            */
+                            
+
+        /* Define Logic Operators */
+       
+            /* 
+                AND = &
+                OR = # 
+                NOT = !  
+            */     
+
+
+        /* Define Output Pin(s) */
+
+            Pin 15 = GATE;
+                      
+
+        /* Define Input Pins */
+        
+            Pin 1  = CLK;   /* Clock Input */
+            Pin 2  = WALK_THRU;
+            Pin 3  = COIN;
+            Pin 11 = !OE;   /* Output Enable Input -- Ground this pin. */
+
+
+        /* Logic Equations */
+
+            GATE.D = (GATE & !COIN) # (!GATE & WALK_THRU);

@@ -1,0 +1,193 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>EET 151: Lab 11</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="Microsoft Theme" content="none, default">
+<meta name="Microsoft Border" content="none">
+</head>
+
+<body>
+
+<p><strong><font face="Courier">EET 151&nbsp;&nbsp;&nbsp; State Machines Lab</font></strong></p>
+
+<p>&nbsp;</p>
+
+<p><font face="Courier"><strong>Purpose:</strong> </font></p>
+
+<p><font face="Courier">1. Solve a &quot;real-life&quot; problem with a state machine. </font></p>
+
+<p><font face="Courier">2. Compare the pros and cons of discrete IC designs using D FF's, JK FF's, and
+PAL's.</font></p>
+
+<p><font face="Courier">3. Successfully program a PAL to implement the state machine.</font></p>
+
+<p><font face="Courier">4. Verify that the PAL circuit correctly implements the state
+machine.</font></p>
+
+<p>&nbsp;</p>
+
+<p><strong><font face="Courier">Procedure:</font></strong></p>
+
+<p><font face="Courier">Refer to the state diagram we developed in class for a subway
+turnstile: </font></p>
+
+<p><font face="Courier">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+WALK_THRU<br>
+&nbsp;&nbsp;&nbsp; +--------------------------------+ <br>
+&nbsp;&nbsp;&nbsp; |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|<br>
+&nbsp;&nbsp;&nbsp; v
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|<br>
+&nbsp; +--------+ COIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +--------+&nbsp;&nbsp; |<br>
+&nbsp; | LOCKED |---------&gt;&nbsp; |&nbsp; OPEN&nbsp; |---+<br>
+&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |--------|<br>
+&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |---+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |CNT_PLSE|---+<br>
+&nbsp; +--------+&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +--------+
+&nbsp; |<br>
+&nbsp;&nbsp;&nbsp; ^&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>
+&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>
+&nbsp;&nbsp;&nbsp; +----------+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
++----------+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; !COIN
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; !WALK_THRU</font></p>
+
+<p><font face="Courier">1. Design the state machine using 7474 D flip flops. Do not construct
+it.</font></p>
+
+<p><font face="Courier">2. Design the state machine using 7476 or 74113 JK flip flops. Do not construct
+it.</font></p>
+
+<p><font face="Courier">3. Program the state machine into a PAL (G16V8). Refer to
+the example PAL program (below).&nbsp; It shows how to program a
+synchronous counter into a PAL.&nbsp; You can follow the same procedure for programming a
+state machine.&nbsp; Your lab report for the PAL Lab may also be helpful.</font></p>
+
+<p>&nbsp;</p>
+
+<p><strong><font face="Courier">Questions:</font></strong></p>
+
+<p><font face="Courier">Reread the purposes of this lab -- especially number 2.&nbsp; What
+can you conclude?</font></p>
+
+<p><font face="Courier">What are state machines? How are they different than counters?
+Where are they used?</font></p>
+
+<p><font face="Courier">What conclusions can you make about the design, and implementation
+of state machines?</font></p>
+
+<p><font face="Courier">What other ways could the turnstile controller have been
+implemented? </font></p>
+
+<p>&nbsp;</p>
+
+<p><b><font face="Courier">Example PAL Program:</font></b></p>
+<p><font face="Courier">The program below is adapted from a previous edition of
+a textbook.&nbsp; The program header contains credits for the source.</font></p>
+<hr>
+<p><font face="Courier">Name Example Synchronous Counter;<br>
+Partno ISBN 0-13-700510-5<br>
+Date 01/01/01;<br>
+Revision 02 (by Rex N. Fisher)<br>
+Designer Tocci &amp; Widmer;<br>
+Company Prentice Hall;<br>
+Assembly Digital Systems: Principles &amp; Applications, 7th Edition;<br>
+Location Example 12-5<br>
+Device 16V8;</font></p>
+<p>&nbsp;</p>
+<p><font face="Courier">/*</font></p>
+<p><font face="Courier">State Transition Diagram:</font></p>
+<p><font face="Courier">101 --&gt; 000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+110 --&gt; 000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+111 --&gt; 000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+000 --&gt; 001 --&gt; 010 --&gt; 011 --&gt; 100 --&gt;
+000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<br>
+*/</font></p>
+<p>&nbsp;</p>
+<p><font face="Courier">/*</font></p>
+<p><font face="Courier">State Transition Table:</font></p>
+<p><font face="Courier"><u>Present State</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<u>Next State</u> </font></p>
+<p>&nbsp;&nbsp; <font face="Courier">&nbsp; A B
+C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+A+ B+ C+ </font></p>
+<p><font face="Courier">&nbsp;&nbsp; 0 0
+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0&nbsp; 0&nbsp;
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></p>
+<p><font face="Courier">&nbsp;&nbsp; 0 0
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0&nbsp; 1&nbsp; 0 </font></p>
+<p><font face="Courier">&nbsp;&nbsp; 0 1
+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0&nbsp; 1&nbsp; 1</font></p>
+<p><font face="Courier">&nbsp;&nbsp; 0 1
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1&nbsp; 0&nbsp; 0</font></p>
+<p><font face="Courier">&nbsp;&nbsp; 1 0
+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0&nbsp; 0&nbsp; 0</font></p>
+<p><font face="Courier">&nbsp;&nbsp; 1 0
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0&nbsp; 0&nbsp; 0</font></p>
+<p><font face="Courier">&nbsp;&nbsp; 1 1
+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0&nbsp; 0&nbsp; 0</font></p>
+<p><font face="Courier">&nbsp;&nbsp; 1 1
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0&nbsp; 0&nbsp; 0</font></p>
+<p><font face="Courier">*/</font></p>
+<p><font face="Courier">&nbsp;</font></p>
+<p><font face="Courier">/*</font></p>
+<p><font face="Courier">Next State Equations:</font></p>
+<p><font face="Courier">&nbsp;&nbsp;&nbsp; _<br>
+A = A B C</font></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _&nbsp;
+_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _<br>
+<font face="Courier">B = A B C + A B C</font></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _&nbsp; _&nbsp;&nbsp;
+_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _ <br>
+<font face="Courier">C = A B C + A B C<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+*/</font></p>
+<p>&nbsp;</p>
+<p><font face="Courier">/*</font></p>
+<p><font face="Courier">Define Logic Operators</font></p>
+<p><font face="Courier">&nbsp;&nbsp;&nbsp; AND = &amp;</font></p>
+<p><font face="Courier">&nbsp;&nbsp;&nbsp; OR = #</font></p>
+<p><font face="Courier">&nbsp;&nbsp;&nbsp; NOT = !</font></p>
+<p><font face="Courier">*/</font></p>
+<p>&nbsp;</p>
+<p><font face="Courier">/* Define Output Pin(s) */</font></p>
+<p><font face="Courier">pin 19 = A; /* MSB */</font></p>
+<p><font face="Courier">pin 18 = B; </font></p>
+<p><font face="Courier">pin 17 = C; /* LSB */</font></p>
+<p>&nbsp;</p>
+<p><font face="Courier">/* Define Input Pin(s) */</font></p>
+<p><font face="Courier">pin 1 = Clock; /* clock input (must be pin 1) */</font></p>
+<p>&nbsp;</p>
+<p><font face="Courier">/* Boolean Equations */</font></p>
+<p><font face="Courier">A.D = !A &amp; B &amp; C;</font></p>
+<p><font face="Courier">B.D = !A &amp; !B &amp; C # !A &amp; B !C;</font></p>
+<p><font face="Courier">C.D = !A &amp; !B &amp; !C # !A &amp; B &amp; !C;</font></p>
+<hr>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

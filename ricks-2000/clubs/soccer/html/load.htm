@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Ricks College Soccer - Preloading Images...</title>
+
+<script language="JavaScript1.1">
+
+/*
+Preload Image With Update Bar Script (By Marcin Wojtowicz [one_spook@hotmail.com])
+Submitted to and permission granted to Dynamicdrive.com to feature script in it's archive
+For full source code to this script and 100's more, visit http://dynamicdrive.com
+*/
+
+function loadImages() { 
+	for (i = 0; i < yourImages.length; i++) { 
+		preImages[i] = new Image()
+		preImages[i].src = yourImages[i]
+	}
+	for (i = 0; i < preImages.length; i++) { 
+		loaded[i] = false
+	}
+	checkLoad()
+}
+function checkLoad() {
+	if (currCount == preImages.length) { 
+		location.replace(locationAfterPreload)
+		return
+	}
+	for (i = 0; i <= preImages.length; i++) {
+		if (loaded[i] == false && preImages[i].complete) {
+			loaded[i] = true
+			eval("document.img" + currCount + ".src=dots[1].src")
+			currCount++
+		}
+	}
+	timerID = setTimeout("checkLoad()",10) 
+}
+
+</script>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<center>
+<font size="4">Please be patient while some images<br>
+are being preloaded...</font><p>
+
+<script language="JavaScript1.1">
+
+var locationAfterPreload = "home.htm"
+var lengthOfPreloadBar = 150 // Length of preload bar (in pixels)
+var heightOfPreloadBar = 15 // Height of preload bar (in pixels)
+var yourImages = new Array("../images/general/official.jpg","../images/home/quote.gif","../images/bkgs/bkgCircles.gif","../images/home/action01.jpg","../images/home/action02.gif","../images/home/view.gif","../images/home/sign.gif")
+
+	var dots = new Array() 
+	dots[0] = new Image(1,1)
+	dots[0].src = "../images/load/black.gif" // default preloadbar color (note: You can substitute it with your image, but it has to be 1x1 size)
+	dots[1] = new Image(1,1)
+	dots[1].src = "../images/load/blue.gif" // color of bar as preloading progresses (same note as above)
+	var preImages = new Array(),coverage = Math.floor(lengthOfPreloadBar/yourImages.length),currCount = 0
+	var loaded = new Array(),i,covered,timerID
+	var leftOverWidth = lengthOfPreloadBar%coverage
+
+if (document.images) {
+	var preloadBar = ''
+	for (i = 0; i < yourImages.length-1; i++) {
+		preloadBar += '<img src="' + dots[0].src + '" width="' + coverage + '" height="' + heightOfPreloadBar + '" name="img' + i + '" align="absmiddle">'
+
+	}
+	preloadBar += '<img src="' + dots[0].src + '" width="' + (leftOverWidth+coverage) + '" height="' + heightOfPreloadBar + '" name="img' + (yourImages.length-1) + '" align="absmiddle">'
+
+	document.write(preloadBar)
+	loadImages()
+}
+document.write('<font face="Arial" size="4" color="#0080C0"><p><p> Ricks Soccer 2000 </font><p><table align="center" cellspacing="0" cellpadding="0" border="0"><tr><td align="center"><font size="-1">This site is better viewed with<br><a href="https://web.archive.org/web/2001/http://www.microsoft.com/windows/ie/">Internet Explorer</a></td></tr></table>');
+
+
+
+</script>
+</center>
+</body>
+</html>

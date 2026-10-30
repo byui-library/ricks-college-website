@@ -1,0 +1,36 @@
+BODY {
+	BACKGROUND: #ffffff; text: #000000
+}
+H1 {
+	FONT-FAMILY: New Times Roman
+}
+H2 {
+	FONT-FAMILY: New Times Roman
+}
+H3 {
+	FONT-FAMILY: New Times Roman
+}
+H4 {
+	FONT-FAMILY: New Times Roman
+}
+H5 {
+	FONT-FAMILY: New Times Roman
+}
+H6 {
+	FONT-FAMILY: New Times Roman
+}
+ADDRESS {
+	FONT-FAMILY: New Times Roman
+}
+A:link {
+	COLOR: #313163; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #313163; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #900000; TEXT-DECORATION: none
+}
+.barlink {
+	FONT-WEIGHT: bold; FONT-SIZE: 0.76em; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}

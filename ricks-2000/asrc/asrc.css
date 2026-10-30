@@ -1,0 +1,17 @@
+BODY { BACKGROUND: #FFFFFF; text: #000000; LINK: #0000FF; VLINK: #800080; ALINK: #FF0000; topmargin: 0; font-family: geneva, verdana, arial; font-size: 10pt}
+title { font-size: 36pt; font-family: Times New Roman; text-transform: uppercase; text-align: Left }
+h1            { font-family: geneva, verdana, arial; font-size: 36pt; color: #323264}
+h2            { font-family: geneva, verdana, arial; font-size: 18pt; color: #323264 }
+h3            { font-family: geneva, verdana, arial; font-size: 14pt; color: #323264 }
+h4            { font-family: geneva, verdana, arial; font-size: 12pt; color: #323264 }
+h5            { font-family: geneva, verdana, arial; font-size: 10pt; color: #323264 }
+h6            { font-family: geneva, verdana, arial; font-size: 8pt; color: #323264  }
+P             { font-family: geneva, verdana, arial; font-size: 10pt}
+td            { font-family: geneva, verdana, arial; font-size: 10pt }
+ul	      { font-family: geneva, verdana, arial; font-size: 10pt }
+.calhead      { font-family: geneva, verdana, arial; font-size: 8pt; color: FFFFFF}
+.caltext      { font-family: geneva, verdana, arial; font-size: 8pt}
+.calboldtext	{ font-family: geneva, verdana, arial; font-size: 8pt; font-weight: bold }
+.devotionhead { font-family: geneva, verdana, arial; font-size: 10pt; color: #FFFFFF}
+.officetitle  { font-family: geneva, verdana, arial; font-size: 8pt; color: #323264; font-weight: bold }
+.devotionsm { font-family: geneva, verdana, arial; font-size: 8pt}

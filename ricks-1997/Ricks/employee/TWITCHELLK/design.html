@@ -1,0 +1,436 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>Software Design</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<TABLE>
+<TR>
+<TD VALIGN="TOP" ROWSPAN=2>
+<A HREF="../../../../ricks-2000/Default.htm">
+<IMG SRC="logo.gif" WIDTH="100" HEIGHT="100" ALT="Ricks College Home Page" BORDER="0"></A>
+</TD>
+<TD VALIGN="TOP" COLSPAN=2>
+<A HREF="about.html">
+<IMG SRC="name.gif" WIDTH="197" HEIGHT="27" ALT="Kevin E. Twitchell" BORDER="0"></A>
+</TD>
+</TR>
+<TR>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+<I>
+Department of<BR>
+Mathematics and<BR>
+Computer Science
+</I>
+</FONT>
+</TD>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+<A HREF="mailto:TwitchellK@ricks.edu">
+TwitchellK@ricks.edu</A><BR>
+208-356-1938
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<H3>Software Design</H3>
+
+<I>"If carpenters made buildings the way programmers make programs,
+the first woodpecker to come along would destroy all of civilization."
+<FONT SIZE="-2">&#173; Anonymous</FONT></I>
+
+<HR>
+
+<TABLE>
+<TR VALIGN="top">
+<TD >
+<B>Contents</B>
+</TD>
+<TD >
+<UL>
+<LI><A HREF="#requirements">Requirements Specification</A>
+<LI><A HREF="#alternatives">Design Alternatives</A>
+<LI><A HREF="#detailed">Detailed Design</A>
+<LI><A HREF="#descriptive">Descriptive Text</A>
+<LI><A HREF="#pseudocode">Pseudocode</A>
+(<A HREF="#sequence">sequence</A>,
+<A HREF="#if">if</A>,
+<A HREF="#switch">switch</A>,
+<A HREF="#for">for</A>,
+<A HREF="#while">while</A>,
+<A HREF="#dowhile">do while</A>,
+<A HREF="#function">function</A>,
+<A HREF="#comment">comment</A>)
+<LI><A HREF="#examples">Examples</A>
+</UL>
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<A NAME="requirements"><H4>Requirements Specification</H4></A>
+
+<P>Assume that you are an experienced builder of houses. Imagine that Brother Twitchell comes to
+you and asks you to build a home for him. He wants to move into his new home by the end of the
+semester. What do you do first? No, it isn't ask him for money. The first thing you should do is
+determine what he wants for a home (after all, you need to know how much money to ask for).
+How big is the house to be? How many bedrooms? How many bathrooms? How many cars in the
+garage? Granted, this activity takes time and may appear to make it more difficult to meet your
+tight time schedule. However, it is very important that your customer, Brother Twitchell, be
+happy with the work you do. In software, gathering this kind of information is called
+requirements specification. It should be the first activity in every software project.
+
+<A NAME="alternatives"><H4>Design Alternatives</H4></A>
+
+<P>Assume that you have the requirements for building the house. Now what? Do you start pouring
+concrete for the foundation? Do you start constructing trusses for the roof? You must make
+progress because you have a deadline to meet! If you immediately start construction, there is no
+doubt that Brother Twitchell has made a big mistake in selecting you as the contractor. The next
+step after requirements specification is to develop alternative floor plans for the house. A floor
+plan is a high level design and provides a basic idea of how the house is going to be laid out.
+They don't have all of the details necessary to build the house. They simply provide the general
+ideas on how you plan to satisfy the major requirements (e.g., number of bedrooms and
+bathrooms, size of garage).The alternative floor plans are evaluated and the "best one" is
+selected. In software, developing alternative designs and selecting the "best" alternative is called
+design alternative analysis. Developing multiple alternatives is important because frequently the
+"best" design is not the first design you develop.
+
+<P>To develop design alternatives for your program, first develop a "high-level" design. Like a floor
+plan, a high-level design doesn't have all of the details. But it does have enough information so
+that you know, in general terms, what you are planning to do. Now, set it aside and ask yourself,
+"How else can I do this?" Develop another high-level design. Set it aside and develop another.
+Continue this process until you feel you have exhausted all realistic possibilities. Remember, the
+more complicated the problem, the more design alternatives you will be able to develop. Now
+select the "best" alternative. What is best is usually what is most simple and easiest to
+implement, although there may be other criteria such as efficiency or use of resources.
+
+<A NAME="detailed"><H4>Detailed Design</H4></A>
+
+<P>Now do you start building the house? No! You still don't have enough detail to enable you to
+start; all you have is the basis to start from. Based on the selected alternative floor plan, you now
+create blueprints for the new house. The blueprints provide you with the details necessary to
+procure materials and start construction. Creating blueprints is analogous to creating a detailed
+design in software.
+
+<P>Design takes time and effort. So why should you want to create a design before writing source
+code? Consider costs and schedule. When is the least expensive time for Brother Twitchell to
+decide he wants two bathrooms instead of one? It's during the requirements phase. At this point,
+it's a quick and easy change. What if he changes his mind after alternative floor plans have been
+developed? While it is more expensive to make the change at this point than during requirements
+specification, it is certainly far less expensive than if the change is made during construction.
+Compare the costs of creating new alternative floor plans to starting over on construction. Think
+of the impact to your schedule. Reworking alternative floor plans takes far less time than
+reworking construction. What if Brother Twitchell changes his mind after the blueprints have
+been created but before construction starts? Again, it is more expensive than making the change
+in earlier phases, but less expensive than making the change in later phases. As before, there is
+less impact on schedule by making the change in earlier phases than in later phases. <STRONG>The earlier
+in the process that an error is found or a change in made, the less impact it will have on the
+project.</STRONG> Developing a design allows you to find and repair errors and make other changes when
+it is still relatively inexpensive to do so.
+
+<P>Design also allows construction to move faster. How fast can you build a house when you have
+to make a decision before nailing each two-by-four into place? When you have blueprints, the
+decisions have already been made. All you have to do is build. In software, completing a design
+(before coding) means that you have thought through the problem and have determined the best
+course of action. More time spent in specification and analysis generally means less time in
+coding and debugging.
+
+<P>The idea is to think before acting. This is true for most of our activities. For example, the most
+effective way to answer an essay test question is to outline your ideas and organize them <STRONG>before</STRONG>
+writing your answer on the test. You will spend less time overall answering the question if you
+make your decisions first and then carry them out. The same is true for writing a paper (including
+this document). It is very true for writing a program.
+
+<P>Note the steps necessary to build a house: determining what the customer wants (requirements
+specification), developing alternative floor plans and selecting one (design alternative analysis),
+and creating the blueprints (detailed design). You wouldn't (OK, shouldn't) build a house
+without going through these steps. The same is true for software development.
+
+<P>A detailed design can be documented with descriptive text and/or pseudocode.
+
+<A NAME="descriptive"><H4>Descriptive Text</H4></A>
+
+<P>Descriptive text is, as the name implies, a textual description. In simple terms, describe what you
+plan to do. Don't omit any steps. Use the most straightforward approach to describe your
+intentions. Remember that at this point you are communicating with a programmer (perhaps
+yourself), not the compiler. So, if you are converting kilometers to miles, include the
+mathematical equation. If you are going to read the contents of a file until you reach the end-of-file, that's how you should say it.
+
+<P>How much detail should you include? Enough such that another programmer could write the
+program the way you want it written. Enough such that you will remember why you are taking
+the approach you are. Unless you record them, you will quickly forget the rationale behind your
+design decisions. There is nothing worse than second-guessing your design when writing code
+just to find out your design really was correct and you should have followed your design as it was
+written.  If you plan to do something slightly unusual, state why you plan to do it that way. This
+text will make excellent comments in your finished code.
+
+<A NAME="pseudocode"><H4>Pseudocode</H4></A>
+
+<P>Descriptive text works well for many simple problems, but natural language (i.e., the one you
+speak) is imprecise. Sometimes it takes many, many words to describe a construct that you could
+detail very quickly and easily by writing "real" source code. Don't succumb to this temptation!
+Once you have written "real" code you will never throw it away, regardless of how unneeded or
+incorrect it is. Rather than write "real" code, it is better to write pseudocode (literally "false
+code").
+
+<P>Pseudocode lies somewhere between descriptive text and actual source code. It looks somewhat
+like source code, but it is not intended to compile. While it can be language independent, it is
+frequently patterned after the language you plan to use to write the source code. You use the
+same constructs as source code, such as if/else, case (or switch), while, do/while, and for. The
+primary difference is that you use descriptive text instead of source code the compiler will
+accept. Forget about syntax. Concentrate on stating how you plan the code to execute. The
+following tables illustrate how the basic (C++) software constructs can be documented in
+pseudocode. The first cell of each table identifies the construct or aspect of pseudocode. The
+second cell provides a generic template. The third cell provides an example.
+
+<BR>
+<BR>
+<TABLE border>
+<TR valign="top">
+<TD>
+<A NAME="sequence"><B>Sequence</B></A>
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+whatever 1<BR>
+whatever 2<BR>
+whatever 3
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+prompt the user for an integer value<BR>
+read the integer value from the user<BR>
+save a copy of the user's integer value for later output
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE border>
+<TR valign="top">
+<TD>
+<A NAME="if"><B>If</B></A>
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+if condition<BR>
+&nbsp;&nbsp;&nbsp;whatever 1<BR>
+&nbsp;&nbsp;&nbsp;whatever 2<BR>
+else if condition<BR>
+&nbsp;&nbsp;&nbsp;whatever 3<BR>
+&nbsp;&nbsp;&nbsp;whatever 4<BR>
+else<BR>
+&nbsp;&nbsp;&nbsp;whatever 5<BR>
+&nbsp;&nbsp;&nbsp;whatever 6<BR>
+end if
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+if the user provided a temperature in fahrenheit<BR>
+&nbsp;&nbsp;&nbsp;convert it to celsius using ((valueFromUser - 32.0) * 5.0) / 9.0<BR>
+else if the user provided a temperature in celsius<BR>
+&nbsp;&nbsp;&nbsp;convert it to fahrenheit using ((9.0 / 5.0) * valueFromUser) + 32.0<BR>
+else<BR>
+&nbsp;&nbsp;&nbsp;output an error message indicating the user did not specify fahrenheit or celsius<BR>
+end if
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE border>
+<TR valign="top">
+<TD>
+<A NAME="switch"><B>Switch</B></A>
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+switch on expression<BR>
+&nbsp;&nbsp;&nbsp;case constant 1<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whatever 1<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whatever 2<BR>
+&nbsp;&nbsp;&nbsp;case constant 2<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whatever 3<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whatever 4<BR>
+&nbsp;&nbsp;&nbsp;case constant 3<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whatever 5<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whatever 6<BR>
+&nbsp;&nbsp;&nbsp;default<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whatever 7<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;whatever 8<BR>
+end switch
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+switch on the number of the month<BR>
+&nbsp;&nbsp;&nbsp;case 1, 3, 5, 7, 8, 10, 12<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set the number of days in the month to 31<BR>
+&nbsp;&nbsp;&nbsp;case 4, 6, 9, 11<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set the number of days in the month to 30<BR>
+&nbsp;&nbsp;&nbsp;case 2<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set the number of days in the month to 28<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add one to the number of days if it is a leap year<BR>
+&nbsp;&nbsp;&nbsp;default<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[this is an error condition]<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set the number of days in the month to 0 (an invalid value)<BR>
+end switch
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE border>
+<TR valign="top">
+<TD>
+<A NAME="for"><B>For</B></A>
+</TD>
+</TR>
+<TR valign="top">
+<TD>loop i from a to z by m<BR>
+&nbsp;&nbsp;&nbsp;whatever 1<BR>
+&nbsp;&nbsp;&nbsp;whatever 2<BR>
+&nbsp;&nbsp;&nbsp;whatever 3<BR>
+end loop
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+loop number from 0 to 9 by 1<BR>
+&nbsp;&nbsp;&nbsp;output number, number squared, and number cubed<BR>
+end loop
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE border>
+<TR valign="top">
+<TD>
+<A NAME="while"><B>While</B></A>
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+while (condition)<BR>
+&nbsp;&nbsp;&nbsp;whatever 1<BR>
+&nbsp;&nbsp;&nbsp;whatever 2<BR>
+&nbsp;&nbsp;&nbsp;whatever 3<BR>
+end while
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+while (the current character in the string is not a null)<BR>
+&nbsp;&nbsp;&nbsp;convert the current character to lower case<BR>
+end while
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE border>
+<TR valign="top">
+<TD>
+<A NAME="dowhile"><B>Do While</B></A>
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+do<BR>
+&nbsp;&nbsp;&nbsp;whatever 1<BR>
+&nbsp;&nbsp;&nbsp;whatever 2<BR>
+&nbsp;&nbsp;&nbsp;whatever 3<BR>
+while (condition)
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+do<BR>
+&nbsp;&nbsp;&nbsp;prompt the user for a non-zero integer<BR>
+&nbsp;&nbsp;&nbsp;read the integer value from the user<BR>
+&nbsp;&nbsp;&nbsp;add the user's integer value to the total<BR>
+while (the user's integer value is not zero)
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE border>
+<TR valign="top">
+<TD>
+<A NAME="function"><B>Function</B></A>
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+function whatever<BR>
+&nbsp;&nbsp;&nbsp;receives parameter 1<BR>
+&nbsp;&nbsp;&nbsp;receives parameter 2<BR>
+&nbsp;&nbsp;&nbsp;receives parameter 3<BR>
+&nbsp;&nbsp;&nbsp;whatever 1<BR>
+&nbsp;&nbsp;&nbsp;whatever 2<BR>
+&nbsp;&nbsp;&nbsp;whatever 3<BR>
+&nbsp;&nbsp;&nbsp;returns value<BR>
+end function whatever
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+function upperCaseFirstCharacter<BR>
+&nbsp;&nbsp;&nbsp;receives a pointer to a character array<BR>
+&nbsp;&nbsp;&nbsp;converts the first element of the character array to upper case<BR>
+&nbsp;&nbsp;&nbsp;returns a pointer to the modified character array<BR>
+end function whatever
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE border>
+<TR valign="top">
+<TD width="100%">
+<A NAME="comment"><B>Comment</B></A>
+</TD>
+</TR>
+<TR valign="top">
+<TD>[comment]
+</TD>
+</TR>
+<TR valign="top">
+<TD>
+[this is an error condition]
+</TD>
+</TR>
+</TABLE>
+
+<A NAME="examples"><H4>Examples</H4></A>
+
+<UL>
+<LI><A HREF="designadd.html">Adding two integers supplied by a user</A>
+<LI><A HREF="designcube.html">Cubing an integer read from a file</A>
+<LI><A HREF="designcomplex.html">Testing a complex number class</A>
+</UL>
+
+<BR>
+<HR>
+
+<FONT SIZE="-1"><A href="../../../../ricks-2000/Default.htm">Ricks College</A> | <A HREF="default.htm">Twitchell</A></FONT>
+<BR>
+<FONT SIZE="-2"><I>September 27, 2000</I></FONT>
+
+</BODY>
+</HTML>

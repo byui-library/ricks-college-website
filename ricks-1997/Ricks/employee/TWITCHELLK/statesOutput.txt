@@ -1,0 +1,59 @@
+states containing 3 unique letters
+   Ohio
+states containing 4 unique letters
+   Alabama
+   Alaska
+   Hawaii
+   Indiana
+   Iowa
+   Kansas
+   Mississippi
+   Tennessee
+   Utah
+states containing 5 unique letters
+   Arkansas
+   Idaho
+   Illinois
+   Maine
+   Montana
+   Nevada
+   Oregon
+   Texas
+states containing 6 unique letters
+   Arizona
+   Colorado
+   Delaware
+   Georgia
+   Missouri
+   Oklahoma
+   Virginia
+   Wisconsin
+states containing 7 unique letters
+   Connecticut
+   Florida
+   Kentucky
+   Louisiana
+   Maryland
+   Michigan
+   Nebraska
+   New Jersey
+   New York
+   Vermont
+   Wyoming
+states containing 8 unique letters
+   California
+   Massachusetts
+   Minnesota
+   New Mexico
+   North Dakota
+   South Dakota
+states containing 9 unique letters
+   North Carolina
+   Pennsylvania
+   Washington
+states containing 10 unique letters
+   New Hampshire
+   Rhode Island
+   West Virginia
+states containing 11 unique letters
+   South Carolina

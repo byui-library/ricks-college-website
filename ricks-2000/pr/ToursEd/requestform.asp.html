@@ -1,0 +1,500 @@
+
+<script>
+
+var x = 0;
+var y = 0;
+var WindowOpen = 0;
+
+function IsOpen()
+{
+	if(WindowOpen)
+	{
+		calendarWindow.close();
+		WindowOpen = 0;
+	}
+	
+}
+
+ns4 = (document.layers)? true:false
+ie4 = (document.all)? true:false
+
+// Microsoft Stupidity Check.
+if (ie4) 
+{	
+	if (navigator.userAgent.indexOf('MSIE 5')>0) 
+	{
+		ie5 = true;
+	} 
+	else 
+	{
+		ie5 = false; 
+	}
+} 
+else 
+{
+	ie5 = false;
+}
+
+if ( (ns4) || (ie4) ) 
+{
+	document.onmousemove = mouseMove
+	if (ns4) document.captureEvents(Event.MOUSEMOVE)
+}
+function mouseMove(e) 
+{
+	if (ns4) {x=e.pageX; y=e.pageY;}
+	if (ie4) {x=event.x; y=event.y;}
+	if (ie5) {x=event.x+document.body.scrollLeft; y=event.y+document.body.scrollTop;}
+}
+
+function makeArray(n) 
+{
+	this.length = n;
+	return this;
+}
+
+function init () 
+{
+	theDate         = new Date();
+	today           = new Date();
+	currMonth       = today.getMonth();
+	msPerDay 	= 24*60*60*1000;
+	cookieString    = "dispMonth="+currMonth+";";
+	document.cookie = cookieString;
+	startOfString   = document.cookie.indexOf("dispMonth");
+	countbegin      = document.cookie.indexOf("=",startOfString) + 1;
+	countend        = document.cookie.indexOf(";",countbegin);
+	if (countend == -1) 
+	{
+		countend = document.cookie.length;
+	}
+
+	dispMonth     = eval ("document.cookie.substring(countbegin,countend)");
+	firstOfMonth  = new Date(today.getYear(),dispMonth,1);
+	monthName     = new makeArray(12);
+	monthName[1]  = "Jan";
+	monthName[2]  = "Feb";
+	monthName[3]  = "Mar";
+	monthName[4]  = "Apr";
+	monthName[5]  = "May";
+	monthName[6]  = "Jun";
+	monthName[7]  = "Jul";
+	monthName[8]  = "Aug";
+	monthName[9]  = "Sep";
+	monthName[10] = "Oct";
+	monthName[11] = "Nov";
+	monthName[12] = "Dec";
+}
+
+function openCalendar (dateFldname) 
+{
+//	x = x-155;
+//	y = y+125;
+
+x = x+25;
+y = y-140;
+
+	
+	init();
+	dateFld  = dateFldname;
+	windowOptions  = "left="+x+",top="+y+",toolbar=no,location=no,directories=no,status=no,menubar=no,resizable=yes,copyhistory=yes,dependent=yes,width=150,height=150";
+	calendarWindow = this.open("","calendarWindow",windowOptions);
+	calendarWindow.callingForm = this;
+	redraw();
+}
+
+function redraw() 
+{
+	calendarWindow.callingForm = this;
+
+	temyr = today.getYear();
+		
+	if (temyr < 2000)
+		temyr = temyr + 1900;
+	
+	tempyr = new String(temyr);
+	
+	if ( tempyr.length == 3 ) 
+	{  
+		var tempYear = temyr + 1900;
+	} 
+	else 
+	{
+		var tempYear = temyr;
+	}
+	
+
+	firstOfMonth = new Date(tempYear,dispMonth,1);
+	calendarWindow.document.open();
+	calTitle = "<TITLE>Calendar</TITLE>";
+	calendarWindow.document.write(calTitle);
+	drawCalendar(firstOfMonth);
+	calendarWindow.document.write(htmlBuffer);
+	calendarWindow.document.close();
+	calendarWindow.callingForm = this;
+	calendarWindow.focus();
+}
+
+function fillDate(filler) 
+{
+	var time=new Date(filler);
+	var lmonth=monthName[time.getMonth() + 1];
+	var date=time.getDate();
+	var year=time.getYear();
+	if (year < 2000)    // Y2K Fix, Isaac Powell
+	year = year + 1900;
+	filler =  lmonth + " " + date + ", " + year;
+
+	eval("document.forms[0]."+dateFld+".value = filler");
+	calendarWindow.close();
+}
+
+function changeMonth (increment) 
+{
+	nextMonth = dispMonth;
+	if (increment == 1) 
+	{
+		nextMonth++ ;
+	} 
+	else 
+	{
+		nextMonth-- ;
+	}
+	
+	dispMonth = nextMonth;
+	document.cookie="dispMonth="+nextMonth;
+	redraw();
+}
+
+function drawCalendar (theDate) 
+{
+	WindowOpen = 1;
+	monthNum = theDate.getMonth() + 1;
+	htmlBuffer  = "<HTML>";
+	htmlBuffer += "<BODY topmargin='0' leftmargin='0' marginheight='0' marginwidth='0' style='border-style:none;'>";
+	htmlBuffer += "<style type='text/css'> <!-- a {  text-decoration: none} --> </style>";
+	htmlBuffer += "<FORM>";
+	htmlBuffer += "<CENTER><TABLE BORDER='0' WIDTH='100%' cellspacing='0' cellpadding='0'><TR BGCOLOR='#6666FF'>";
+	htmlBuffer += "<TD ALIGN=RIGHT><a href='javascript:callingForm.changeMonth(-1)'><img src='prev.gif' border='0'></a></TD>";
+	htmlBuffer += "<TD ALIGN=CENTER COLSPAN='5'><FONT COLOR='WHITE'><B> ";
+	htmlBuffer += monthName[monthNum];
+	temyr = theDate.getYear();
+	
+	if (temyr < 2000)
+		temyr = temyr + 1900;
+	
+	tempyr = new String(temyr);
+	
+	if ( tempyr.length == 3 ) 
+	{  
+		var tempYear = temyr + 1900;
+	} 
+	else 
+	{
+		var tempYear = temyr;
+	}
+	
+	htmlBuffer += " " + tempYear;
+	htmlBuffer += "</B></FONT></TD><TD ALIGN=RIGHT><a href='javascript:callingForm.changeMonth(1)'><img src='next.gif' border='0'></a></TD>";
+	htmlBuffer += "</TR><TR BGCOLOR='#E8E8E8'>";
+	htmlBuffer += "<TD ALIGN=CENTER>S</TD><TD ALIGN=CENTER>M</TD><TD ALIGN=CENTER>T</TD><TD ALIGN=CENTER>W</TD><TD ALIGN=CENTER>T</TD><TD ALIGN=CENTER>F</TD><TD ALIGN=CENTER>S</TD></TR><TR BGCOLOR='#E8E8E8'>";
+	drawBody(theDate,tempYear);
+	htmlBuffer += "</TR></TABLE>";
+	htmlBuffer += "</BODY></HTML>";
+}
+
+function drawBody (theDate,theYear) 
+{
+
+	var TodayDate = new Date();
+
+	thisMonth = theDate.getMonth();
+	thisDate  = theDate.getDate();
+	Today   = TodayDate.getDate();
+	TodayMonth = TodayDate.getMonth();
+	firstSunday(theDate);
+	for (w=0; w<6; w++) 
+	{
+		for (d=0; d<7; d++) 
+		{
+			date = theDate.getDate();
+			htmlBuffer   += "<TD ALIGN=CENTER>";
+			if (theDate.getMonth() != thisMonth) 
+			{
+				htmlBuffer += "<BR>";
+			}
+			else 
+			{
+				sendvalue = (thisMonth+1) + "/" + date + "/" + theYear
+				htmlBuffer += "<a href=javascript:callingForm.fillDate('" + sendvalue  + "')>"
+				
+				if((Today == date)&&(TodayMonth == thisMonth))
+				{
+					htmlBuffer += "<font color='red'>"
+				}
+				
+				htmlBuffer += date;
+				
+				if((Today == date)&&(TodayMonth == thisMonth))
+				{
+					htmlBuffer += "</font>"
+				}
+					
+				htmlBuffer += "</a>";
+			}
+			
+			newTime = theDate.getTime() + msPerDay;
+			theDate.setTime(newTime);
+			if (theDate.getHours() != 23) 
+			{
+				theDate.setTime(newTime + 3600000);
+			} 
+		}
+	
+		htmlBuffer += "</TD><TR BGCOLOR='#E8E8E8'>";
+	}
+	
+	htmlBuffer += "</FORM>";
+}
+
+function firstSunday (fromDate) 
+{
+	while (fromDate.getDay() != 0) 
+	{
+		newTime = fromDate.getTime() - msPerDay;
+		fromDate.setTime(newTime);
+	}
+}
+
+//-->
+
+</script>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script src="../../_archive/compat.js"></script>
+<title>Ricks Youth Tours Request Form</title>
+
+<script language="javascript">
+function clearButtons(myForm)
+/* Purpose: clears all the text fields
+   Parameters: myForm
+   Returns: none  */
+{
+   myForm.SpecialNeeds.value = ""
+   myForm.Grade.value = ""
+   myForm.Comments.value = ""
+   myForm.Group.value = ""
+   myForm.ContactPerson.value = ""
+   myForm.NaturalScienceMuseum.checked = 0
+   myForm.Greenhouses.checked = 0
+   myForm.NumberOfKids.value = ""
+   myForm.NumberOfAdults.value = ""
+   myForm.PhoneNumber.value = ""
+   myForm.OtherDesiredPlaces.value = ""
+   myForm.PreferredDate.value = ""
+   myForm.PreferredTime.value = ""
+   myForm.StreetAddress.value = ""
+   myForm.WildlifeMuseum.checked = 0
+   myForm.CityStateAndZip.value = ""
+   myForm.DemonstrationGardens.checked = 0
+}
+</script> 
+
+</head>
+
+<body bgcolor="#ffffff" text="#000080" link="#0000ff" vlink="#000080" alink="#ff0000">
+
+<h1 align="center">Ricks Youth Tours Request Form</h1>
+
+<form method="POST" onsubmit="return false">
+  <input type="hidden" name="orderby"
+  value="Group,Grade,NumberOfKids,NumberOfAdults,ContactPerson,PhoneNumber,StreetAddress,CityStateAndZip,WildlifeMuseum,NaturalScienceMuseum,Greenhouses,DemonstrationGardens,OtherDesiredPlaces,PreferredDate,PreferredTime,Comments,SpecialNeeds"><input
+  type="hidden" name="recipient" value="HAWKED@ricks.edu "><input type="hidden"
+  name="subject" value="Youth Tours Form"><input type="hidden" name="message"
+  value="<font color=#000080><h1><center>Thank you for your request</h1>Your request will be reviewed and verified by phone within two business days.</center></font>">
+  <b>
+
+<center><p>Group</b>
+<input type="text" name="Group" size="40" maxlength="80" value> </p>
+<p>
+
+<!--First huge table--> </p>
+
+<table align="center" cellspacing="0"  cellpadding="4">
+    <tr>
+      <td valign="top"><b>Grade &nbsp;</b><input type="text" name="Grade" size="5"
+      	maxlength="10" value></td>
+      <td valign="top"><b>Number of kids &nbsp;</b><input type="text" name="NumberOfKids"
+      	size="5" maxlength="10" value></td>
+      <td valign="top"><b>Number of Adults &nbsp;</b><input type="text" 		name="NumberOfAdults" size="5" maxlength="10" value></td>
+    </tr>
+</table>
+<br>
+<table border="1">
+    <tr>
+      <td valign="top">
+
+	<!--Contact Table--> 
+	<!--Table B1--> 
+	<table>
+      	<tr>
+            	<td valign="top"><b>Contact Person</b></td>
+          		<td valign="top"><input type="text" name="ContactPerson" size="30" 				maxlength="40" value></td>
+        	</tr>
+      </table>
+      
+</td>
+<td valign="top">
+
+<!--Table B2--> 
+	<table>
+        	<tr>
+          		<td valign="top"><b>Phone Number</b></td>
+          		<td valign="top"><input type="text" name="PhoneNumber" size="10" 				maxlength="15" value></td>
+        	</tr>
+      </table>
+      
+</td>
+</tr>
+<tr>
+<td>
+
+<!--Table C1--> 
+
+	<table><tr>
+	<td>
+	<b>Email Address</b></td><td><input type = "text" name = "sender"</td>
+	</td>
+	</tr>
+        	<tr>
+          		<td valign="top"><b>Address</b></td>
+          		<td><div align="center"><center><p><input type="text" name="StreetAddress" 				size="30" maxlength="40" value><br>
+		          	<font size="-1">Street</font></td>
+        	</tr>
+      </table>
+
+</td>
+<td>
+
+<!--Table C2--> 
+	<table>
+        	<tr>
+          	<td><input type="text" name="CityStateAndZip" size="30" maxlength="50" value><br>
+          
+		<table width="250">
+            	<tr>
+              	<td valign="top"><div align="center"><center><p><font size="-1">City</font></td>
+              	<td valign="top"><div align="center"><center><p><font size="-1">State</font></td>
+              	<td valign="top"><div align="center"><center><p><font size="-1">Zip</font></td>
+            	</tr>
+          	</table>
+          	</td>
+        	</tr>
+      </table>
+      
+</td>
+</tr>
+</table>
+
+<p>
+
+<!--Second Huge Table-->
+
+<table border="1" width="95%" align="center">
+    <tr>
+    <td valign="top" align="left" width="50%"><b>Area(s) Desired</b><br>
+
+	<!--Table D1-->      
+
+	<table align="center">
+	      <tr>
+            <td><input type="checkbox" name="WildlifeMuseum" value="Yes">
+			&nbsp;<a href="wildlifeDisplayCenter.html">Wildlife Display Center</a><br>
+          		<input type="checkbox" name="NaturalScienceMuseum" value="Yes"> 			&nbsp;<a href="naturalScienceMuseum.html">Natural Science Museum</a><br>
+	            <input type="checkbox" name="Greenhouses" value="Yes"> 
+			&nbsp;<a href="greenhouses.html">Greenhouses</a><br>
+	            <input type="checkbox" name="DemonstrationGardens" value="Yes"> 			&nbsp;<a href="demonstrationGardens.html">Demonstration Gardens</a><br>
+          	</td>
+        	</tr>
+        	<tr>
+          	<td><b><i>Other</i></b> &nbsp; <input type="text" name="OtherDesiredPlaces" 			size="20" maxlength="80" value> </td>
+            </tr>
+      </table>
+     
+</td>
+<td valign="top" width="50%">
+
+<!--Table D2--> 
+
+	<table valign="center">
+        	<tr>
+          	<td valign="top"><b>Date </b>&nbsp;&nbsp;<a 			href="javascript:openCalendar('PreferredDate')"><img src="calendar.gif" 			border="0" width="34" height="21"></a></td>
+          	<td><input type="text" name="PreferredDate" size="15"> </td>
+        	</tr>
+        	<tr>
+          	<td><b>Preferred Time</b></td>
+          	<td><input type="text" name="PreferredTime" size="5" maxlength="5" value> </td>
+        	</tr>
+      </table>
+     
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+<!--E1--> 
+<b>Comments about your group</b><p>
+<textarea name="Comments" rows="3" cols="30"></textarea> 
+
+</td>      
+<td>
+
+<!--E2--> 
+<b>Special Needs</b> <br>
+<font size="-1"><i>(Wheelchair access, area for lunch, etc.)</i></font> <br>
+<textarea name="SpecialNeeds" rows="3" cols="30"></textarea> 
+
+</td>
+</tr>
+</table>
+  
+<table width="100%">
+    <tr>
+      <td align="right" width="50%"><input type="submit" name="submit" value="Submit Request"> </td>
+      <td align="left" width="50%">&nbsp; <input type="button" name="Clear" value="Clear Form" onclick="clearButtons (this.form)"> 
+</center>
+</td>
+
+</tr>
+</table>
+
+</form>
+<center><font size="+1"><a href="javascript:history.go(-1)">
+Back</a></font> 
+<hr>
+
+Contact us at:
+
+<table>
+  <tr>
+    <td><p align="center"><b>Public Relations Department</b><br>
+    Ricks College<br>
+    226 Kimball<br>
+    Rexburg, ID 83460-1660 </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp; </td>
+    <td><font size="-1">Phone:<br>
+    Fax:<br>
+    E-mail: </font></td>
+    <td><font size="-1">(208) 356-1150<br>
+    (208) 359-3929<br>
+    <a href="mailto:PublicRelations@ricks.edu">PublicRelations@ricks.edu</a> </font></td>
+  </tr>
+</table>
+
+</center>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,1239 @@
+0 HEAD
+1 SOUR PAF
+2 NAME Personal Ancestral File
+2 VERS 4.0
+2 CORP The Church of Jesus Christ of Latter-day Saints
+3 ADDR 50 East North Temple Street
+4 CONT Salt Lake City, UT 84150
+1 DEST PAF
+1 DATE 13 SEP 1999
+2 TIME 11:48:50
+1 FILE lubbers.ged
+1 GEDC
+2 VERS 5.5
+2 FORM LINEAGE-LINKED
+1 CHAR ANSEL
+1 SUBM @SUB1@
+0 @SUB1@ SUBM
+1 NAME Craig Alan Johnson
+1 ADDR 273 East Main Street
+2 CONT Rexburg, Idaho 83440
+1 CTRY United States of America
+1 PHON 208-656-0388
+1 _EMAIL johnsonc@ricks.edu
+0 @I1@ INDI
+1 NAME Joseph Axel /Lubbers/
+2 GIVN Joseph Axel
+2 SURN Lubbers
+1 SEX M
+1 BIRT
+2 DATE 29 APR 1926
+1 FAMS @F13@
+1 FAMC @F1@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:52:09
+0 @I2@ INDI
+1 NAME Axel Vilhelm /Lubbers/
+2 GIVN Axel Vilhelm
+2 SURN Lubbers
+1 SEX M
+1 BIRT
+2 DATE 14 JAN 1885
+2 PLAC Copenhagen,Denmark
+1 BAPL
+2 DATE 11 JUN 1899
+2 PLAC Fyen,Denmark
+1 ENDL
+2 DATE 14 NOV 1913
+1 FAMS @F1@
+1 FAMC @F2@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:50:29
+0 @I3@ INDI
+1 NAME Ingrid Ida Christina Langsted /Pedersen/
+2 GIVN Ingrid Ida Christina Langsted
+2 SURN Pedersen
+1 SEX F
+1 FAMS @F1@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 11:50:59
+0 @I4@ INDI
+1 NAME Axel Frederik Vilhelm /Lubbers/
+2 GIVN Axel Frederik Vilhelm
+2 SURN Lubbers
+1 SEX M
+1 BIRT
+2 DATE 29 MAR 1848
+2 PLAC Ringe,Fyen,Denmark
+1 DEAT
+2 DATE APR 1897
+2 PLAC Copenhagen,Denmark
+1 BAPL
+2 DATE 1 NOV 1910
+2 TEMP SLAKE
+1 ENDL
+2 DATE 19 FEB 1914
+2 TEMP SLAKE
+1 FAMS @F2@
+1 FAMC @F3@
+1 NOTE Death:  Axel Vilhelm Lubbers journal gives Mar and April 1897.
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:49:23
+0 @I5@ INDI
+1 NAME Johanna /Svensdotter/
+2 GIVN Johanna
+2 SURN Svensdotter
+2 _AKA Johanna Olsen
+1 SEX F
+1 BIRT
+2 DATE 15 DEC 1859
+2 PLAC R²stanga,Sweden
+1 BAPL
+2 DATE 21 NOV 1897
+1 FAMS @F2@
+1 FAMS @F19@
+1 FAMC @F15@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:37:09
+0 @I6@ INDI
+1 NAME Carl Christian Poulsen /Lubbers/
+2 GIVN Carl Christian Poulsen
+2 SURN Lubbers
+1 SEX M
+1 DEAT
+2 DATE 1854
+2 PLAC Surababa,South America
+1 BAPL
+2 DATE 1 NOV 1910
+2 TEMP SLAKE
+1 ENDL
+2 DATE 14 JAN 1916
+1 FAMS @F3@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 15:50:24
+0 @I7@ INDI
+1 NAME Bolette /Hansen/
+2 GIVN Bolette
+2 SURN Hansen
+1 SEX F
+1 BIRT
+2 DATE 26 APR 1818
+2 PLAC of Copenhagen,Denmark
+1 DEAT
+2 DATE 1 NOV 1897
+1 FAMS @F3@
+1 FAMS @F4@
+1 FAMC @F5@
+1 NOTE Quote from Axel Vilhelm Lubbers journal on Bolette Hansen, (book beginning 1908):  "har en On
+2 CONC kel i Korsor Peter Svane i Pastgivergaard blev gift med Lubbers."  (he translates) "Bolette
+2 CONC , had an uncle in Korsor (Denmark) Peter Svane (gaestgiver)" (gaestgiver is an innkeeper or l
+2 CONC andlord).
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:45:34
+0 @I8@ INDI
+1 NAME Carl /Lubbers/
+2 GIVN Carl
+2 SURN Lubbers
+1 SEX M
+1 BIRT
+2 DATE 16 JUL 1846
+2 PLAC Copenhagen,Denmark
+1 FAMS @F8@
+1 FAMC @F3@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:03:01
+0 @I9@ INDI
+1 NAME Holger /Lubbers/
+2 GIVN Holger
+2 SURN Lubbers
+1 SEX M
+1 BIRT
+2 DATE 13 APR 1850
+2 PLAC Copenhagen,Denmark
+1 FAMC @F3@
+1 NOTE unmarried
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:39:40
+0 @I10@ INDI
+1 NAME Valdemar /Lubbers/
+2 GIVN Valdemar
+2 SURN Lubbers
+1 SEX M
+1 BIRT
+2 DATE 9 APR 1853
+2 PLAC Copenhagen,Denmark
+1 FAMS @F9@
+1 FAMC @F3@
+1 NOTE Grocer
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:40:00
+0 @I11@ INDI
+1 NAME F. V. /Lusty/
+2 GIVN F. V.
+2 SURN Lusty
+1 SEX M
+1 BIRT
+2 DATE 1807
+2 PLAC Rendsborg,Denmark
+1 DEAT
+2 DATE 1886
+1 BAPL
+2 DATE 1 NOV 1910
+1 FAMS @F4@
+1 NOTE Bolette was third wife to F.V. Lusty, according to Axel Vilhelm Lubbers journal
+2 CONT Occupation:  Musician
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:56:18
+0 @I12@ INDI
+1 NAME Ida /Lusty/
+2 GIVN Ida
+2 SURN Lusty
+1 SEX F
+1 BIRT
+2 DATE 17 MAY 1856
+2 PLAC Copenhagen,Denmark
+1 DEAT
+2 DATE 1873
+2 PLAC Aarus,Jylland,Denmark
+1 FAMC @F4@
+1 NOTE Death place noted elsewhere as Kefor
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:42:01
+0 @I13@ INDI
+1 NAME Otto /Lusty/
+2 GIVN Otto
+2 SURN Lusty
+1 SEX M
+1 BIRT
+2 DATE 23 JAN 1858
+2 PLAC Copenhagen,Denmark
+1 DEAT
+2 PLAC Copenhagen,Denmark
+1 FAMS @F10@
+1 FAMC @F4@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:38:27
+0 @I14@ INDI
+1 NAME Jens /Hansen/
+2 GIVN Jens
+2 SURN Hansen
+1 SEX M
+1 BIRT
+2 DATE 1788
+2 PLAC Kµttinge,Birker²d,Denmark
+1 DEAT
+2 DATE 1863
+2 PLAC Copenhagen,Denmark
+1 BAPL
+2 DATE 1 NOV 1910
+2 TEMP SLAKE
+1 ENDL
+2 DATE 21 JAN 1916
+1 FAMS @F5@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 15:50:02
+0 @I15@ INDI
+1 NAME Christian /Hansen/
+2 GIVN Christian
+2 SURN Hansen
+1 SEX M
+1 BIRT
+2 DATE 1814
+2 PLAC Copenhagen,Denmark
+1 DEAT
+2 DATE 1860
+1 BAPL
+2 DATE 1 NOV 1910
+2 TEMP SLAKE
+1 FAMS @F6@
+1 FAMC @F5@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:42:50
+0 @I16@ INDI
+1 NAME Ferdinand /Hansen/
+2 GIVN Ferdinand
+2 SURN Hansen
+1 SEX M
+1 BIRT
+2 DATE 1816
+2 PLAC Copenhagen,Denmark
+1 DEAT
+2 DATE 1883
+1 DSCR Musician
+1 BAPL
+2 DATE 1 NOV 1910
+2 TEMP SLAKE
+1 FAMS @F7@
+1 FAMC @F5@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 15:53:50
+0 @I17@ INDI
+1 NAME Frederik /Hansen/
+2 GIVN Frederik
+2 SURN Hansen
+1 SEX M
+1 FAMS @F12@
+1 FAMC @F6@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:49:19
+0 @I18@ INDI
+1 NAME Conrad /Hansen/
+2 GIVN Conrad
+2 SURN Hansen
+1 SEX M
+1 DEAT
+2 DATE 1900
+1 FAMC @F6@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:42:57
+0 @I19@ INDI
+1 NAME Vilhelmine /Hansen/
+2 GIVN Vilhelmine
+2 SURN Hansen
+1 SEX F
+1 FAMC @F6@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:13:00
+0 @I20@ INDI
+1 NAME Christian /Hansen/
+2 GIVN Christian
+2 SURN Hansen
+1 SEX M
+1 FAMC @F6@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:13:08
+0 @I21@ INDI
+1 NAME Emil /Hansen/
+2 GIVN Emil
+2 SURN Hansen
+1 SEX U
+1 FAMC @F7@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:50:21
+0 @I22@ INDI
+1 NAME Louis /Hansen/
+2 GIVN Louis
+2 SURN Hansen
+1 SEX M
+1 FAMC @F7@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:43:53
+0 @I23@ INDI
+1 NAME Selma /Hansen/
+2 GIVN Selma
+2 SURN Hansen
+2 _AKA Alma
+1 SEX F
+1 DEAT
+2 DATE 1880
+1 FAMC @F7@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:49:13
+0 @I24@ INDI
+1 NAME Olga /Hansen/
+2 GIVN Olga
+2 SURN Hansen
+1 SEX F
+1 FAMC @F7@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:14:28
+0 @I25@ INDI
+1 NAME Marie //
+2 GIVN Marie
+1 SEX F
+1 FAMS @F8@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:15:54
+0 @I26@ INDI
+1 NAME Theodor /Lubbers/
+2 GIVN Theodor
+2 SURN Lubbers
+1 SEX M
+1 FAMC @F8@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:16:13
+0 @I27@ INDI
+1 NAME Harald /Lubbers/
+2 GIVN Harald
+2 SURN Lubbers
+1 SEX M
+1 FAMC @F8@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:16:19
+0 @I28@ INDI
+1 NAME Carl /Lubbers/
+2 GIVN Carl
+2 SURN Lubbers
+1 SEX M
+1 FAMC @F8@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:16:29
+0 @I29@ INDI
+1 NAME Marie /Lubbers/
+2 GIVN Marie
+2 SURN Lubbers
+1 SEX F
+1 FAMC @F8@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:16:36
+0 @I30@ INDI
+1 NAME Dagmar /Lubbers/
+2 GIVN Dagmar
+2 SURN Lubbers
+1 SEX F
+1 BIRT
+2 DATE 15 APR 1884
+2 PLAC Copenhagen,Denmark
+1 DEAT
+2 DATE 28 FEB 1905
+1 FAMS @F11@
+1 FAMC @F2@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:20:54
+0 @I31@ INDI
+1 NAME Otto /Lubbers/
+2 GIVN Otto
+2 SURN Lubbers
+1 SEX M
+1 BIRT
+2 DATE 1887
+1 DEAT
+2 DATE ABT 1891
+1 FAMC @F2@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:18:56
+0 @I32@ INDI
+1 NAME Ida /Lubbers/
+2 GIVN Ida
+2 SURN Lubbers
+1 SEX F
+1 BIRT
+2 DATE 11 SEP 1889
+2 PLAC Copenhagen,Denmark
+1 DEAT
+2 DATE 7 NOV 1918
+2 PLAC Salt Lake City,Utah
+1 BAPL
+2 DATE 11 JUN 1899
+2 PLAC Fyen,Denmark
+1 FAMS @F14@
+1 FAMC @F2@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:50:36
+0 @I33@ INDI
+1 NAME Rosalie //
+2 GIVN Rosalie
+1 SEX F
+1 FAMS @F9@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:19:53
+0 @I34@ INDI
+1 NAME Otto /Lubbers/
+2 GIVN Otto
+2 SURN Lubbers
+1 SEX M
+1 FAMC @F9@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:20:07
+0 @I35@ INDI
+1 NAME Thora /Lubbers/
+2 GIVN Thora
+2 SURN Lubbers
+1 SEX F
+1 FAMC @F9@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:20:15
+0 @I36@ INDI
+1 NAME Ida /Lubbers/
+2 GIVN Ida
+2 SURN Lubbers
+1 SEX F
+1 FAMC @F9@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:20:23
+0 @I37@ INDI
+1 NAME Mary /Lubbers/
+2 GIVN Mary
+2 SURN Lubbers
+1 SEX F
+1 FAMC @F9@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:20:29
+0 @I38@ INDI
+1 NAME Ellen /Lubbers/
+2 GIVN Ellen
+2 SURN Lubbers
+1 SEX F
+1 FAMC @F9@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:20:34
+0 @I39@ INDI
+1 NAME Valdemar /Lubbers/
+2 GIVN Valdemar
+2 SURN Lubbers
+1 SEX M
+1 FAMC @F9@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:20:39
+0 @I40@ INDI
+1 NAME Martha /Lubbers/
+2 GIVN Martha
+2 SURN Lubbers
+1 SEX F
+1 FAMC @F9@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:20:46
+0 @I41@ INDI
+1 NAME Emilie //
+2 GIVN Emilie
+1 SEX F
+1 FAMS @F10@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:21:29
+0 @I42@ INDI
+1 NAME Holger /Lusty/
+2 GIVN Holger
+2 SURN Lusty
+1 SEX M
+1 FAMC @F10@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:21:39
+0 @I43@ INDI
+1 NAME Valdemar /Lusty/
+2 GIVN Valdemar
+2 SURN Lusty
+1 SEX M
+1 FAMC @F10@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:21:47
+0 @I44@ INDI
+1 NAME Niels /Nielsen/
+2 GIVN Niels
+2 SURN Nielsen
+1 SEX M
+1 BIRT
+2 PLAC of Riverton,Utah
+1 FAMS @F11@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:22:28
+0 @I45@ INDI
+1 NAME Aage /Lusty/
+2 GIVN Aage
+2 SURN Lusty
+1 SEX M
+1 FAMC @F10@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:22:03
+0 @I46@ INDI
+1 NAME Hjalmar /Lusty/
+2 GIVN Hjalmar
+2 SURN Lusty
+1 SEX M
+1 FAMC @F10@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:22:19
+0 @I47@ INDI
+1 NAME Elly /Lusty/
+2 GIVN Elly
+2 SURN Lusty
+1 SEX F
+1 FAMC @F10@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:22:27
+0 @I48@ INDI
+1 NAME Solveig /Lusty/
+2 GIVN Solveig
+2 SURN Lusty
+1 SEX U
+1 FAMC @F10@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:22:40
+0 @I49@ INDI
+1 NAME Leona Pearl /Nielsen/
+2 GIVN Leona Pearl
+2 SURN Nielsen
+1 SEX F
+1 BIRT
+2 DATE 2 APR
+2 PLAC Riverton,Utah
+1 FAMC @F11@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:26:04
+0 @I50@ INDI
+1 NAME May Arvilda /Nielsen/
+2 GIVN May Arvilda
+2 SURN Nielsen
+1 SEX F
+1 BIRT
+2 DATE 9 MAR
+2 PLAC Riverton,Utah
+1 FAMC @F11@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:51:13
+0 @I51@ INDI
+1 NAME Alma //
+2 GIVN Alma
+1 SEX F
+1 FAMS @F12@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 12:40:11
+0 @I52@ INDI
+1 NAME Wilma /Osborn/
+2 GIVN Wilma
+2 SURN Osborn
+1 SEX F
+1 BIRT
+2 DATE 26 SEP 1927
+2 PLAC Utah
+1 FAMS @F13@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:04:41
+0 @I53@ INDI
+1 NAME John Michael /Lubbers/
+2 GIVN John Michael
+2 SURN Lubbers
+1 SEX M
+1 BIRT
+2 DATE 1 MAY 1948
+2 PLAC Salt Lake City,Utah
+1 FAMC @F13@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:05:52
+0 @I54@ INDI
+1 NAME Kathleen /Lubbers/
+2 GIVN Kathleen
+2 SURN Lubbers
+1 SEX F
+1 BIRT
+2 DATE 23 APR 1949
+2 PLAC Salt Lake City,Utah
+1 FAMC @F13@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:06:16
+0 @I55@ INDI
+1 NAME Craig /Lubbers/
+2 GIVN Craig
+2 SURN Lubbers
+1 SEX M
+1 BIRT
+2 DATE 10 JAN 1951
+2 PLAC Salt Lake City,Utah
+1 DEAT
+2 DATE 5 JAN 1953
+2 PLAC Salt Lake City,Utah
+1 BURI
+2 DATE 9 JAN 1953
+2 PLAC Salt Lake City,Utah
+1 FAMC @F13@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:07:32
+0 @I56@ INDI
+1 NAME Kim /Lubbers/
+2 GIVN Kim
+2 SURN Lubbers
+1 SEX F
+1 BIRT
+2 DATE 25 APR
+2 PLAC Salt Lake City,Utah
+1 FAMC @F13@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:08:08
+0 @I57@ INDI
+1 NAME Julie Ann /Lubbers/
+2 GIVN Julie Ann
+2 SURN Lubbers
+1 SEX F
+1 BIRT
+2 DATE 24 MAY
+2 PLAC Salt Lake City,Utah
+1 FAMC @F13@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:08:27
+0 @I58@ INDI
+1 NAME Kevan W /Lubbers/
+2 GIVN Kevan W
+2 SURN Lubbers
+1 SEX M
+1 BIRT
+2 DATE 18 APR
+2 PLAC Salt Lake City,Utah
+1 FAMC @F13@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:09:14
+0 @I59@ INDI
+1 NAME Patricia /Lubbers/
+2 GIVN Patricia
+2 SURN Lubbers
+1 SEX F
+1 BIRT
+2 DATE 25 OCT 1959
+2 PLAC Salt Lake City,Utah
+1 FAMC @F13@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:09:40
+0 @I60@ INDI
+1 NAME Rebecca /Lubbers/
+2 GIVN Rebecca
+2 SURN Lubbers
+1 SEX F
+1 BIRT
+2 DATE 24 AUG 1961
+2 PLAC Salt Lake City,Utah
+1 BAPL
+2 DATE 1969
+1 FAMS @F18@
+1 FAMC @F13@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:10:10
+0 @I61@ INDI
+1 NAME Jolynn /Lubbers/
+2 GIVN Jolynn
+2 SURN Lubbers
+1 SEX F
+1 BIRT
+2 DATE 2 JAN 1963
+2 PLAC Salt Lake City,Utah
+1 FAMC @F13@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:10:35
+0 @I62@ INDI
+1 NAME David Osborn /Lubbers/
+2 GIVN David Osborn
+2 SURN Lubbers
+1 SEX M
+1 BIRT
+2 DATE 17 FEB 1964
+2 PLAC Salt Lake City,Utah
+1 FAMC @F13@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:10:48
+0 @I63@ INDI
+1 NAME Chris /Miller/
+2 GIVN Chris
+2 SURN Miller
+1 SEX M
+1 FAMS @F14@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:29:55
+0 @I64@ INDI
+1 NAME William /Miller/
+2 GIVN William
+2 SURN Miller
+1 SEX M
+1 BIRT
+2 DATE 1 DEC 1912
+2 PLAC Salt Lake City,Utah
+1 FAMC @F14@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:30:16
+0 @I65@ INDI
+1 NAME Robert /Miller/
+2 GIVN Robert
+2 SURN Miller
+1 SEX M
+1 BIRT
+2 DATE 14 MAY 1914
+2 PLAC Salt Lake City,Utah
+1 FAMC @F14@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:30:31
+0 @I66@ INDI
+1 NAME Anita /Miller/
+2 GIVN Anita
+2 SURN Miller
+1 SEX F
+1 BIRT
+2 DATE 30 JUN 1916
+2 PLAC Salt Lake City,Utah
+1 FAMC @F14@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:30:59
+0 @I67@ INDI
+1 NAME Betty /Lubbers/
+2 GIVN Betty
+2 SURN Lubbers
+1 SEX F
+1 FAMC @F1@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 13:52:29
+0 @I68@ INDI
+1 NAME Sven /Olsen/
+2 GIVN Sven
+2 SURN Olsen
+1 SEX M
+1 BIRT
+2 DATE 29 SEP 1826
+1 DEAT
+2 DATE 16 JUN 1902
+1 BAPL
+2 DATE 1 NOV 1910
+1 FAMS @F15@
+1 FAMC @F16@
+1 NOTE Axel V. Lubbers Journal indicates birth and death dates as 5 Oct 1826 and 8 May 1902, respect
+2 CONC ively which were scratched out and the dates 29 Sep 1826 and 16 Jun 1902 were replaced.
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:45:23
+0 @I69@ INDI
+1 NAME Emma /Svensdotter/
+2 GIVN Emma
+2 SURN Svensdotter
+2 _AKA Emma Olsen
+1 SEX F
+1 BIRT
+2 DATE 29 NOV 1849
+1 DEAT
+2 PLAC Hêaslèov
+1 FAMS @F17@
+1 FAMC @F15@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:37:40
+0 @I70@ INDI
+1 NAME Olaf /Svensen/
+2 GIVN Olaf
+2 SURN Svensen
+2 _AKA Olaf Olsen
+1 SEX M
+1 BIRT
+2 DATE 1851
+1 FAMC @F15@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 15:33:21
+0 @I71@ INDI
+1 NAME Pµr /Svensen/
+2 GIVN Pµr
+2 SURN Svensen
+2 _AKA Pµr Olsen
+1 SEX M
+1 BIRT
+2 DATE 21 JUN 1854
+1 FAMC @F15@
+1 NOTE Axel Vilhelm Lubbers journal gives another birthdate of 21 June 1851
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 14:12:18
+0 @I72@ INDI
+1 NAME Olivia /Svensdotter/
+2 GIVN Olivia
+2 SURN Svensdotter
+2 _AKA Olivia Olsen
+1 SEX F
+1 BIRT
+2 DATE 15 DEC 1859
+1 FAMC @F15@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:37:25
+0 @I73@ INDI
+1 NAME Olivia /Svensdotter/
+2 GIVN Olivia
+2 SURN Svensdotter
+2 _AKA Olivia Olsen
+1 SEX F
+1 BIRT
+2 DATE 27 SEP 1862
+1 FAMS @F20@
+1 FAMC @F15@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:37:32
+0 @I74@ INDI
+1 NAME Ola /Svensen/
+2 GIVN Ola
+2 SURN Svensen
+1 SEX M
+1 FAMS @F16@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 14:06:15
+0 @I75@ INDI
+1 NAME Cecelia /Dalberg/
+2 GIVN Cecelia
+2 SURN Dalberg
+2 _AKA Cicilia
+1 SEX F
+1 FAMS @F16@
+1 FAMC @F21@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:06:04
+0 @I76@ INDI
+1 NAME Anna Marie /Strandberg/
+2 GIVN Anna Marie
+2 SURN Strandberg
+2 _AKA Rostanga
+1 SEX F
+1 BIRT
+2 DATE 1 JUN 1816
+1 DEAT
+2 DATE 18 FEB 1874
+1 FAMS @F15@
+1 NOTE Birth:  Could have also been 1820 or 1830.  Source:  Axel Vilhelm Lubbers Journal  (Difficul
+2 CONC t to read)
+2 CONT Death:  Could have also been 1876.  The Axel Vilhelm Lubbers Journal gives both dates.
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:47:29
+0 @I77@ INDI
+1 NAME Ida //
+2 GIVN Ida
+1 SEX F
+1 BIRT
+2 DATE 5 NOV
+1 FAMC @F17@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 14:10:48
+0 @I78@ INDI
+1 NAME Jessica Afton /Lubbers/
+2 GIVN Jessica Afton
+2 SURN Lubbers
+1 SEX F
+1 BIRT
+2 DATE 1 OCT 1984
+2 PLAC Salt Lake City,Utah
+1 FAMC @F18@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:14:34
+0 @I79@ INDI
+1 NAME J.C. /Anderson/
+2 GIVN J.C.
+2 SURN Anderson
+1 SEX M
+1 BIRT
+2 PLAC of Moroni,Utah
+1 FAMS @F19@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 15:36:28
+0 @I80@ INDI
+1 NAME Josef /Gagner/
+2 GIVN Josef
+2 SURN Gagner
+1 SEX M
+1 FAMS @F20@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 15:39:06
+0 @I81@ INDI
+1 NAME Thyra /Gagner/
+2 GIVN Thyra
+2 SURN Gagner
+1 SEX U
+1 FAMC @F20@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 15:39:19
+0 @I82@ INDI
+1 NAME Carl /Gagner/
+2 GIVN Carl
+2 SURN Gagner
+1 SEX M
+1 FAMC @F20@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 15:40:24
+0 @I83@ INDI
+1 NAME Anna /Gagner/
+2 GIVN Anna
+2 SURN Gagner
+1 SEX F
+1 FAMC @F20@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 15:39:35
+0 @I84@ INDI
+1 NAME Ejner /Gagner/
+2 GIVN Ejner
+2 SURN Gagner
+1 SEX M
+1 FAMC @F20@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 15:39:45
+0 @I85@ INDI
+1 NAME Emmy /Gagner/
+2 GIVN Emmy
+2 SURN Gagner
+1 SEX F
+1 FAMC @F20@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 15:39:51
+0 @I86@ INDI
+1 NAME Hjalmar /Gagner/
+2 GIVN Hjalmar
+2 SURN Gagner
+1 SEX M
+1 FAMC @F20@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 15:40:17
+0 @I87@ INDI
+1 NAME Bengt /Dalberg/
+2 GIVN Bengt
+2 SURN Dalberg
+1 SEX M
+1 FAMS @F21@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:06:37
+0 @I88@ INDI
+1 NAME Christine //
+2 GIVN Christine
+1 SEX F
+1 FAMS @F21@
+1 FAMC @F22@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:08:53
+0 @I89@ INDI
+1 NAME Ceselia //
+2 GIVN Ceselia
+1 SEX F
+1 FAMS @F22@
+1 CHAN
+2 DATE 11 SEP 1999
+3 TIME 16:09:18
+0 @F1@ FAM
+1 _STAT MARRIED
+1 HUSB @I2@
+1 WIFE @I3@
+1 CHIL @I67@
+1 CHIL @I1@
+0 @F2@ FAM
+1 _STAT MARRIED
+1 HUSB @I4@
+1 WIFE @I5@
+1 CHIL @I30@
+1 CHIL @I2@
+1 CHIL @I31@
+1 CHIL @I32@
+1 MARR
+2 DATE 6 APR 1884
+2 PLAC St. John's Church,Copenhagen,Denmark
+0 @F3@ FAM
+1 _STAT MARRIED
+1 HUSB @I6@
+1 WIFE @I7@
+1 CHIL @I8@
+1 CHIL @I4@
+1 CHIL @I9@
+1 CHIL @I10@
+0 @F4@ FAM
+1 _STAT MARRIED
+1 HUSB @I11@
+1 WIFE @I7@
+1 CHIL @I12@
+1 CHIL @I13@
+0 @F5@ FAM
+1 _STAT MARRIED
+1 HUSB @I14@
+1 CHIL @I7@
+1 CHIL @I15@
+1 CHIL @I16@
+0 @F6@ FAM
+1 _STAT MARRIED
+1 HUSB @I15@
+1 CHIL @I17@
+1 CHIL @I18@
+1 CHIL @I19@
+1 CHIL @I20@
+0 @F7@ FAM
+1 _STAT MARRIED
+1 HUSB @I16@
+1 CHIL @I21@
+1 CHIL @I22@
+1 CHIL @I23@
+1 CHIL @I24@
+0 @F8@ FAM
+1 _STAT MARRIED
+1 HUSB @I8@
+1 WIFE @I25@
+1 CHIL @I26@
+1 CHIL @I27@
+1 CHIL @I28@
+1 CHIL @I29@
+0 @F9@ FAM
+1 _STAT MARRIED
+1 HUSB @I10@
+1 WIFE @I33@
+1 CHIL @I34@
+1 CHIL @I35@
+1 CHIL @I36@
+1 CHIL @I37@
+1 CHIL @I38@
+1 CHIL @I39@
+1 CHIL @I40@
+0 @F10@ FAM
+1 _STAT MARRIED
+1 HUSB @I13@
+1 WIFE @I41@
+1 CHIL @I42@
+1 CHIL @I43@
+1 CHIL @I45@
+1 CHIL @I46@
+1 CHIL @I47@
+1 CHIL @I48@
+0 @F11@ FAM
+1 _STAT MARRIED
+1 HUSB @I44@
+1 WIFE @I30@
+1 CHIL @I49@
+1 CHIL @I50@
+1 MARR
+2 DATE 14 JUN 1901
+2 PLAC Salt Lake City,Utah
+0 @F12@ FAM
+1 _STAT MARRIED
+1 HUSB @I17@
+1 WIFE @I51@
+0 @F13@ FAM
+1 _STAT MARRIED
+1 HUSB @I1@
+1 WIFE @I52@
+1 CHIL @I53@
+1 CHIL @I54@
+1 CHIL @I55@
+1 CHIL @I56@
+1 CHIL @I57@
+1 CHIL @I58@
+1 CHIL @I59@
+1 CHIL @I60@
+1 CHIL @I61@
+1 CHIL @I62@
+1 MARR
+2 DATE 11 DEC 1946
+2 PLAC Salt Lake City,Utah
+1 SLGS
+2 DATE 11 DEC 1946
+2 TEMP SLAKE
+0 @F14@ FAM
+1 _STAT MARRIED
+1 HUSB @I63@
+1 WIFE @I32@
+1 CHIL @I64@
+1 CHIL @I65@
+1 CHIL @I66@
+0 @F15@ FAM
+1 _STAT MARRIED
+1 HUSB @I68@
+1 WIFE @I76@
+1 CHIL @I69@
+1 CHIL @I70@
+1 CHIL @I71@
+1 CHIL @I5@
+1 CHIL @I72@
+1 CHIL @I73@
+0 @F16@ FAM
+1 _STAT MARRIED
+1 HUSB @I74@
+1 WIFE @I75@
+1 CHIL @I68@
+0 @F17@ FAM
+1 _STAT MARRIED
+1 WIFE @I69@
+1 CHIL @I77@
+0 @F18@ FAM
+1 _STAT MARRIED
+1 WIFE @I60@
+1 CHIL @I78@
+0 @F19@ FAM
+1 _STAT MARRIED
+1 HUSB @I79@
+1 WIFE @I5@
+1 MARR
+2 DATE 9 OCT 1907
+2 PLAC Salt Lake City,Utah
+1 NOTE Location of marriage in SL Temple.  It is unknown if they were sealed because of prior marria
+2 CONC ge to Axel Frederik Vilhelm Lubbers
+0 @F20@ FAM
+1 _STAT MARRIED
+1 HUSB @I80@
+1 WIFE @I73@
+1 CHIL @I81@
+1 CHIL @I82@
+1 CHIL @I83@
+1 CHIL @I84@
+1 CHIL @I85@
+1 CHIL @I86@
+0 @F21@ FAM
+1 _STAT MARRIED
+1 HUSB @I87@
+1 WIFE @I88@
+1 CHIL @I75@
+0 @F22@ FAM
+1 _STAT MARRIED
+1 WIFE @I89@
+1 CHIL @I88@
+0 TRLR

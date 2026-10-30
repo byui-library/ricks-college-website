@@ -1,0 +1,87 @@
+
+        Name            EET 151 PAL Laboratory;
+        Date            4/1/99;
+        Designer        Chevy Haighter;
+        Company         Road Ripper Motor Company;
+        Assembly        Turn Signal & Stop Light Controller;
+
+        /* Simulator Input File
+
+
+        /* Target Devices: G16V8 or P16R4 */
+
+
+        /* Function Specifications */
+        
+        /*      Inputs (Switches) | Outputs (Lights)
+                                  |
+                stop left  right  | l_front l_back  r_front r_back
+                ------------------|------------------------------
+                0    0     0      | 0       0       0       0 
+                0    0     1      | 0       0       BLINK   BLINK              
+                0    1     0      | BLINK   BLINK   0       0        
+                0    1     1      | BLINK   BLINK   BLINK   BLINK
+                1    0     0      | 0       1       0       1
+                1    0     1      | 0       1       BLINK   BLINK           
+                1    1     0      | BLINK   BLINK   0       1        
+                1    1     1      | BLINK   1       BLINK   1
+
+                0 = OFF     1 = ON      BLINK = Blinking (Clocked)      
+
+ 
+                stop left  right clk  |  l_front l_back  r_front r_back
+                ----------------------|------------------------------
+                0    0     0     0    |  L       L       L       L;
+                0    0     0     1    |  L       L       L       L;
+                0    0     1     0    |  L       L       L       L;
+                0    0     1     1    |  L       L       H       H;
+                0    1     0     0    |  L       L       L       L;
+                0    1     0     1    |  H       H       L       L;
+                0    1     1     0    |  L       L       L       L;
+                0    1     1     1    |  H       H       H       H;
+                1    0     0     0    |  L       H       L       H;
+                1    0     0     1    |  L       H       L       H;
+                1    0     1     0    |  L       H       L       L;
+                1    0     1     1    |  L       H       H       H;
+                1    1     0     0    |  L       L       L       H;
+                1    1     0     1    |  H       H       L       H;
+                1    1     1     0    |  L       H       L       H;
+                1    1     1     1    |  H       H       H       H;     */    
+
+        /* Define Device: G16V8 Generic Array Logic (MA = Complex Mode) */
+
+            Device  G16V8MA;
+
+        
+        /* Define Test Vectors */
+
+            Order:
+            
+                stop, %5, left, %5, right, %6, clk, %7, 
+                l_front, %8, l_back, %7, r_front, %8, r_back;
+
+        
+            Vectors:
+             
+                $msg "";
+                $msg "Turn Signal & Stop Light Controller Simulation";
+                $msg ""; 
+                $msg "stop left right clk    l_front l_back r_front r_back"; 
+              
+                      0    0    0     0      L       L      L       L
+                      0    0    0     1      L       L      L       L
+                      0    0    1     0      L       L      L       L
+                      0    0    1     1      L       L      H       H
+                      0    1    0     0      L       L      L       L
+                      0    1    0     1      H       H      L       L
+                      0    1    1     0      L       L      L       L
+                      0    1    1     1      H       H      H       H
+                      1    0    0     0      L       H      L       H
+                      1    0    0     1      L       H      L       H
+                      1    0    1     0      L       H      L       L
+                      1    0    1     1      L       H      H       H
+                      1    1    0     0      L       L      L       H
+                      1    1    0     1      H       H      L       H
+                      1    1    1     0      L       H      L       H
+                      1    1    1     1      H       H      H       H
+         

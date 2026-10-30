@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>About Twitchell</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+var timerID = null
+var timerRunning = false
+var graduation = new Date (2001, 3, 28, 8, 45, 0) // April 28, 2001 8:45 AM
+function stopCounter ()
+{
+   if (timerRunning)
+      clearInterval (timerID)
+   timerRunning = false
+}
+function startCounter ()
+{
+   // Make sure the counter is stopped
+   stopCounter ()
+   timerID = setInterval ("showDelta ()", 1000)
+   timerRunning = true
+   document.counter.graduation.value = graduation.toLocaleString ()
+}
+function showDelta ()
+{
+   var now = new Date ()
+   document.counter.current.value = now.toLocaleString ()
+   var delta = graduation.getTime () - now.getTime ()
+   delta /= 1000  // get rid of milliseconds giving us seconds
+   seconds = Math.floor (delta) % 60
+   delta = Math.floor (delta / 60)  // get rid of seconds giving us minutes
+   minutes = delta % 60
+   delta = Math.floor (delta / 60)  // get rid of minutes giving us hours
+   hours = delta % 24
+   days = Math.floor (delta / 24)  // whatever is left must be days
+   var timeValue = days + " days "
+   timeValue += hours + " hours "
+   timeValue += minutes + " minutes "
+   timeValue += seconds + " seconds "
+   document.counter.countDown.value = timeValue
+}
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" onLoad="startCounter()">
+<TABLE>
+<TR>
+<TD VALIGN="TOP" ROWSPAN=2>
+<A HREF="../../../../ricks-2000/Default.htm">
+<IMG SRC="logo.gif" WIDTH="100" HEIGHT="100" ALT="Ricks College Home Page" BORDER="0"></A>
+</TD>
+<TD VALIGN="TOP" COLSPAN=2>
+<A HREF="about.html">
+<IMG SRC="name.gif" WIDTH="197" HEIGHT="27" ALT="Kevin E. Twitchell" BORDER="0"></A>
+</TD>
+</TR>
+<TR>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+<I>
+Department of<BR>
+Mathematics and<BR>
+Computer Science
+</I>
+</FONT>
+</TD>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+<A HREF="mailto:TwitchellK@ricks.edu">
+TwitchellK@ricks.edu</A><BR>
+208-356-1938
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+
+<HR>
+
+<FORM NAME="counter" onSubmit="0">
+<H2>Graduation Count Down</H2>
+<input type=text name=countDown size=40>
+<BR>
+<input type="text" name=graduation size=40> graduation date and time
+<BR>
+<input type="text" name=current size=40> current date and time
+<!--
+<BR>
+<a href="javascript:">JavaScript Console</a>
+-->
+</FORM>
+
+<HR>
+
+<FONT SIZE="-1"><A href="../../../../ricks-2000/Default.htm">Ricks College</A> | <A HREF="default.htm">Twitchell</A></FONT>
+<BR>
+<FONT SIZE="-2"><I>March 11, 2000</I></FONT>
+
+</BODY>
+</HTML>

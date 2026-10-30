@@ -1,0 +1,183 @@
+;=======FLASH.ASM==================Rex N. Fisher===============4/13/98====
+;This program is a very simple PIC application.  Its only purpose is to 
+;flash an LED at one of two rates.  Normally, when bit 0 of port A (RA0)
+;is a logic high, the LED flashes slowly.  If RA0 goes low, however, the 
+;LED flashes about twice as fast.  The LED should start flashing as soon 
+;as power is applied.  
+
+;The following concepts are demonstrated:
+;
+;    *Connecting the PIC16C84 hardware to power, clock, and I/O devices
+;    *Formatting the various program sections
+;    *Using labels  
+;    *Configuring and using I/O pins as inputs or outputs
+;    *Looping with a counter
+;    *Using subroutines
+
+;Hardware connections for this circuit:
+;
+;    * Pin 1 (RA2) n/c
+;    * Pin 2 (RA3) n/c
+;    * Pin 3 (RTCC) to +5V
+;    * Pin 4 (_MCLR) to +5V
+;    * Pin 5 (Vss) to GND
+;    * Pin 6 (RB0) n/c
+;    * Pin 7 (RB1) n/c
+;    * Pin 8 (RB2) n/c
+;    * Pin 9 (RB3) n/c
+;    * Pin 10 (RB4) n/c
+;    * Pin 11 (RB5) n/c
+;    * Pin 12 (RB6) n/c
+;    * Pin 13 (RB7) n/c
+;    * Pin 14 (Vdd) to +5V
+;    * Pin 15 (OSC2) n/c
+;    * Pin 16 (OSC1) to 4.7K & 20pF (4.7K to +5V, 20pF to GND)
+;    * Pin 17 (RA0) to 10K & switch (10K to +5V, switch to GND)
+;    * Pin 18 (RA1) to 330 ohm (330 to diode anode, diode cathode to GND)
+;
+;    Notes: 4.7K and 20pF are *minimum* values!
+;           Use the switch to apply +5V and GND to RA0.
+
+;========Programming Instructions==========================================
+
+;Select the following settings at time of programming:
+
+;    	Device = 84
+;    	Oscillator = RC
+;    	Watchdog = OFF
+;    	Timer = ON
+;    	Code Protect = OFF
+
+
+;=======Program Hierarchy================================================
+
+;    	Main 
+;          Initialize
+;          Toggle_LED
+;          Delay
+
+
+;=======Header Section===================================================
+
+;Select PIC16F84 processor and default radiz.
+
+;    	processor	16F84	;Assemble for specific features of PIC16F84.
+;    	radix           HEX     ;Hexidecimal is the default number system.
+
+;P16F84.INC defines configurations, registers, and other useful bits 
+;of information for the PIC16F84 microcontoller.  The names assigned to registers 
+;and pins match the Microchip data sheets as closely as possible.
+     
+     include <P16F84.INC>
+
+;=======Equate Section===================================================
+
+;Register equates:
+
+SRAM	equ  	0C      ;RAM locations (GP registers) start at 0Ch.
+RA      equ  	05      ;RA is another name for PORTA.
+RB      equ  	06	;RB is another name for PORTB
+
+;Bit equates:
+
+SWITCH	equ  	0       ;A switch is connected to bit 0 of RA.
+
+
+;=======Variable Section==================================================
+
+ 	cblock	SRAM 	;Assign variable names to data memory locations 
+                        ;starting at the address defined by SRAM
+               
+               	COUNT0  ;Counter for delay loops.
+               	COUNT1  ;Counter for Delay loops.
+
+     	endc            ;End of data memory assignments.
+
+
+;=======Vector Section===================================================
+
+	org	00 	;Program memory locations start at 00h.
+                        ;Reset vector is 00h.  Start here after reset.
+        goto    Main    ;Branch to program (starting at Main).
+
+        org     04      ;Interrupt vector is 04h.
+Int                     ;Start here after interrupt.
+        goto    Int     ;Endless loop (stops program on interrupt).
+
+;=======Table Section====================================================
+
+;No tables for this program.
+
+
+;=======Program Section==================================================
+
+;-----------Main Program--------------------------------------------------------------------------------------
+
+Main                            ;Start program here.
+      	call	Initialize      ;Initialize variables & registers.
+
+Repeat                          ;Start of main loop in program.
+        call    Toggle_LED	;Turn LED on or off.
+        call    Delay           ;Wait for 65536 loops.
+          
+        ;Check logic level of switch input & jump to Repeat if low.
+        ;If bit 0 is high, loop another 65536 times to slow blink rate of LED.
+     
+        btfss   RA,SWITCH       ;Test switch input for 1 or 0.
+        goto    Repeat     	;Switch is 0, toggle LED again.
+        call    Delay           ;Switch is 1, Wait for 65536 more loops.
+        goto    Repeat     	;Go toggle LED again.
+
+
+;-----------Initialize Subroutine-------------------------------------------------------------------------------
+;
+;Zero counters and configure I/O pins.
+
+Initialize
+
+	;Clear variables.
+          
+        clrf 	COUNT0
+        clrf 	COUNT1
+
+        ;Set direction register for RA (port A).
+
+        clrf    RA              ;Clear RA before setting direction.
+        bsf     STATUS,RP0 	;Access bank 1 of register files.
+        movlw   B'00000001'     ;Set bit 0 as input, others as outputs.
+        movwf   TRISA       	;Copy 01h to direction register of RA.
+        bcf     STATUS,RP0 	;Return to bank 0 of register file.
+
+        return
+
+;-----------Toggle_LED Subroutine-------------------------------------------------------------------------
+;
+;Toggle LED on or off.
+
+Toggle_LED
+
+	movlw  	B'00000010'  	;Create bit mask for LED on bit 1 of RA.
+        xorwf   RA, F           ;Invert output bit to LED.
+      
+        return
+
+;-----------Delay Subroutine----------------------------------------------------------------------------------
+;
+;Loop 65536 times to use up time.
+
+Delay
+
+Loop      
+	decfsz	COUNT0, F       ;Decrement COUNT0.
+        goto    Loop		;Repeat Loop if COUNT0 is not equal to 0.
+                                ;Fall through if COUNT0 is equal to 0.
+
+        decfsz  COUNT1, F        ;Decrement COUNT1.
+        goto    Loop             ;Repeat Loop if COUNT1 is not equal to 0.
+     
+        return
+
+     
+        end                 ;End of program.
+
+;=====================================================================

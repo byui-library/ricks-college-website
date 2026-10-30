@@ -1,0 +1,127 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>B283 Quiz #5</title>
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- //BEGIN SCRIPT
+function scorequiz(form) {
+ tally=0
+ if(form.Q1.value!=null && form.Q1.value=="*") {tally=tally+1}
+ if(form.Q2.value!=null && form.Q2.value=="*") {tally=tally+1}
+ if(form.Q3.value!=null && form.Q3.value=="*") {tally=tally+1}
+ if(form.Q4.value!=null && form.Q4.value=="*") {tally=tally+1}
+ if(form.Q5.value!=null && form.Q5.value=="*") {tally=tally+1}
+ 
+ form.SCORE.value =eval(tally)
+}
+
+function clearquiz(form) {
+ tally=0
+ form.Q1.value="?"
+ form.Q2.value="?"
+ form.Q3.value="?"
+ form.Q4.value="?"
+ form.Q5.value="?"
+ 
+ form.SCORE.value =eval(tally)
+}
+
+function msg() {
+ alert("Your quiz tally is being e-mailed to the instructor. Thank you!")
+ }
+// -->
+</SCRIPT>
+
+<body>
+
+<p align="center"><b><font size="1">| <a href="../default.htm"> HOME</a> | <a href="../b283quizzes.htm"> B283 Quizzes</a> |
+<a href="b283syllabus.htm">B283 Syllabus</a> |</font></b></p>
+
+<h1 align="center"><b>ONLINE QUIZ #5</b></h1>
+<p align="center">CHAPTER 9 READING</p>
+<hr width="65%" size="4" noshade color="#000000">
+<Form name="quiz1" method="post" enctype="text/plain" 
+ onLoad="clearquiz(this.form)" onsubmit="return false">
+<table border="0" width="100%">
+  <tr>
+    <td width="28%" align="right">
+Please enter your name:&nbsp;</td>
+    <td width="72%"><INPUT TYPE="text" NAME="Name" VALUE="" size="40"></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right">
+Please enter your Email address:&nbsp;</td>
+    <td width="72%"><input type="text" name="email" value="" size="40"></td>
+  </tr>
+</table>
+<p><br>
+</p>
+<hr>
+
+1. A building's functional character relates to its suitability for the
+operations of a business..
+<ol>
+<INPUT TYPE="radio" NAME="Q1" value="*True" onclick=Q1.value="*">True<br>
+<INPUT TYPE="radio" NAME="Q1" value="False" onclick=Q1.value="F">False<br>
+</ol>
+
+2. A milking machine in a dairy is a type of general-purpose equipment.
+<ol>
+<INPUT TYPE="radio" NAME="Q2" value="True" onclick=Q2.value="T">True<br>
+<INPUT TYPE="radio" NAME="Q2" value="*False" onclick=Q2.value="*">False<br>
+</ol>
+
+3. The owner of a home-based business can establish boundaries between the
+business and the home by
+<ol>
+<INPUT TYPE="radio" NAME="Q3" value="*setting aside specific space for the business" onclick=Q3.value="*">setting
+aside specific space for the business.<br>
+<INPUT TYPE="radio" NAME="Q3" value="using an outside bookkeeping service" onclick=Q3.value="B">using an
+outside bookkeeping service<br>
+<INPUT TYPE="radio" NAME="Q3" value="selling to wholesalers rather than to ultimate consumers" onclick=Q3.value="C">selling
+to wholesalers rather than to ultimate consumers.<br>
+<INPUT TYPE="radio" NAME="Q3" value="limiting his or her participation in community activities" onclick=Q3.value="D">limiting
+his or her participation in community activities.<br>
+</ol>
+ 
+4. An example of special-purpose equipment is a 
+<ol>
+<INPUT TYPE="radio" NAME="Q4" value="lathe" onclick=Q4.value="A">lathe.<br>
+<INPUT TYPE="radio" NAME="Q4" value="*bottling machine" onclick=Q4.value="*">bottling
+machine<br>
+<INPUT TYPE="radio" NAME="Q4" value="drill press" onclick=Q4.value="C">drill
+press.<br>
+<INPUT TYPE="radio" name="Q4" value="ripsaw" onclick=Q4.value="D">ripsaw</ol>
+
+5. Which of the following layout patterns is a plain, block-looking layout that
+provides greatest merchandise exposure and simplifies security and cleaning?
+<ol>
+<p>
+<INPUT TYPE="radio" NAME="Q5" value="product layout" onclick=Q5.value="A">Product
+layout<br>
+<INPUT TYPE="radio" NAME="Q5" value="*process layout" onclick=Q5.value="*">Process
+layout<br>
+<INPUT TYPE="radio" NAME="Q5" value="Grid pattern" onclick=Q5.value="C">Grid
+pattern<br>
+<INPUT TYPE="radio" name="Q5" value="Functional layout" onclick=Q5.value="D">Functional
+layout</p>
+</ol>
+
+<hr>
+
+<B>Your Quiz Score is:  </B><INPUT  NAME="SCORE" TYPE="text" size="4">
+<p><INPUT TYPE="reset" NAME="reset" VALUE="Clear Quiz" onclick=clearquiz(this.form)>
+<INPUT TYPE="submit" VALUE="Send Quiz to Instructor" onclick=scorequiz(this.form)>
+</p>
+<p><INPUT TYPE="button" NAME="submit" VALUE="Compute Quiz tally" onclick=scorequiz(this.form)>
+
+<BR><BR>
+</p>
+</form>
+</body>
+
+</html>

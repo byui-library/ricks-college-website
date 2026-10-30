@@ -1,0 +1,272 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type="text/css"> <!-- a {  text-decoration: none} --> </style>
+
+
+<title>Music Department-Talent Award</title>
+
+<!--Brandon Rowely, July, 2000-->
+</head>
+
+<body>
+
+<p>&nbsp;</p>
+<!--<form method = "POST" name="" onsubmit="return false">-->
+
+<script Language="JavaScript"><!--
+function FrontPage_Form1_Validator(theForm)
+{
+
+  var checkOK = "0123456789-.,";
+  var checkStr = theForm.SSS.value;
+  var allValid = true;
+  var decPoints = 0;
+  var allNum = "";
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+    if (ch == ".")
+    {
+      allNum += ".";
+      decPoints++;
+    }
+    else if (ch != ",")
+      allNum += ch;
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit characters in the \"SSS\" field.");
+    theForm.SSS.focus();
+    return (false);
+  }
+
+  if (decPoints > 1)
+  {
+    alert("Please enter a valid number in the \"SSS\" field.");
+    theForm.SSS.focus();
+    return (false);
+  }
+  return (true);
+}
+//--></script><form method="POST" name="FrontPage_Form1" onsubmit="return false">
+<!--SELECTION-->
+  <div align="center"><center><h1><!--/SELECTION-->Scholarship Application for Music Talent Award</h1>
+  </center></div><div align="center"><center><table width="249" border="0" cellspacing="2"
+  cellpadding="3">
+    <tr>
+      <td width="100%">&nbsp;1) Fill in and submit the form prior to <b>February 1 2001</b>.</td>
+    </tr>
+    <tr>
+      <td width="100%">&nbsp;2) Receive confirmation via e-mail within 1 day.</td>
+    </tr>
+  </table>
+  </center></div><font size="5"><hr align="center">
+  </font><table width="500" border="1" cellspacing="2" cellpadding="3" bgcolor="#dddddd"
+  height="587">
+    <tr>
+      <td width="206" valign="top" height="23"><div align="left"><p>Full Name</td>
+      <td width="373" height="23"><div align="left"><p><input name="Name" type="text" size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="23"><div align="left"><p>E-mail Address</td>
+      <td width="373" height="23"><div align="left"><p><input name="Email" type="text" size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="23"><div align="left"><p>Street Address</td>
+      <td width="373" height="23"><div align="left"><p><input name="StreetAddress" type="text"
+      size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="23">City-State-Zip</td>
+      <td width="373" height="23"><input name="Citystatezip" type="text" size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="21">Country</td>
+      <td width="373" height="21"><input name="country" type="text" size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="23">Telephone Number</td>
+      <td width="373" height="23"><input name="telephone" type="text" size="45" maxlength="15"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="38">U.S. Social Security Number</td>
+      <td width="373" height="38"><input name="SSS"
+      type="text" size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="23">Parent or Guardian</td>
+      <td width="373" height="23"><input name="parent" type="text" size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="38">Last High School Attended</td>
+      <td width="373" height="38"><input name="lasthighschool" type="text" size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="38">Mailing Address of School</td>
+      <td width="373" height="38"><input name="mailingaddress1" type="text" size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="23">City-State-Zip</td>
+      <td width="373" height="23"><input name="mailingaddress2" type="text" size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="23">Graduation Date</td>
+      <td width="373" height="23"><input name="graduationdate" type="text" size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="23">GPA</td>
+      <td width="373" height="23"><input name="gpa" type="text" size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="57"><div align="left"><p>Name your last
+      Band/Orchestra/Choir Teacher</td>
+      <td width="373" height="57"><div align="left"><p><input name="lastteacher" type="text"
+      size="45"></td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="38"><div align="left"><p>Semester and Year you will
+      attend Ricks</td>
+      <td width="373" height="38"><div align="left"><p><input name="Matriculation" type="text"
+      size="45"></td>
+    </tr>
+  </table>
+  <table width="746" border="1" cellspacing="2" cellpadding="2" bgcolor="#dddddd"
+  height="113">
+    <tr>
+      <td width="206" valign="top" height="76"><div align="left"><p>Performance: Check your most
+      proficient area</td>
+      <td width="540" height="76"><div align="left"><p><input type="checkbox" name="instrument1"
+      value="voice">voice<br>
+      <input type="checkbox" name="instrument2" value="Keyboard">Keyboard<br>
+      <input type="checkbox" name="instrument3" value="Orchestra">Orchestra<br>
+      <input type="checkbox" name="instrument4" value="Band">Band</td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="19">Rate your most proficient area in voice with a 1,
+      2, or 3 for Soprano, Alto, Tenor, Bass.&nbsp; </td>
+      <td width="540" height="19"><input name="proficientvoice" type="text" size="43"> </td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="19">Rate your most proficient area in Keyboard with a
+      1, 2, or 3 for Piano, Organ, Harpsichord.&nbsp; </td>
+      <td width="540" height="19"><input name="proficientkeyboard" type="text" size="43"> </td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="19">Instrument (Band or Orchestra) </td>
+      <td width="540" height="19"><input name="band" type="text" size="43"> </td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="60">Do you own an instrument? (What make?) </td>
+      <td width="540" height="60"><input name="instrument5" type="text" size="43"> </td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="60">Background: How many hours do you practice each
+      day? </td>
+      <td width="540" height="60"><input name="practicehours" type="text" size="43"> </td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="60">List private teachers with whom you have studied.
+      </td>
+      <td width="540" height="60"><textarea rows="2" name="private" cols="36"></textarea> </td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="60">List solos, studies, etudes and method books used
+      in recent years. </td>
+      <td width="540" height="60"><textarea rows="2" name="etudes" cols="36"></textarea> </td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="56">Ensemble Experience: Give Year, Organization,
+      Section and Chair. </td>
+      <td width="540" height="56"><input type="text" name="year" size="12"><input type="text"
+      name="organization" size="25"><input type="text" name="section" size="16"> <p><font
+      size="2">Year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Organization&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Section&nbsp; and chair</font></p>
+      <p>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="1">Give last<font color="#FF0000"> solo</font>
+      contest rating: <p>&nbsp;</td>
+      <td width="540" height="1"><input name="solo" type="text" size="20">&nbsp;&nbsp; &nbsp;<input
+      type="text" name="rating1" size="6">&nbsp;&nbsp;<input type="text" name="year1" size="4">&nbsp;<input
+      type="text" name="state1" size="8"><input type="text" name="district1" size="10"> <p><font
+      size="1">Name of Musical Number(s) Performed</font><font size="2">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Rating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      District.</font></p>
+      <p>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="19">Give last <font color="#FF0000">small ensemble</font>
+      rating: </td>
+      <td width="540" height="19"><input name="smallensemble" type="text" size="20">&nbsp;&nbsp;
+      &nbsp;<input type="text" name="rating2" size="6">&nbsp;&nbsp;<input type="text"
+      name="year2" size="4">&nbsp;<input type="text" name="state2" size="8"><input type="text"
+      name="district2" size="10"> <p><font size="1">Name of Musical Number(s) Performed</font><font
+      size="2">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rating&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      Year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; District.</font></p>
+      <p>&nbsp; </td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="19">Give last <font color="#FF0000">large ensemble</font>
+      rating: </td>
+      <td width="540" height="19"><input name="largeensemble" type="text" size="20">&nbsp;&nbsp;
+      &nbsp;<input type="text" name="rating3" size="6">&nbsp;&nbsp;<input type="text"
+      name="year3" size="4">&nbsp;<input type="text" name="state3" size="8"><input type="text"
+      name="district3" size="10"> <p><font size="1">Name of Musical Number(s) Performed</font><font
+      size="2">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rating&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; District.</font></p>
+      <p>&nbsp; </td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="44">Special Honors and accomplishments received in
+      music. </td>
+      <td width="540" height="44"><input name="honors" type="text" size="45"> </td>
+    </tr>
+    <tr>
+      <td width="206" valign="top" height="39">Intended college major or area of interest. </td>
+      <td width="540" height="39"><input name="major" type="text" size="45"> </td>
+    </tr>
+  </table>
+  <table width="610" border="1" cellspacing="2" cellpadding="0" bgcolor="#dddddd">
+    <tr>
+      <td width="200" valign="top">Please include a statement concerning you goals in music. </td>
+      <td width="410"><textarea name="comments1" rows="5" cols="51" wrap="virtual"></textarea> </td>
+    </tr>
+    <tr>
+      <td width="200" valign="top"><div align="left"><p>Additional information or comments which
+      may be helpful in the Music Scholarship Committee.</td>
+      <td width="410"><div align="left"><p><textarea name="comments2" rows="5" cols="51"
+      wrap="virtual"></textarea></td>
+    </tr>
+  </table>
+  <div align="center"><center><p><input name="submit" type="submit" value="submit"> <input
+  name="name" type="reset" value="Reset"></p>
+  </center></div><hr>
+  <p>Property of Ricks College </p>
+<!--Brandon Rowley, July 2000-->
+  <p>Copyright 2000[Ricks College]. All rights reserved. </p>
+  <p>07/05/2000 </p>
+</form>
+
+
+<p align="center"><a href="../../Default.htm">Ricks College</a> | <a
+href="../index.html">Music Department</a> | <a
+href="mailto:robertsl@ricks.edu">Scholarship Secratary</a></p>
+</body>
+</html>

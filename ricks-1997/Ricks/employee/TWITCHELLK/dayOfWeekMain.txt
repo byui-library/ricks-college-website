@@ -1,0 +1,31 @@
+void main (void)
+/***********************************************************************
+* Invokes functions to get input from the user (getInput), check the
+* user's input for errors (noErrors), calculate the day of the week
+* given the user's input (calculateDayOfWeek), and output the results
+* (output).
+* -- getInput returns false if the user specifies to quit; otherwise
+*    it returns true. getInput also returns the month, day, and year
+*    entered by the user
+* -- noErrors returns true if there are no errors in the user's input;
+*    otherwise it returns false
+* -- calculateDayOfWeek returns an integer representing the day of the
+*    week the user-specified date falls on
+***********************************************************************/
+{
+   int month;
+   int day;
+   int year;
+   int dayOfWeek;
+
+   while (getInput (month, day, year))
+   {
+      // we have input from the user
+      if (noErrors (month, day, year))
+      {
+         // we have *good* input from the user
+         dayOfWeek = calculateDayOfWeek (month, day, year);
+         output (month, day, year, dayOfWeek);
+      }
+   }
+}

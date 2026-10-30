@@ -1,0 +1,108 @@
+<!-- Sets the Background image and standard font -->
+body { background-color: #FFFFDD; margin: 3pt; font-family: Geneva, Verdana, Arial, Helvetica, sans-serif; font-size: 10pt;}
+
+<!-- standard font -->
+font {font-family: Geneva, Verdana, Arial, Helvetica, sans-serif; font-size: 10pt;}
+
+<!-- this sets the standard link color/font style -->
+a {font-size: 12px;
+ font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
+ color: #003399;
+ background: transparent;} 
+
+<!-- this makes it so links turn yellow when you hover them -->
+a:Hover	{ background-color:#ffcc00; text-decoration: none; color:#336699;}
+
+a:active { color: #ff0000;} 
+
+a:visited { color: #990000} 
+
+<!-- this sets the header link color/font style -->
+a.head1 {font-size: 12px;
+ font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
+ color: #FFFFFF;
+ text-decoration: none;
+ background: transparent;} 
+
+<!-- this makes it so links turn yellow when you hover them -->
+a.head1:Hover	{ background-color:#cccccc; text-decoration: none; color:#336699;}
+
+a.head1:active { color: #ffffff;} 
+
+a.head1:visited { color: #ffffff} 
+
+.head1 { color: #ffffff;
+ font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
+ font-size: 14px;}
+
+<!-- the bodlnk class sets the attributes of the larger burgundy links as on the front page -->
+a.bodlnk { text-decoration: none;
+ font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
+ color: #990000;
+ font-size: 25px;
+ font-weight: bold;} 
+
+a.bodlnk:Hover	{ background-color:#ffcc00; text-decoration: none; color:#990000;}
+
+a.bodlnk:active { color: #ff0000;} 
+
+a.bodlnk:visited { color: #cc0000} 
+
+<!-- bod1 is standard body text -->
+.bod1 { color: #000000;
+ font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
+ font-size: 14px;}
+
+<!-- bod2 is bold/italicized body text -->
+.bod2 { color: #000000;
+ font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
+ font-size: 14px;
+ font-style: italic;
+ font-weight: bold;}
+
+<!-- bod3 is the Title/Large letter in the body -->
+.bod3 { text-decoration: none;
+ font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
+ color: #990000;
+ font-size: 25px;
+ font-weight: bold;} 
+
+<!-- bod4 is the subtitle in the body -->
+.bod4 { text-decoration: none;
+ font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
+ color: #990000;
+ font-size: 16px;
+ font-weight: bold;} 
+
+<!-- This sets the color/size of the bullets -->
+li { size:  8px;
+ font-size: 12px;
+ font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
+ color: #990000;
+ background: transparent;}
+
+<!-- This sets the color/font attributes of input boxes/buttons -->
+input {
+ background-color: #cc9;
+ font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
+ font-size: 10px;
+ }
+
+input.button {
+ background-color: #996;
+ font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
+ font-size: 12px;
+ font-weight: bold;
+ color: white;
+ }
+
+textarea {
+ background-color: #cc9;
+ font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
+ font-size: 12px;
+ color: black;}
+
+<!-- this sets the horizontal rule attributes -->
+hr { color: #990000;
+ text-align: center;}
+

@@ -1,0 +1,864 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>CS170 - Introduction to Software Development Homework</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<TABLE>
+<TR>
+<TD VALIGN="TOP" ROWSPAN=2>
+<A HREF="../../../../ricks-2000/Default.htm">
+<IMG SRC="logo.gif" WIDTH="100" HEIGHT="100" ALT="Ricks College Home Page" BORDER="0"></A>
+</TD>
+<TD VALIGN="TOP" COLSPAN=2>
+<A HREF="about.html">
+<IMG SRC="name.gif" WIDTH="197" HEIGHT="27" ALT="Kevin E. Twitchell" BORDER="0"></A>
+</TD>
+</TR>
+<TR>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+<I>
+Department of<BR>
+Mathematics and<BR>
+Computer Science
+</I>
+</FONT>
+</TD>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+<A HREF="mailto:TwitchellK@ricks.edu">
+TwitchellK@ricks.edu</A><BR>
+208-356-1938
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<H3>CS170 - Introduction to Software Development<BR>Homework</H3>
+
+<HR>
+
+<P>
+
+<FONT SIZE="-1">
+<A HREF="#00">00</A> |
+<A HREF="#01">01</A> |
+<A HREF="#02">02</A> |
+<A HREF="#03">03</A> |
+<A HREF="#04">04</A> |
+<A HREF="#05">05</A> |
+<A HREF="#06">06</A> |
+<A HREF="#07">07</A> |
+<A HREF="#08">08</A> |
+<A HREF="#09">09</A> |
+<A HREF="#10">10</A> |
+<A HREF="#11">11</A> |
+<A HREF="#12">12</A> |
+<A HREF="#13">13</A> |
+<A HREF="#14">14</A> |
+<A HREF="#15">15</A> |
+<A HREF="#16">16</A> |
+<A HREF="#17">17</A> |
+<A HREF="#18">18</A> |
+<A HREF="#19">19</A> |
+<A HREF="#20">20</A> |
+<A HREF="#21">21</A> |
+<A HREF="#22">22</A> |
+<A HREF="#23">23</A> |
+<A HREF="#24">24</A> |
+<A HREF="#25">25</A> |
+<A HREF="#26">26</A>
+</FONT>
+
+<H4>General Instructions</H4>
+<UL>
+<LI>All assignments except 00 shall be submitted by copying files to
+/home/ket/cs170/hw##/, where ## is the two-digit homework number
+(be sure to include leading zeros when necessary).
+Examples where <I>whateverYouNamedIt</I> is your file to be submitted
+and <I>xyz99001</I> is your user ID)
+<UL>
+<LI>cp whateverYouNamedIt.cpp /home/ket/cs170/hw##/xyz99001.cpp
+<LI>cp whateverYouNamedIt.txt /home/ket/cs170/hw##/xyz99001.txt
+</UL>
+<LI>All assignments shall be submitted as ASCII text files.
+<LI>C++ source code files shall be submitted using the .cpp extension.
+<LI>Designs shall be submitted using the .txt extension.
+<LI>Homework shall not be submitted using e-mail.
+<LI>Make sure your submitted program satisfies all specified requirements.
+<LI>All programs shall include error handling and shall terminate gracefully.
+<LI>Whenever the homework specifies that the program is to loop until the
+	user specifies to quit, the input from the user shall be the word "quit".
+	Nothing more and nothing less.
+<LI>You may <B>not</B> use the following in your programs:
+<UL>
+<LI>the system function
+<LI>any time function
+<LI>the strpbrk, strspn, and strtok functions or anything like unto them
+</UL>
+<LI>Use C++ I/O (i.e., cout); do not use C I/O (i.e., printf).
+<LI>Each program shall compile and execute using ROM 272 (Linux) lab computers.
+<LI>Source code shall conform to <A HREF="style.html">style guidelines</A>.
+<LI>Each line in each file, source code and design, shall be less than 80 characters long.
+</UL>
+<HR>
+
+<TABLE>
+<TR VALIGN="top">
+<TD>
+<A NAME="00"><FONT SIZE="+3"><B>00</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Scriptures in Class</B></font><BR>
+<I>75 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Each class shall start with at least one brief presentation of a scripture.
+You are required to present <B>three</B> scriptures from the
+Standard Works during the semester.
+Each scripture (one or more verses) shall be pertinent
+to our class, to our course of study, or to life at Ricks College.
+Just as Nephi, you are encouraged to
+"liken all scriptures unto us" (1 Nephi 19:23).
+Each scripture shall be one that has not been presented before in this class.
+Standard late penalties apply each time you are not prepared
+on your assigned (or reassigned) day.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="01"><FONT SIZE="+3"><B>01</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Hello World!</B></font><BR>
+<I>25 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Output the text “Hello World!”,
+your name, your major, and where you are from.
+Sample source code is in the text on page 32.
+The purpose of this assignment is not to demonstrate
+your programming prowess,
+but to help you become acquainted with the lab in ROM 272.
+Be sure to document your program as specified in
+the <a href="style.html">Elements of Style</a>.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="02"><FONT SIZE="+3"><B>02</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Temperature</B></font><BR>
+<I>50 points</I><BR>
+<img src="Fis.gif" align=right width="86" height="40" alt="F=">
+&nbsp;&nbsp;&nbsp;&nbsp;
+Prompt the user to enter a floating point number (e.g., 98.6).
+After reading the number from the user, assume the number is Celsius
+and convert the value to Fahrenheit using the provided formula.
+Output the original number followed by C and the converted
+temperature followed by F.
+Output both values to exactly one decimal place.
+<img src="Cis.gif" align=right width="96" height="40" alt="C=">
+Next, assume the original number is Fahrenheit and
+convert the value to Celsius using the provided formula.
+Output the original number followed by F and the
+converted temperature followed by C.
+Output both values to exactly one decimal place.
+Assume user input is valid.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is <B>bold</B>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+Please enter a floating point number: <B>98.6</B><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+98.6C is 209.5F<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+98.6F is 37.0C<BR>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="03"><FONT SIZE="+3"><B>03</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Change Maker</B></font><BR>
+<I>50 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Prompt the user to enter a non-negative integer less than or equal to 100 (e.g., 85).
+After reading the number from the user, calculate the amount of change from $1 (100),
+assuming that the user input represents the cost of an item in cents.
+The program determines the least number quarters, dimes, nickels, and pennies to be used as change.
+Output “The item costs ### cents.” where ### is the value input by the user.
+Follow this with the change specified as quantities of quarters, dimes, nickels, and pennies.
+You may not use any selection or iteration structures. Assume user input is valid.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is <B>bold</B>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+Enter the cost of an item in whole cents (0-100): <B>59</B><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+The item costs 59 cents. Your change is 1 quarter(s), 1 dime(s), 1 nickel(s), and 1 penny(ies).
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="04"><FONT SIZE="+3"><B>04</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Vending Machine</B></font><BR>
+<I>50 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create a vending machine filled with items priced as specified in /home/ket/examples/vm.txt.
+Assume that the customer has already successfully supplied $1 to the machine.
+Allow the customer to select a grid location (such as C5).
+While you may assume user input is valid
+(i.e., the first character is A-E and the second character is 1-5),
+you must allow for both upper and lower case input.
+You do not need to output the vending machine grid.
+Deliver the correct amount of change using the least number quarters, dimes, and nickels.
+There are <B>no</B> pennies!
+The output from your program shall be something like “Item C5 costs 60 cents. Change is 1 quarter(s), 1 dime(s), and 1 nickel(s).”
+If the customer selects an empty grid location, return the entire dollar (in change).
+<TR VALIGN="top">
+<TD>
+<A NAME="05"><FONT SIZE="+3"><B>05</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Temperature (revisited)</B></font><BR>
+<I>50 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Prompt the user to enter a temperature and an F (for Fahrenheit) or a C (for Celsius) as shown below.
+Handle upper and lower case input.
+Do not assume valid input for the F or C.
+If the user enters a temperature in Fahrenheit, convert it to Celsius.
+If the user enters a temperature in Celsius, convert it to Fahrenheit.
+Output the original and converted values to exactly one decimal place
+followed by an F or a C, as appropriate. Match the output shown below.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is <B>bold</B>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+Enter temperature and an F (for Fahrenheit) or a C (for Celsius): <B>212.0F</B><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+212.0F is 100.0C
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="06"><FONT SIZE="+3"><B>06</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Grades</B></font><BR>
+<I>75 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Output the letter grade given an integer between 0 and 100 (inclusive).
+Use the following grading scale:<BR>
+<TABLE>
+<TR VALIGN=top>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<TD>
+A - nineties and one hundred<BR>
+B - eighties<BR>
+C - seventies<BR>
+D - sixties<BR>
+F - 59 and below
+</TD>
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<TD>
+If the final digit is 7-9, output a "+" (e.g., 88 is a B+).<BR>
+If the final digit is 0-2, output a "-" (e.g., 61 is a D-).<BR>
+There is no A+, F+, nor F-.
+</TD>
+</TR>
+</TABLE>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Continue to accept input until the user enters an invalid value (e.g., -1 or 101).<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is <B>bold</B>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+Please enter a numeric grade ranging from 0 to 100<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+(a number less than 0 or greater than 100 terminates the program)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+Numeric grade: <B>100</B><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+The letter grade for 100 is A<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+Numeric grade: <B>72</B><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+The letter grade for 72 is C-<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+Numeric grade: <B>-1</B>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="07"><FONT SIZE="+3"><B>07</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Multiplication Table</B></font><BR>
+<I>75 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Utilizing nested loops, calculate and output the calculated values for a multiplication table for numbers one through ten.
+Use constant variables for the minimum number (one) and the maximum number (ten).
+Format the table to look exactly like the table in /home/ket/examples/table.txt.
+You may not use any of the functions available in iomanip (e.g., setw).
+There is no user input.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="08"><FONT SIZE="+3"><B>08</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Day of the Week Design</B></font><BR>
+<I>150 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Design a program to output the day of the week given a date.
+Prompt the user for a date composed of a numeric month, day, and year.
+Output the day of the week that date falls on.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is <B>bold</B>):<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+Enter date (MM/DD/YYYY): <B>2/29/2000</B><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+2/29/2000 is a Tuesday<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Continue to accept input until the user specifies to quit
+(by entering a single zero (0) -- nothing else).
+Provide specific instructions on how to quit the program.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+No date shall be earlier than Monday, January 1, 1753
+(an earlier date is an error condition).<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Provide full error detection and handling.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+While the Unix cal utility may be used to assist algorithm design, it may not be used in the execution of the program.
+You may not use Zeller’s Congruence or anything like unto it.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The program shall utilize functions.
+main() shall include only data declarations, function calls, and a loop.
+main() may include a conditional as well.
+main() shall not include any I/O (input/output) statements.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Provide two design alternatives for the function(s) that determine(s)
+the day of the week.
+One shall utilize loops to determine the day of the week.
+The other shall not use any loop to make said determination.
+Select an alternative.
+Specify which alternative you plan to implement and why.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="09"><FONT SIZE="+3"><B>09</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>States Design</B></font><BR>
+<I>150 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Design a program to organize and output the names of the states
+by the number of unique letters in the names.
+<B>A unique letter is an alphabetic character that appears at least once.</B>
+Note that you must ignore case and that a space is not a letter.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Format your output to exactly match that contained in /home/ket/examples/statesOutput.txt.
+Start with the lowest number of unique letters (whatever that may be)
+and proceed to the highest.
+Output each state name as it appears in the input file.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Use the design in /home/ket/examples/readStates.txt to read
+the names of the states into your program.
+Note that this requires you to use the list of states available at /home/ket/examples/states.txt.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Use a function to count the number of unique letters in each state name.
+The function shall process only one state name (at a time).
+Prepare two design alternatives for this function.
+One alternative shall use recursion and the other shall not.
+Select an alternative.
+Specify which alternative you would prefer to implement and why.
+Please note that you will be required to implement a recursive solution.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="10"><FONT SIZE="+3"><B>10</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Day of the Week</B></font><BR>
+<I>200 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Implement the design completed for homework <A HREF="#08">08</A>.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="11"><FONT SIZE="+3"><B>11</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>States</B></font><BR>
+<I>200 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Implement the design completed for homework <A HREF="#09">09</A>
+using a recursive solution.
+Use the code in /home/ket/examples/readStates.cpp to read
+the names of the states into your program.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="12"><FONT SIZE="+3"><B>12</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Prime Numbers</B></font><BR>
+<I>125 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Use the <a href="sieve.html">Sieve of Eratosthenes</a>
+algorithm to generate a list of primes between 2 and 1033, inclusive.
+A list of primes is available at /home/ket/examples/primes.txt.
+Output only the prime numbers, each one on a separate line.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The program shall have a function that “crosses out numbers”
+in a block of memory you pass to the function.
+This function shall make a single pass through the block of memory.
+Create the block of memory using new.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+For loops and array notation, or anything like unto them,
+shall not be used anywhere in the program.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="13"><FONT SIZE="+3"><B>13</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Split an Expression</B></font><BR>
+<I>150 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Accept as input an arithmetic expression using fractions or a command to quit;
+there shall be only one prompt for the arithmetic expression or quit command
+(i.e., input a single string).
+The input shall not contain any spaces
+(this is a constraint, not an error condition).
+The only valid operators are +, -, *, and /.
+Output an error message if an invalid operator is used.
+Output the following information as shown (including right justification):
+first numerator, first denominator, operator,
+second numerator, and second denominator.
+Continue to accept input until the user specifies to quit.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is <B>bold</B>):
+<PRE>
+     Please enter an arithmetic expression using fractions: <B>11/52+30/104</B>
+     First numerator:     11
+     First denominator:   52
+     Operator:             +
+     Second numerator:    30
+     Second denominator: 104
+</PRE>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Be sure to provide correct answers for arithmetic expressions such as -3/-4--9/-5 and 2/1/7/6.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="14"><FONT SIZE="+3"><B>14</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Reduce a Fraction Design</B></font><BR>
+<I>100 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Design a program to accept input of a fraction from the user or a command to quit;
+there shall be only one prompt for the fraction or quit command (i.e., input a single string).
+Output the fraction in reduced form.
+Continue to accept input until the user specifies to quit.
+The fraction shall be entered in the form of i/j, where i and j are integers.
+The forward slash (/) is part of the input (absence of the slash is an error condition).
+The fraction shall be output using the form i/j, where i and j are integers.
+For example, input of 30/45 results in output of 2/3,
+78/-100 results in output of -39/50,
+0/5 results in output of 0/5,
+3/0 results in an error message,
+and a/4 results in an error message.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Use a struct as the data structure to hold your fraction.
+The struct shall consist of two integers, a numerator and a denominator.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Implement your reduction algorithm in a function (other than main()).
+Efficiency of your reduction algorithm is important.
+You may not use Euclid’s algorithm or anything like unto it.
+Output the fraction from a function (other than main() and the reduction function).
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="15"><FONT SIZE="+3"><B>15</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Reduce a Fraction</B></font><BR>
+<I>150 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Implement the design completed for homework <A HREF="#14">14</A>.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="16"><FONT SIZE="+3"><B>16</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Object Oriented Hello World!</B></font><BR>
+<I>100 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create a class named Hello.
+The constructor shall output “Hello ” followed by the string passed to the constructor.
+The destructor shall output “Goodbye cruel ” followed by the same string.
+Provide six member functions to store a name, store a major, store a location,
+output “My name is ” followed by the stored name,
+output “My major is ” followed by the stored major, and
+output “I am from ” followed by the stored location.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+From main(), instantiate a hello object with the string “World!”
+Send six messages to your object to set your name (pass your name from main()),
+set your major (pass your major from main()),
+set where you are from (pass the location from main()),
+display your name, display your major, and display where you are from.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="17"><FONT SIZE="+3"><B>17</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Object Oriented States</B></font><BR>
+<I>100 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create an object oriented states program using the requirements specified in homework <A HREF="#09">09</A>.
+Each object shall hold exactly one state.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="18"><FONT SIZE="+3"><B>18</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Rational Number Calculator Design</B></font><BR>
+<I>100 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Create a class named Rational for performing arithmetic with fractions.
+Use integer variables for the numerator and denominator.
+Each instantiated object shall contain exactly one fraction.
+Provide public member functions for each of the following:
+<OL>
+<LI>Setting the value for a Rational number. The result shall be stored in reduced form
+<LI>Addition of two Rational numbers. The result shall be stored in reduced form.
+<LI>Subtraction of two Rational numbers. The result shall be stored in reduced form.
+<LI>Multiplication of two Rational numbers. The result shall be stored in reduced form.
+<LI>Division of two Rational numbers. The result shall be stored in reduced form.
+<LI>Displaying Rational numbers in the form i/j where i is the numerator and j is the denominator.
+</OL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Allow the user to enter an arithmetic expression (as in homework <A HREF="#13">13</A>)
+or an exit command (i.e., loop for input until the user says “quit”).
+Provide clear instructions.
+Each operand shall be entered in the form of i/j, where i and j are integers (e.g., -11/52).
+Output the result as a rational number.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Be prepared, at a minimum, to correctly handle the following
+(the correct answer is in parentheses):
+<PRE>
+      11/52+30/104 (1/2)
+      3/4*4/3 (1/1)
+      7/11+0/3 (7/11)
+      17/-5/-17/-5 (-1/1)
+      7/3-36/-12 (16/3)
+      5/8/0/3 (error)
+</PRE>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Use new and delete to manage your objects.
+Using new, instantiate each object just before you need it.
+Destroy each object using delete immediately after results are output.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+No friends.
+No operator overloading.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="19"><FONT SIZE="+3"><B>19</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Stack Lock & Unlock</B></font><BR>
+<I>100 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Modify a class where each instance of the class can access a stack–not one stack per instance, but one stack period.
+Any instance of the class (i.e., object) can lock the stack for its own exclusive use and unlock it later.
+This means that only the object that has locked the stack can unlock it.
+Define member functions to perform the lock and unlock functions.
+These member functions also output information regarding
+each attempt to lock and unlock the stack and the success/failure of that attempt.
+Modify the push and pop member functions to output that a push/pop has occurred,
+the associated location on the stack (note this is not necessarily the
+current value of location), and the associated value.
+Each object must be able to determine, completely on its own, who it is.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Base code for the stack class is located at /home/ket/examples/stack.cpp.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Replace the code in main() to instantiate four objects.
+I refer to them as aStack, bStack, cStack, and dStack.
+Instantiate each immediately before it is first used.
+Perform the operations specified in the first column of
+/home/ket/examples/stack.txt.
+Use the same order of operations and values.
+Do not output this information.
+Exactly match the output specified in the second column of
+/home/ket/examples/stack.txt.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="20"><FONT SIZE="+3"><B>20</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Input/Output</B></font><BR>
+<I>100 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Work with others in a group to research and present information regarding
+C++ input/output (I/O).
+You will be given some class time to prepare for the presentation.
+The presentation shall include a discussion of the topic and
+functional examples (i.e., programs that work correctly).
+You will be penalized if your presentation does not adequately
+cover the assigned topic.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+It is unlikely that all of the information necessary
+for the presentation will be in the textbook.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Sign up with a group and for a topic in class.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+While each member of the group does not have to present,
+each member of the group should equally contribute to the presentation.
+For example, some may code examples while others
+present to the class and answer questions.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The amount of time for each presentation shall be announced in class.
+You will be penalized for using too much or too little time.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<B>Each</B> student shall prepare and submit a work summary, including the following information:
+<OL>
+<LI>The names of others in your group.
+<LI>The dates of class time utilized to prepare the presentation
+	(including examples).
+<LI>The dates and amount of time utilized outside of class
+	to prepare the presentation.
+<LI>The authors and titles of books, articles, etc.
+	used in researching your topic.
+<LI>The name of the file(s) containing source code you prepared
+	for the presentation.
+	Copy all source code to my directory.
+	If this is not applicable, so indicate.
+<LI>Specify the percentage of code written by you.
+	If this is not applicable, so indicate.
+<LI>List contributions other than source code.
+<LI>The length (in minutes) of your presentation.
+</OL>
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="21"><FONT SIZE="+3"><B>21</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Rational Number Calculator</B></font><BR>
+<I>250 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Implement the design completed for homework <A HREF="#18">18</A>.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="22"><FONT SIZE="+3"><B>22</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Multiplication Table (revisited)</B></font><BR>
+<I>100 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Utilizing nested loops, calculate and output the calculated values
+for a multiplication table for numbers one through ten.
+You may use a procedural implementation.
+Use constant variables for the minimum number (one)
+and the maximum number (ten).
+Use constant variables and calculations based on those constant variables
+to determine the width of cells in the table.
+Use I/O functions or manipulators to format the table
+to look exactly like the table in
+/home/ket/examples/fancyTable.txt.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="23"><FONT SIZE="+3"><B>23</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Operator Overloading</B></font><BR>
+<I>150 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Modify your Rational Number Calculator to use operator overloading
+instead of the member functions.
+Overload the following operators:
+<UL>
++<BR>
+–<BR>
+*<BR>
+/<BR>
+&lt;&lt; (output)<BR>
++=<BR>
+–=<BR>
+*=<BR>
+/=<BR>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Do the following to demonstrate that your program functions correctly
+(assuming that you have two Rational objects named operand1 and operand2):<BR>
+<PRE>
+          cout << operand1 + operand2 << endl;
+          operand1 += operand2;
+          cout << operand1 << endl;
+</PRE>
+This means that you will output the (correct) answer twice.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+No friends.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+While only the code for the operator overloading will be graded for style and elegance, the entire rational number calculator program is expected to work correctly.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="24"><FONT SIZE="+3"><B>24</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Bank Design</B></font><BR>
+<I>100 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Design software to process a list of bank transactions.
+Transactions include creating accounts, making deposits and withdrawals,
+adding accumulated interest, and deducting accumulated fees.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The following rules apply:
+<UL>
+<LI>A bounced check costs $25 and is deducted immediately from the checking account balance.
+<LI>There is a fee for each check (checking account withdrawal).
+Each checking account may use a different fee.
+The fees are charged as part of an update (see below).
+<LI>Savings accounts accrue interest.
+Each savings account may have a different interest rate.
+Interest is credited as part of an update (see below).
+<LI>Interest is charged for loans.
+Each loan may have a different interest rate.
+Interest is charged as part of an update (see below).
+<LI>An attempt is made to withdraw more money than is available in a savings or checking account
+shall be rejected and a message indicating such shall be output.
+<LI>There is no maximum limit on the amount loaned.
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The transaction file uses the following symbols: s, c, l, t, and u.
+<UL>
+<LI><B>s</B> - Create a new savings account.
+An account number, a name, an initial balance, and the interest rate are supplied.
+<LI><B>c</B> - Create a new checking account.
+An account number, a name, an initial balance, and the fee for each processed check are supplied.
+<LI><B>l</B> - Create a new loan account.
+An account number, a name, an initial balance, and the interest rate are supplied.
+<LI><B>t</B> - Perform a transaction. An account number and the amount of the transaction are supplied.
+<UL>
+<LI>For savings accounts, a positive value is a deposit and a negative value is a withdrawal.
+<LI>For checking accounts, a positive value is a deposit and a negative value represents a check.
+<LI>For loan accounts, a positive value represents a payment on the loan and
+a negative value represents the borrowing of additional money.
+</UL>
+<LI><B>u</B> - perform an update. An account number is supplied.
+<UL>
+<LI>For savings accounts, calculate and add interest earned.
+<LI>For checking accounts, calculate and deduct the fee for each check.
+<LI>For loan accounts, calculate and add the interest charged to the outstanding loan balance.
+</UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Use the list of transactions contained in /home/ket/examples/bank.txt.
+Use C++ file I/O to process this file.
+All transactions shall be processed in a single loop.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Implement the above using object oriented programming.
+Create a base class named Account.
+Created derived classes named Savings, Checking, and Loan.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The output from your program shall exactly match the output contained in /home/ket/examples/bankOutput.txt
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="25"><FONT SIZE="+3"><B>25</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Bank</B></font><BR>
+<I>200 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Implement the design completed for homework <a href="#24">24</a>.
+</TD>
+</TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="26"><FONT SIZE="+3"><B>26</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Procedural and Object Oriented</B></font><BR>
+<I>100 points</I><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Based on your experiences associated with this class,
+write a paper discussing, comparing, and contrasting
+procedural and object oriented approaches to design and programming.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The length of the paper shall be at least the amount of text
+contained in one single-spaced page (54 lines of text,
+78 columns per line).
+I will not read beyond the second page.
+&nbsp;&nbsp;&nbsp;&nbsp;
+Submit your paper as a .txt file.
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<HR>
+
+<FONT SIZE="-1"><A href="../../../../ricks-2000/Default.htm">Ricks College</A> |
+<A HREF="default.htm">Twitchell</A> |
+<A HREF="cs170.html">CS170</A></FONT>
+<BR>
+<FONT SIZE="-2"><I>March 2, 2001</I></FONT>
+
+</BODY>
+</HTML>

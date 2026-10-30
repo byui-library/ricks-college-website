@@ -1,0 +1,341 @@
+<HTML>
+<HEAD>
+<script src="../../../_archive/compat.js"></script>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (Win95; I) [Netscape]">
+   <META NAME="Author" CONTENT="Nick Hales">
+   <TITLE>Clair B. Eckersell home page</TITLE>
+<SCRIPT LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BACKGROUND="RicksWater.gif" onload="dynAnimation()">
+&nbsp;
+<CENTER><TABLE BORDER=0 CELLPADDING=2 WIDTH="700" HEIGHT="16" >
+<TR>
+<TD ALIGN=CENTER VALIGN=CENTER WIDTH="15%" HEIGHT="10" BGCOLOR="#FFFFFF" dynamicanimation="spiral" style="position: relative !important; left: 10000 !important"><IMG SRC="RicksLogo.gif" ALT="RicksLogo.gif (2590 bytes)" HEIGHT=106 WIDTH=81></TD>
+
+<TD WIDTH="60%">
+<CENTER><FONT SIZE=+3><FONT COLOR="#000066">Clair B. Eckersell, Ph.D.</FONT>&nbsp;</FONT></CENTER>
+
+<CENTER>
+<H3>
+<FONT COLOR="#000066"><FONT SIZE=+2>Department of Biological Sciences</FONT></FONT></H3></CENTER>
+
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<CENTER><FONT SIZE=+1>Office: <FONT COLOR="#000066">220 BEN</FONT></FONT></CENTER>
+
+<CENTER><FONT SIZE=+1>Office Phone: <FONT COLOR="#000066">(208)356-2023</FONT></FONT><FONT SIZE=+2>&nbsp;</FONT></CENTER>
+
+<CENTER><FONT SIZE=+1>email: <FONT COLOR="#000066"><A HREF="mailto:%20eckersellc@ricks.edu">eckersellc@ricks.edu</A></FONT></FONT><FONT SIZE=+2>&nbsp;</FONT></CENTER>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</TD>
+
+<TD VALIGN=TOP WIDTH="25%" HEIGHT="50">
+<CENTER>&nbsp;<IMG SRC="ECKERSELLC.jpg" BORDER=0 HEIGHT=170 WIDTH=120>&nbsp;</CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<UL>
+<DIV style="margin-top: -1px; margin-bottom: -1px"><U><FONT SIZE=+2>Courses:</FONT></U>
+<BR><FONT SIZE=+2><A HREF="bs100/Biol100.htm">Principles of Biology BS
+100</A></FONT></DIV>
+
+<DIV style="margin-top: -1px; margin-bottom: -1px"><FONT SIZE=+2><A HREF="bs264/AP264.htm">Anatomy
+and Physiology BS 264</A></FONT></DIV>
+
+<DIV style="margin-top: -1px; margin-bottom: -1px"><U><FONT SIZE=+2><A HREF="bs265/AP265.htm">Anatomy
+and Physiology BS 265</A></FONT></U>
+<BR><U><FONT SIZE=+2><A HREF="BS281/Pathophysiology.htm">Pathophysiology
+BS 281</A></FONT></U></DIV>
+</UL>
+&nbsp;
+<CENTER><TABLE BORDER=0 CELLPADDING=2 WIDTH="596" >
+<TR>
+<TD ALIGN=CENTER WIDTH="588" BGCOLOR="#FFFFFF">
+<CENTER><A HREF="../../../../ricks-2000/Default.htm">Ricks College Home Page</A> <A HREF="../../../../ricks-2000/AcademicPrograms.htm">Academic
+Programs</A> | <A HREF="../../admissions/adm.html">Apply
+to Ricks</A> | <A HREF="https://web.archive.org/web/1998/http://www.ricks.edu/Ricks/Academics/Catalog/CatalogCurrent/CatalogCont.html">Catalog</A>
+| <A HREF="https://web.archive.org/web/1998/http://spencer.ricks.edu/LOCAL/CLSSCD.MBR">Class Schedule</A>
+| <A HREF="../../financialaid/faintro.htm">Financial
+Aid</A> | <A HREF="../../StudentServices/FoodServices/default.html">Food
+Services</A> | <A HREF="../../StudentServices/Housing/housingcover.html">Housing</A>
+| <A HREF="../../../../ricks-2000/spencer/local/warn.htm">Registration</A>
+| <A HREF="../../../../ricks-2000/aboutricks.htm">About Ricks</A> | <A HREF="../../ContEd/conted.htm">Continuing
+Education</A> | <A HREF="../../../../ricks-2000/Devotionals.htm">Devotionals</A>
+| <A HREF="../../Personnel/Default.htm">Employment</A> | <A HREF="https://web.archive.org/web/1998/http://www.lib.ricks.edu/">Library</A>
+| <A HREF="../../../../ricks-2000/news.htm">News</A> | <A HREF="../../../../ricks-2000/events.htm">Events</A>
+| <A HREF="../../../../ricks-2000/sports.htm">Sports</A> | <A HREF="../../President/PresidentB.html">President's
+Message</A> | <A HREF="../../../../ricks-2000/StudentLife.htm">Student Life</A>
+| <A HREF="../../../../ricks-2000/alumniandfriends.htm">Alumni &amp; Friends</A>
+| <A HREF="../../../../ricks-2000/CurrentStudents.htm">Current Students</A>
+| <A HREF="../../../../ricks-2000/employees.htm">Employees</A> | <A HREF="../../../../ricks-2000/ProspStudents.htm">Prospective
+Students&nbsp;</A>&nbsp;</CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+</BODY>
+</HTML>

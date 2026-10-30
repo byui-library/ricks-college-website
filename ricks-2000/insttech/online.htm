@@ -1,0 +1,251 @@
+<html>
+
+	<head>
+<script src="../_archive/compat.js"></script>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Microsoft FrontPage 4.0">
+		<title>DIT - About Us</title>
+		<csscriptdict>
+			<script><!--
+CSStopExecution = false;
+CSInit = new Array;
+function CSScriptInit() {
+idxArray = new Array;
+for(var i=0;i<CSInit.length;i++)
+	idxArray[i] = i;
+CSAction2(CSInit, idxArray);
+}
+CSAg = window.navigator.userAgent; CSBVers = parseInt(CSAg.charAt(CSAg.indexOf("/")+1),10);
+function IsIE() { return CSAg.indexOf("MSIE") > 0;}
+function CSIEStyl(s) { return document.all.tags("div")[s].style; }
+function CSNSStyl(s) { return CSFindElement(s,0); }
+function CSFindElement(n,ly) { if (CSBVers < 4) return document[n];
+	var curDoc = ly ? ly.document : document; var elem = curDoc[n];
+	if (!elem) { for (var i=0;i<curDoc.layers.length;i++) {
+		elem = CSFindElement(n,curDoc.layers[i]); if (elem) return elem; }}
+	return elem;
+}
+function CSButtonReturn () {
+	var bAgent = window.navigator.userAgent; 
+	var bAppName = window.navigator.appName;
+	if ((bAppName.indexOf("Explorer") >= 0) && (bAgent.indexOf("Mozilla/3") >= 0) && (bAgent.indexOf("Mac") >= 0))
+		return false; // follow link
+	else return true; // follow link
+}
+CSIm = new Object();
+function CSIShow(n,i) {
+	if (document.images) {
+		if (CSIm[n]) {
+			var img = (!IsIE()) ? CSFindElement(n,0) : document[n];
+			if (img && typeof(CSIm[n][i].src) != "undefined") {img.src = CSIm[n][i].src;}
+			if(i != 0)
+				self.status = CSIm[n][3];
+			else
+				self.status = " ";
+			return true;
+		}
+	}
+	return false;
+}
+function CSILoad(action) {
+	im = action[1];
+	if (document.images) {
+		CSIm[im] = new Object();
+		for (var i=2;i<5;i++) {
+			if (action[i] != '') { CSIm[im][i-2] = new Image(); CSIm[im][i-2].src = action[i]; }
+			else CSIm[im][i-2] = 0;
+		}
+		CSIm[im][3] = action[5];
+	}
+}
+CSStopExecution = false;
+
+function CSAction(array) { 
+	return CSAction2(CSAct, array);
+}
+function CSAction2(fct, array) { 
+	var result;
+	for (var i=0;i<array.length;i++) {
+		if(CSStopExecution) return false; 
+		var actArray = fct[array[i]];
+		var tempArray = new Array;
+		for(var j=1;j<actArray.length;j++) {
+			if((actArray[j] != null) && (typeof(actArray[j]) == "object") && (actArray[j].length == 2)) {
+				if(actArray[j][0] == "VAR") {
+					tempArray[j] = CSStateArray[actArray[j][1]];
+				}
+				else {
+					if(actArray[j][0] == "ACT") {
+						tempArray[j] = CSAction(new Array(new String(actArray[j][1])));
+					}
+				else
+					tempArray[j] = actArray[j];
+				}
+			}
+			else
+				tempArray[j] = actArray[j];
+		}			
+		result = actArray[0](tempArray);
+	}
+	return result;
+}
+CSAct = new Object;
+
+// --></script>
+		</csscriptdict>
+		<csactiondict>
+		<script><!--
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button11',/*URL*/'../images/aboutus1.gif',/*URL*/'../images/aboutus2.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button12',/*URL*/'../images/showcase1.gif',/*URL*/'../images/showcase2.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button13',/*URL*/'../images/helpdesk1.gif',/*URL*/'../images/helpdesk2.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button14',/*URL*/'../images/tools1.gif',/*URL*/'../images/tools2.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button15',/*URL*/'../images/whatnew1.gif',/*URL*/'../images/whatnew2.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'tech',/*URL*/'../images/TechSmall.gif',/*URL*/'../images/TechSmallA.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'ITC',/*URL*/'../images/ITCsmall.gif',/*URL*/'../images/ITCsmallA.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'InstDes',/*URL*/'../images/Onlinesmall.gif',/*URL*/'../images/Onlinesmalla.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'Media',/*URL*/'../images/MediaLabsmall.gif',/*URL*/'../images/MediaLabsmallA.gif',/*URL*/'','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'photo',/*URL*/'../images/Photosmall.gif',/*URL*/'../images/PhotosmallA.gif',/*URL*/'','');
+
+// --></script>
+		</csactiondict>
+        <style type="text/css"><!--
+			a { color: teal; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; text-decoration: none }-->
+		</style>
+	</head>
+
+	<body bgcolor="white" background="images/BACKGROUND.gif" onload="CSScriptInit();">
+		<table cool width="703" height="2293" border="0" cellpadding="0" cellspacing="0" gridx="16" showgridx gridy="16" showgridy>
+			<tr height="1" cntrlrow>
+				<td width="1" height="1"></td>
+				<td width="108" height="1"><spacer type="block" width="108" height="1"></td>
+				<td width="51" height="1"><spacer type="block" width="51" height="1"></td>
+				<td width="33" height="1"><spacer type="block" width="33" height="1"></td>
+				<td width="7" height="1"><spacer type="block" width="7" height="1"></td>
+				<td width="27" height="1"><spacer type="block" width="27" height="1"></td>
+				<td width="286" height="1"><spacer type="block" width="286" height="1"></td>
+				<td width="2" height="1"><spacer type="block" width="2" height="1"></td>
+				<td width="46" height="1"><spacer type="block" width="46" height="1"></td>
+				<td width="140" height="1"><spacer type="block" width="140" height="1"></td>
+			</tr>
+			<tr height="103">
+				<td width="1" height="103"><spacer type="block" width="1" height="103"></td>
+				<td width="159" height="167" colspan="2" rowspan="2" valign="top" align="left" xpos="0"><a href="default.htm"><img height="132" width="137" src="images/logosm.gif" border="0"></a></td>
+				<td width="33" height="103"></td>
+				<td width="320" height="103" colspan="3" rowspan="1" valign="top" align="left" xpos="192" content csheight="22"><a href="(Empty Reference!)"><font size="2"><csobj w="54" h="12" t="Button" ht="../images/aboutus2.gif"></a><a href="../about.htm" onmouseover="return CSIShow(/*CMP*/'button11',1)" onmouseout="return CSIShow(/*CMP*/'button11',0)" onclick="return CSButtonReturn()"><img src="images/aboutus1.gif" width="54" height="12" name="button11" border="0"></a></csobj></font><font size="2">|<csobj w="51" h="12" t="Button" ht="../images/showcase2.gif"><a href="../showcase.htm" onmouseover="return CSIShow(/*CMP*/'button12',1)" onmouseout="return CSIShow(/*CMP*/'button12',0)" onclick="return CSButtonReturn()"><img src="images/showcase1.gif" width="51" height="12" name="button12" border="0"></a></csobj>|<csobj w="59" h="12" t="Button" ht="../images/helpdesk2.gif"><a href="../helpdesk.htm" onmouseover="return CSIShow(/*CMP*/'button13',1)" onmouseout="return CSIShow(/*CMP*/'button13',0)" onclick="return CSButtonReturn()"><img src="images/helpdesk1.gif" width="59" height="12" name="button13" border="0"></a></csobj>|<csobj w="64" h="12" t="Button" ht="../images/tools2.gif"><a href="../tools.htm" onmouseover="return CSIShow(/*CMP*/'button14',1)" onmouseout="return CSIShow(/*CMP*/'button14',0)" onclick="return CSButtonReturn()"><img src="images/tools1.gif" width="64" height="12" name="button14" border="0"></a></csobj> |<csobj w="64" h="12" t="Button" ht="../images/whatnew2.gif"><a href="../whatsnew.htm" onmouseover="return CSIShow(/*CMP*/'button15',1)" onmouseout="return CSIShow(/*CMP*/'button15',0)" onclick="return CSButtonReturn()"><img src="images/whatnew1.gif" width="64" height="12" name="button15" border="0"></a></csobj></font></td>
+				<td width="2" height="103"></td>
+				<td width="46" height="103"></td>
+				<td width="140" height="103"></td>
+			</tr>
+			<tr height="64">
+				<td width="1" height="64"><spacer type="block" width="1" height="64"></td>
+				<td width="33" height="64"></td>
+				<td width="7" height="64"></td>
+				<td width="313" height="64" colspan="2" rowspan="1" valign="top" align="left" xpos="199"><img height="49" width="264" src="images/IDaa.gif"></td>
+				<td width="2" height="64"></td>
+				<td width="46" height="64"></td>
+				<td width="140" height="64"></td>
+			</tr>
+			<tr height="24">
+				<td width="1" height="24"><spacer type="block" width="1" height="24"></td>
+				<td width="108" height="24" colspan="1" rowspan="1" valign="top" align="left" xpos="0"><csobj w="95" h="19" t="Button" ht="../images/TechSmallA.gif"><a href="techsmart.htm" onmouseover="return CSIShow(/*CMP*/'tech',1)" onmouseout="return CSIShow(/*CMP*/'tech',0)" onclick="return CSButtonReturn()"><img src="images/TechSmall.gif" width="95" height="19" name="tech" border="0"></a></csobj></td>
+				<td width="51" height="24"></td>
+				<td width="33" height="24"></td>
+				<td width="7" height="24"></td>
+				<td width="27" height="24"></td>
+				<td width="286" height="24"></td>
+				<td width="2" height="24"></td>
+				<td width="46" height="24"></td>
+				<td width="140" height="24"></td>
+			</tr>
+			<tr height="2">
+				<td width="1" height="2"><spacer type="block" width="1" height="2"></td>
+				<td width="108" height="24" colspan="1" rowspan="2" valign="top" align="left" xpos="0"><csobj w="95" h="19" t="Button" ht="../images/ITCsmallA.gif"><a href="itc.htm" onmouseover="return CSIShow(/*CMP*/'ITC',1)" onmouseout="return CSIShow(/*CMP*/'ITC',0)" onclick="return CSButtonReturn()"><img src="images/ITCsmall.gif" width="95" height="19" name="ITC" border="0"></a></csobj></td>
+				<td width="51" height="2"></td>
+				<td width="33" height="2"></td>
+				<td width="7" height="2"></td>
+				<td width="27" height="2"></td>
+				<td width="286" height="2"></td>
+				<td width="2" height="2"></td>
+				<td width="46" height="2"></td>
+				<td width="140" height="2"></td>
+			</tr>
+			<tr height="22">
+				<td width="1" height="22"><spacer type="block" width="1" height="22"></td>
+				<td width="452" height="141" colspan="7" rowspan="4" valign="top" align="left" xpos="108" content csheight="140">
+					<center>
+                        <a href="ciorient.htm"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Online
+                    Course Orientation (Online Version)<br>
+                        </font></a>
+                        <font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
+                    <br>
+                    <a href="https://web.archive.org/web/2001/http://courses.ricks.edu">Login - BlackBoard CourseInfo<br>
+                    <img border="0" src="images/Bblogo.gif" width="111" height="78"><br></a>
+						<br>
+                    <a href="onlinecourses/onlinecalendar.htm">Online Courses
+                    Available</a>
+                        </font>
+                    <p>
+                        <a href="FAQs.htm"><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">Frequently Asked Questions<br>
+                        </font></a><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2"><br>
+                        <a href="#Anchor-Contact-14210">Contact Information</a></font>
+						<p></center>
+				</td>
+				<td width="140" height="22"></td>
+			</tr>
+			<tr height="24">
+				<td width="1" height="24"><spacer type="block" width="1" height="24"></td>
+				<td width="108" height="24" colspan="1" rowspan="1" valign="top" align="left" xpos="0"><csobj w="95" h="19" t="Button" ht="../images/Onlinesmalla.gif"><a href="online.htm" onmouseover="return CSIShow(/*CMP*/'InstDes',1)" onmouseout="return CSIShow(/*CMP*/'InstDes',0)" onclick="return CSButtonReturn()"><img src="images/Onlinesmall.gif" width="95" height="19" name="InstDes" border="0"></a></csobj></td>
+				<td width="140" height="24"></td>
+			</tr>
+			<tr height="25">
+				<td width="1" height="25"><spacer type="block" width="1" height="25"></td>
+				<td width="108" height="25" colspan="1" rowspan="1" valign="top" align="left" xpos="0"><csobj w="95" h="19" t="Button" ht="../images/MediaLabsmallA.gif"><a href="medialab.htm" onmouseover="return CSIShow(/*CMP*/'Media',1)" onmouseout="return CSIShow(/*CMP*/'Media',0)" onclick="return CSButtonReturn()"><img src="images/MediaLabsmall.gif" width="95" height="19" name="Media" border="0"></a></csobj></td>
+				<td width="140" height="25"></td>
+			</tr>
+			<tr height="70">
+				<td width="1" height="70"><spacer type="block" width="1" height="70"></td>
+				<td width="108" height="70" colspan="1" rowspan="1" valign="top" align="left" xpos="0"><csobj w="95" h="19" t="Button" ht="../images/PhotosmallA.gif"><a href="photo.htm" onmouseover="return CSIShow(/*CMP*/'photo',1)" onmouseout="return CSIShow(/*CMP*/'photo',0)" onclick="return CSButtonReturn()"><img src="images/Photosmall.gif" width="95" height="19" name="photo" border="0"></a></csobj></td>
+				<td width="140" height="70"></td>
+			</tr>
+			<tr height="1658">
+				<td width="1" height="1658"><spacer type="block" width="1" height="1658"></td>
+				<td width="108" height="1658"></td>
+				<td width="51" height="1658"></td>
+				<td width="33" height="1658"></td>
+				<td width="7" height="1658"></td>
+				<td width="27" height="1658"></td>
+				<td width="286" height="1658" colspan="1" rowspan="1" valign="top" align="left" xpos="226"><img height="167" width="182" src="images/Teacher%2001.gif"></td>
+				<td width="2" height="1658"></td>
+				<td width="46" height="1658"></td>
+				<td width="140" height="1658"></td>
+			</tr>
+			<tr height="298">
+				<td width="1" height="298"><spacer type="block" width="1" height="298"></td>
+				<td width="108" height="298"></td>
+				<td width="51" height="298"></td>
+				<td width="355" height="298" colspan="5" rowspan="1" valign="top" align="left" xpos="159" content csheight="298"><font size="4"><i><b><a name="Anchor-Contact-14210"></a>Contact Information</b></i></font>
+					<p><b>Online Course Administrative Issues</b><br>
+					Department of Instructional Technology<br>
+					Ricks College<br>
+					Rexburg, ID 84360-0405<br>
+					Phone: 208.356.1200<br>
+					Fax: 208.356.2390<br>
+					Email: <a href="mailto:onlinehelp@ricks.edu"><font size="2">Onlinehelp@ricks.edu</font></a><br>
+					Web site: <a href="default.htm"><font size="2">http://www.ricks.edu/insttech/</font></a></p>
+					<p>Hours:<br>
+					8:00 a.m. - 5:00 p.m. -- Monday-Friday</p>
+					<p><b>Online Course Technical Issues</b><br>
+					Ricks College Help Desk<br>
+					Phone: 208.356.2361<br>
+					Email: <a href="mailto:helpdesk@ricks.edu"><font size="2">Helpdesk@ricks.edu</font></a><br>
+					</p>
+					<p>Hours:<br>
+					7:00 a.m - 10:00 p.m -- Monday-Friday<br>
+					9:00 a.m. - 6:00 p.m -- Saturday</td>
+				<td width="46" height="298"></td>
+				<td width="140" height="298"></td>
+			</tr>
+		</table>
+	</body>
+
+</html>

@@ -1,0 +1,83 @@
+
+        Name            EET 151 PAL Laboratory;
+        Date            4/1/99;
+        Designer        Chevy Haighter;
+        Company         Road Ripper Motor Company;
+        Assembly        Turn Signal & Stop Light Controller;
+        Device  	G16V8;
+
+
+
+        /* Function Specifications */
+        
+        /*      Inputs (Switches) | Outputs (Lights)
+                                  |
+                stop left  right  | l_front l_back  r_front r_back
+                ------------------|------------------------------
+                0    0     0      | 0       0       0       0 
+                0    0     1      | 0       0       BLINK   BLINK              
+                0    1     0      | BLINK   BLINK   0       0        
+                0    1     1      | BLINK   BLINK   BLINK   BLINK
+                1    0     0      | 0       1       0       1
+                1    0     1      | 0       1       BLINK   BLINK           
+                1    1     0      | BLINK   BLINK   0       1        
+                1    1     1      | BLINK   1       BLINK   1
+
+                0 = OFF     1 = ON      BLINK = Blinking (Clocked)      
+
+ 
+                stop left  right clk  |  l_front l_back  r_front r_back
+                ----------------------|------------------------------
+                0    0     0     0    |  L       L       L       L;
+                0    0     0     1    |  L       L       L       L;
+                0    0     1     0    |  L       L       L       L;
+                0    0     1     1    |  L       L       H       H;
+                0    1     0     0    |  L       L       L       L;
+                0    1     0     1    |  H       H       L       L;
+                0    1     1     0    |  L       L       L       L;
+                0    1     1     1    |  H       H       H       H;
+                1    0     0     0    |  L       H       L       H;
+                1    0     0     1    |  L       H       L       H;
+                1    0     1     0    |  L       H       L       L;
+                1    0     1     1    |  L       H       H       H;
+                1    1     0     0    |  L       L       L       H;
+                1    1     0     1    |  H       H       L       H;
+                1    1     1     0    |  L       H       L       H;
+                1    1     1     1    |  H       H       H       H;     	
+	*/
+    
+        /* Define Logic Operators */
+       
+            /* AND = &  */
+            /* OR = #   */
+            /* NOT = !  */     
+
+        /* Define Output Pins */
+
+            pin 18 = l_front;     /* left front light (input/output) */
+            pin 13 = r_front;     /* right front light (input/output) */
+            pin 19 = l_back;      /* left back light (output only) */
+            pin 12 = r_back;      /* right back light (output only) */
+        
+        /* Define Input Pins */
+        
+            pin 2 = stop;         /* brake pedal switch */
+            pin 3 = left;         /* left turn switch */
+            pin 4 = right;        /* right turn switch */
+            pin 5 = clk;          /* flasher input */
+
+
+        /* Boolean Equations */
+
+            /* These are the equations determined for you in the handout. */
+               
+            l_front = clk & left;                   
+            l_back = l_front # (!left & stop) # (right & stop);     
+
+            /* These are the equations you must write. */
+
+            r_front = ;
+            r_back = ;
+
+
+

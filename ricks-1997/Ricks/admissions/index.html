@@ -1,0 +1,214 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Netscape Workspace</title>
+</head>
+
+<script language="JavaScript">
+
+self.name = "user";
+
+function getCookie(name) {
+    dc = document.cookie;
+    if (dc.length>0 && (cut1=dc.indexOf(name))>=0) {
+        tmp = dc.substring(cut1+name.length+1);
+        cut2=tmp.indexOf(';');
+        if (cut2<0)
+            tmp2 = tmp;
+        else
+            tmp2 = tmp.substring(0,cut2);
+        return unescape(tmp2);
+    }
+    return null;
+}
+
+function setCookie (name, value) {
+
+    document.cookie = name + "=" + escape (value) + "; path=/";
+}
+
+function openWebPubWindow()
+{
+
+	var url = top.location.href;
+ 	var baseURL = url.substring(0, url.lastIndexOf('/'));
+
+	setCookie('baseURL', baseURL);
+	if (navigator.appName == "Microsoft Internet Explorer" ||
+ 	((navigator.appName == "Netscape" && parseInt(navigator.appVersion) == 3) &&
+ 	navigator.javaEnabled())) {
+          // the applet version should be the old (non-signed-applet) one
+          webPubWin = window.open( "/publisher/WPConsole30.html", "webpubwin",
+          "status=yes,width=600,height=200,menubar=no,location=no,directories=no,"+
+                "menubar=no,scrollbars=no,resizable=no" );
+        } else if(( navigator.appName == "Netscape" &&
+        parseInt(navigator.appVersion) == 4) && navigator.javaEnabled()) {
+          // the applet is being launched as a sigend applet
+          webPubWin = window.open( "/publisher/WPConsole.html", "webpubwin",
+                "status=yes,width=600,height=200,menubar=no,location=no,directories=no,"+
+                "menubar=no,scrollbars=no,resizable=no" );
+        } else {
+                // no approved setup was detected
+                if( parseInt(navigator.appVersion) == 2 ){
+                        alert("The Web Publisher cannot be run from Navigator version 2!");
+                } else if( navigator.javaEnabled() == false ){
+                        alert("The Web Publisher can only be run when Java is enabled!" );
+                } else {
+                        alert("Web Publisher cannot start: unknown problem with browser type!" );
+                }
+        }
+}
+
+function UsrAgent()
+{
+var myWin = window.open('/Agents', 'Agents','resizable=1,width=700,height=500,toobar=no');
+}
+
+
+function Search()
+{
+var myWin = window.open('/search', 'Search');
+}
+
+function Info()
+{
+	var myWin = window.open(top.user.info, top.user.uid);
+}
+
+
+function AccessControl() 
+{
+	var path = top.location.pathname;
+	var uri = path.substring(0, path.lastIndexOf('/'));
+	top.conFrame.location.href='/oneacl'+uri+'/';
+}
+
+function CheckLinks() 
+{
+	var path = top.location.pathname;
+	var uri = path.substring(0, path.lastIndexOf('/'));
+	top.conFrame.location.href=uri+'?wp-link-info';
+}
+
+
+// directories
+function Dir_openWebPubWindow()
+{
+        if (navigator.appName == "Microsoft Internet Explorer" ||
+        ((navigator.appName == "Netscape" && parseInt(navigator.appVersion) == 3) &&
+        navigator.javaEnabled())) {
+          // the applet version should be the old (non-signed-applet) one
+          webPubWin = window.open( "/publisher/WPConsole30.html", "webpubwin",
+          "status=yes,width=600,height=200,menubar=no,location=no,directories=no,"+
+                "menubar=no,scrollbars=no,resizable=no" );
+        } else if(( navigator.appName == "Netscape" &&
+        parseInt(navigator.appVersion) == 4) && navigator.javaEnabled()) {
+          // the applet is being launched as a sigend applet
+          webPubWin = window.open( "/publisher/WPConsole.html", "webpubwin",
+                "status=yes,width=600,height=200,menubar=no,location=no,directories=no,"+
+                "menubar=no,scrollbars=no,resizable=no" );
+        } else {
+                // no approved setup was detected
+                if( parseInt(navigator.appVersion) == 2 ){
+                        alert("The Web Publisher cannot be run from Navigator version 2!");
+                } else if( navigator.javaEnabled() == false ){
+                        alert("The Web Publisher can only be run when Java is enabled!" );
+                } else {
+                        alert("Web Publisher cannot start: unknown problem with browser type!" );
+                }
+        }
+}
+
+function Dir_Search()
+{
+        var myWin = window.open('/search', 'Search',
+        'resizable=1,width=700,height=500,toobar=no');
+}
+
+function Dir_UsrAgent()
+{
+        var myWin = window.open('/Agents', 'Agents',
+        'resizable=1,width=700,height=500,toobar=no');
+}
+
+function User()
+{
+   this.uid='daviss';
+   this.parentUrl='/Ricks/';
+   this.info='http://www.ricks.edu:8090';
+   this.cn='Steve Davis';
+}
+top.user = new User();
+
+
+top.openWebPubWindow = openWebPubWindow;
+top.UsrAgent = UsrAgent;
+top.CheckLinks = CheckLinks;
+top.Search = Search;
+top.Info = Info;
+top.AccessControl = AccessControl;
+top.Dir_openWebPubWindow = Dir_openWebPubWindow;
+top.Dir_Search = Dir_Search;
+top.Dir_UsrAgent = Dir_UsrAgent;
+
+</script>
+
+
+<frameset
+        rows="70,*"
+        frameborder="no"
+        border=0>
+
+    <frame
+        src="banner.html"
+        name="commandFrame"
+        frameborder="yes"
+        marginheight=10
+
+        marginwidth=0
+
+        scrolling="no">
+
+<frameset
+        cols="160,*,0"
+        frameborder="yes"
+        border=1>
+
+        <frame
+        src="menu.html"
+        frameborder="yes"
+        marginheight=5
+
+        marginwidth=0
+
+        scrolling="auto">
+
+        <frame src="netshare.html"
+        name="conFrame"
+        frameborder="no"
+        marginheight=5
+
+        marginwidth=10
+
+        scrolling="auto">
+
+        <frame src="javascript:;"
+        name="emptyframe"
+        frameborder="no"
+        marginheight=0
+
+        marginwidth=0
+
+        scrolling="no">
+
+</frameset>
+
+</frameset>
+
+
+
+<noframe>
+This page must be viewed with a browser that supports frames (Netscape Navigator v2.0 or higher.  <a href="../../../ricks-2000/Default.htm">Click here to link to the frameless version.</a>
+</noframe>
+</html>
+

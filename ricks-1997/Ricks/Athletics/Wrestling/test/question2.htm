@@ -1,0 +1,1939 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 4.0">
+<title>Wrestling Application - Ricks College</title>
+</head>
+
+<body bgcolor="#C0C0C0" background="rain.jpg">
+<font FACE="Arial" SIZE="3">
+
+<!--webbot BOT="GeneratedScript" PREVIEW=" " startspan --><script Language="JavaScript"><!--
+function FrontPage_Form1_Validator(theForm)
+{
+
+  if (theForm.Social1.value == "")
+  {
+    alert("Please enter a value for the \"first social security\" field.");
+    theForm.Social1.focus();
+    return (false);
+  }
+
+  if (theForm.Social1.value.length < 3)
+  {
+    alert("Please enter at least 3 characters in the \"first social security\" field.");
+    theForm.Social1.focus();
+    return (false);
+  }
+
+  if (theForm.Social1.value.length > 3)
+  {
+    alert("Please enter at most 3 characters in the \"first social security\" field.");
+    theForm.Social1.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-,";
+  var checkStr = theForm.Social1.value;
+  var allValid = true;
+  var decPoints = 0;
+  var allNum = "";
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+    if (ch != ",")
+      allNum += ch;
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit characters in the \"first social security\" field.");
+    theForm.Social1.focus();
+    return (false);
+  }
+
+  if (theForm.Social2.value == "")
+  {
+    alert("Please enter a value for the \"second social security\" field.");
+    theForm.Social2.focus();
+    return (false);
+  }
+
+  if (theForm.Social2.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"second social security\" field.");
+    theForm.Social2.focus();
+    return (false);
+  }
+
+  if (theForm.Social2.value.length > 2)
+  {
+    alert("Please enter at most 2 characters in the \"second social security\" field.");
+    theForm.Social2.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-,";
+  var checkStr = theForm.Social2.value;
+  var allValid = true;
+  var decPoints = 0;
+  var allNum = "";
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+    if (ch != ",")
+      allNum += ch;
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit characters in the \"second social security\" field.");
+    theForm.Social2.focus();
+    return (false);
+  }
+
+  if (theForm.Social3.value == "")
+  {
+    alert("Please enter a value for the \"third social security\" field.");
+    theForm.Social3.focus();
+    return (false);
+  }
+
+  if (theForm.Social3.value.length < 4)
+  {
+    alert("Please enter at least 4 characters in the \"third social security\" field.");
+    theForm.Social3.focus();
+    return (false);
+  }
+
+  if (theForm.Social3.value.length > 4)
+  {
+    alert("Please enter at most 4 characters in the \"third social security\" field.");
+    theForm.Social3.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-,";
+  var checkStr = theForm.Social3.value;
+  var allValid = true;
+  var decPoints = 0;
+  var allNum = "";
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+    if (ch != ",")
+      allNum += ch;
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit characters in the \"third social security\" field.");
+    theForm.Social3.focus();
+    return (false);
+  }
+
+  if (theForm.Age.value == "")
+  {
+    alert("Please enter a value for the \"Age\" field.");
+    theForm.Age.focus();
+    return (false);
+  }
+
+  if (theForm.Age.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"Age\" field.");
+    theForm.Age.focus();
+    return (false);
+  }
+
+  if (theForm.Age.value.length > 2)
+  {
+    alert("Please enter at most 2 characters in the \"Age\" field.");
+    theForm.Age.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-,";
+  var checkStr = theForm.Age.value;
+  var allValid = true;
+  var decPoints = 0;
+  var allNum = "";
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+    if (ch != ",")
+      allNum += ch;
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit characters in the \"Age\" field.");
+    theForm.Age.focus();
+    return (false);
+  }
+
+  if (theForm.Weight.value == "")
+  {
+    alert("Please enter a value for the \"weight\" field.");
+    theForm.Weight.focus();
+    return (false);
+  }
+
+  if (theForm.Weight.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"weight\" field.");
+    theForm.Weight.focus();
+    return (false);
+  }
+
+  if (theForm.Weight.value.length > 3)
+  {
+    alert("Please enter at most 3 characters in the \"weight\" field.");
+    theForm.Weight.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-',/";
+  var checkStr = theForm.Weight.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit and \"',/\" characters in the \"weight\" field.");
+    theForm.Weight.focus();
+    return (false);
+  }
+
+  if (theForm.Height.value == "")
+  {
+    alert("Please enter a value for the \"Height\" field.");
+    theForm.Height.focus();
+    return (false);
+  }
+
+  if (theForm.Height.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"Height\" field.");
+    theForm.Height.focus();
+    return (false);
+  }
+
+  if (theForm.Height.value.length > 4)
+  {
+    alert("Please enter at most 4 characters in the \"Height\" field.");
+    theForm.Height.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-'\"- \t\r\n\f";
+  var checkStr = theForm.Height.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit, whitespace and \"'\"-\" characters in the \"Height\" field.");
+    theForm.Height.focus();
+    return (false);
+  }
+
+  if (theForm.Date.value == "")
+  {
+    alert("Please enter a value for the \"Date\" field.");
+    theForm.Date.focus();
+    return (false);
+  }
+
+  if (theForm.Date.value.length < 6)
+  {
+    alert("Please enter at least 6 characters in the \"Date\" field.");
+    theForm.Date.focus();
+    return (false);
+  }
+
+  if (theForm.Date.value.length > 10)
+  {
+    alert("Please enter at most 10 characters in the \"Date\" field.");
+    theForm.Date.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-/";
+  var checkStr = theForm.Date.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit and \"/\" characters in the \"Date\" field.");
+    theForm.Date.focus();
+    return (false);
+  }
+
+  if (theForm.PrevCollege.value == "")
+  {
+    alert("Please enter a value for the \"Prev College\" field.");
+    theForm.PrevCollege.focus();
+    return (false);
+  }
+
+  if (theForm.PrevCollege.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"Prev College\" field.");
+    theForm.PrevCollege.focus();
+    return (false);
+  }
+
+  if (theForm.PrevCollege.value.length > 45)
+  {
+    alert("Please enter at most 45 characters in the \"Prev College\" field.");
+    theForm.PrevCollege.focus();
+    return (false);
+  }
+
+  var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ \t\r\n\f";
+  var checkStr = theForm.PrevCollege.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only letter and whitespace characters in the \"Prev College\" field.");
+    theForm.PrevCollege.focus();
+    return (false);
+  }
+
+  if (theForm.PrevcollegeYear.value == "")
+  {
+    alert("Please enter a value for the \"year in college\" field.");
+    theForm.PrevcollegeYear.focus();
+    return (false);
+  }
+
+  if (theForm.PrevcollegeYear.value.length < 4)
+  {
+    alert("Please enter at least 4 characters in the \"year in college\" field.");
+    theForm.PrevcollegeYear.focus();
+    return (false);
+  }
+
+  if (theForm.PrevcollegeYear.value.length > 9)
+  {
+    alert("Please enter at most 9 characters in the \"year in college\" field.");
+    theForm.PrevcollegeYear.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789--";
+  var checkStr = theForm.PrevcollegeYear.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit and \"-\" characters in the \"year in college\" field.");
+    theForm.PrevcollegeYear.focus();
+    return (false);
+  }
+
+  if (theForm.Name.value == "")
+  {
+    alert("Please enter a value for the \"Full Name\" field.");
+    theForm.Name.focus();
+    return (false);
+  }
+
+  if (theForm.Name.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"Full Name\" field.");
+    theForm.Name.focus();
+    return (false);
+  }
+
+  if (theForm.Name.value.length > 50)
+  {
+    alert("Please enter at most 50 characters in the \"Full Name\" field.");
+    theForm.Name.focus();
+    return (false);
+  }
+
+  var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ., \t\r\n\f";
+  var checkStr = theForm.Name.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only letter, whitespace and \".,\" characters in the \"Full Name\" field.");
+    theForm.Name.focus();
+    return (false);
+  }
+
+  if (theForm.Major.value == "")
+  {
+    alert("Please enter a value for the \"Major\" field.");
+    theForm.Major.focus();
+    return (false);
+  }
+
+  if (theForm.Major.value.length < 3)
+  {
+    alert("Please enter at least 3 characters in the \"Major\" field.");
+    theForm.Major.focus();
+    return (false);
+  }
+
+  if (theForm.Major.value.length > 25)
+  {
+    alert("Please enter at most 25 characters in the \"Major\" field.");
+    theForm.Major.focus();
+    return (false);
+  }
+
+  var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ \t\r\n\f";
+  var checkStr = theForm.Major.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only letter and whitespace characters in the \"Major\" field.");
+    theForm.Major.focus();
+    return (false);
+  }
+
+  if (theForm.Address.value == "")
+  {
+    alert("Please enter a value for the \"Address\" field.");
+    theForm.Address.focus();
+    return (false);
+  }
+
+  if (theForm.Address.value.length < 4)
+  {
+    alert("Please enter at least 4 characters in the \"Address\" field.");
+    theForm.Address.focus();
+    return (false);
+  }
+
+  if (theForm.Address.value.length > 45)
+  {
+    alert("Please enter at most 45 characters in the \"Address\" field.");
+    theForm.Address.focus();
+    return (false);
+  }
+
+  if (theForm.Collegeheight.value == "")
+  {
+    alert("Please enter a value for the \"Probable College Wrestling Height\" field.");
+    theForm.Collegeheight.focus();
+    return (false);
+  }
+
+  if (theForm.Collegeheight.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"Probable College Wrestling Height\" field.");
+    theForm.Collegeheight.focus();
+    return (false);
+  }
+
+  if (theForm.Collegeheight.value.length > 5)
+  {
+    alert("Please enter at most 5 characters in the \"Probable College Wrestling Height\" field.");
+    theForm.Collegeheight.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-\"-'";
+  var checkStr = theForm.Collegeheight.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit and \"\"-'\" characters in the \"Probable College Wrestling Height\" field.");
+    theForm.Collegeheight.focus();
+    return (false);
+  }
+
+  if (theForm.City.value == "")
+  {
+    alert("Please enter a value for the \"City\" field.");
+    theForm.City.focus();
+    return (false);
+  }
+
+  if (theForm.City.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"City\" field.");
+    theForm.City.focus();
+    return (false);
+  }
+
+  if (theForm.City.value.length > 30)
+  {
+    alert("Please enter at most 30 characters in the \"City\" field.");
+    theForm.City.focus();
+    return (false);
+  }
+
+  if (theForm.Overallrecord.value == "")
+  {
+    alert("Please enter a value for the \"Overall Record this Year\" field.");
+    theForm.Overallrecord.focus();
+    return (false);
+  }
+
+  if (theForm.Overallrecord.value.length < 3)
+  {
+    alert("Please enter at least 3 characters in the \"Overall Record this Year\" field.");
+    theForm.Overallrecord.focus();
+    return (false);
+  }
+
+  if (theForm.Overallrecord.value.length > 5)
+  {
+    alert("Please enter at most 5 characters in the \"Overall Record this Year\" field.");
+    theForm.Overallrecord.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789--";
+  var checkStr = theForm.Overallrecord.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit and \"-\" characters in the \"Overall Record this Year\" field.");
+    theForm.Overallrecord.focus();
+    return (false);
+  }
+
+  if (theForm.State.value == "")
+  {
+    alert("Please enter a value for the \"State\" field.");
+    theForm.State.focus();
+    return (false);
+  }
+
+  if (theForm.State.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"State\" field.");
+    theForm.State.focus();
+    return (false);
+  }
+
+  if (theForm.State.value.length > 45)
+  {
+    alert("Please enter at most 45 characters in the \"State\" field.");
+    theForm.State.focus();
+    return (false);
+  }
+
+  var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ.,-/ \t\r\n\f";
+  var checkStr = theForm.State.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only letter, whitespace and \".,-/\" characters in the \"State\" field.");
+    theForm.State.focus();
+    return (false);
+  }
+
+  if (theForm.teamrecord.value == "")
+  {
+    alert("Please enter a value for the \"Team Record this Year\" field.");
+    theForm.teamrecord.focus();
+    return (false);
+  }
+
+  if (theForm.teamrecord.value.length < 5)
+  {
+    alert("Please enter at least 5 characters in the \"Team Record this Year\" field.");
+    theForm.teamrecord.focus();
+    return (false);
+  }
+
+  if (theForm.teamrecord.value.length > 8)
+  {
+    alert("Please enter at most 8 characters in the \"Team Record this Year\" field.");
+    theForm.teamrecord.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789--";
+  var checkStr = theForm.teamrecord.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit and \"-\" characters in the \"Team Record this Year\" field.");
+    theForm.teamrecord.focus();
+    return (false);
+  }
+
+  if (theForm.Zipcode.value == "")
+  {
+    alert("Please enter a value for the \"Zip Code\" field.");
+    theForm.Zipcode.focus();
+    return (false);
+  }
+
+  if (theForm.Zipcode.value.length < 5)
+  {
+    alert("Please enter at least 5 characters in the \"Zip Code\" field.");
+    theForm.Zipcode.focus();
+    return (false);
+  }
+
+  if (theForm.Zipcode.value.length > 10)
+  {
+    alert("Please enter at most 10 characters in the \"Zip Code\" field.");
+    theForm.Zipcode.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-- \t\r\n\f";
+  var checkStr = theForm.Zipcode.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit, whitespace and \"-\" characters in the \"Zip Code\" field.");
+    theForm.Zipcode.focus();
+    return (false);
+  }
+
+  if (theForm.Tourneyrecord.value == "")
+  {
+    alert("Please enter a value for the \"Tournament record this year\" field.");
+    theForm.Tourneyrecord.focus();
+    return (false);
+  }
+
+  if (theForm.Tourneyrecord.value.length < 3)
+  {
+    alert("Please enter at least 3 characters in the \"Tournament record this year\" field.");
+    theForm.Tourneyrecord.focus();
+    return (false);
+  }
+
+  if (theForm.Tourneyrecord.value.length > 5)
+  {
+    alert("Please enter at most 5 characters in the \"Tournament record this year\" field.");
+    theForm.Tourneyrecord.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789--";
+  var checkStr = theForm.Tourneyrecord.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit and \"-\" characters in the \"Tournament record this year\" field.");
+    theForm.Tourneyrecord.focus();
+    return (false);
+  }
+
+  if (theForm.Telephone.value == "")
+  {
+    alert("Please enter a value for the \"Telephone Number\" field.");
+    theForm.Telephone.focus();
+    return (false);
+  }
+
+  if (theForm.Telephone.value.length < 7)
+  {
+    alert("Please enter at least 7 characters in the \"Telephone Number\" field.");
+    theForm.Telephone.focus();
+    return (false);
+  }
+
+  if (theForm.Telephone.value.length > 15)
+  {
+    alert("Please enter at most 15 characters in the \"Telephone Number\" field.");
+    theForm.Telephone.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-/-() \t\r\n\f";
+  var checkStr = theForm.Telephone.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit, whitespace and \"/-()\" characters in the \"Telephone Number\" field.");
+    theForm.Telephone.focus();
+    return (false);
+  }
+
+  if (theForm.Tourneyplacement.value == "")
+  {
+    alert("Please enter a value for the \"Tournament Placing this Year\" field.");
+    theForm.Tourneyplacement.focus();
+    return (false);
+  }
+
+  if (theForm.Tourneyplacement.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"Tournament Placing this Year\" field.");
+    theForm.Tourneyplacement.focus();
+    return (false);
+  }
+
+  if (theForm.Tourneyplacement.value.length > 25)
+  {
+    alert("Please enter at most 25 characters in the \"Tournament Placing this Year\" field.");
+    theForm.Tourneyplacement.focus();
+    return (false);
+  }
+
+  if (theForm.Email.value == "")
+  {
+    alert("Please enter a value for the \"Email Address\" field.");
+    theForm.Email.focus();
+    return (false);
+  }
+
+  if (theForm.Email.value.length < 6)
+  {
+    alert("Please enter at least 6 characters in the \"Email Address\" field.");
+    theForm.Email.focus();
+    return (false);
+  }
+
+  if (theForm.Email.value.length > 45)
+  {
+    alert("Please enter at most 45 characters in the \"Email Address\" field.");
+    theForm.Email.focus();
+    return (false);
+  }
+
+  if (theForm.Disrict.value == "")
+  {
+    alert("Please enter a value for the \"District/Region placing this year\" field.");
+    theForm.Disrict.focus();
+    return (false);
+  }
+
+  if (theForm.Disrict.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"District/Region placing this year\" field.");
+    theForm.Disrict.focus();
+    return (false);
+  }
+
+  if (theForm.Disrict.value.length > 25)
+  {
+    alert("Please enter at most 25 characters in the \"District/Region placing this year\" field.");
+    theForm.Disrict.focus();
+    return (false);
+  }
+
+  if (theForm.stateplace.value == "")
+  {
+    alert("Please enter a value for the \"State placing this year\" field.");
+    theForm.stateplace.focus();
+    return (false);
+  }
+
+  if (theForm.stateplace.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"State placing this year\" field.");
+    theForm.stateplace.focus();
+    return (false);
+  }
+
+  if (theForm.stateplace.value.length > 25)
+  {
+    alert("Please enter at most 25 characters in the \"State placing this year\" field.");
+    theForm.stateplace.focus();
+    return (false);
+  }
+
+  if (theForm.Birthdate.value == "")
+  {
+    alert("Please enter a value for the \"Birth Date\" field.");
+    theForm.Birthdate.focus();
+    return (false);
+  }
+
+  if (theForm.Birthdate.value.length < 6)
+  {
+    alert("Please enter at least 6 characters in the \"Birth Date\" field.");
+    theForm.Birthdate.focus();
+    return (false);
+  }
+
+  if (theForm.Birthdate.value.length > 10)
+  {
+    alert("Please enter at most 10 characters in the \"Birth Date\" field.");
+    theForm.Birthdate.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-/ \t\r\n\f";
+  var checkStr = theForm.Birthdate.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit, whitespace and \"/\" characters in the \"Birth Date\" field.");
+    theForm.Birthdate.focus();
+    return (false);
+  }
+
+  if (theForm.HSoffice.value == "")
+  {
+    alert("Please enter a value for the \"High School Offices Held\" field.");
+    theForm.HSoffice.focus();
+    return (false);
+  }
+
+  if (theForm.HSoffice.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"High School Offices Held\" field.");
+    theForm.HSoffice.focus();
+    return (false);
+  }
+
+  if (theForm.HSoffice.value.length > 45)
+  {
+    alert("Please enter at most 45 characters in the \"High School Offices Held\" field.");
+    theForm.HSoffice.focus();
+    return (false);
+  }
+
+  if (theForm.Father.value == "")
+  {
+    alert("Please enter a value for the \"Fathers Name\" field.");
+    theForm.Father.focus();
+    return (false);
+  }
+
+  if (theForm.Father.value.length < 3)
+  {
+    alert("Please enter at least 3 characters in the \"Fathers Name\" field.");
+    theForm.Father.focus();
+    return (false);
+  }
+
+  if (theForm.Father.value.length > 45)
+  {
+    alert("Please enter at most 45 characters in the \"Fathers Name\" field.");
+    theForm.Father.focus();
+    return (false);
+  }
+
+  var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ., \t\r\n\f";
+  var checkStr = theForm.Father.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only letter, whitespace and \".,\" characters in the \"Fathers Name\" field.");
+    theForm.Father.focus();
+    return (false);
+  }
+
+  if (theForm.PriorAccomplishments.value == "")
+  {
+    alert("Please enter a value for the \"Prior Accomplishments\" field.");
+    theForm.PriorAccomplishments.focus();
+    return (false);
+  }
+
+  if (theForm.PriorAccomplishments.value.length < 20)
+  {
+    alert("Please enter at least 20 characters in the \"Prior Accomplishments\" field.");
+    theForm.PriorAccomplishments.focus();
+    return (false);
+  }
+
+  if (theForm.PriorAccomplishments.value.length > 999)
+  {
+    alert("Please enter at most 999 characters in the \"Prior Accomplishments\" field.");
+    theForm.PriorAccomplishments.focus();
+    return (false);
+  }
+
+  if (theForm.mother.value == "")
+  {
+    alert("Please enter a value for the \"Mothers Name\" field.");
+    theForm.mother.focus();
+    return (false);
+  }
+
+  if (theForm.mother.value.length < 3)
+  {
+    alert("Please enter at least 3 characters in the \"Mothers Name\" field.");
+    theForm.mother.focus();
+    return (false);
+  }
+
+  if (theForm.mother.value.length > 42)
+  {
+    alert("Please enter at most 42 characters in the \"Mothers Name\" field.");
+    theForm.mother.focus();
+    return (false);
+  }
+
+  var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ., \t\r\n\f";
+  var checkStr = theForm.mother.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only letter, whitespace and \".,\" characters in the \"Mothers Name\" field.");
+    theForm.mother.focus();
+    return (false);
+  }
+
+  if (theForm.religious.value == "")
+  {
+    alert("Please enter a value for the \"Religious Preference\" field.");
+    theForm.religious.focus();
+    return (false);
+  }
+
+  if (theForm.religious.value.length < 3)
+  {
+    alert("Please enter at least 3 characters in the \"Religious Preference\" field.");
+    theForm.religious.focus();
+    return (false);
+  }
+
+  if (theForm.religious.value.length > 45)
+  {
+    alert("Please enter at most 45 characters in the \"Religious Preference\" field.");
+    theForm.religious.focus();
+    return (false);
+  }
+
+  var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ.,/ \t\r\n\f";
+  var checkStr = theForm.religious.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only letter, whitespace and \".,/\" characters in the \"Religious Preference\" field.");
+    theForm.religious.focus();
+    return (false);
+  }
+
+  if (theForm.HighSchool.value == "")
+  {
+    alert("Please enter a value for the \"High School\" field.");
+    theForm.HighSchool.focus();
+    return (false);
+  }
+
+  if (theForm.HighSchool.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"High School\" field.");
+    theForm.HighSchool.focus();
+    return (false);
+  }
+
+  if (theForm.HighSchool.value.length > 45)
+  {
+    alert("Please enter at most 45 characters in the \"High School\" field.");
+    theForm.HighSchool.focus();
+    return (false);
+  }
+
+  var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ0123456789-.,/ \t\r\n\f";
+  var checkStr = theForm.HighSchool.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only letter, digit, whitespace and \".,/\" characters in the \"High School\" field.");
+    theForm.HighSchool.focus();
+    return (false);
+  }
+
+  if (theForm.HSGraddate.value == "")
+  {
+    alert("Please enter a value for the \"High School Graduation\" field.");
+    theForm.HSGraddate.focus();
+    return (false);
+  }
+
+  if (theForm.HSGraddate.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"High School Graduation\" field.");
+    theForm.HSGraddate.focus();
+    return (false);
+  }
+
+  if (theForm.HSGraddate.value.length > 10)
+  {
+    alert("Please enter at most 10 characters in the \"High School Graduation\" field.");
+    theForm.HSGraddate.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-/";
+  var checkStr = theForm.HSGraddate.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit and \"/\" characters in the \"High School Graduation\" field.");
+    theForm.HSGraddate.focus();
+    return (false);
+  }
+
+  if (theForm.HSclassification.value == "")
+  {
+    alert("Please enter a value for the \"H.S. Wrestling Classification\" field.");
+    theForm.HSclassification.focus();
+    return (false);
+  }
+
+  if (theForm.HSclassification.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"H.S. Wrestling Classification\" field.");
+    theForm.HSclassification.focus();
+    return (false);
+  }
+
+  if (theForm.HSclassification.value.length > 5)
+  {
+    alert("Please enter at most 5 characters in the \"H.S. Wrestling Classification\" field.");
+    theForm.HSclassification.focus();
+    return (false);
+  }
+
+  var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ0123456789-- \t\r\n\f";
+  var checkStr = theForm.HSclassification.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only letter, digit, whitespace and \"-\" characters in the \"H.S. Wrestling Classification\" field.");
+    theForm.HSclassification.focus();
+    return (false);
+  }
+
+  if (theForm.HSGPA.value == "")
+  {
+    alert("Please enter a value for the \"High School GPA\" field.");
+    theForm.HSGPA.focus();
+    return (false);
+  }
+
+  if (theForm.HSGPA.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"High School GPA\" field.");
+    theForm.HSGPA.focus();
+    return (false);
+  }
+
+  if (theForm.HSGPA.value.length > 5)
+  {
+    alert("Please enter at most 5 characters in the \"High School GPA\" field.");
+    theForm.HSGPA.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-.";
+  var checkStr = theForm.HSGPA.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit and \".\" characters in the \"High School GPA\" field.");
+    theForm.HSGPA.focus();
+    return (false);
+  }
+
+  if (theForm.HSenrollment.value == "")
+  {
+    alert("Please enter a value for the \"High School enrollment\" field.");
+    theForm.HSenrollment.focus();
+    return (false);
+  }
+
+  if (theForm.HSenrollment.value.length < 4)
+  {
+    alert("Please enter at least 4 characters in the \"High School enrollment\" field.");
+    theForm.HSenrollment.focus();
+    return (false);
+  }
+
+  if (theForm.HSenrollment.value.length > 10)
+  {
+    alert("Please enter at most 10 characters in the \"High School enrollment\" field.");
+    theForm.HSenrollment.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-,";
+  var checkStr = theForm.HSenrollment.value;
+  var allValid = true;
+  var decPoints = 0;
+  var allNum = "";
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+    if (ch != ",")
+      allNum += ch;
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit characters in the \"High School enrollment\" field.");
+    theForm.HSenrollment.focus();
+    return (false);
+  }
+
+  if (theForm.CoachName.value == "")
+  {
+    alert("Please enter a value for the \"High School Coach's Name\" field.");
+    theForm.CoachName.focus();
+    return (false);
+  }
+
+  if (theForm.CoachName.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"High School Coach's Name\" field.");
+    theForm.CoachName.focus();
+    return (false);
+  }
+
+  if (theForm.CoachName.value.length > 45)
+  {
+    alert("Please enter at most 45 characters in the \"High School Coach's Name\" field.");
+    theForm.CoachName.focus();
+    return (false);
+  }
+
+  var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ., \t\r\n\f";
+  var checkStr = theForm.CoachName.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only letter, whitespace and \".,\" characters in the \"High School Coach's Name\" field.");
+    theForm.CoachName.focus();
+    return (false);
+  }
+
+  if (theForm.ACT.value == "")
+  {
+    alert("Please enter a value for the \"Act Score\" field.");
+    theForm.ACT.focus();
+    return (false);
+  }
+
+  if (theForm.ACT.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"Act Score\" field.");
+    theForm.ACT.focus();
+    return (false);
+  }
+
+  if (theForm.ACT.value.length > 5)
+  {
+    alert("Please enter at most 5 characters in the \"Act Score\" field.");
+    theForm.ACT.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-,";
+  var checkStr = theForm.ACT.value;
+  var allValid = true;
+  var decPoints = 0;
+  var allNum = "";
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+    if (ch != ",")
+      allNum += ch;
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit characters in the \"Act Score\" field.");
+    theForm.ACT.focus();
+    return (false);
+  }
+
+  if (theForm.SAT.value == "")
+  {
+    alert("Please enter a value for the \"Sat Score\" field.");
+    theForm.SAT.focus();
+    return (false);
+  }
+
+  if (theForm.SAT.value.length < 2)
+  {
+    alert("Please enter at least 2 characters in the \"Sat Score\" field.");
+    theForm.SAT.focus();
+    return (false);
+  }
+
+  if (theForm.SAT.value.length > 5)
+  {
+    alert("Please enter at most 5 characters in the \"Sat Score\" field.");
+    theForm.SAT.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789-,";
+  var checkStr = theForm.SAT.value;
+  var allValid = true;
+  var decPoints = 0;
+  var allNum = "";
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+    if (ch != ",")
+      allNum += ch;
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit characters in the \"Sat Score\" field.");
+    theForm.SAT.focus();
+    return (false);
+  }
+
+  if (theForm.CoachphH.value == "")
+  {
+    alert("Please enter a value for the \"Coach's phone\" field.");
+    theForm.CoachphH.focus();
+    return (false);
+  }
+
+  if (theForm.CoachphH.value.length < 7)
+  {
+    alert("Please enter at least 7 characters in the \"Coach's phone\" field.");
+    theForm.CoachphH.focus();
+    return (false);
+  }
+
+  if (theForm.CoachphH.value.length > 14)
+  {
+    alert("Please enter at most 14 characters in the \"Coach's phone\" field.");
+    theForm.CoachphH.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789--() \t\r\n\f";
+  var checkStr = theForm.CoachphH.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit, whitespace and \"-()\" characters in the \"Coach's phone\" field.");
+    theForm.CoachphH.focus();
+    return (false);
+  }
+
+  if (theForm.CoachphW.value == "")
+  {
+    alert("Please enter a value for the \"coach's Work Phone\" field.");
+    theForm.CoachphW.focus();
+    return (false);
+  }
+
+  if (theForm.CoachphW.value.length < 7)
+  {
+    alert("Please enter at least 7 characters in the \"coach's Work Phone\" field.");
+    theForm.CoachphW.focus();
+    return (false);
+  }
+
+  if (theForm.CoachphW.value.length > 14)
+  {
+    alert("Please enter at most 14 characters in the \"coach's Work Phone\" field.");
+    theForm.CoachphW.focus();
+    return (false);
+  }
+
+  var checkOK = "0123456789--() \t\r\n\f";
+  var checkStr = theForm.CoachphW.value;
+  var allValid = true;
+  for (i = 0;  i < checkStr.length;  i++)
+  {
+    ch = checkStr.charAt(i);
+    for (j = 0;  j < checkOK.length;  j++)
+      if (ch == checkOK.charAt(j))
+        break;
+    if (j == checkOK.length)
+    {
+      allValid = false;
+      break;
+    }
+  }
+  if (!allValid)
+  {
+    alert("Please enter only digit, whitespace and \"-()\" characters in the \"coach's Work Phone\" field.");
+    theForm.CoachphW.focus();
+    return (false);
+  }
+  return (true);
+}
+//--></script><!--webbot BOT="GeneratedScript" endspan --><form method="POST"
+name="FrontPage_Form1" onsubmit="return false">
+  </font><div align="center"><center><p><font size="24">Wrestling Questionnaire</font><br>
+  <font size="5"><small><small>Ricks College Wrestling, Rexburg, Idaho 83406 (208)356-2121</small></small></font></p>
+  </center></div><hr size="3" color="#000000">
+  <div align="center"><center><table border="0" cellspacing="0" bgcolor="#FFFFFF"
+  bordercolor="#000000" cellpadding="2" width="704" height="683">
+    <tr>
+      <td bgcolor="#008080" height="21" width="3"></td>
+      <td bgcolor="#008080" colspan="7" height="21" width="670"></td>
+      <td bgcolor="#008080" rowspan="25" height="679" width="2"></td>
+    </tr>
+    <tr>
+      <td bgcolor="#008080" rowspan="24" height="654" width="3"></td>
+      <td bgcolor="#BCEFFE" colspan="2" align="center" height="25" width="300">Social Security # <font size="3"><!--webbot
+        bot="Validation" S-Display-Name="first social security"
+        S-Data-Type="Integer" S-Number-Separators="," B-Value-Required="TRUE"
+        I-Minimum-Length="3" I-Maximum-Length="3" --><input type="text" name="Social1" size="3" maxlength="3"
+      tabindex="1"> - <!--webbot bot="Validation"
+        S-Display-Name="second social security" S-Data-Type="Integer"
+        S-Number-Separators="," B-Value-Required="TRUE" I-Minimum-Length="2"
+        I-Maximum-Length="2" --><input type="text" name="Social2" size="2" maxlength="2"
+      tabindex="2"> - <!--webbot bot="Validation"
+        S-Display-Name="third social security" S-Data-Type="Integer"
+        S-Number-Separators="," B-Value-Required="TRUE" I-Minimum-Length="4"
+        I-Maximum-Length="4" --><input type="text" name="Social3" size="4" maxlength="4"
+      tabindex="3"></font></td>
+      <td bgcolor="#008080" rowspan="23" height="629" width="2"></td>
+      <td bgcolor="#BCEFFE" height="25" width="90">Age <!--webbot
+        bot="Validation" S-Display-Name="Age" S-Data-Type="Integer"
+        S-Number-Separators="," B-Value-Required="TRUE" I-Minimum-Length="2"
+        I-Maximum-Length="2" --><input type="text"
+      name="Age" size="3" maxlength="2" tabindex="23"></td>
+      <td bgcolor="#BCEFFE" height="25" width="131">Weight <!--webbot
+        bot="Validation" S-Display-Name="weight" S-Data-Type="String"
+        B-Allow-Digits="TRUE" S-Allow-Other-Chars="',/" B-Value-Required="TRUE"
+        I-Minimum-Length="2" I-Maximum-Length="3" --><input type="text"
+      name="Weight" size="3" maxlength="3" tabindex="24"></td>
+      <td bgcolor="#BCEFFE" height="25" width="42">Height</td>
+      <td bgcolor="#BCEFFE" height="25" width="86"><!--webbot bot="Validation"
+        S-Display-Name="Height" S-Data-Type="String" B-Allow-Digits="TRUE"
+        B-Allow-WhiteSpace="TRUE" S-Allow-Other-Chars="'&quot;-"
+        B-Value-Required="TRUE" I-Minimum-Length="2" I-Maximum-Length="4" --><input type="text" name="Height" size="5" maxlength="4"
+      tabindex="25"></td>
+    </tr>
+    <tr>
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101">Date</td>
+      <td bgcolor="#BCEFFE" align="center" height="25" width="193"><div align="left"><p><!--webbot
+          bot="Validation" S-Display-Name="Date" S-Data-Type="String"
+          B-Allow-Digits="TRUE" S-Allow-Other-Chars="/" B-Value-Required="TRUE"
+          I-Minimum-Length="6" I-Maximum-Length="10" --><input type="text" name="Date" size="8" maxlength="10"
+      tabindex="4">  ex. 01/01/00
+        </div>
+      </td>
+      <td bgcolor="#BCEFFE" colspan="2" align="center" height="25" width="227">Prev. College
+        <!--webbot bot="Validation" S-Display-Name="Prev College"
+        S-Data-Type="String" B-Allow-Letters="TRUE" B-Allow-WhiteSpace="TRUE"
+        B-Value-Required="TRUE" I-Minimum-Length="2" I-Maximum-Length="45" --><input
+      type="text" name="PrevCollege" size="9" maxlength="45" tabindex="26"></td>
+      <td bgcolor="#BCEFFE" align="center" height="25" width="42">Year</td>
+      <td bgcolor="#BCEFFE" align="left" height="25" width="86"><!--webbot
+        bot="Validation" S-Display-Name="year in college" S-Data-Type="String"
+        B-Allow-Digits="TRUE" S-Allow-Other-Chars="-" B-Value-Required="TRUE"
+        I-Minimum-Length="4" I-Maximum-Length="9" --><input type="text" name="PrevcollegeYear" size="9"
+      maxlength="9" tabindex="27"></td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101">Full Name</td>
+      <td bgcolor="#BCEFFE" align="center" height="25" width="193"><!--webbot
+        bot="Validation" S-Display-Name="Full Name" S-Data-Type="String"
+        B-Allow-Letters="TRUE" B-Allow-WhiteSpace="TRUE"
+        S-Allow-Other-Chars=".," B-Value-Required="TRUE" I-Minimum-Length="2"
+        I-Maximum-Length="50" --><input
+      type="text" name="Name" size="20" maxlength="50" tabindex="5"></td>
+      <td bgcolor="#BCEFFE" height="25" width="90">Major </td>
+      <td bgcolor="#BCEFFE" colspan="3" align="left" height="25" width="260"><!--webbot
+        bot="Validation" S-Display-Name="Major" S-Data-Type="String"
+        B-Allow-Letters="TRUE" B-Allow-WhiteSpace="TRUE" B-Value-Required="TRUE"
+        I-Minimum-Length="3" I-Maximum-Length="25" --><input type="text"
+      name="Major" size="20" maxlength="25" tabindex="28"></td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101">Address</td>
+      <td bgcolor="#BCEFFE" align="center" height="25" width="193"><!--webbot
+        bot="Validation" B-Value-Required="TRUE" I-Minimum-Length="4"
+        I-Maximum-Length="45" --><input type="text" name="Address" size="20" maxlength="45"
+      tabindex="6"></td>
+      <td colspan="3" bgcolor="#BCEFFE" align="left" height="25" width="264">Probable College Wrestling Height</td>
+      <td bgcolor="#BCEFFE" align="left" height="25" width="86"><!--webbot
+        bot="Validation" S-Display-Name="Probable College Wrestling Height"
+        S-Data-Type="String" B-Allow-Digits="TRUE"
+        S-Allow-Other-Chars="&quot;-'" B-Value-Required="TRUE"
+        I-Minimum-Length="2" I-Maximum-Length="5" --><input type="text" name="Collegeheight" size="9"
+      maxlength="5" tabindex="29"></td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101">City</td>
+      <td bgcolor="#BCEFFE" align="center" height="25" width="193"><!--webbot
+        bot="Validation" S-Display-Name="City" B-Value-Required="TRUE"
+        I-Minimum-Length="2" I-Maximum-Length="30" --><input type="text" name="City" size="20" tabindex="7"
+      maxlength="30"></td>
+      <td colspan="3" bgcolor="#BCEFFE" align="left" height="25" width="264">Overall record this year (duals &amp;
+      tourney) </td>
+      <td bgcolor="#BCEFFE" align="left" height="25" width="86"><!--webbot
+        bot="Validation" S-Display-Name="Overall Record this Year"
+        S-Data-Type="String" B-Allow-Digits="TRUE" S-Allow-Other-Chars="-"
+        B-Value-Required="TRUE" I-Minimum-Length="3" I-Maximum-Length="5" --><input type="text"
+      name="Overallrecord" size="9" maxlength="5" tabindex="30"></td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101">State</td>
+      <td bgcolor="#BCEFFE" align="center" height="25" width="193"><!--webbot
+        bot="Validation" S-Display-Name="State" S-Data-Type="String"
+        B-Allow-Letters="TRUE" B-Allow-WhiteSpace="TRUE"
+        S-Allow-Other-Chars=".,-/" B-Value-Required="TRUE" I-Minimum-Length="2"
+        I-Maximum-Length="45" --><input
+      type="text" name="State" size="20" tabindex="8" maxlength="45"></td>
+      <td colspan="3" bgcolor="#BCEFFE" align="left" height="25" width="264">Team&nbsp; record this year (won-lost-tied)</td>
+      <td bgcolor="#BCEFFE" align="left" height="25" width="86"><!--webbot
+        bot="Validation" S-Display-Name="Team Record this Year"
+        S-Data-Type="String" B-Allow-Digits="TRUE" S-Allow-Other-Chars="-"
+        B-Value-Required="TRUE" I-Minimum-Length="5" I-Maximum-Length="8" --><input type="text"
+      name="teamrecord" size="9" maxlength="8" tabindex="31"></td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101">Zip Code</td>
+      <td bgcolor="#BCEFFE" align="center" height="25" width="193"><div align="left"><p><!--webbot
+          bot="Validation" S-Display-Name="Zip Code" S-Data-Type="String"
+          B-Allow-Digits="TRUE" B-Allow-WhiteSpace="TRUE"
+          S-Allow-Other-Chars="-" B-Value-Required="TRUE" I-Minimum-Length="5"
+          I-Maximum-Length="10" --><input
+      type="text" name="Zipcode" size="10" tabindex="9" maxlength="10">
+        </div>
+      </td>
+      <td colspan="2" bgcolor="#BCEFFE" align="left" height="25" width="227">Tournament record this year</td>
+      <td bgcolor="#BCEFFE" align="left" colspan="2" height="25" width="134"><!--webbot
+        bot="Validation" S-Display-Name="Tournament record this year"
+        S-Data-Type="String" B-Allow-Digits="TRUE" S-Allow-Other-Chars="-"
+        B-Value-Required="TRUE" I-Minimum-Length="3" I-Maximum-Length="5" --><input type="text"
+      name="Tourneyrecord" size="18" maxlength="5" tabindex="32"></td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" height="24" width="101">Telephone</td>
+      <td bgcolor="#BCEFFE" align="center" height="24" width="193"><div align="left"><p><!--webbot
+          bot="Validation" S-Display-Name="Telephone Number"
+          S-Data-Type="String" B-Allow-Digits="TRUE" B-Allow-WhiteSpace="TRUE"
+          S-Allow-Other-Chars="/-()" B-Value-Required="TRUE"
+          I-Minimum-Length="7" I-Maximum-Length="15" --><input
+      type="text" name="Telephone" size="15" tabindex="10" maxlength="15">
+        </div>
+      </td>
+      <td colspan="2" bgcolor="#BCEFFE" align="left" height="24" width="227">Tournament placing this year</td>
+      <td bgcolor="#BCEFFE" align="left" colspan="2" height="24" width="134"><!--webbot
+        bot="Validation" S-Display-Name="Tournament Placing this Year"
+        B-Value-Required="TRUE" I-Minimum-Length="2" I-Maximum-Length="25" --><input type="text"
+      name="Tourneyplacement" size="18" maxlength="25" tabindex="33"></td>
+    </tr>
+    <tr>
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101">E-mail Address</td>
+  </center>
+      <td bgcolor="#BCEFFE" align="center" height="25" width="193">
+        <p align="left"><!--webbot bot="Validation"
+        S-Display-Name="Email Address" B-Value-Required="TRUE"
+        I-Minimum-Length="6" I-Maximum-Length="45" --><input
+      type="text" name="Email" size="15" tabindex="11" maxlength="45">
+      </td>
+      <td colspan="2" bgcolor="#BCEFFE" align="left" height="25" width="227">District/Region placing this year</td>
+      <td bgcolor="#BCEFFE" align="left" colspan="2" height="25" width="134"><!--webbot
+        bot="Validation" S-Display-Name="District/Region placing this year"
+        B-Value-Required="TRUE" I-Minimum-Length="2" I-Maximum-Length="25" --><input type="text"
+      name="Disrict" size="18" maxlength="25" tabindex="34"></td>
+    </tr>
+    <center>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" colspan="2" rowspan="2" height="50" width="300"><div align="left"><p><font color="#FF0000" size="2"><b>Note:</b>
+          You must enter an E-mail address or this can't be sent.&nbsp;
+          Example:&nbsp; yourname@domain.net</font>
+        </div>
+      </td>
+      <td colspan="2" bgcolor="#BCEFFE" align="left" height="25" width="227">State placing this
+      year</td>
+      <td bgcolor="#BCEFFE" align="left" colspan="2" height="25" width="134"><font size="3"><!--webbot
+        bot="Validation" S-Display-Name="State placing this year"
+        B-Value-Required="TRUE" I-Minimum-Length="2" I-Maximum-Length="25" --><input
+      type="text" name="stateplace" size="18" maxlength="25" tabindex="35"></font>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" bgcolor="#BCEFFE" align="left" height="21" width="227">
+        <p align="center">Any long term injuries</td>
+      <td bgcolor="#BCEFFE" align="left" colspan="2" height="21" width="134">
+        <p align="center"><font size="2"><input type="radio" name="Injuries"
+      value="Yes" tabindex="36">yes&nbsp; <input type="radio" name="Injuries" value="no">no</font></td>
+    </tr>
+    <tr>
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101">Birthdate</td>
+  </center>
+      <td bgcolor="#BCEFFE" align="center" height="25" width="193">
+        <p align="left"><!--webbot bot="Validation" S-Display-Name="Birth Date"
+        S-Data-Type="String" B-Allow-Digits="TRUE" B-Allow-WhiteSpace="TRUE"
+        S-Allow-Other-Chars="/" B-Value-Required="TRUE" I-Minimum-Length="6"
+        I-Maximum-Length="10" --><input
+      type="text" name="Birthdate" size="15" tabindex="12" maxlength="10">
+      </td>
+      <td colspan="2" bgcolor="#BCEFFE" align="left" height="25" width="227">
+        <p align="center">High School Offices Held</td>
+      <td bgcolor="#BCEFFE" align="left" colspan="2" height="25" width="134"><!--webbot
+        bot="Validation" S-Display-Name="High School Offices Held"
+        B-Value-Required="TRUE" I-Minimum-Length="2" I-Maximum-Length="45" --><input type="text"
+      name="HSoffice" size="18" maxlength="45" tabindex="37"></td>
+    </tr>
+    <center>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101">Father</td>
+      <td bgcolor="#BCEFFE" align="center" height="25" width="193"><!--webbot
+        bot="Validation" S-Display-Name="Fathers Name" S-Data-Type="String"
+        B-Allow-Letters="TRUE" B-Allow-WhiteSpace="TRUE"
+        S-Allow-Other-Chars=".," B-Value-Required="TRUE" I-Minimum-Length="3"
+        I-Maximum-Length="45" --><input
+      type="text" name="Father" size="20" tabindex="13" maxlength="45"></td>
+      <td colspan="4" bgcolor="#BCEFFE" align="center" rowspan="8" height="214" width="356"><div align="center"><p><strong>Prior
+          to this year what were your wrestling accomplishments:</strong>
+          </div>
+        <p><!--webbot bot="Validation" S-Display-Name="Prior Accomplishments"
+        B-Value-Required="TRUE" I-Minimum-Length="20" I-Maximum-Length="999" --><textarea rows="5" name="PriorAccomplishments" cols="40" tabindex="38"></textarea></td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101">Mother</td>
+      <td bgcolor="#BCEFFE" align="center" height="25" width="193"><!--webbot
+        bot="Validation" S-Display-Name="Mothers Name" S-Data-Type="String"
+        B-Allow-Letters="TRUE" B-Allow-WhiteSpace="TRUE"
+        S-Allow-Other-Chars=".," B-Value-Required="TRUE" I-Minimum-Length="3"
+        I-Maximum-Length="42" --><input
+      type="text" name="mother" size="20" tabindex="14" maxlength="42"></td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101"><div align="center"><center><p>Religious Pref. 
+          </div>
+        </center> </td>
+      <td bgcolor="#BCEFFE" align="center" height="25" width="193"><div align="center"><center><p><!--webbot
+          bot="Validation" S-Display-Name="Religious Preference"
+          S-Data-Type="String" B-Allow-Letters="TRUE" B-Allow-WhiteSpace="TRUE"
+          S-Allow-Other-Chars=".,/" B-Value-Required="TRUE" I-Minimum-Length="3"
+          I-Maximum-Length="45" --><input type="text" name="religious" size="20" tabindex="15"
+      maxlength="45">
+          </div>
+        </center></td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101"><div align="left"><p>High School
+        </div>
+      </td>
+      <td bgcolor="#BCEFFE" align="right" height="25" width="193"><div align="center"><center><p><!--webbot
+          bot="Validation" S-Display-Name="High School" S-Data-Type="String"
+          B-Allow-Letters="TRUE" B-Allow-Digits="TRUE" B-Allow-WhiteSpace="TRUE"
+          S-Allow-Other-Chars=".,/" B-Value-Required="TRUE" I-Minimum-Length="2"
+          I-Maximum-Length="45" --><input type="text"
+      name="HighSchool" size="20" tabindex="16" maxlength="45">
+          </div>
+        </center></td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" colspan="2" height="25" width="300"><div align="left"><p>H.S. Graduation Date<font
+      size="3"> </font><!--webbot bot="Validation"
+          S-Display-Name="High School Graduation" S-Data-Type="String"
+          B-Allow-Digits="TRUE" S-Allow-Other-Chars="/" B-Value-Required="TRUE"
+          I-Minimum-Length="2" I-Maximum-Length="10" --><input type="text" name="HSGraddate" size="10" tabindex="17"
+      maxlength="10">
+        </div>
+      </td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" colspan="2" height="25" width="300"><div align="left"><p>H.S. Wrestling
+      Classification <!--webbot bot="Validation"
+          S-Display-Name="H.S. Wrestling Classification" S-Data-Type="String"
+          B-Allow-Letters="TRUE" B-Allow-Digits="TRUE" B-Allow-WhiteSpace="TRUE"
+          S-Allow-Other-Chars="-" B-Value-Required="TRUE" I-Minimum-Length="2"
+          I-Maximum-Length="5" --><input type="text"
+      name="HSclassification" size="10" tabindex="18" maxlength="5">
+        </div>
+      </td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" height="25" width="101"><div align="left"><p>H.S. GPA</td>
+      <td bgcolor="#BCEFFE" align="right" height="25" width="193"><div align="left"><p><!--webbot
+          bot="Validation" S-Display-Name="High School GPA" S-Data-Type="String"
+          B-Allow-Digits="TRUE" S-Allow-Other-Chars="." B-Value-Required="TRUE"
+          I-Minimum-Length="2" I-Maximum-Length="5" --><input type="text" name="HSGPA" size="5" tabindex="19"
+      maxlength="5">
+        </div>
+      </td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="right" colspan="2" rowspan="2" height="25" width="300"><font size="3"><div align="left"><p></font>H.S.
+      Enrollment <!--webbot bot="Validation"
+          S-Display-Name="High School enrollment" S-Data-Type="Integer"
+          S-Number-Separators="," B-Value-Required="TRUE" I-Minimum-Length="4"
+          I-Maximum-Length="10" --><input type="text" name="HSenrollment" size="18" tabindex="20"
+      maxlength="10">
+        </div>
+      </td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" colspan="4" align="center" rowspan="2" height="39" width="356">H.S. Coach's
+        Name <!--webbot bot="Validation"
+        S-Display-Name="High School Coach's Name" S-Data-Type="String"
+        B-Allow-Letters="TRUE" B-Allow-WhiteSpace="TRUE"
+        S-Allow-Other-Chars=".," B-Value-Required="TRUE" I-Minimum-Length="2"
+        I-Maximum-Length="45" --><input type="text" name="CoachName" size="18" tabindex="39"
+      maxlength="45">
+ </td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="left" height="25" width="101">ACT Score </td>
+      <td bgcolor="#BCEFFE" align="left" height="25" width="193"><!--webbot
+        bot="Validation" S-Display-Name="Act Score" S-Data-Type="Integer"
+        S-Number-Separators="," B-Value-Required="TRUE" I-Minimum-Length="2"
+        I-Maximum-Length="5" --><input type="text" name="ACT" size="5" maxlength="5"
+      tabindex="21"></td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#BCEFFE" align="left" height="25" width="101">SAT Score </td>
+      <td bgcolor="#BCEFFE" align="left" height="25" width="193"><!--webbot
+        bot="Validation" S-Display-Name="Sat Score" S-Data-Type="Integer"
+        S-Number-Separators="," B-Value-Required="TRUE" I-Minimum-Length="2"
+        I-Maximum-Length="5" --><input type="text" name="SAT" size="5" tabindex="22"
+      maxlength="5"></td>
+      <td bgcolor="#BCEFFE" colspan="2" align="center" height="25" width="227">Coach's Phone(H)
+        <!--webbot bot="Validation" S-Display-Name="Coach's phone"
+        S-Data-Type="String" B-Allow-Digits="TRUE" B-Allow-WhiteSpace="TRUE"
+        S-Allow-Other-Chars="-()" B-Value-Required="TRUE" I-Minimum-Length="7"
+        I-Maximum-Length="14" --><input type="text"
+      name="CoachphH" size="9" maxlength="14" tabindex="40"> </td>
+      <td bgcolor="#BCEFFE" colspan="2" height="25" width="134">(W)&nbsp; <!--webbot
+        bot="Validation" S-Display-Name="coach's Work Phone"
+        S-Data-Type="String" B-Allow-Digits="TRUE" B-Allow-WhiteSpace="TRUE"
+        S-Allow-Other-Chars="-()" B-Value-Required="TRUE" I-Minimum-Length="7"
+        I-Maximum-Length="14" --><input type="text"
+      name="CoachphW" size="9" maxlength="14" tabindex="41"></td>
+    </tr>
+    <tr align="center">
+      <td bgcolor="#008080" colspan="7" height="21" width="670">&nbsp;</td>
+    </tr>
+  </table>
+  </center></div><div align="center"><center><p><input type="submit" value="Submit"
+  name="Submit" tabindex="43"><input type="reset" value="Reset" name="Reset" tabindex="44"></p>
+  </center></div><div align="center"><center><p>&nbsp;</p>
+  </center></div>
+</form>
+</body>
+</html>

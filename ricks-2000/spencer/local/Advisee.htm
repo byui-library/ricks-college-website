@@ -1,0 +1,89 @@
+<HTML>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<TITLE>Advisee File Display/download</TITLE>
+
+<BODY BGCOLOR="FFFFFF">
+<BODY>
+<FORM METHOD="POST" onsubmit="return false">
+<H2 align=center><I>Advisee File Display/download</I></h2><hr>
+
+<p>
+Faculty ID Number:  <INPUT TYPE="text"
+ NAME="IDNO" SIZE=9 VALUE=""> &nbsp;
+<INPUT TYPE="submit" VALUE="Submit">
+<HR>
+Select Display type
+<UL>
+<LI>
+<INPUT TYPE="radio" NAME="DWN" VALUE="P" CHECKED>
+<b>Information Grid</b>
+</LI>
+<LI><b>Downloadable text.</b> <small> After clicking SUBMIT the data
+will appear on your browser.  Click on <b> File </b> on your browser's
+tool bar, then <b> Save as</b>, which will allow you to save it to a
+file on your PC.  The default name will be <i>SRRWADVISE.PGM</i>.
+Change the name and directory then click on OK.</small>
+<UL>
+<LI>
+<INPUT TYPE="radio" NAME="DWN" VALUE="C">
+Comma Separated Variables (CSV) <small>for import to most
+spreadsheets, PC databases, and Word processors.
+<B>  The file will have a
+blank line at the first, that you have to delete using an editor
+such as wordpad before importing the file to your PC application.</b>
+</small></LI>
+<LI>
+<INPUT TYPE="radio" NAME="DWN" VALUE="D">Text
+ <small> (Name, 4 digits of SSN, and local phone only)</small>
+</LI>
+<LI>
+<INPUT TYPE="radio" NAME="DWN" VALUE="E"> E-mail address<small>
+ (Name and E-mail Address for import to Address book)
+</small></li>
+</UL>
+</UL>
+<HR>
+Please indicate the data you wish:
+(for other than downloadable text)
+<UL>
+<LI>
+    <INPUT Type="CHECKBOX" name="ssn4">
+    Last 4 digits of Ricks ID number
+</LI>
+<LI>
+    <INPUT Type="CHECKBOX" name="name" checked>
+    Student Name (Last First Middle)
+</LI>
+<LI>
+    <INPUT Type="CHECKBOX" name="nameF"> Student Name
+(First Middle Last)
+</LI>
+<LI>
+    <INPUT Type="CHECKBOX" name="nameP"> First name
+</LI>
+<LI>
+    <INPUT Type="CHECKBOX" name="PICT" > Photo
+</LI>
+<LI>
+    <INPUT Type="CHECKBOX" name="LADR"> Local address
+</LI>
+<LI>
+    <INPUT Type="CHECKBOX" name="LPHN"> Local phone
+
+<LI>
+    <INPUT Type="CHECKBOX" name="EMAILX"> Email address
+</LI>
+<LI>
+    <INPUT Type="CHECKBOX" name="HADR"> Home address
+</LI>
+<LI>
+    <INPUT Type="CHECKBOX" name="MADR"> Mailing address
+</LI>
+<LI>
+    <INPUT Type="CHECKBOX" name="HPHN"> Home phone
+</LI>
+</UL>
+</FORM>
+</BODY>
+</HTML>

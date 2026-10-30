@@ -1,0 +1,121 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>Strange C++ Code</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<TABLE>
+<TR>
+<TD VALIGN="TOP" ROWSPAN=2>
+<A HREF="../../../../ricks-2000/Default.htm">
+<IMG SRC="logo.gif" WIDTH="100" HEIGHT="100" ALT="Ricks College Home Page" BORDER="0"></A>
+</TD>
+<TD VALIGN="TOP" COLSPAN=2>
+<A HREF="about.html">
+<IMG SRC="name.gif" WIDTH="197" HEIGHT="27" ALT="Kevin E. Twitchell" BORDER="0"></A>
+</TD>
+</TR>
+<TR>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+<I>
+Department of<BR>
+Mathematics and<BR>
+Computer Science
+</I>
+</FONT>
+</TD>
+<TD VALIGN="TOP">
+<FONT SIZE="-1">
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+<A HREF="mailto:TwitchellK@ricks.edu">
+TwitchellK@ricks.edu</A><BR>
+208-356-1938
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<H3>Strange C++ Code</H3>
+
+<HR>
+<P>
+
+<a href="#commutative">Array notation is commutative</a><br>
+<a href="#output">Order of output</a><br>
+<a href="#swap">Swapping values without a third variable</a>
+
+<P>
+<HR>
+<P>
+
+<a name="commutative"><B>Array notation is commutative</B></a>
+<P>
+<PRE>
+#include &lt;iostream&gt;
+
+void main()
+{
+   int array[5] = {0, 1, 2, 3, 4};
+
+   // each of the following is syntactically correct
+   //  and produces the same output
+   cout &lt;&lt; array[3] &lt;&lt; endl;
+   cout &lt;&lt; *(array + 3) &lt;&lt; endl;
+   cout &lt;&lt; *(3 + array) &lt;&lt; endl;
+   cout &lt;&lt; 3[array] &lt;&lt; endl;
+}
+</PRE>
+
+<P>
+<HR>
+<P>
+
+<a name="output"><B>Order of output</B></a>
+<P>
+<PRE>
+#include &lt;iostream&gt;
+
+void main ()
+{
+   int i (0);
+   int j (5);
+   cout &lt;&lt; i &lt;&lt; " - " &lt;&lt; (i = j * j) &lt;&lt; " - " &lt;&lt; i &lt;&lt; endl;
+   // output is 25 - 25 - 0
+}
+</PRE>
+
+<P>
+<HR>
+<P>
+
+<a name="swap"><B>Swapping values without a third variable</B></a>
+<P>
+<PRE>
+#include &lt;iostream&gt;
+
+void main ()
+{
+   int i (2);
+   int j (4);
+   cout &lt;&lt; "before: " &lt;&lt; i &lt;&lt; " = i, " &lt;&lt; j &lt;&lt; " = j" &lt;&lt; endl;
+   i = (j = j) + (j = i) - j;
+   cout &lt;&lt; " after: " &lt;&lt; i &lt;&lt; " = i, " &lt;&lt; j &lt;&lt; " = j" &lt;&lt; endl;
+   // output is before: 2 = i, 4 = j
+   //            after: 4 = i, 2 = j}
+</PRE>
+<P>
+<HR>
+<P>
+<FONT SIZE="-1"><A HREF="../../../../ricks-2000/Default.htm">Ricks College</A> |
+<A HREF="default.htm">Twitchell</A> |
+<A HREF="cs170.html">CS170</A></FONT>
+<BR>
+<FONT SIZE="-2"><I>August 17, 2000</I></FONT>
+
+</BODY>
+</HTML>

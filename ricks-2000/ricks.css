@@ -1,0 +1,22 @@
+BODY {	text:		#000000;
+	      background:	#FFFFFF }
+
+  H1    { font-family: New Times Roman  }
+  H2    { font-family: New Times Roman  }
+  H3    { font-family: New Times Roman  }
+  H4    { font-family: New Times Roman  }
+  H5    { font-family: New Times Roman  }
+  H6    { font-family: New Times Roman  }
+ADDRESS { font-family: New Times Roman  }
+
+A:link    { color: #313163;  text-decoration: none }
+A:visited { color: #313163;  text-decoration: none }          
+A:active  { color: #900000;  text-decoration: none }
+
+.barlink {
+           font-family: Arial;
+           font-size: .76em;
+           font-weight: bold;
+           color: #FFFFFF;
+           text-decoration: none
+         }

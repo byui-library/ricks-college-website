@@ -1,0 +1,25 @@
+td.donotuselogo
+{
+   background-image: url(https://web.archive.org/web/2001im_/http://www.byui.edu/navbar/byuidahologo.gif);
+}
+
+td.donotusebackground
+{
+   background-color: #002a54;
+}
+
+td.donotusetitle
+{
+   color: #ffffff;
+	font-size: 17pt;
+	font-family: arial, helvetica, sans-serif;
+	font-weight: bold;
+}
+
+a.NoUnderLine, a.NoUnderLine:hover, a.NoUnderLine:active, a.NoUnderLine:visited
+{
+   text-decoration: none;
+	color: #ffffff;
+	font-size: 10pt;
+	font-family: arial, helvetica, sans-serif;
+}

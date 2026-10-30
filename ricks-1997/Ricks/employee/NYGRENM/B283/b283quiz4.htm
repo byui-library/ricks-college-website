@@ -1,0 +1,131 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>B283 Quiz #4</title>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- //BEGIN SCRIPT
+function scorequiz(form) {
+ tally=0
+ if(form.Q1.value!=null && form.Q1.value=="*") {tally=tally+1}
+ if(form.Q2.value!=null && form.Q2.value=="*") {tally=tally+1}
+ if(form.Q3.value!=null && form.Q3.value=="*") {tally=tally+1}
+ if(form.Q4.value!=null && form.Q4.value=="*") {tally=tally+1}
+ if(form.Q5.value!=null && form.Q5.value=="*") {tally=tally+1}
+ 
+ form.SCORE.value =eval(tally)
+}
+
+function clearquiz(form) {
+ tally=0
+ form.Q1.value="?"
+ form.Q2.value="?"
+ form.Q3.value="?"
+ form.Q4.value="?"
+ form.Q5.value="?"
+ 
+ form.SCORE.value =eval(tally)
+}
+
+function msg() {
+ alert("Your quiz tally is being e-mailed to the instructor. Thank you!")
+ }
+// -->
+</SCRIPT>
+</head>
+
+<body>
+
+<p align="center"><b><font size="1">| <a href="../default.htm"> HOME</a> | <a href="../b283quizzes.htm"> B283 Quizzes</a> |
+<a href="b283syllabus.htm">B283 Syllabus</a> |</font></b></p>
+
+<h1 align="center"><b>ONLINE QUIZ #4</b></h1>
+<p align="center">CHAPTER 7 READING</p>
+<hr width="65%" size="4" noshade color="#000000">
+<Form name="quiz1" method="post" enctype="text/plain" 
+ onLoad="clearquiz(this.form)" onsubmit="return false">
+<table border="0" width="100%">
+  <tr>
+    <td width="28%" align="right">
+Please enter your name:&nbsp;</td>
+    <td width="72%"><INPUT TYPE="text" NAME="Name" VALUE="" size="40"></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right">
+Please enter your Email address:&nbsp;</td>
+    <td width="72%"><input type="text" name="email" value="" size="40"></td>
+  </tr>
+</table>
+<p><br>
+</p>
+<hr>
+
+1. Small business marketing is best defined as the performance of distribution activities
+that affect the flow of goods and services from producer to consumer or user.
+<ol>
+<INPUT TYPE="radio" NAME="Q1" value="True" onclick=Q1.value="T">True<br>
+<INPUT TYPE="radio" NAME="Q1" value="*False" onclick=Q1.value="*">False<br>
+</ol>
+
+2. Because sales forecasts revolve around specific target markets, the market
+should be defined as precisely as possible
+<ol>
+<INPUT TYPE="radio" NAME="Q2" value="*True" onclick=Q2.value="*">True<br>
+<INPUT TYPE="radio" NAME="Q2" value="False" onclick=Q2.value="F">False<br>
+</ol>
+
+3. Irene Anderson, an experienced entrepreneur, is evaluating her customer
+profile.&nbsp; What does she need to double-check after she has finished the
+marketing part of her business plan?
+<ol>
+<INPUT TYPE="radio" NAME="Q3" value="financial ratio" onclick=Q3.value="A">Her
+financial ratios-to make sure they were calculated correctly.<br>
+<INPUT TYPE="radio" NAME="Q3" value="her funding" onclick=Q3.value="B">Her
+funding.<br>
+<INPUT TYPE="radio" NAME="Q3" value="*her customer benefits" onclick=Q3.value="*">Her
+customer benefits-to make sure they are consistent with the &quot;Products and
+Services&quot; section of her business plan.<br>
+<INPUT TYPE="radio" NAME="Q3" value="make sure competetor offer same benefits" onclick=Q3.value="D">Her
+customer benefits-to make sure her competitors off the same benefits.<br>
+</ol>
+ 
+4. The basic instrument used to guide the researcher and the respondent when
+surveys are taken is known as a(n) ______________. 
+<ol>
+<INPUT TYPE="radio" NAME="Q4" value="*questionnaire" onclick=Q4.value="*">questionnaire.<br>
+<INPUT TYPE="radio" NAME="Q4" value="questioning form" onclick=Q4.value="B">questioning
+form.<br>
+<INPUT TYPE="radio" NAME="Q4" value="interview outline" onclick=Q4.value="C">interview
+outline.<br>
+<INPUT TYPE="radio" name="Q4" value="guide form" onclick=Q4.value="D">guide
+form.</ol>
+
+5. A firm's marketing mix consists of&nbsp; _____________ activites.
+<ol>
+<p>
+<INPUT TYPE="radio" NAME="Q5" value="pricing/promotion/distribution" onclick=Q5.value="A">pricing,
+promotion, and distribution<br>
+<INPUT TYPE="radio" NAME="Q5" value="product/pricing/promotion" onclick=Q5.value="B">product,
+pricing, and promotion<br>
+<INPUT TYPE="radio" NAME="Q5" value="product/promotion/distribution" onclick=Q5.value="C">product,
+promotion, and distribution.<br>
+<INPUT TYPE="radio" name="Q5" value="*product/pricing/promotion/distribution" onclick=Q5.value="*">product,
+pricing, promotion, and distribution.</p>
+</ol>
+
+<hr>
+
+<B>Your Quiz Score is:  </B><INPUT  NAME="SCORE" TYPE="text" size="4">
+<p><INPUT TYPE="reset" NAME="reset" VALUE="Clear Quiz" onclick=clearquiz(this.form)>
+<INPUT TYPE="submit" VALUE="Send Quiz to Instructor" onclick=scorequiz(this.form)>
+</p>
+<p><INPUT TYPE="button" NAME="submit" VALUE="Compute Quiz tally" onclick=scorequiz(this.form)>
+
+<BR><BR>
+</p>
+</form>
+</body>
+
+</html>

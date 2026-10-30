@@ -1,0 +1,136 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>Tapered Nose Clamp</title>
+</head>
+
+<body background="thm3.gif">
+
+<p align="center"><big><big><big><big><strong>CAD 238<br>
+Tapered Nose Clamp</strong></big></big></big></big></p>
+<i><font SIZE="3">
+
+<p></font></i>&nbsp;</p>
+
+<p><font size="4"><i>When in situations of stress we wonder if there is any more in us to
+give, we can be comforted to know that God, who knows our capacity perfectly, placed us
+here to succeed. No one was foreordained to fail or to be wicked.<font
+FACE="WP TypographicSymbols">@</font></i>, Neal A. Maxwell.</font></p>
+
+<p><font face="Times New Roman" size="5"><br>
+</font><big><big>Write a parametric AutoLISP program to create the Tapered Nose Clamp
+Straps as shown below. The program should prompt the user for the following information:</big></big></p>
+
+<blockquote>
+  <ul>
+    <li><p ALIGN="LEFT"><big><big>Variables A through J, (<em>I omitted</em>)</big></big></p>
+    </li>
+    <li><p ALIGN="LEFT"><big><big>Point for a local origin</big></big></p>
+    </li>
+    <li><p ALIGN="LEFT"><big><big>Part No.</big></big></p>
+    </li>
+    <li><p ALIGN="LEFT"><big><big>Distance between views</big></big></p>
+    </li>
+  </ul>
+</blockquote>
+
+<p><big><big>The program should create both the top and front views. Include hiddenlines,
+but centerlines and dimensions may be omitted.</big></big></p>
+
+<p align="center"><img src="clamp.jpg" width="307" height="220"
+alt="clamp.jpg (9509 bytes)"></p>
+
+<p ALIGN="LEFT"><big><big>Use the following sample data to demonstrate the capabilities of
+your program:</big></big></p>
+
+<table BORDER="1" CELLSPACING="2" BORDERCOLOR="#000000" CELLPADDING="8" WIDTH="516">
+  <tr>
+    <td WIDTH="15%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="CENTER">Part No.</b></font></td>
+    <td WIDTH="9%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="CENTER">A</b></font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="CENTER">B</b></font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="CENTER">C</b></font></td>
+    <td WIDTH="10%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="CENTER">D</b></font></td>
+    <td WIDTH="12%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="CENTER">E</b></font></td>
+    <td WIDTH="12%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="CENTER">F</b></font></td>
+    <td WIDTH="9%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="CENTER">G</b></font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="CENTER">H</b></font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="center">J</b></font></td>
+  </tr>
+  <tr>
+    <td WIDTH="15%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="LEFT">CL-20320</b></font></td>
+    <td WIDTH="9%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">1/4</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">3/8</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">5/8</font></td>
+    <td WIDTH="10%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">2</font></td>
+    <td WIDTH="12%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">15/16</font></td>
+    <td WIDTH="12%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">13/16</font></td>
+    <td WIDTH="9%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">15/32</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">5/32</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">5/16</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="15%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="LEFT">CL-20325</b></font></td>
+    <td WIDTH="9%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">1/4</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">3/8</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">5/8</font></td>
+    <td WIDTH="10%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">2-1/2</font></td>
+    <td WIDTH="12%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">1-3/16</font></td>
+    <td WIDTH="12%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">1-1/16</font></td>
+    <td WIDTH="9%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">15/32</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">5/32</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">5/16</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="15%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="LEFT">CL-20425</b></font></td>
+    <td WIDTH="9%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">5/16</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">3/8</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">3/4</font></td>
+    <td WIDTH="10%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">2-1/2</font></td>
+    <td WIDTH="12%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">1-5/32</font></td>
+    <td WIDTH="12%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">1</font></td>
+    <td WIDTH="9%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">9/16</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">3/16</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">3/8</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="15%" VALIGN="TOP"><font SIZE="2"><b><p ALIGN="LEFT">CL-20535</b></font></td>
+    <td WIDTH="9%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">3/8</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font FACE="WP TypographicSymbols" SIZE="2"><p ALIGN="CENTER">2</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">1</font></td>
+    <td WIDTH="10%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">3-1/2</font></td>
+    <td WIDTH="12%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">1-21/32</font></td>
+    <td WIDTH="12%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">1-15/32</font></td>
+    <td WIDTH="9%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">3/4</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font SIZE="2"><p ALIGN="CENTER">1/4</font></td>
+    <td WIDTH="8%" VALIGN="TOP"><font FACE="WP TypographicSymbols" SIZE="2"><p ALIGN="CENTER">2</font></td>
+  </tr>
+</table>
+
+<p><font face="Times New Roman" size="5"><strong>Turn in&nbsp; the following:</strong><br>
+&nbsp;&nbsp;&nbsp; Hardcopy of AutoLisp program<br>
+&nbsp;&nbsp;&nbsp; Full scale plot of each part number (multiple pages as required) <br>
+&nbsp;&nbsp;&nbsp; Electronic copy of program in Dropbox, use keyword <em>Taper</em></font></p>
+
+<p>&nbsp;</p>
+<b>
+
+<p ALIGN="LEFT"><big><big>Extra Credit options:</big></big></p>
+</b>
+
+<blockquote>
+  <ul>
+    <li><p ALIGN="LEFT"><big><big>Include centerlines and dimensions, as appropriate on each
+      view</big></big></p>
+    </li>
+    <li><p ALIGN="LEFT"><big><big>Create a 3D wireframe version of the clamp (in addition to 2D
+      views described above)</big></big></p>
+    </li>
+  </ul>
+</blockquote>
+
+<p><font face="Times New Roman" size="5"><br>
+&nbsp;&nbsp;&nbsp; </font></p>
+</body>
+</html>

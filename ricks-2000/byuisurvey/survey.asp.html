@@ -1,0 +1,483 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Survey: Perceptions of BYU-Idaho</title>
+<script>
+var number_checked = 0
+function addone(whichbox)
+{
+whichbox += 4
+   if (document.survey.elements[whichbox].checked == 0)
+   {
+      number_checked--
+   }
+   else
+      if(number_checked == 3)
+      {
+         alert("Sorry you have already checked three boxes.  Uncheck another choice and then re-check this box")
+         document.survey.elements[whichbox].checked = false
+      }
+      else
+         number_checked += 1
+   
+
+   //alert(number_checked)      
+
+}
+</script>
+<script language="JavaScript1.2" src="../textnavbar.js"></script>
+</head>
+<body marginheight = 0 topmargin = 0 leftmargin = 0>
+<form name = "survey" method = "post" onsubmit="return false">
+<input type = "hidden" name = "entrydate" value = "2/23/2001">
+<table width = "79%" border = "1">
+<tr>
+<td><big><font face="Verdana">SURVEY ON BYU-IDAHO TRANSITION </td>
+<td align = "right"><img src = "rickslogo.gif" width = "41" height = "53"></td>
+</tr>
+</table><p>
+<table width = "100%" border = "0">
+<tr>
+<Td width = "32%">Name <i>(optional)</i></td><td><input type = "text" name = "personsname" size = "30"></td>
+</tr><tr>
+<td>Address <i>(optional)</i></td><td><input type = "text" name = "personsaddress" size = "50"></td>
+</tr><tr>
+<td>City <i>(optional)</i><input type = "text" name = "personscity" size = "15"></td>
+<Td>State <i>(optional)</i><input type = "text" name = "personsstate" size = "2"></td>
+</tr><tr>
+<td>Zipcode <i>(optional)</i><input type = "text" name = "personszipcode" size = "5"></td>
+<td>Country <i>(optional)</i><input type = "text" name = "personscountry" size = "25"></td>
+</tr><Tr>
+
+<td>Phone Number<i>(optional)</i></td><td><input type = "text" name = "personsphone" size = "25"></td>
+</tr>
+<Tr>
+
+<td>Email Address<i>(optional)</i></td><td><input type = "text" name = "personsemail" size = "25"></td>
+</tr>
+</table>
+<hr align = "left" width = "90%"><br>
+<table border ="1" width = "90%"><tr>
+   <td valign = "top">
+      <table border = "0"><tr>
+      <td><font face="Verdana" size = "-1" >&nbsp;1. How do you accept the transition from Ricks<br> College to BYU-Idaho?</td>
+      </tr></table>
+   </td>
+   <td>
+      <table border = "0">
+      <tr><td><font face="Verdana" size = "-2">Very accepting </td><td><input type = "radio" name = "accepting" value = "7"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mostly accepting </td><td><input type = "radio" name = "accepting" value = "6"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Somewhat accepting </td><td><input type = "radio" name = "accepting" value = "5"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">No opinion/don't care </td><td><input type = "radio" name = "accepting" value = "4"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Somewhat unaccepting </td><td><input type = "radio" name = "accepting" value = "3"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mostly unaccepting </td><td><input type = "radio" name = "accepting" value = "2"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Very unaccepting </td><td><input type = "radio" name = "accepting" value = "1"></td></tr>
+            </table></td>
+</tr>
+</table>
+<table>
+<tr>
+<td valign = "center"><font face="Verdana" size = "-1">Please explain: </td><td><textarea cols = "51" rows = "2" name = "acceptingexplain"></textarea></td>
+</tr>
+</table>
+<hr align = "left" width = "90%"><Br>
+<font face="Verdana" size = "-1">&nbsp;2. What benefits do you anticipate as a result of the transition to BYU-Idaho?<br>
+<textarea name = "benfits" cols = "65" rows = "5"></textarea><br>
+<hr align = "left" width = "90%"><Br>
+<font face="Verdana" size = "-1">&nbsp;3. What concerns do you have about the transition to BYU-Idaho?<br>
+<textarea name = "concerns" cols = "65" rows = "5"></textarea><br>
+<hr align = "left" width = "90%"><Br>
+<font face="Verdana" size = "-1">&nbsp;4. How have you been informed about the ongoing transition activities? <i>Check ALL that apply</i>.<p>
+<table border = "1" width = "100%" cellpadding = "2" cellspacing  = "2">
+<tr>
+<td align = "right"><font face="Verdana" size = "-2">Church Leaders</td><td><input type = "checkbox" name = "churchleaders"></td>
+<td align = "right"><font face="Verdana" size = "-2">Radio</td><td><input type = "checkbox" name = "radio"></td>
+<td align = "right"><font face="Verdana" size = "-2">Direct Mail</td><td><input type = "checkbox" name = "directmail"></td>
+</tr><tr>
+<td align = "right"><font face="Verdana" size = "-2">Seminary</td><td><input type = "checkbox" name = "seminary"></td>
+<td align = "right"><font face="Verdana" size = "-2">Internet</td><td><input type = "checkbox" name = "internet"></td>
+<td align = "right"><font face="Verdana" size = "-2">Summit Magazine</td><td><input type = "checkbox" name = "magazine"></td>
+</tr><tr>
+<td align = "right"><font face="Verdana" size = "-2">Newspaper</td><td><input type = "checkbox" name = "Newspaper"></td>
+<td align = "right"><font face="Verdana" size = "-2">TV news</td><td><input type = "checkbox" name = "tvnews"></td>
+<td align = "right"><font face="Verdana" size = "-2">Official College Representative</td><td><input type = "checkbox" name = "offical"></td>
+</tr><tr>
+<td align = "right"><font face="Verdana" size = "-2">Inside Ricks</td><td><input type = "checkbox" name = "insidericks"></td>
+<td align = "right"><font face="Verdana" size = "-2">R News &amp Notes</td><td><input type = "checkbox" name = "rnewsnotes"></td>
+<td align = "right"><font face="Verdana" size = "-2">The Scroll</td><td><input type = "checkbox" name = "thescroll"></td>
+</tr><tr>
+<td align = "right"><font face="Verdana" size = "-2">Word of mouth</td><td><input type = "checkbox" name = "wordofmouth"></td>
+<td align = "right"><font face="Verdana" size = "-2">President's Council Q&A Sessions</td><td><input type = "checkbox" name = "presidentsQA"></td>
+<td align = "right"><font face="Verdana" size = "-2">I am not informed</td><td><input type = "checkbox" name = "notinformed"></td>
+</tr><tr>
+<td align = "right" valign = "top"><font face="Verdana" size = "-2">Other?</td><td colspan = "5"><textarea name = "informother" rows = "3" cols = "70"></textarea></td>
+</tr>
+</table>
+<p>
+<hr align = "left" width = "90%"><Br>
+<font face="Verdana" size = "-1">&nbsp;5. What are the three <u>most effective</u> ways to inform you about transition activities in the future?<br>
+ <i>Check <b>three</b>.<p>
+<table border = "1" width = "90%" cellpadding = "2" cellspacing  = "2">
+<tr>
+<td align = "right"><font face="Verdana" size = "-2">Church Leaders</td><td>
+<input type = "checkbox" name = "threechurchleaders" onclick = "addone(23)"></td>
+<td align = "right"><font face="Verdana" size = "-2">Radio</td><td><input type = "checkbox" name = "threeradio" onclick = "addone(24)"></td>
+<td align = "right"><font face="Verdana" size = "-2">Direct Mail</td><td><input type = "checkbox" name = "threedirectmail" onclick = "addone(25)"></td>
+</tr><tr>
+<td align = "right"><font face="Verdana" size = "-2">Seminary</td><td><input type = "checkbox" name = "threeseminary" onclick = "addone(26)"></td>
+<td align = "right"><font face="Verdana" size = "-2">Internet</td><td><input type = "checkbox" name = "threeinternet" onclick = "addone(27)"></td>
+<td align = "right"><font face="Verdana" size = "-2">Summit Magazine</td><td><input type = "checkbox" name = "threemagazine" onclick = "addone(28)"></td>
+</tr><tr>
+<td align = "right"><font face="Verdana" size = "-2">Newspaper</td><td><input type = "checkbox" name = "threenewspaper" onclick = "addone(29)"></td>
+<td align = "right"><font face="Verdana" size = "-2">TV news</td><td><input type = "checkbox" name = "threetvnews" onclick = "addone(30)"></td>
+<td align = "right"><font face="Verdana" size = "-2">Official College representative</td><td><input type = "checkbox" name = "threeoffical" onclick = "addone(31)"></td>
+</tr><tr>
+<td align = "right"><font face="Verdana" size = "-2">Inside Ricks</td><td><input type = "checkbox" name = "threeinsidericks" onclick = "addone(32)"></td>
+<td align = "right"><font face="Verdana" size = "-2">R News &amp; Notes</td><td><input type = "checkbox" name = "threernewsnotes" onclick = "addone(33)"></td>
+<td align = "right"><font face="Verdana" size = "-2">The Scroll</td><td><input type = "checkbox" name = "threethescroll" onclick = "addone(34)"></td>
+</tr><tr>
+<td align = "right"><font face="Verdana" size = "-2">Word of mouth</td><td><input type = "checkbox" name = "threewordofmouth" onclick = "addone(35)"></td>
+<td align = "right"><font face="Verdana" size = "-2">President's Council Q&A sessions</td><td><input type = "checkbox" name = "threepresidentsQA" onclick = "addone(36)"></td>
+<td align = "right"><font face="Verdana" size = "-2">Other</td><td><input type = "checkbox" name = "threeother" onclick = "addone(37)"></td>
+</tr>
+<tr>
+<td align = "right"  valign = "top"><font face="Verdana" size = "-2">Please identify</td><td colspan = "5"><textarea name = "betterother" rows = "3" cols = "70"></textarea></td>
+</tr>
+</table><p>
+<hr align = "left" width = "90%"><Br>
+
+<font face="Verdana" size = "-1"></i></i>&nbsp;6. What additional information do you need about the transition?<br>
+<textarea name = "needmoreinfo" cols = "75" rows = "5"></textarea><p>
+<hr align = "left" width = "90%"><Br>
+<font face="Verdana" size = "-1">&nbsp;7. How well do you understand the following terms and concepts associated with BYU-Idaho:<p>
+<table border = "1" width = "90%">
+<tr>
+<td>&nbsp;</td>
+<td align = "center"><font face="Verdana" size = "-1">No<br>Understanding</td>
+<td align = "center"><font face="Verdana" size = "-1">Little<br>Understanding</td>
+<td align = "center"><font face="Verdana" size = "-1">Some<br>Understanding</td>
+<td align = "center"><font face="Verdana" size = "-1">Complete<br>Understanding</td>
+</tr>
+<tr>
+<td><font face="Verdana" size = "-1">a. Multi-track system</td>
+<td align = "center"><input type = "radio" name = "multitrack" value = "0"></td>
+<td align = "center"><input type = "radio" name = "multitrack" value = "1"></td>
+<td align = "center"><input type = "radio" name = "multitrack" value = "2"></td>
+<td align = "center"><input type = "radio" name = "multitrack" value = "3"></td>
+</tr>
+<tr>
+<td><font face="Verdana" size = "-1">b. Two-tiered institution</td>
+<td align = "center"><input type = "radio" name = "twotiered" value = "0"></td>
+<td align = "center"><input type = "radio" name = "twotiered" value = "1"></td>
+<td align = "center"><input type = "radio" name = "twotiered" value = "2"></td>
+<td align = "center"><input type = "radio" name = "twotiered" value = "3"></td>
+</tr>
+<tr>
+<td><font face="Verdana" size = "-1">c. Baccalaureate degree-granting institution</td>
+<td align = "center"><input type = "radio" name = "bacc" value = "0" ></td>
+<td align = "center"><input type = "radio" name = "bacc" value = "1"></td>
+<td align = "center"><input type = "radio" name = "bacc" value = "2"></td>
+<td align = "center"><input type = "radio" name = "bacc" value = "3"></td>
+</tr>
+<tr>
+<td><font face="Verdana" size = "-1">d. Student activities program</td>
+<td align = "center"><input type = "radio" name = "studentprogram" value = "0"></td>
+<td align = "center"><input type = "radio" name = "studentprogram" value = "1"></td>
+<td align = "center"><input type = "radio" name = "studentprogram" value = "2"></td>
+<td align = "center"><input type = "radio" name = "studentprogram" value = "3"></td>
+</tr>
+<tr>
+<td><font face="Verdana" size = "-1">e. Integrated bachelor's degree programs</td>
+<td align = "center"><input type = "radio" name = "integrated" value = "0"></td>
+<td align = "center"><input type = "radio" name = "integrated" value = "1"></td>
+<td align = "center"><input type = "radio" name = "integrated" value = "2"></td>
+<td align = "center"><input type = "radio" name = "integrated" value = "3"></td>
+</tr>
+<tr>
+<td><font face="Verdana" size = "-1">f. Specialized bachelor's degree programs</td>
+<td align = "center"><input type = "radio" name = "specialized" value = "0"></td>
+<td align = "center"><input type = "radio" name = "specialized" value = "1"></td>
+<td align = "center"><input type = "radio" name = "specialized" value = "2"></td>
+<td align = "center"><input type = "radio" name = "specialized" value = "3"></td>
+</tr>
+<td><font face="Verdana" size = "-1">g. Primary and secondary areas of focus</td>
+<td align = "center"><input type = "radio" name = "focus" value = "0"></td>
+<td align = "center"><input type = "radio" name = "focus" value = "1"></td>
+<td align = "center"><input type = "radio" name = "focus" value = "2"></td>
+<td align = "center"><input type = "radio" name = "focus" value = "3"></td>
+</tr>
+</table>
+<hr align = "left" width = "90%"><Br>
+<font face="Verdana" size = "-1">&nbsp;8. What has made Ricks College unique over the years that you hope will <u>not</u> change?<p>
+<textarea name = "dontchange" cols = "75" rows = "5"></textarea><p>
+<hr align = "left" width = "90%"><Br>
+
+
+
+<table border ="1" width = "90%"><tr>
+   <td valign = "top">
+      <table border = "0"><tr>
+      <td><font face="Verdana" size = "-1" >&nbsp;9. How would you assess the impact of the name<Br>Brigham Young University-Idaho?</td>
+      </tr></table>
+   </td>
+   <td>
+      <table border = "0">
+      <tr><td><font face="Verdana" size = "-2">Large positive impact</td><td><input type = "radio" name = "accepting" value = "Lpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite positive impact</td><td><input type = "radio" name = "accepting" value = "Dpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild positive impact</td><td><input type = "radio" name = "accepting" value = "Mpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">No impact</td><td><input type = "radio" name = "accepting" value = "no"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild negative impact</td><td><input type = "radio" name = "accepting" value = "Mnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite negative impact</td><td><input type = "radio" name = "accepting" value = "Dnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Large negative impact</td><td><input type = "radio" name = "accepting" value = "Lnegative"></td></tr>
+      </table></td>
+</tr>
+</table>
+<table border = "1" width = "90%">
+<tr>
+<td valign = "top"><font face="Verdana" size = "-1">Please explain: </td><td><textarea cols = "65" rows = "2" name = "nameexplain"></textarea></td>
+</tr>
+</table>
+<hr align = "left" width = "90%"><Br>
+<font face="Verdana" size = "-1" >&nbsp;10. What impact will the discontinuance of <b>intercollegiate</b> athletics at BYU-Idaho have:<p>
+<table border = "1" width = "90%">
+<tr><td align = "center"><B><font face="Verdana" size = "-1">ON YOU?</td><td align = "center"><B><font face="Verdana" size = "-1">ON BYU-IDAHO?</td><td align = "center"><b><font face="Verdana" size = "-1">ON THE LOCAL COMMUNITY?</td></tr>
+<tr>
+<td>
+<table border = "0">
+      <tr><td><font face="Verdana" size = "-2">Large positive impact</td><td><input type = "radio" name = "impactonyou" value = "Lpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite positive impact</td><td><input type = "radio" name = "impactonyou" value = "Dpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild positive impact</td><td><input type = "radio" name = "impactonyou" value = "Mpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">No impact</td><td><input type = "radio" name = "impactonyou" value = "no"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild negative impact</td><td><input type = "radio" name = "impactonyou" value = "Mnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite negative impact</td><td><input type = "radio" name = "impactonyou" value = "Dnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Large negative impact</td><td><input type = "radio" name = "impactonyou" value = "Lnegative"></td></tr>
+      </table>
+</td>
+<td>
+<table border = "0">
+      <tr><td><font face="Verdana" size = "-2">Large positive impact</td><td><input type = "radio" name = "impactonBYUI" value = "Lpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite positive impact</td><td><input type = "radio" name = "impactonBYUI" value = "Dpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild positive impact</td><td><input type = "radio" name = "impactonBYUI" value = "Mpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">No impact</td><td><input type = "radio" name = "impactonBYUI" value = "no"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild negative impact</td><td><input type = "radio" name = "impactonBYUI" value = "Mnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite negative impact</td><td><input type = "radio" name = "impactonBYUI" value = "Dnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Large negative impact</td><td><input type = "radio" name = "impactonBYUI" value = "Lnegative"></td></tr>
+      </table>
+</td>
+<td>
+<table border = "0">
+      <tr><td><font face="Verdana" size = "-2">Large positive impact</td><td><input type = "radio" name = "impactonlocal" value = "Lpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite positive impact</td><td><input type = "radio" name = "impactonlocal" value = "Dpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild positive impact</td><td><input type = "radio" name = "impactonlocal" value = "Mpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">No impact</td><td><input type = "radio" name = "impactonlocal" value = "no"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild negative impact</td><td><input type = "radio" name = "impactonlocal" value = "Mnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite negative impact</td><td><input type = "radio" name = "impactonlocal" value = "Dnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Large negative impact</td><td><input type = "radio" name = "impactonlocal" value = "Lnegative"></td></tr>
+      </table>
+</td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<td valign = "top"><font face="Verdana" size = "-1">Please explain: </td><td><textarea cols = "65" rows = "2" name = "impactexplain"></textarea></td>
+</tr>
+</table>
+<hr align = "left" width = "90%"><Br>
+<font face="Verdana" size = "-1" >&nbsp;11. How would you assess the potential impact of a new expanded student activities program
+at BYU-Idaho to replace intercollegiate athletics:<p>
+<table border = "1" width = "90%">
+<tr><td align = "center"><B><font face="Verdana" size = "-1">ON YOU?</td><td align = "center"><B><font face="Verdana" size = "-1">ON BYU-IDAHO?</td><td align = "center"><b><font face="Verdana" size = "-1">ON THE LOCAL COMMUNITY?</td></tr>
+<tr>
+<td>
+<table border = "0">
+      <tr><td><font face="Verdana" size = "-2">Large positive impact</td><td><input type = "radio" name = "assessonyou" value = "Lpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite positive impact</td><td><input type = "radio" name = "assessonyou" value = "Dpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild positive impact</td><td><input type = "radio" name = "assessonyou" value = "Mpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">No impact</td><td><input type = "radio" name = "assessonyou" value = "no"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild negative impact</td><td><input type = "radio" name = "assessonyou" value = "Mnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite negative impact</td><td><input type = "radio" name = "assessonyou" value = "Dnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Large negative impact</td><td><input type = "radio" name = "assessonyou" value = "Lnegative"></td></tr>
+      </table>
+</td>
+<td>
+<table border = "0">
+      <tr><td><font face="Verdana" size = "-2">Large positive impact</td><td><input type = "radio" name = "assessonBYUI" value = "Lpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite positive impact</td><td><input type = "radio" name = "assessonBYUI" value = "Dpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild positive impact</td><td><input type = "radio" name = "assessonBYUI" value = "Mpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">No impact</td><td><input type = "radio" name = "assessonBYUI" value = "no"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild negative impact</td><td><input type = "radio" name = "assessonBYUI" value = "Mnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite negative impact</td><td><input type = "radio" name = "assessonBYUI" value = "Dnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Large negative impact</td><td><input type = "radio" name = "assessonBYUI" value = "Lnegative"></td></tr>
+      </table>
+</td>
+<td>
+<table border = "0">
+      <tr><td><font face="Verdana" size = "-2">Large positive impact</td><td><input type = "radio" name = "assessonlocal" value = "Lpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite positive impact</td><td><input type = "radio" name = "assessonlocal" value = "Dpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild positive impact</td><td><input type = "radio" name = "assessonlocal" value = "Mpositive"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">No impact</td><td><input type = "radio" name = "assessonlocal" value = "no"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Mild negative impact</td><td><input type = "radio" name = "assessonlocal" value = "Mnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Definite negative impact</td><td><input type = "radio" name = "assessonlocal" value = "Dnegative"></td></tr>
+      <tr><td><font face="Verdana" size = "-2">Large negative impact</td><td><input type = "radio" name = "assessonlocal" value = "Lnegative"></td></tr>
+      </table>
+</td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<td valign = "top"><font face="Verdana" size = "-1">Please explain: </td><td><textarea cols = "65" rows = "2" name = "assesexplain"></textarea></td>
+</tr>
+</table>
+<hr align = "left" width = "90%"><Br>
+<font face="Verdana" size = "-1">&nbsp;12. What is your understanding of the relationship between BYU-Provo and BYU-Idaho?<p>
+<textarea name = "provoidaho" cols = "75" rows = "5"></textarea><p>
+<hr align = "left" width = "90%"><Br>
+<font face="Verdana" size = "-1">&nbsp;13. Where do you feel Ricks College stands on the following attributes?<p>
+
+
+<table width = "100%" border = "1">
+<tr>
+<td align = "right"><font face="Verdana" size = "-2">Impersonal</td>
+<td><input type = "radio" name = "rate1" value = "0"></td>
+<td><input type = "radio" name = "rate1" value = "1"></td>
+<td><input type = "radio" name = "rate1" value = "2"></td>
+<td><input type = "radio" name = "rate1" value = "3"></td>
+<td><input type = "radio" name = "rate1" value = "4"></td>
+<td><input type = "radio" name = "rate1" value = "5"></td>
+<td><input type = "radio" name = "rate1" value = "6"></td>
+<td><font face="Verdana" size = "-2">Personal</td>
+</tr>
+<tr>
+<td align = "right"><font face="Verdana" size = "-2">Too large</td>
+<td><input type = "radio" name = "rate2" value = "0"></td>
+<td><input type = "radio" name = "rate2" value = "1"></td>
+<td><input type = "radio" name = "rate2" value = "2"></td>
+<td><input type = "radio" name = "rate2" value = "3"></td>
+<td><input type = "radio" name = "rate2" value = "4"></td>
+<td><input type = "radio" name = "rate2" value = "5"></td>
+<td><input type = "radio" name = "rate2" value = "6"></td>
+<td><font face="Verdana" size = "-2">Too small</td>
+</tr><tr>
+<td align = "right"><font face="Verdana" size = "-2">Caring teachers</td>
+<td><input type = "radio" name = "rate3" value = "0"></td>
+<td><input type = "radio" name = "rate3" value = "1"></td>
+<td><input type = "radio" name = "rate3" value = "2"></td>
+<td><input type = "radio" name = "rate3" value = "3"></td>
+<td><input type = "radio" name = "rate3" value = "4"></td>
+<td><input type = "radio" name = "rate3" value = "5"></td>
+<td><input type = "radio" name = "rate3" value = "6"></td>
+<td><font face="Verdana" size = "-2">Uncaring teachers</td>
+</tr><tr>
+<td align = "right"><font face="Verdana" size = "-2">Research institution</td>
+<td><input type = "radio" name = "rate4" value = "0"></td>
+<td><input type = "radio" name = "rate4" value = "1"></td>
+<td><input type = "radio" name = "rate4" value = "2"></td>
+<td><input type = "radio" name = "rate4" value = "3"></td>
+<td><input type = "radio" name = "rate4" value = "4"></td>
+<td><input type = "radio" name = "rate4" value = "5"></td>
+<td><input type = "radio" name = "rate4" value = "6"></td>
+<td><font face="Verdana" size = "-2">Teaching institution</td>
+</tr>
+<tr>
+<td align = "right"><font face="Verdana" size = "-2">Casual classroom atmosphere</td>
+<td><input type = "radio" name = "rate5" value = "0"></td>
+<td><input type = "radio" name = "rate5" value = "1"></td>
+<td><input type = "radio" name = "rate5" value = "2"></td>
+<td><input type = "radio" name = "rate5" value = "3"></td>
+<td><input type = "radio" name = "rate5" value = "4"></td>
+<td><input type = "radio" name = "rate5" value = "5"></td>
+<td><input type = "radio" name = "rate5" value = "6"></td>
+<td><font face="Verdana" size = "-2">Intense classroom atmosphere</td>
+</tr>
+<tr>
+<td align = "right"><font face="Verdana" size = "-2">Not innovative</td>
+<td><input type = "radio" name = "rate6" value = "0"></td>
+<td><input type = "radio" name = "rate6" value = "1"></td>
+<td><input type = "radio" name = "rate6" value = "2"></td>
+<td><input type = "radio" name = "rate6" value = "3"></td>
+<td><input type = "radio" name = "rate6" value = "4"></td>
+<td><input type = "radio" name = "rate6" value = "5"></td>
+<td><input type = "radio" name = "rate6" value = "6"></td>
+<td><font face="Verdana" size = "-2">Innovative</td>
+</tr>
+<tr>
+<td align = "right"><font face="Verdana" size = "-2">Easy</td>
+<td><input type = "radio" name = "rate7" value = "0"></td>
+<td><input type = "radio" name = "rate7" value = "1"></td>
+<td><input type = "radio" name = "rate7" value = "2"></td>
+<td><input type = "radio" name = "rate7" value = "3"></td>
+<td><input type = "radio" name = "rate7" value = "4"></td>
+<td><input type = "radio" name = "rate7" value = "5"></td>
+<td><input type = "radio" name = "rate7" value = "6"></td>
+<td><font face="Verdana" size = "-2">Challenging</td>
+</tr>
+<tr>
+<td align = "right"><font face="Verdana" size = "-2">Spiritual</td>
+<td><input type = "radio" name = "rate8" value = "0"></td>
+<td><input type = "radio" name = "rate8" value = "1"></td>
+<td><input type = "radio" name = "rate8" value = "2"></td>
+<td><input type = "radio" name = "rate8" value = "3"></td>
+<td><input type = "radio" name = "rate8" value = "4"></td>
+<td><input type = "radio" name = "rate8" value = "5"></td>
+<td><input type = "radio" name = "rate8" value = "6"></td>
+<td><font face="Verdana" size = "-2">Worldly</td>
+</tr>
+<tr>
+<td align = "right"><font face="Verdana" size = "-2">Not enough extracurricular opportunties</td>
+<td><input type = "radio" name = "rate9" value = "0"></td>
+<td><input type = "radio" name = "rate9" value = "1"></td>
+<td><input type = "radio" name = "rate9" value = "2"></td>
+<td><input type = "radio" name = "rate9" value = "3"></td>
+<td><input type = "radio" name = "rate9" value = "4"></td>
+<td><input type = "radio" name = "rate9" value = "5"></td>
+<td><input type = "radio" name = "rate9" value = "6"></td>
+<td><font face="Verdana" size = "-2">Too many extracurricular opportunites</td>
+</tr>
+<tr>
+<td align = "right"><font face="Verdana" size = "-2">Concerned about student's future</td>
+<td><input type = "radio" name = "rate10" value = "0"></td>
+<td><input type = "radio" name = "rate10" value = "1"></td>
+<td><input type = "radio" name = "rate10" value = "2"></td>
+<td><input type = "radio" name = "rate10" value = "3"></td>
+<td><input type = "radio" name = "rate10" value = "4"></td>
+<td><input type = "radio" name = "rate10" value = "5"></td>
+<td><input type = "radio" name = "rate10" value = "6"></td>
+<td><font face="Verdana" size = "-2">Not concerned about student's future</td>
+</tr>
+<tr>
+<td align = "right"><font face="Verdana" size = "-2">Prestigious</td>
+<td><input type = "radio" name = "rate11" value = "0"></td>
+<td><input type = "radio" name = "rate11" value = "1"></td>
+<td><input type = "radio" name = "rate11" value = "2"></td>
+<td><input type = "radio" name = "rate11" value = "3"></td>
+<td><input type = "radio" name = "rate11" value = "4"></td>
+<td><input type = "radio" name = "rate11" value = "5"></td>
+<td><input type = "radio" name = "rate11" value = "6"></td>
+<td><font face="Verdana" size = "-2">Not prestigious</td>
+</tr>
+<tr>
+<td align = "right"><font face="Verdana" size = "-2">Easy to get accepted</td>
+<td><input type = "radio" name = "rate12" value = "0"></td>
+<td><input type = "radio" name = "rate12" value = "1"></td>
+<td><input type = "radio" name = "rate12" value = "2"></td>
+<td><input type = "radio" name = "rate12" value = "3"></td>
+<td><input type = "radio" name = "rate12" value = "4"></td>
+<td><input type = "radio" name = "rate12" value = "5"></td>
+<td><input type = "radio" name = "rate12" value = "6"></td>
+<td><font face="Verdana" size = "-2">Difficult to get accepted</td>
+</tr>
+
+
+</table>
+<hr align = "left" width = "90%"><Br>
+
+
+<font face="Verdana" size = "-1">&nbsp;14. Other comments?
+<textarea name = "othercomments" cols = "75" rows = "5"></textarea><p>
+<hr align = "left" width = "90%"><Br>
+<input type = "submit" value = "Submit Survey" name = "submit">
+</form>
+</body>
+</html>

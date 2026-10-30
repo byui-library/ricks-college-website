@@ -1,0 +1,296 @@
+;=======ADC831.ASM============================Rex N. Fisher===4/15/98=====
+
+;Adaptation of a program originally published as an application note by 
+;Parallax, Inc.  
+
+;This program demonstrates the use of an external serial ADC (National 
+;ADC0831) with the PIC16C84 microcontroller.  A variable voltage (0-5V) at
+;pin 2 of the ADC controls the blinking rate of an LED connected to pin 2
+;of the PIC.
+
+;Hardware connections:
+;
+;    *Pin 1 (RA2) to pin 1 of ADC
+;    *Pin 2 (RA3) to 470 ohm (470 to diode anode, diode cathode to GND)
+;    *Pin 3 (RTCC) to +5V
+;    *Pin 4 (_MCLR) to +5V
+;    *Pin 5 (Vss) to GND
+;    *Pin 6 (RB0) n/c
+;    *Pin 7 (RB1) n/c
+;    *Pin 8 (RB2) n/c
+;    *Pin 9 (RB3) n/c
+;    *Pin 10 (RB4) n/c
+;    *Pin 11 (RB5) n/c
+;    *Pin 12 (RB6) n/c
+;    *Pin 13 (RB7) n/c
+;    *Pin 14 (Vdd) to +5V
+;    *Pin 15 (OSC2) to pin 3 of ceramic resonator
+;    *Pin 16 (OSC1) to pin 1 of resonator (pin 2 of resonator to GND)
+;    *Pin 17 (RA0) to pin 7 of ADC
+;    *Pin 18 (RA1) to pin 6 of ADC
+;
+;    Notes:         Pin 2 of ADC is 0 - 5V input.
+;                   Pin 3 & pin 4 of ADC to GND.
+;                   Pin 5 & pin 8 of ADC to +5V.
+
+;Theory of operation
+;
+;    One or more external analog-to-digital converters (ADC) can be
+;    connected to the PIC16C84.  A single ADC0831 is used here.
+;
+;    Interafacing the ADC831 requires only three I/O lines, and of these,
+;    two can be multiplexed with other functions (or additional ADC831s).
+;    Only the chip-select (CS) pin requires a dedicated line.  The
+;    ADC's range of input voltages is controlled by Vref and Vin(-) pins.
+;    Vref sets the voltage at whivh the ADC will return a full-scale
+;    output of 255 (Ffh), while Vin(-) sets the voltage that will
+;    return 0.
+;
+;    In this example, Vin(-) is at ground and Vref is at +5V; however
+;    these values can be as close together as 1 volt without harming
+;    accuracy or linearity.  Diode voltage references or trim pots may
+;    be used to set these values.
+;
+;    This program reads the voltage at the ADC831's input pin and uses
+;    the 8-bit result to control a timing routine that flashes an LED.
+;    The LED flashes slowly when the input is +5V, and very rapidly as 
+;    it approaches ground.
+;
+;    The subroutine "Convert" handles the details of getting data out of the
+;    ADC.  It enables the ADC by pulling the CS line low, then pulses the 
+;    clock line (CLK) to signal the beginning of a conversion.  The program
+;    then enters a loop in which it pulses CLK, gets the bit on pin DAT,
+;    and shifts it into the received byte using the rotate left (rlf)
+;    instruction.  Remember that rlf shifts the carry bit into the LSB of 
+;    the specified register (and the MSB back into the carry bit).
+;
+;    When all bits have been shifted into the byte, the program turns off
+;    the ADC by returning CS high.  The subroutine returns with the 
+;    conversion result in the variable AD_RSLT.  The value of AD_RSLT is
+;    moved to COUNT1 and determines the length of the delay loop (blink
+;    rate).
+
+;Possible modifications:
+;
+;    More ADC831's can be added to the circuit.  Connect each additional
+;    ADC to the same clock and data lines, but assign separate CS pins.
+;    Modify the "Convert" subroutine to take the appropriate CS pin low
+;    when it needs to acquire data from a particular ADC.
+
+
+;=======Programming Instructions===========================================
+
+;Select the following settings at time of programming:
+
+;    Device = 84
+;    Oscillator = XT
+;    Watchdog = OFF
+;    Timer = ON
+;    Code Protect = OFF
+
+
+;=======Program Hierarchy================================================
+
+;    Main
+;         Initialize
+;         Blink
+;         Wait
+;              Convert
+
+
+;=======Header Section===================================================
+
+;Select PIC16C84 processor and default radix.
+
+     processor 	16F84	;Assemble for specific features of PIC16F84.
+     radix      HEX     ;Default number system is hexadecimal.
+
+;P16C84.INC defines configurations, registers, and other useful bits of 
+;information for the PIC16F84 microcontroller.  The names assigned to registers
+;and pins match the Microchip data sheets as closely as possible.
+
+     include <P16F84.INC>
+
+
+;=======Equate Section===================================================
+
+;Register equates:
+
+SRAM      equ  0C                  ;RAM locations (GP registers) start at 0Ch.
+RA        equ  05                  ;RA is another name for PORTA.
+RB        equ  06                  ;RB is another name for PORTB.
+
+;Bit equates:
+
+CLK       equ  0                   ;Bit 0 of RA (ADC clock).
+DAT       equ  1                   ;Bit 1 of RA (ADC data).
+CS        equ  2                   ;Bit 2 of RA (ADC chip select).
+LED       equ  3                   ;Bit 3 of RA (LED).
+
+
+;=======Variable Section==================================================
+
+     cblock    SRAM           ;Assign variable names to data memory locations.
+                              ;starting at the address defined by SRAM.
+
+               COUNT0         ;Counter for delay loop.
+               COUNT1         ;Counter for delay loop.
+               COUNT2         ;Counter used to read 8 data bits from ADC.
+               AD_RSLT        ;Result of A/D conversion.
+     Endc                     ;End of data memory assignments.
+
+
+;=======Vector Section===================================================
+
+     org  00                       ;Program memory locations start at 00h.
+                                   ;Reset vector is 00h.  Start here after reset.
+     goto Main                     ;Branch to program (starting at Main).
+
+     org  04                       ;Interrupt vector is 04h.
+Int                                ;Start here after interrupt.
+     goto Int                      ;Endless loop (stops program on interrupt).
+
+
+;=======Table Section====================================================
+
+;No tables for this program.
+
+
+;=======Program Section==================================================
+
+Main                               ;Start program here.
+     call Initialize               ;Initialize variables and registers.
+
+Blink                              ;Toggle the LED on and off.
+     movlw     B'00001000'         ;Create bit mask for bit 3 (RA.3 = LED).
+     xorwf     RA,F                ;Invert output bit to LED.
+     call      Wait                ;Variable delay depending on ADC data.
+     goto      Blink               ;Go toggle the LED again.
+
+
+;-----------Initialize Subroutine-------------------------------------------------------------------------------
+;
+;Zero variables and configure I/O pins.
+
+Initialize
+
+     ;Clear variables.
+
+     clrf COUNT0
+     clrf COUNT1
+     clrf COUNT2
+     clrf AD_RSLT
+
+     ;Clear RA and RB before setting direction.
+
+     clrf RA
+     clrf RB
+
+     ;Set direction register for RA and RB.
+
+     bsf   	STATUS,RP0  	    ;Access bank 1 of register files.
+     movlw      B'00000010'         ;Make bit 1 an input, others are outputs.
+     movwf      TRISA               ;Program I/O bits of RA.
+     movlw      B'00000000'         ;Make all bits outputs.
+     movwf      TRISB               ;Program I/O bits of RB.
+     bcf        STATUS,RP0          ;Return to bank 0 of register file.
+
+
+     return
+
+
+;-----------Wait Subroutine-----------------------------------------------------------------------------------
+;
+;Determine the blinking speed of the LED, which depends on the data received
+;from the ADC.  If the input voltage to the ADC is high (close to +5V), the 
+;8-bit data value is large and the blink rate is slow.  The blink rate becomes
+;faster as the input voltage to the ADC is reduced, and the 8-bit data value 
+;becomes smaller.
+
+Wait
+     call      Convert		;Get result of A/D conversion & put in AD_RSLT.
+     
+     ;Put data from ADC (AD_RSLT) into COUNT1.
+
+     movf      AD_RSLT,W      
+     movwf     COUNT1
+
+     ;Add 1 to COUNT1 to prevent underflow when AD_RSLT = 0.
+
+     movlw     01
+     addwf     COUNT1,F
+
+
+Delay                           ;Produce a time dleay that depends on the data
+                                ;from the ADC, which was previously put into
+                                ;COUNT1
+
+     ;The delay determined by COUNT0 is fixed at 0FFh (256d) loops.
+     
+     decfsz    COUNT0,F         ;Decrement COUNT0.  Decrement COUNT0 again if 
+     goto      Delay            ;COUNT0 is not equal to 0.  Fall through if 
+                                ;COUNT0 is equal to 0.
+
+     ;The delay determined by COUNT1 is dependent upon the A/D conversion
+     ;result, which was put into COUNT1.
+     
+     decfsz    COUNT1, F        ;Decrement COUNT1.  Go back and decrement
+     goto      Delay            ;COUNT0again if COUNT1 is not equal to 0.
+                                ;Fall through if COUNT is equal to 0.
+
+     return
+
+
+;-----------Convert Subroutine-------------------------------------------------------------------------------
+;
+;Enable the ADC, signal the ADC to begin a data conversion, read the ADC data 
+;one bit at a time, put the 8-bit data value into AD_RSLT, disable the ADC.
+
+Convert
+     bcf  	RA,CS  		;Clear pin 2 of RA (CS) to enable ADC.
+
+     ;Set up COUNT2 for eight data bits from ADC to be moved into AD_RSLT.
+
+     movlw     	08
+     movwf     	COUNT2
+
+     ;Pulse CLK pin of ADC to signal the beginning of a conversion.
+
+     bsf  	RA,CLK    	;Set CLK to 1.
+     nop            		;Hold 1 on CLK (necessary if PIC clock >4MHz).
+     bcf  	RA,CLK    	;Reset CLK to 0.
+
+     clrf 	AD_RSLT   	;Clear register before reading new ADC data.
+
+Read_Bit            		;Pulse CLK to read data bit from ADC,
+                    		;read the data bit, and shift it into AD_RSLT
+                    		;Repeat 8 times to read the entire data byte.
+
+     bsf  	RA,CLK  	;Set CLK to 1.
+     nop            		;Hold 1 on CLK (necessary if PIC clock >4MHz).
+     bcf  	RA,CLK    	;Reset CLK to 0.
+
+     ;Read data bit from ADC and set carry bit equal to the data bit.
+
+     btfss     	RA,DAT    	;Is data bit equal to 1?
+     bcf  	STATUS,C  	;Clear carry bit equal to 0?
+     btfsc     	RA,DAT    	;Is data bit equal to 0?
+     bsf  	STATUS,C  	;Set carry bit if data bit is not equal to 0.
+
+     ;Put data bit into AD_RSLT and go get next data bit.
+
+     rlf  	AD_RSLT,F 	;Shift carry bit (equal to ADC data bit)
+                    		;into AD_RSLT.
+     decfsz    	COUNT2,F  	;Decrement COUNT2.
+     goto 	Read_Bit  	;Read 8 bits (until COUNT2 = 0).
+                    		;Fall through loop after all 8 bits are read.
+
+     bsf  	RA,CS          	;Set pin 2 of RA (CS) to disable ADC.
+
+     return
+     
+     end            ;End of program.
+
+
+;===================================================================== 
+     

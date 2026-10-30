@@ -1,0 +1,130 @@
+<html>
+
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- //BEGIN SCRIPT
+function scorequiz(form) {
+ tally=0
+ if(form.Q1.value!=null && form.Q1.value=="*") {tally=tally+1}
+ if(form.Q2.value!=null && form.Q2.value=="*") {tally=tally+1}
+ if(form.Q3.value!=null && form.Q3.value=="*") {tally=tally+1}
+ if(form.Q4.value!=null && form.Q4.value=="*") {tally=tally+1}
+ if(form.Q5.value!=null && form.Q5.value=="*") {tally=tally+1}
+ 
+ form.SCORE.value =eval(tally)
+}
+
+function clearquiz(form) {
+ tally=0
+ form.Q1.value="?"
+ form.Q2.value="?"
+ form.Q3.value="?"
+ form.Q4.value="?"
+ form.Q5.value="?"
+ 
+ form.SCORE.value =eval(tally)
+}
+
+function msg() {
+ alert("Your quiz tally is being e-mailed to the instructor. Thank you!")
+ }
+// -->
+</SCRIPT>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>B283 Quiz #2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Online Quiz</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="1">| <a href="../default.htm"> HOME</a> | <a href="../b283quizzes.htm"> B283 Quizzes</a> |
+<a href="b283syllabus.htm">B283 Syllabus</a> |</font></b></p>
+
+<h1 align="center"><b>ONLINE QUIZ #2</b></h1>
+<p align="center">CHAPTER 3 READING</p>
+<hr width="65%" size="4" noshade color="#000000">
+<Form name="quiz1" method="post" enctype="text/plain" 
+ onLoad="clearquiz(this.form)" onsubmit="return false">
+<table border="0" width="100%">
+  <tr>
+    <td width="28%" align="right">
+Please enter your name:&nbsp;</td>
+    <td width="72%"><INPUT TYPE="text" NAME="Name" VALUE="" size="40"></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right">
+Please enter your Email address:&nbsp;</td>
+    <td width="72%"><input type="text" name="email" value="" size="40"></td>
+  </tr>
+</table>
+<p><br>
+</p>
+<hr>
+
+1. The price of the product and the location of the business affect the amount
+of training required for the franchisee..
+<ol>
+<INPUT TYPE="radio" NAME="Q1" value="True" onclick=Q1.value="T">True<br>
+<INPUT TYPE="radio" NAME="Q1" value="*False" onclick=Q1.value="*">False<br>
+</ol>
+
+2. The failure rate for independent small businesses is comparable to that for franchised businesses.
+<ol>
+<INPUT TYPE="radio" NAME="Q2" value="*True" onclick=Q2.value="T">True<br>
+<INPUT TYPE="radio" NAME="Q2" value="False" onclick=Q2.value="*">False<br>
+</ol>
+
+3. Which event has contributed the least to the opening of foreign markets to U.S.
+franchisors?.
+<ol>
+<INPUT TYPE="radio" NAME="Q3" value="Formation of European Union" onclick=Q3.value="A">The
+formation of the European Union.<br>
+<INPUT TYPE="radio" NAME="Q3" value="Collapse of Soviet Union" onclick=Q3.value="B">The
+collapse of the Soviet Union<br>
+<INPUT TYPE="radio" NAME="Q3" value="*Euro as currency" onclick=Q3.value="*">The
+introduction of the Euro as the unit of currency throughout much of Europe<br>
+<INPUT TYPE="radio" NAME="Q3" value="Passage of NAFTA" onclick=Q3.value="D">The
+passage of the North American Free Trade Agreement<br>
+</ol>
+ 
+4. A written legal agreement between two parties in a franchise arrangement is referred to as a _____________. 
+<ol>
+<INPUT TYPE="radio" NAME="Q4" value="Master License" onclick=Q4.value="A">Master
+License.<br>
+<INPUT TYPE="radio" NAME="Q4" value="*Franchise contract" onclick=Q4.value="*">Franchise
+contract.<br>
+<INPUT TYPE="radio" NAME="Q4" value="Requirements contract" onclick=Q4.value="C">Requirements
+contract.<br>
+<INPUT TYPE="radio" name="Q4" value="Franchise consent draft" onclick=Q4.value="D">Franchise
+consent draft.</ol>
+
+5. Johnny John is trying to sell you a franchise deal.  He states, "Territories are going fast.  Act now or you'll be shut out."
+For which franchise scam might this be a warning signal.
+<ol>
+<INPUT TYPE="radio" NAME="Q5" value="Boast" onclick=Q5.value="A">The Boast.<br>
+<INPUT TYPE="radio" NAME="Q5" value="*Hustle" onclick=Q5.value="*">The Hustle.<br>
+<INPUT TYPE="radio" NAME="Q5" value="Big-Money Claim" onclick=Q5.value="C">The Big-Money Claim.<br>
+<INPUT TYPE="radio" name="Q5" value="Disclosure Dance" onclick=Q5.value="D">The Disclosure Dance.
+</ol>
+
+<hr>
+
+<B>Your Quiz Score is:  </B><INPUT  NAME="SCORE" TYPE="text" size="4">
+<p><INPUT TYPE="reset" NAME="reset" VALUE="Clear Quiz" onclick=clearquiz(this.form)>
+<INPUT TYPE="submit" VALUE="Send Quiz to Instructor" onclick=scorequiz(this.form)>
+</p>
+<p><INPUT TYPE="button" NAME="submit" VALUE="Compute Quiz tally" onclick=scorequiz(this.form)>
+
+<BR><BR>
+</p>
+</form>
+
+</body>
+
+</html>

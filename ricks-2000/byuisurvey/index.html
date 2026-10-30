@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Survey: Perceptions of BYU-Idaho</title>
+<script>
+function validate()
+{
+   
+   for(index = 0;index<11;index++)
+   {
+      if(document.survey.elements[index].checked)
+      return true;
+      
+      
+   }
+   if(document.survey.other.value != "")
+       return true;
+   alert("Please Select one of the Check Boxes")
+   return false;
+   
+}
+</script>
+
+</head>
+<body marginheight = 0 topmargin = 0 leftmargin = 0>
+<script>
+appName = 'BYU-Idaho Transition Survey'
+</script>
+<script src="../navbar/sitenavbar.js"></script>
+<form method = "GET" name = "survey" onsubmit="return false">
+
+Thank you for taking a few minutes to share your point of view. <br> Your input is extremely helpful to us as we measure the understanding of the many friends of this institution.<br><br>
+What is your relationship to Ricks College/BYU-Idaho?  <i>Check ALL that apply.</i><Br>
+<table border = "0" cellpadding = "2" cellspacing  = "2">
+<tr>
+<td align = "right">Potential Student</td><td><input type = "checkbox" name = "potentialstudent"></td>
+<td align = "right">Current Student</td><td><input type = "checkbox" name = "currentstudent"></td>
+<td align = "right">Former Student</td><td><input type = "checkbox" name = "formerstudent"></td>
+</tr>
+<tr>
+<td align = "right">Current Employee</td><td><input type = "checkbox" name = "currentemployee"?</td>
+<td align = "right">Retired Employee</td><td><input type = "checkbox" name = "retitredemployee"></td>
+<td align = "right">Former Employee</td><td><input type = "checkbox" name = "formeremployee"></td>
+</tr>
+<tr>
+<td align = "right">Donor</td><td><input type = "checkbox" name = "donor"></td>
+<td align = "right">Parent of Students</td><td><input type = "checkbox" name = "parentofstudent"></td>
+<td align = "right">Employer of Students</td><td><input type = "checkbox" name = "employerofstudents"></td>
+</tr>
+<tr>
+<td>Local Community Member</td><td><input type = "checkbox" name = "localmember"></td>
+<td>Bishop or Stake President</td><td><input type = "checkbox" name = "bishoporstakepresident"></td>
+<td colspan = "2">Other &nbsp;<input type = "text"size = "15" name = "other"></td>
+</tr>
+</table>
+<input type = "submit" name = "Contuine" value = "Continue">
+</form>
+</body>
+</html>

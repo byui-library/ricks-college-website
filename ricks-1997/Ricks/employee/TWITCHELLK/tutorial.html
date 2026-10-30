@@ -1,0 +1,497 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>Linux Tutorial by Greg Cameron</TITLE>
+</HEAD>
+<BODY>
+
+<H2>Linux Tutorial<BR>by Greg Cameron<BR><HR></H2>
+
+<P><STRONG>Introduction</STRONG></P>
+
+<P>The purpose of this Linux tutorial is to familiarize the student with the Linux system. 
+The Linux Operating System is used in the computer lab located in ROM 272. This
+tutorial will cover how to log on and off the Linux system, the commands to work with
+text files, the commands to manipulate through the file system of Linux, and how to use
+the compilers.<STRONG><U></U></STRONG></P>
+
+<P>Linux is an operating system that runs on personal computers similar to Windows
+95/98/2000.  The difference is that Linux is based on the UNIX operating system.  The
+UNIX operating system is one of the oldest operating systems in existence.  Its
+estimated that 50-75% of the machines on the Internet are UNIX based machines.
+Linux was chosen to be used in the lab because it's free, it's growing in popularity and
+because UNIX is still an industry standard for software development.</P>
+
+<P>The computer lab has close to 40 machines running Linux. Students are expected to
+use the machines in lab to complete their assignments, however, any machine on
+campus that has telnet can log onto one of  the machines in ROM 272 and have full
+access (except X-Windows) to their Linux accounts. Telnet and ftp access into our
+Linux network from off campus is denied due to security policies set in place by the
+college. </P>
+
+<P>All Linux machines in the lab rely on a server named <STRONG>joshua</STRONG> where most of the
+programs and student files reside.  The server is located in the server room off of ROM
+272.  Telnet and ftp access to <STRONG>joshua</STRONG> are denied to all students.</P>
+
+<P>As indicated earlier, no access from off campus to the Linux system is permitted. Those
+desiring to work at home must be able to install Linux on their own machine and find a
+way to transfer files from home to the computer lab.  <STRONG><EM>The Math/CS department
+provides no instruction or assistance for students desiring to install Linux on
+their home computers.  Students take full responsibility for installing Linux and
+learning how to transfer files to and from their own systems.  </EM></STRONG></P>
+
+<P><STRONG></STRONG><STRONG>Logging On/Off System</STRONG></P>
+
+<P>Prior to coming to the computer lab your instructor should have assigned you a
+username.  Please remember this username as you will need this to log into the Linux
+system.  To use the Linux system in the computer lab:</P>
+
+<UL>
+  <LI>	 Find a computer that is not being used</LI>
+  <LI>	 Place books and bags on the shelf above the computer or underneath the
+desk</LI>
+  <LI>	 Log into Linux system.</LI>
+
+<BR WP="BR1"><BR WP="BR2"></UL>
+
+<P><STRONG>Logging into Linux system for the first time</STRONG></P>
+
+<P>Do the following steps to log into the Linux system for the first time:</P>
+
+<UL>
+  <LI>	 If the screen is blank, wiggle the mouse to get the login screen</LI>
+  <LI>	 At the login prompt type in your username (use only lower case letters)
+followed by the Enter key.</LI>
+
+<BR WP="BR1"><BR WP="BR2"></UL>
+
+<P>After logging into the system, Linux will automatically bring up the windowing system. 
+The windowing system is based on X-Windows and is called KDE. KDE has some
+similarities to Windows 95/98/2000 but is far more powerful and highly configurable. 
+The KDE comes with lots of tools only a few of which will be discussed in this tutorial. 
+The tool you will need the most is called an x-term window; this is a window similar to
+an MS-DOS prompt in Windows 95/95/2000.  An x-term window allows you to type in
+commands to Linux.  The x-term contains what is called the shell prompt which is where
+the commands are typed.  Find an x-term window either on the bottom bar or in the
+menus.</P>
+
+<P><STRONG>Setting up a password</STRONG></P>
+
+<P>Now that you are logged into the Linux system, you will need to set up a password. A
+password ensures that only you can log in to your Linux account.  This is a security
+measure to protect your files and data.  Your password is secret and should never be
+given to anyone under any circumstances.  Your password should be changed monthly
+to ensure that no one learns your password either by accident or on purpose. </P>
+
+<P>When choosing a password use the following guidelines:</P>
+
+<UL>
+  <LI>	 Make the password at least 6 characters long.</LI>
+  <LI>	  Use at least one non-alphabetic character in your password </LI>
+  <LI>	 Never use a word that can easily be associated with you. 
+		For exampleBrother Cameron would never use a word such as
+		teacher or triplet since these are words associated with him.</LI>
+</UL>
+
+<P>To set up your password be sure you are logged onto the Linux system and that you
+have a x-term window up. Now do the following:</P>
+
+<UL>
+  <LI>	 Type the command <STRONG>passwd</STRONG> at the shell prompt and then press Enter.  </LI>
+  <LI>	 At the prompt (<FONT FACE="Courier New">Please enter new password</FONT>: ) type in a password and
+press enter. Please note that your password will not printed on the screen as you
+type.</LI>
+  <LI>	 At the next prompt (<FONT FACE="Courier New">Please retype new password: </FONT>) retype in your
+password and press enter.  You must enter the password exactly as you did the
+first time.</LI>
+  <LI>	 The above message should appear if you typed your password in twice: </LI>
+</UL>
+
+<P>	</P>
+
+<P>	<FONT FACE="Courier New">The NIS password has been changed on joshua.byui.edu</FONT></P>
+
+<P>If you do not get the above message, please see a lab assistant for assistance.  </P>
+
+<P>Please remember your password.  If you ever forget your password, please see Brother
+Cameron.</P>
+
+<P><STRONG>Logging Off</STRONG></P>
+
+<P>To log off the Linux system simply find on the main KDE menu the word Logout.  Follow
+the window prompts until the login screen appears.  When the login screen appears it
+indicates that you have been logged off that machine.  Never forget to logout of your
+Linux account.  Leaving your Linux account open would allow others to gain access to
+your files and data.  This is very dangerous and could result in serious damage to your
+account.</P>
+
+<P><STRONG>Logging into Linux with a password</STRONG></P>
+
+<P>Now that you have a password, you will be required to use it every time you log into the
+Linux system.  To log into the system with a password to the following steps:</P>
+
+<UL>
+  <LI>	 If the screen is blank, jiggle the mouse to get the login screen</LI>
+  <LI>	 At the login prompt type in your username (use only lower case letters)
+followed by the Enter key.</LI>
+  <LI>	 At the password prompt (<FONT FACE="Courier New">password: </FONT>) type in the password you created
+earlier.  You must type in the password correctly or the system will return to the
+login prompt and not give you access.</LI>
+  <LI>	 If you typed in your username and password correctly, the screen should look
+like it did the first time you logged in (see picture above)</LI>
+</UL>
+
+<P>	</P>
+
+<P><STRONG>Changing your password</STRONG></P>
+
+<P>The password you setup will only be good if you keep it a secret and create a password
+using the guildlines above.  To further enhance the security of your password, we
+suggest changing it once a month.  To change your password:</P>
+
+<UL>
+  <LI>	 At the shell prompt in an X-term window type in the <STRONG>passwd</STRONG> followed by Enter
+key.</LI>
+  <LI>	 You will be asked for your old password.  Type in your current password.  You
+must type it in correctly or the <STRONG>passwd</STRONG> command will not allow you to change
+your password.</LI>
+  <LI>	 After typing in your current password correctly you will be prompted for a new
+password.  Use the same guidelines above when choosing a new password. 
+Press enter when you are completed typing in your new password.</LI>
+  <LI>	 You will be prompted again to enter your new password. You must enter your
+new password exactly as you did in the previous step.</LI>
+  <LI>	 The above message should appear if you typed your password in twice: </LI>
+</UL>
+
+<P>	</P>
+
+<P>	<FONT FACE="Courier New">The NIS password has been changed on joshua.byui.edu</FONT></P>
+
+<P>Your password should be changed and updated on joshua.</P>
+
+<P><STRONG>A few notes about passwords</STRONG></P>
+
+<P>All user passwords are stored in encrypted form on <STRONG>joshua</STRONG>.  Since they are stored in
+encrypted form, no one will be able know your password (including the system
+administrator).  In addition, no one but a few select people have access to the server,
+therefore you can be assured that the passwords are safe and that your accounts are
+secure from tampering by others.</P>
+
+<P>Even though the passwords may be safe from others gaining accessing to them it
+doesn't mean that someone can't break into your Linux account by guessing your
+password.  Therefore a good password that is hard to guess will make your Linux
+account safe from harm.  Please follow the guidelines above for choosing passwords.</P>
+
+<P>Please be aware that occasionally we run a password checking program to see if users
+are creating passwords that are secure. You may get a mail message from us asking
+you to change your password due to its lack of security.</P>
+
+<P><STRONG></STRONG><STRONG>Basic File Commands</STRONG></P>
+
+<P><STRONG>Files</STRONG></P>
+
+<P>One of the basic units of Linux is that of a file.  A file is like a container that holds similar
+information. A file resides on a floppy or hard disk of the computer.  Your files will be
+stored on the server <STRONG>joshua</STRONG> and not on the hard drive of the computer you log into.</P>
+
+<P>There are two types of files in Linux that we will work with:</P>
+
+<P>	1. Text Files - Files that are readable and contain text like in this tutorial.  These
+files are human readable and not understood by the computer.</P>
+
+<P>	2. Executables - These are files that are "run" by the computer.  They are made
+up of strings of 1's and 0's called machine instructions.  These files are not
+readable and are only understandable by the computer hardware.</P>
+
+<P><STRONG>Filenames</STRONG></P>
+
+<P>Every file has a name called a filename.  Filenames can be any length up to 255
+characters.  The only characters that can be used in a filename are upper and lower
+case letters, digits, the period (.), and the dash (-). All other characters are not allowed
+in filenames.  </P>
+
+<P>Filename can have what are called extensions. File extensions are often used to
+identify what kind of data is held in the file. For example <FONT FACE="Courier New">camerong.cpp</FONT> is a file with
+the extension <FONT FACE="Courier New">cpp</FONT> and contains the source code of a C++ program. File extensions
+start with the period (.) and are followed by a set of characters.  File extensions are not
+required on files in Linux but certain types of files generally have standard file
+extensions.  Here are a list of some standard file extensions (there are many more):</P>
+
+<P>		</P>
+
+<P>		(no extension) - directory name or binary file (executable)</P>
+
+<P>		cpp - C++ source code</P>
+
+<P>		.h - header file</P>
+
+<P>		.c - C source code</P>
+
+<P>		.pl - Perl source code</P>
+
+<P>		.java - Java source code</P>
+
+<P>		.html - File containing Hyper Text Markup Language codes</P>
+
+<P><U>Commands dealing with files</U></P>
+
+<P>There are a number of commands that are available on the system for manipulating
+and working with files.  KDE provides a file manager tool that will do many of the things
+we discuss below graphically.  However, it is  important to have an understanding of the
+underlying concepts and commands before moving to a file manager. </P>
+
+<P>Before we begin discussing files, there are a few symbols you need to know that relate
+to files:</P>
+
+<P>		* 	is a wildcard match to any number of characters in a filename</P>
+
+<P>		? 	is a wildcard match to any single character in a filename</P>
+
+<P>Each of the following commands are typed at the shell prompt in an x-term window.</P>
+
+<P>For each of these commands several examples are given.  You are encouraged to try
+each example to become familiar with how the commands work.</P>
+
+<P><FONT FACE="Courier New">ls</FONT> - this command lists or displays the files in a directory (a directory will be discussed
+later).</P>
+
+<P><U>Examples</U></P>
+
+<P>	<FONT FACE="Courier New">ls</FONT>		Displays the names of all files and directories in the current
+directory</P>
+
+<P>	<FONT FACE="Courier New">ls -l</FONT>	Displays the names of all files and directories in the current
+directory in a long format including the file permissions, size, name
+and files size</P>
+
+<P>	<FONT FACE="Courier New">ls -a</FONT>	displays what are called hidden files.  Hidden files names start with
+the dot (.).</P>
+
+<P>	<FONT FACE="Courier New">ls -la</FONT>	does both the -l and -a option together</P>
+
+<P><HR>
+</P>
+
+<FONT FACE="Courier New"></FONT>cp - this command makes a copy of a file
+
+<P><U>Examples</U></P>
+
+<P>	<FONT FACE="Courier New">cp oldfile newfile</FONT>		Copies the file <FONT FACE="Courier New">oldfile</FONT> to <FONT FACE="Courier New">newfile</FONT>. If
+<FONT FACE="Courier New">newfile</FONT> exists, it will be overwritten with
+<FONT FACE="Courier New">oldfile</FONT></P>
+
+<P>	<FONT FACE="Courier New">cp joeuser-1.c /home/glcamer/cs144/assign01</FONT></P>
+
+<P>						Copies the file <FONT FACE="Courier New">joeuser-1.c</FONT> to the directory
+<FONT FACE="Courier New">/home/glcamer/cs144/assign01</FONT>.  This is
+an example of how assignments are copied to
+Brother Cameron's directory.</P>
+
+<P><HR>
+	</P>
+
+<P><FONT FACE="Courier New"></FONT><FONT FACE="Courier New">mv</FONT> - This command renames or moves a file from one location to another.</P>
+
+<P><U>Examples</U></P>
+
+<P>	<FONT FACE="Courier New">mv oldfile newfile</FONT>		Renames the file <FONT FACE="Courier New">oldfile</FONT> to <FONT FACE="Courier New">newfile</FONT>.</P>
+
+<P>	<FONT FACE="Courier New">mv oldfile /home/glcamer</FONT>	Moves the file <FONT FACE="Courier New">oldfile</FONT> to the directory
+<FONT FACE="Courier New">newfile</FONT>.  Note that the file <FONT FACE="Courier New">oldfile</FONT> will no
+longer exist in the current directory.	</P>
+
+<P>	<FONT FACE="Courier New">mv oldfile /home/glcamer/newfile</FONT>	</P>
+
+<P>						Moves and renames the file <FONT FACE="Courier New">oldfile</FONT> from the
+current directory to the directory
+<FONT FACE="Courier New">/home/glcamer</FONT> and is now named
+<FONT FACE="Courier New">newfile.</FONT></P>
+
+<P><HR>
+</P>
+
+<FONT FACE="Courier New"></FONT>lpr - send a file to the printer.  Please note this command only works with text files. 
+Please do not send binary files to the printer.
+
+<P><U>Example</U></P>
+
+<P>	<FONT FACE="Courier New">lpr joeuser-1.c</FONT>	Prints the text file <FONT FACE="Courier New">joeuser-1.c</FONT> on the printer.</P>
+
+<P><HR>
+</P>
+
+<FONT FACE="Courier New"></FONT>rm - removes a file.  Please note that the results of this command are irreversible and
+any file removed can not be restored.
+
+<P><U>Example</U></P>
+
+<P><FONT FACE="Courier New">	rm newfile</FONT>		Removes the file <FONT FACE="Courier New">newfile</FONT> from the current directory.</P>
+
+<P><HR>
+</P>
+
+<FONT FACE="Courier New"></FONT>more - allows user to see the contents of a text file.
+
+<P><U>Example</U></P>
+
+<P>	<FONT FACE="Courier New">more joeuser-1.c</FONT>		The contents of the file <FONT FACE="Courier New">joeuser-1.c</FONT> will be
+display one screen at a time.  You can use the
+space bar to see the next screen and the b key
+to move backward 1 page at a time. Press q to
+exit.</P>
+
+<P><STRONG></STRONG><STRONG>Basic Directory Commands</STRONG></P>
+
+<P><STRONG>What is a directory?</STRONG></P>
+
+<P>A directory is a container that contains other files and directories.  In some operating
+systems a directory is called a folder.  Directories have names just like files.  The same
+rules for naming files applies to directories. </P>
+
+<P><STRONG>Directories on Linux</STRONG></P>
+
+<P>The directories on a Linux system are organized in an a hierarchy called a tree.  The
+top (or root) of the tree is named /.  The following is the first level of directory structure:</P>
+
+<P><center><img src="fsstnd.3.gif" width="305" height="226" ></center></P>
+
+<P>Each of the above directories contains files and other directories.  One of the most
+important directories above is the <FONT FACE="Courier New">home</FONT> directory.   In the home directory each user has
+there own directory to store files and do their work.  For example:</P>
+
+<P>			<FONT FACE="Courier New">/</FONT>		- Root directory</P>
+
+<P>			<FONT FACE="Courier New">home</FONT>		- subdirectory of root directory</P>
+
+<P>			<FONT FACE="Courier New">glcamer</FONT>	- Brother Cameron's own directory in the home
+directory</P>
+
+<P>In Linux we can refer to a specific directory or file by listing all directories from the root
+directory down to the specific directory or file.  This is called the <STRONG>path</STRONG>.  In the above
+example the path for Brother Cameron's directory would be <FONT FACE="Courier New">/home/glcamer</FONT>.  Please
+note that the / is used to separate directories as well as the name for the root directory.</P>
+
+<P>At any time while logged onto the system you are in a some directory.  The directory
+you are currently in is called the current working directory.  You can always find out
+what your current working directory is by typing the command <STRONG>pwd</STRONG>.  It will list the path
+of your current working directory.</P>
+
+<P><U>Directory Commands</U></P>
+
+<P>There are a couple of commands that can be used to navigate through the directory
+hierarchy in the Linux system.  Again, these commands will be given with several
+options and examples.</P>
+
+<P><FONT FACE="Courier New">cd</FONT> - used to change directory from one directory to another.</P>
+
+<P><U>Examples</U></P>
+
+<P>	<FONT FACE="Courier New">cd oldprogs</FONT>		change the current working directory to the
+subdirectory <FONT FACE="Courier New">oldprogs</FONT> located in the current
+directory.</P>
+
+<P>	<FONT FACE="Courier New">cd /home/glcamer</FONT>	change the current working directory to
+<FONT FACE="Courier New">/home/glcamer</FONT></P>
+
+<P>	<FONT FACE="Courier New">cd ..</FONT>			change to the parent directory of the current working
+directory (i.e. backup one directory).</P>
+
+<P><HR>
+</P>
+mkdir - create a subdirectory
+
+<P><U>Example</U></P>
+
+<P>	<FONT FACE="Courier New">mkdir oldprogs</FONT>		creates a subdirectory named oldprogs in the current
+working directory</P>
+
+<P><HR>
+	</P>
+
+<P>rmdir - remove a subdirectory.  For this command to work all files must be deleted out
+of the subdirectory and all of its subdirectories.</P>
+
+<P><U>Example</U></P>
+
+<P>	<FONT FACE="Courier New">rmdir oldprogs</FONT>		removes the directory <FONT FACE="Courier New">oldprogs</FONT> from the current
+working directory.</P>
+
+<P>	<FONT FACE="Courier New">rm -r oldprogs</FONT>		removes the directory <FONT FACE="Courier New">oldprogs</FONT> and all of its
+subdirectories and files from the current working
+directory.  This command does not require that the
+files be deleted in all subdirectories as <FONT FACE="Courier New">rmdir</FONT> does. 
+Be aware that this command does not ask you
+whether you want to delete a file; it just does it for
+you.  Please be careful.</P>
+
+<P><STRONG></STRONG><STRONG>Text Editor</STRONG></P>
+
+<P>Part of writing a program is to create a file of C++ statements.  Files are created and
+edited by using a text editor.  Text editors save their contents as text files.  On the KDE
+there are several easy to use text editors.  Your instructor will give you further
+information about which editor he would prefer you use.  This tutorial will not go into
+details about how to use any of the editors available on the system. Students will be
+responsible for learning the details of each editor on their own.</P>
+
+<P><STRONG></STRONG><STRONG>Compilers</STRONG></P>
+
+<P>The process of converting a C++ source code file into something that the computer
+understands and can execute is called compiling.  A program called a compiler will
+translate C++ statements into machine language statements.  The program that does
+that on the Linux system is called <STRONG>g++</STRONG> which stands for Gnu C-Plus-Plus compiler.  </P>
+
+<P>Before g++ can be used, you must have a file of C++ statements saved in your home
+directory.  Make sure that any file you wish to compile with g++ has an extension of
+.cpp following the filename.  </P>
+
+<P>Suppose you wished to compile the C++ source file called <FONT FACE="Courier New">main.cpp</FONT> into a executable
+file called <FONT FACE="Courier New">myprog</FONT>. To compile this with <FONT FACE="Courier New">g++</FONT> you would do the following at a shell
+prompt in a X-term window:</P>
+
+<P>	<FONT FACE="Courier New">g++ -o myprog main.cpp</FONT></P>
+
+<P>The -o option to g++ tells g++ what you wish to name the executable file.  You may use
+any name you wish.  The file main.cpp is the file that contains the C++ source code. 
+This file was most likely created with some text editor.</P>
+
+<P>If the compiler finds no errors or warnings, then it will simply bring back the shell prompt
+and the file <FONT FACE="Courier New">myprog</FONT> will be created in your home directory.  You can then type the
+<FONT FACE="Courier New">myprog</FONT> at the shell prompt and the computer will try to execute your program. </P>
+
+<P>If the compiler finds errors, a list of errors and the line numbers where the errors were
+located will be listed on the screen.  If errors were found during the compilation process,
+no executable will be created and you will have to go back to the C++ source code file
+and fix the problems.  </P>
+
+<P>If the compiler issues warning messages only, then the executable will be created and
+you can still execute your program.  Most of the time you should not get warnings, but if
+you do, please ask a lab assistant if the warning should be looked at before proceeding
+with executing your program.</P>
+
+<HR>
+
+<table>
+<tr valign=bottom>
+<td>
+<FONT SIZE="-1">
+<b><a href="default.htm">Kevin E. Twitchell</a></b><BR>
+<A href="../../../../ricks-2000/Default.htm">BYU-Idaho</A><BR>
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+</FONT>
+</td>
+<td>
+</td>
+<td>
+<FONT SIZE="-1">
+<A HREF="mailto:TwitchellK@byui.edu">
+TwitchellK@byui.edu</A><BR>
+208-496-1938 voice<BR>
+208-496-5938 fax
+</FONT>
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>

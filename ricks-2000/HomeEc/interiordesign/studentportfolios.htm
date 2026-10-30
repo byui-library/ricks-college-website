@@ -1,0 +1,263 @@
+<html>
+
+<head>
+<script src="../../_archive/compat.js"></script>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Student Portfolios</title>
+<script>
+
+/*
+Thumbnail image viewer- 
+© Dynamic Drive (www.dynamicdrive.com)
+For full source code, usage terms, and 100's more DHTML scripts, visit http://dynamicdrive.com
+*/
+
+
+function enlarge(which,e){
+//Render image code for IE 4+
+if (document.all){
+if (showimage.style.visibility=="hidden"){
+showimage.style.left=document.body.scrollLeft+event.clientX
+showimage.style.top=document.body.scrollTop+event.clientY
+showimage.innerHTML='<img src="'+which+'">'
+showimage.style.visibility="visible"
+}
+else
+showimage.style.visibility="hidden"
+return false
+}
+//Render image code for NS 4
+else if (document.layers){
+if (document.showimage.visibility=="hide"){
+document.showimage.document.write('<a href="#" onMouseover="drag_dropns(showimage)"><img src="'+which+'" border=0></a>')
+document.showimage.document.close()
+document.showimage.left=e.x
+document.showimage.top=e.y
+document.showimage.visibility="show"
+}
+else
+document.showimage.visibility="hide"
+return false
+}
+//if NOT IE 4+ or NS 4, simply display image in full browser window
+else
+return true
+}
+
+
+</script>
+
+
+<script language="JavaScript1.2">
+
+//By Dynamicdrive.com
+
+//drag drop function for NS 4////
+/////////////////////////////////
+
+var nsx
+var nsy
+var nstemp
+
+function drag_dropns(name){
+temp=eval(name)
+temp.captureEvents(Event.MOUSEDOWN | Event.MOUSEUP)
+temp.onmousedown=gons
+temp.onmousemove=dragns
+temp.onmouseup=stopns
+}
+
+function gons(e){
+temp.captureEvents(Event.MOUSEMOVE)
+nsx=e.x
+nsy=e.y
+}
+function dragns(e){
+temp.moveBy(e.x-nsx,e.y-nsy)
+return false
+}
+
+function stopns(){
+temp.releaseEvents(Event.MOUSEMOVE)
+}
+
+//drag drop function for IE 4+////
+/////////////////////////////////
+
+var dragapproved=false
+
+function drag_dropie(){
+if (dragapproved==true){
+document.all.showimage.style.pixelLeft=tempx+event.clientX-iex
+document.all.showimage.style.pixelTop=tempy+event.clientY-iey
+return false
+}
+}
+
+function initializedragie(){
+if (event.srcElement.parentElement.id=="showimage"){
+iex=event.clientX
+iey=event.clientY
+tempx=showimage.style.pixelLeft
+tempy=showimage.style.pixelTop
+dragapproved=true
+document.onmousemove=drag_dropie
+}
+}
+
+if (document.all){
+document.onmousedown=initializedragie
+document.onmouseup=new Function("dragapproved=false")
+}
+
+</script>
+</head>
+
+<body link=#800000 vlink=#800000 hlink=8000000 background="photos/background.gif">
+
+
+<div id="showimage" style="position:absolute;visibility:hidden">
+</div>
+
+
+<center><table border="0" width="612" height="26">
+  <tr>
+    <td  align="left" width="88">&nbsp;&nbsp;&nbsp; <a href="interiordesign.htm"><img border="0" src="photos/logo.PNG" width="72" height="79" alt="Go to Interior Design Home Page"></a></td>
+    <td  width="510">
+    </center>
+      <p align="center"><font color="#800000" face="Dauphin" size="6"><b>Interior Design Student Portfolio</b></font><font size="2"><BR>To view an enlarged photo of a project double click on the picture.&nbsp; <BR>You can
+click, drag, and move a picture as well. <br>To deselect the picture click on
+a different picture.</font>
+      </p>
+    </td>
+  </tr>
+</table>
+
+
+<center>
+<br><table width="601" height="154" cellpadding="3">
+  <tr>
+    <td width="194">
+      <p align="center">
+      <a href="photos/portfoliopictures/houseboard.jpg" onClick="return enlarge('photos/portfoliopictures/houseboard.jpg',event)">
+      <img src="photos/portfoliopictures/houseboard.jpg" border="0" width="151" height="118"></a>
+        
+     <BR><i><b>ID&nbsp;341 Space Plan III</b></i></td>
+    <td width="181">
+      <p align="center"><a href="grassmodel.jpg" onClick="return enlarge('photos/portfoliopictures/grassmodel.jpg',event)">
+      <img src="grassmodel.jpg" border="0" width="151" height="118"></a>
+      <BR><i><b>ID 460 Contract Design II</b></i></p>
+    </td>
+    <td width="194">
+    <p align="center"><a href="photos/portfoliopictures/chinaboard.jpg" onClick="return enlarge('photos/portfoliopictures/chinaboard.jpg',event)">
+      <img src="photos/portfoliopictures/chinaboard.jpg" border="0" width="151" height="118"></a>
+      <BR><i><b>ID 355 Contract Design I</b></i></p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td width="194">
+    
+    <p align="center"><a href="photos/portfoliopictures/stationery.jpg" onClick="return enlarge('photos/portfoliopictures/stationery.jpg',event)">
+      <img src="photos/portfoliopictures/stationery.jpg" border="0" width="87" height="100"></a>&nbsp;
+    <a href="photos/portfoliopictures/stationery1.jpg" onClick="return enlarge('photos/portfoliopictures/stationery1.jpg',event)"><img src="photos/portfoliopictures/stationery1.jpg" border="0" width="76" height="99"></a>
+     
+      
+     <BR><i><b>ID 385 Business Principles</b></i></td>
+    <td width="181" height="123">
+    
+    
+    
+    <p align="center"><a href="photos/portfoliopictures/colorballs.JPG" onClick="return enlarge('photos/portfoliopictures/colorballs.JPG',event)">
+      <img src="photos/portfoliopictures/colorballs.JPG" border="0" width="151" height="107"></a><b><i><BR> ID 101 Design Basics</i></b> 
+     
+     
+     </td>
+    <td width="194" height="123">
+     
+   <p align="center"><a href="photos/portfoliopictures/blueyellow.JPG" onClick="return enlarge('photos/portfoliopictures/blueyellow.JPG',event)">
+   <img src="photos/portfoliopictures/blueyellow.JPG" border="0" width="130" height="107"></a><b><i><BR> ID 102 Color
+   Theory</i></b>
+   
+    </td>
+  </tr>
+  
+  <tr>
+    <td width="194">
+    
+    <p align="center"><a href="photos/portfoliopictures/kitchenbath.JPG" onClick="return enlarge('photos/portfoliopictures/kitchenbath.JPG',event)">
+   <img src="photos/portfoliopictures/kitchenbath.JPG" border="0" width="154" height="107"></a><b><i><BR> ID 250 Space Plan
+    II</b></i>
+
+    </td>
+    <td width="194" height="123">
+   <p align="center"><a href="photos/portfoliopictures/artgallery.JPG" onClick="return enlarge('photos/portfoliopictures/artgallery.JPG',event)">
+   <img src="photos/portfoliopictures/artgallery.JPG" border="0" width="154" height="107"></a><b><i><BR> ID 460 Contract Design II
+    </b></i>
+  
+    </td>
+  <td>
+  
+   <p align="center"><a href="photos/portfoliopictures/id355.JPG" onClick="return enlarge('photos/portfoliopictures/id355.JPG',event)">
+   <img src="photos/portfoliopictures/id355.JPG" border="0" width="123" height="107"></a><b><i><BR> ID 355 Contract Design I
+    </b></i>
+
+   
+  </tr>
+  <tr colspan=3>
+  <td colspan=3>
+  <p align="center"><b><i>The following was the winner of the Theresa Bradley Spirit Award 2001</i></b>
+
+    </tr>
+  
+  <tr>
+    <td width="194">
+    
+    <p align="center"><a href="photos/portfoliopictures/winner1.JPG" onClick="return enlarge('photos/portfoliopictures/winner1.JPG',event)">
+   <img src="photos/portfoliopictures/winner1.JPG" border="0" width="152" height="117"></a>
+    
+    </td>
+    <td width="194" height="123">
+  <p align="center"><a href="photos/portfoliopictures/winner2.JPG" onClick="return enlarge('photos/portfoliopictures/winner2.JPG',event)">
+   <img src="photos/portfoliopictures/winner2.JPG" border="0" width="161" height="114"></a>
+
+  
+    </td>
+  <td>
+  <p align="center"><a href="photos/portfoliopictures/winner3.JPG" onClick="return enlarge('photos/portfoliopictures/winner3.JPG',event)">
+   <img src="photos/portfoliopictures/winner3.JPG" border="0" width="155" height="117"></a>
+
+   
+  </tr>
+</table>
+
+<center><table BORDER="0" bordercolor="#FFFFCC" height="1" width="538">
+  <tr>
+    <td width="518" height="1" align="center">
+      <h4><font face="Arial" size="2" color="#000080">&nbsp; </font><font color="#800000"><a href="whatisinteriordesign.htm"><font face="Arial" size="2" color="#800000">What
+      is Interior Design</font></a></font><font face="Arial" size="2" color="#000080">
+      | </font><font color="#800000"><a href="applicationprocess.htm"><font face="Arial" size="2">Application
+      Process</font></a><font face="Arial" size="2"> </font></font><font face="Arial" size="2" color="#000080">|</font>
+      <font size="2" face="Arial"><a href="coursedescriptions.htm"><b>Course
+      Descriptions</b></a> </font><font face="Arial" size="2" color="#000080">|&nbsp;</font><font color="#800000" size="2" face="Arial"><a href="fieldtrips.htm">Field
+      Trips</a> </font><font face="Arial" size="2" color="#000080">|<BR> 
+      | </font><font color="#800000" size="2" face="Arial"><a href="faculty.htm"><b>Faculty</b></a>
+      </font><font face="Arial" size="2" color="#000080">| </font><font size="2" face="Arial"><b><a href="studentportfolios.htm">Student
+      Portfolios</a> </b></font><font face="Arial" size="2" color="#000080">| <a href="programexpenses.htm">Program
+      Expenses&nbsp;</a> | <a href="professionalassociations.htm"> Professional Associations</a> |<BR>
+ </font><font size="1"><font face="Arial" color="#000080">
+      | </font><b><font color="#800000" face="Arial"><a href="../default.htm">Home
+      and Family&nbsp;</a></font><a href="../default.htm"><font color="#800000" face="Arial">
+      Educatio</font></a><font color="#800000" face="Arial"><a href="../default.htm">n
+      Home Page</a></font> </b><font face="Arial" size="2" color="#000080">| </font></font></h4>
+  </tr>
+</table>
+
+<p align="center">&nbsp;</p>
+
+</body>
+
+</html>

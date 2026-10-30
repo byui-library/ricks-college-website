@@ -1,0 +1,162 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Change your Password</title>
+<script>
+function changeSubmit()
+{
+   if(document.passwd.newpassword.value != document.passwd.newpassword1.value)
+   {
+      alert("Your New Passwords Need to Match")
+      return false;
+   }
+   else if(document.passwd.username.value == "")
+   {
+     alert("Your Need to Enter in your UserName")
+     return false;
+   }
+   else if(document.passwd.oldpassword.value == "")
+   {
+      alert("You Need to Enter in your Old Password")
+      return false;
+   }   
+   else
+      return true;
+}
+function setSubmit()
+{
+   //***JUST CHECK TO MAKE SURE THEY ENTERED IN ALL THE INFORMATION
+   //***AND THAT THE TWO PASSWORD MATCHED
+   if(document.passwd1.firstname.value == "")
+   {
+     alert("Your Need to Enter in your First Name")
+     return false
+   }
+   else if(document.passwd1.lastname.value == "")
+   {
+     alert("Your Need to Enter in your Last Name")
+     return false
+   }
+   else if(document.passwd1.IDNum.value == "")
+   {
+      alert("You Need to Enter in your Social Security Number")
+      return false;
+   }  
+   else if(document.passwd1.password.value != document.passwd1.password1.value)
+   {
+      alert("Your New Passwords Need to Match")
+      return false;
+   }
+   else if(document.passwd1.username.value == "")
+   {
+     alert("Your Need to Enter in your UserName")
+     return false
+   } 
+   return true;
+    
+   
+      
+}
+
+</script>
+<STYLE type=text/css> A {TEXT-DECORATION: none}</STYLE>
+</head>
+<body marginwidth=0 marginheight=0 leftmargin=0 rightmargin=0 topmargin=0 bottommargin=0>
+<script>
+appName = 'Change Your Ricks Password'
+breadcrumb = '<td class="donotusebreadcrumb"><a href="../Default.htm" class="donotusetoplinks">Home</a></td><td width=20 class="donotusearrow">&nbsp;</td><td class="donotusebreadcrumb">Password</td>'
+</script>
+<script src = "../navbar/sitenavbar.js"></script>
+
+
+
+<form method = "post" name = "passwd" onsubmit="return false">
+<input type = "hidden" name = "status" value = "changepasswd" >
+<center>
+<table cellpadding=0 cellspacing=0 border=0 width=700>
+<tr><td valign=bottom width=49%>This page is created for those students and employees of Ricks College who have forgotten or need to change their network passwords.<p>
+	<table cellpadding=3 cellspacing=0 border=1 width=100%>
+	<tr bgcolor="#343263"><th colspan=2><font color="white">I want to change my password</th></tr>
+	<tr><td>
+		<table cellpadding=2 cellspacing=0 border=0 width=100%><tr>
+		<td><b><font size=-1 face="arial">Username:</b></td>
+		<td><input type = "text" name = "username"></td>
+		</tr><tr>
+		<td><b><font size=-1 face="arial">Old Password:</b></td>
+		<td><input type = "password" name = "oldpassword"></td>
+		</tr><tr>
+		<td><b><font size=-1 face="arial">New Password:</b></td>
+		<td><input type = "password" name = "newpassword"></td>
+		</tr><tr>
+		<td><b><font size=-1 face="arial">Confirm New <br>Password:</b></td>
+		<td><input type = "password" name = "newpassword1"></td>
+		</tr><tr>
+		<td><b><font size=-1 face=arial>I am a(n):</b></td>
+		<td><input type="radio" name="domain" value="students" checked>student&nbsp;&nbsp;<input type="radio" name="domain" value="byui">employee</td>
+		</tr><tr>
+		<td colspan=2><center><input type = "submit" name = "submit" value = "submit"></center></td>
+		</tr></table>
+	</tr></td>
+	</table>
+</td><td width=2%>&nbsp;
+</td><td valign=bottom width=49%>
+</form>
+<form method = "POST" name = "passwd1" onsubmit="return false">
+<input type = "hidden" name = "status" value = "setpasswd">
+	<table cellpadding=3 cellspacing=0 border=1 width=100%>
+	<tr bgcolor="#343263"><th colspan=2><font color="white">I have forgotten my password </th></tr>
+	<tr><td>
+		<table cellpadding=2 cellspacing=0 border=0 width=100%><tr>
+		<td><b><font size=-1 face="arial">First Name:</b></td>
+		<td><input type = "text" name = "firstname"></td>
+		</tr><tr>
+		<td><b><font size=-1 face="arial">Last Name:</b></td>
+		<td><input type = "text" name = "lastname"></td>
+		</tr><tr>
+		<td><b><font size=-1 face="arial">SSN:</b></td>
+		<td><input type = "password" name = "IDNum" ></td>
+		</tr><tr>
+		<td><b><font size=-1 face="arial">Username:</b></td>
+		<td><input type = "text" name = "username"></td>
+		</tr><tr>
+		<td><b><font size=-1 face="arial">New Password:</b></td>
+		<td><input type = "password" name = "password"></td>
+		</tr><tr>
+		<td><b><font size=-1 face="arial">Confirm New <br>Password:</b></td>
+		<td><input type = "password" name = "password1" ></td>
+		</tr><tr>
+		<td><b><font size=-1 face="arial">Birthdate:</b></td>
+		<td>
+		<select>
+		<option>Jan</option><option>Feb</option><option>Mar</option>
+		<option>Apr</option><option>May</option><option>Jun</option>
+		<option>Jul</option><option>Aug</option><option>Sep</option>
+		<option>Oct</option><option>Nov</option><option>Dec</option>
+		</select>
+		<select>
+		<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+		</select>
+		<select>
+		<option>1900</option><option>1901</option><option>1902</option><option>1903</option><option>1904</option><option>1905</option><option>1906</option><option>1907</option><option>1908</option><option>1909</option><option>1910</option><option>1911</option><option>1912</option><option>1913</option><option>1914</option><option>1915</option><option>1916</option><option>1917</option><option>1918</option><option>1919</option><option>1920</option><option>1921</option><option>1922</option><option>1923</option><option>1924</option><option>1925</option><option>1926</option><option>1927</option><option>1928</option><option>1929</option><option>1930</option><option>1931</option><option>1932</option><option>1933</option><option>1934</option><option>1935</option><option>1936</option><option>1937</option><option>1938</option><option>1939</option><option>1940</option><option>1941</option><option>1942</option><option>1943</option><option>1944</option><option>1945</option><option>1946</option><option>1947</option><option>1948</option><option>1949</option><option>1950</option><option>1951</option><option>1952</option><option>1953</option><option>1954</option><option>1955</option><option>1956</option><option>1957</option><option>1958</option><option>1959</option><option>1960</option><option>1961</option><option>1962</option><option>1963</option><option>1964</option><option>1965</option><option>1966</option><option>1967</option><option>1968</option><option>1969</option><option>1970</option><option>1971</option><option>1972</option><option>1973</option><option>1974</option><option>1975</option><option>1976</option><option>1977</option><option>1978</option><option>1979</option><option>1980</option><option>1981</option><option>1982</option><option>1983</option><option>1984</option><option>1985</option><option>1986</option><option>1987</option><option>1988</option><option>1989</option><option>1990</option><option>1991</option><option>1992</option><option>1993</option><option>1994</option><option>1995</option><option>1996</option><option>1997</option><option>1998</option><option>1999</option><option>2000</option><option>2001</option>
+		
+		</select>
+		</td>
+		</tr>
+		<tr>
+		<td><b><font size=-1 face=arial>I am a(n):</b></td>
+		<td><input type="radio" name="domain" value="students" checked>student&nbsp;&nbsp;<input type="radio" name="domain" value="byui">employee</td>
+		</tr>
+		<tr>
+		<td colspan=2><center><input type = "submit" name = "submit" value = "submit"></center></td>
+		</tr></table>
+	</tr></td>
+	</table>
+</td></tr>
+</table>
+</center>
+</form>
+</body>
+</html>
+
+

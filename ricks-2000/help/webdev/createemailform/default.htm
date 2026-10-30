@@ -1,0 +1,106 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Create an Email Form</title>
+<script>
+appName = 'Create an Email Form'
+breadcrumb = '<td class="donotusebreadcrumb"><a href="../../../Default.htm" class="donotusetoplinks">Home</a></td><td width=20 class="donotusearrow">&nbsp;</td><td class="donotusebreadcrumb"><a href="../default.htm" class="donotusetoplinks">WebDev</a></td><td width=20 class="donotusearrow">&nbsp;</td><td class="donotusebreadcrumb">Form</td>'
+</script>
+<script src = "../../../navbar/sitenavbar.js"></script>
+</head>
+<body>
+<b><font size="+5">
+
+<center><font size="4">This is the process to create an Email form in FrontPage 2000. <br>
+</font></p>
+
+<script src = "../navbar.js"></script>
+  <tr>
+        <td width="100%" bgcolor="#000080" height="21"><font color="#FFFFFF"><strong>Creating an Email form</strong></font></td>
+      </tr>
+    </table>
+    </center></div>
+
+
+<ol>
+<li><a href = "../CreateNewform/default.htm">Create a Html Form</a><p>
+
+<li>Edit the Form Field Properties</b></h3>
+
+<blockquote>
+If you have a <b><i>Form Element</b></i> for the user to type in there email address, change the <b>Name</b> of the <b><i>Form Element</b></i> to <b>sender</i><br>
+Change the <b>Name</b> of the Submit button to <b>Submit</b><br>
+For Each <b><i>Form Element</b></i> change the <b>Name</b> So it describes the type of information the Form Element will have<br>
+<b><font color="#FF0000" size="-1">Warning</font><font size="-1"> make sure you <b>DON'T USE SPACES</b> in the Name</font><br></b></i><br>
+<bl>Also you can change the <b>Value</b> of a <b><i>Form Element</i></b> in the example below we changed the <b>Value</b><br>
+of <b><i>Blue</i></b> to be <b><i>Yes</i></b> instead of the default<br>
+
+<table border = "1">
+<tr>
+<td width = "50%" valign = "top">
+<b>Example Form</b><p>
+<form>
+Your Name: <input type = "text" name ="Name" value = "Papa Smurf"><p>
+Are you Blue? <input type = "checkbox" name ="Blue" checked></form><p>
+
+
+</td>
+<td width = "50%" valign = "top">
+<b>Example Email</b><p>
+Name:  Papa Smurf<p>
+Blue: Yes<p>
+</td>
+</tr></table>
+Name, and Blue are the names of the <b><i><i>Form Elements</i></b></i> from the <b><i>Form</b></i><br>
+Papa Smurf is the <b>Value</b> of Name<br>
+
+Yes is the <b>Value></b> of Blue<br>
+</blockquote>
+
+
+<li>Open Notepad and Paste the following lines of code there<br>
+<blockquote>
+<b><font color="#003399" ><b>&lt;form method = "POST" action ="https://web.archive.org/web/2001/http://www.byui.edu/AspUtilities/email/email.asp"&gt;</b><br>
+&lt;input type = "hidden" name ="recipient" value = "<font color="#000000">recipientEmailAddress</font>"&gt;<br>
+&lt;input type = "hidden" name ="subject" value = "<font color="#000000">subjectline</font>"&gt;<br>
+&lt;input type = "hidden" name ="message" value = "<font color="#000000">message</font>"&gt;</b><br>
+</b></i></font>
+</blockquote>
+
+<li>Edit the code you just pasted so that <b>recipientEmailAddress, subjectline, and message</b> have the values you want<p>
+<blockquote>
+<b>recipientEmailAddress</b> is who the email is going to be sent to and needs to be a ricks college email address<br>
+<blockquote>
+<b>Faculty Email Example</b> 
+	<blockquote><font size = "-1">&lt;input type = "hidden" name ="recipient" value = "<b>smithj@ricks.edu</b>"&gt;</font></blockquote>
+<b>Student Email Example</b> 
+	<blockquote><font size = "-1">&lt;input type = "hidden" name ="recipient" value = "<b>aaa00001@NEPTUNE.ricks.edu</b>"&gt;</font></blockquote>
+</blockquote>
+<br><b>subjectline</b> This will be the subject line of the email<br>
+<blockquote>
+<b>Example</b> <font size = "-1">&lt;input type = "hidden" name ="subject" value = "Math 101 Survey"&gt;<br></font>
+</blockquote>
+<br><b>message</b> is the message you want displayed to the user  after they submit the form<br>
+<blockquote>
+<b>Example</b> <font size = "-1">&lt;input type = "hidden" name ="message" value = "Thank you for filling out this survey"&gt;<br></font>
+</blockquote>
+</blockquote>
+<li>Click on the <b><i>HTML TAB</b></i> so you can start editing the HTML code<br>
+
+
+<br>
+
+<blockquote>
+Look in the <b><i>Html Code</b></i> for several lines that look like those below</b></i><br>
+<b><font color="#FF0000" size="-1">Warning </font><font size="-1"><b>If you are not using FrontPage they might look differently</font></b><p>
+<b><font color="#003399">
+&lt;form method="POST" action="--WEBBOT-SELF--"&gt;<br>
+  &lt;!--webbot bot="SaveResults" U-File="fpweb:///_private/form_results.txt"<br>
+  S-Format="TEXT/CSV" S-Label-Fields="TRUE" --&gt;</b></b></i></font><p>
+You want to delete these lines of code, and replace them with the four lines of code you edited in Notepad from step #3 and step #4
+</blockquote>
+
+</table></center></div>
+</body>
+</html>

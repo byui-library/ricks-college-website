@@ -1,0 +1,12 @@
+.header { font-family: Verdana; font-size: 13pt; color: #FFFFFF; font-weight: bold;}
+.heading { font-family: Verdana; font-size: 13pt; color: #003366; font-weight: normal;}
+.subheading { font-family: Verdana; font-size: 8pt; color: #666666; font-weight: bold;}
+.links { font-family: Verdana; font-size: 8pt; color: #CCCCFF; font-weight: bold; text-decoration: none; }
+.links:hover { font-family: Verdana; font-size: 8pt; color: #CCCCFF; font-weight: bold; text-decoration: underline; }
+
+.textlinks { font-family: Verdana; font-size: 8pt; color: #003366; font-weight: bold; text-decoration: none; }
+.textlinks:hover { font-family: Verdana; font-size: 8pt; color: #003366; font-weight: bold; text-decoration: underline; }
+
+.text { font-family: Verdana; font-size: 8pt; color: #666666; font-weight: normal;}
+.doc { font-family: Verdana; font-size: 8pt; color: #990000; font-weight: normal;}
+.dropdown { font-family: Verdana; font-size: 8pt; color: #CCCCFF; background-color: #003366; font-weight: bold;}

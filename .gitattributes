@@ -1,0 +1,2 @@
+# Store every file byte-for-byte: the archive keeps original line endings and encodings.
+* -text

@@ -1,0 +1,182 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>Menu</title>
+</head>
+
+<body background="thm3.gif">
+
+<p align="center"><big><big><big><big><strong>CAD 238<br>
+Menu &amp; Toolbar Creation</strong></big></big></big></big></p>
+
+<p>&nbsp;</p>
+<font FACE="Times New Roman" font size="4"><i><font FACE="WP TypographicSymbols" SIZE="1">
+
+<p ALIGN="LEFT"></font>&quot;The test, then, of our soul's greatness is rather to be
+sought in our ability to comfort and console, our ability to help others, rather than in
+our ability to help ourselves and crowd others down in the struggle of life.&quot;</i>,
+Joseph Fielding Smith.<font SIZE="1"></p>
+</font><font SIZE="2">
+
+<p ALIGN="LEFT"></font></font><font FACE="Times New Roman" font size="5"><br>
+Create a menu for AutoCAD which includes the following sections as described:</p>
+<b>
+
+<p ALIGN="LEFT"><br>
+BUTTONS/AUX</p>
+
+<blockquote>
+  <p ALIGN="LEFT"></b>Design to support both 2 and 3 button mouse. Right button should be a
+  carriage return. Middle button on 3 button mouse and shift+right button on 2 button mouse
+  should display POP0.<b></p>
+  </b><table border="0" width="100%" cellpadding="4">
+    <tr>
+      <td width="15%" valign="top"><b>POP0</b></td>
+      <td width="85%">Use for object snap menu. Include <i>endpoint, intersection, center</i>,
+      and 1 object snap of your choice.</td>
+    </tr>
+    <tr>
+      <td width="15%" valign="top"><b>POP1</b></td>
+      <td width="85%">Label as <i>Draw</i>. Include <i>line-&gt;, circle, circle TTR</i> and 2
+      construction commands of your choice. The line entry should be a cascading menu which
+      includes <i>line, line endpoint endpoint </i>(closed),<i> line qua qua line qua qua </i>(for
+      centerline creation).</td>
+    </tr>
+    <tr>
+      <td width="15%" valign="top"><b>POP2</b></td>
+      <td width="85%">Label as <i>Edit</i>. Include <i>move, move endpoint endpoint, move
+      relative, repeating fillet</i>, and 2 editing commands of your choice.</td>
+    </tr>
+    <tr>
+      <td width="15%" valign="top"><b>POP3</b></td>
+      <td width="85%">Label as <i>Display</i>. Include <i>zoom, regen, rtpan</i>, and 2 display
+      commands of your choice.</td>
+    </tr>
+    <tr>
+      <td width="15%" valign="top"><b>POP4</b></td>
+      <td width="85%">Label as <i>3D</i>. Include <i>3D dynamic view, automatic setup of
+      front/top/side/iso views, vports single, vports retrieve</i>, and 1 3D command of your
+      choice.</td>
+    </tr>
+  </table>
+</blockquote>
+<b>
+
+<p ALIGN="LEFT"><br>
+ACCELERATORS</p>
+</b>
+
+<blockquote>
+  <p ALIGN="LEFT">Include accelerator keys for <i>undo, file save, zoom ext zoom .95x</i>,
+  and 2 commands of your choice.</p>
+</blockquote>
+<b>
+
+<p ALIGN="LEFT"><br>
+TOOLBARS</p>
+</b>
+
+<blockquote>
+  <p ALIGN="LEFT">Create a custom toolbar named <i>DT238</i> which includes the following
+  commands/macros:</p>
+</blockquote>
+</font><font SIZE="3" FACE="Times New Roman">
+
+<table border="0" width="93%">
+  <tr>
+    </font><td width="13%"><font face="Times New Roman" size="4"></font></td>
+    <font FACE="Times New Roman" size="4"><td width="29%">line</td>
+    <td width="28%">erase</td>
+    <td width="29%">zoom</td>
+    <td width="26%">endpoint</td>
+    </font><font SIZE="3" FACE="Times New Roman">
+  </tr>
+  <tr>
+    </font><td width="13%"><font face="Times New Roman" size="4"></font></td>
+    <font FACE="Times New Roman" size="4"><td width="29%">circle</td>
+    <td width="28%">copy</td>
+    <td width="29%">zoom w</td>
+    <td width="26%">center</td>
+    </font><font SIZE="3" FACE="Times New Roman">
+  </tr>
+  <tr>
+    </font><td width="13%"><font face="Times New Roman" size="4"></font></td>
+    <font FACE="Times New Roman" size="4"><td width="29%">circle diameter</td>
+    <td width="28%">rotate</td>
+    <td width="29%">zoom -</td>
+    <td width="26%">intersection</td>
+    </font><font SIZE="3" FACE="Times New Roman">
+  </tr>
+  <tr>
+    </font><td width="13%"><font face="Times New Roman" size="4"></font></td>
+    <font FACE="Times New Roman" size="4"><td width="29%">circle ttr</td>
+    <td width="28%">stretch</td>
+    <td width="29%">zoom ext</td>
+    <td width="26%"></td>
+    </font><font SIZE="3" FACE="Times New Roman">
+  </tr>
+  <tr>
+    </font><td width="13%"><font face="Times New Roman" size="4"></font></td>
+    <font FACE="Times New Roman" size="4"><td width="29%">dtext</td>
+    <td width="28%">trim</td>
+    <td width="29%">zoom ext zoom .95x</td>
+    <td width="26%"></td>
+    </font><font SIZE="3" FACE="Times New Roman">
+  </tr>
+  <tr>
+    </font><td width="13%"><font face="Times New Roman" size="4"></font></td>
+    <font FACE="Times New Roman" size="4"><td width="29%">dtext ht .125, ang 0</td>
+    <td width="28%">extend</td>
+    <td width="29%">zoom previous</td>
+    <td width="26%"></td>
+    </font><font SIZE="3" FACE="Times New Roman">
+  </tr>
+  <tr>
+    </font><td width="13%"><font face="Times New Roman" size="4"></font></td>
+    <font FACE="Times New Roman" size="4"><td width="29%"></td>
+    <td width="28%">offset</td>
+    <td width="29%">rt pan</td>
+    <td width="26%"></td>
+    </font><font SIZE="3" FACE="Times New Roman">
+  </tr>
+  <tr>
+    </font><td width="13%"><font face="Times New Roman" size="4"></font></td>
+    <font FACE="Times New Roman" size="4"><td width="29%"></td>
+    <td width="28%">fillet</td>
+    <td width="29%"></td>
+    <td width="26%"></td>
+    </font><font SIZE="3" FACE="Times New Roman">
+  </tr>
+  <tr>
+    </font><td width="13%"><font face="Times New Roman" size="4"></font></td>
+    <font FACE="Times New Roman" size="4"><td width="29%"></td>
+    <td width="28%">fillet rad 0</td>
+    <td width="29%"></td>
+    <td width="26%"></td>
+    </font><font SIZE="3" FACE="Times New Roman">
+  </tr>
+</table>
+</font><i><font SIZE="2">
+
+<p ALIGN="LEFT"></font><font size="4">If you add flyouts or modify icons, make certain the
+appropriate files are included when handing in your assignment. You may add additional
+buttons if space permits, but all buttons should be visible when displayed at a resolution
+of 640x480 and docked in a horizontal position.</font><font SIZE="2"></p>
+</i>
+
+<p ALIGN="LEFT"></font><font size="5">All commands should automatically cancel any active
+commands where appropriate (may not want to cancel when using display commands)</font><font
+SIZE="2"></p>
+</font><b>
+
+<p ALIGN="LEFT"><br>
+</b><big><big><strong>Turn In The Following:</strong><br>
+&nbsp;&nbsp;&nbsp; Hard copy of menu<br>
+&nbsp;&nbsp;&nbsp; Electronic copy of menu in dropbox<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (place all files in folder, use keyword Menu)<br>
+</big></big><font SIZE="2"></p>
+</font>
+</body>
+</html>

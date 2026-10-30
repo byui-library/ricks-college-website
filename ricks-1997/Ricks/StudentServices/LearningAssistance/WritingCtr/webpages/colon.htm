@@ -1,0 +1,414 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script src="../../../../../_archive/compat.js"></script>
+<title>THE COLON</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script></head>
+
+<body background="../Backgrounds/wp0021brown.jpg" onload="dynAnimation()">
+
+<h3 align="center" dynamicanimation="flyBottom"
+style="position: relative !important; left: 10000 !important"><img src="AG00050_.gif"
+width="44" height="23" alt="AG00050_.gif (1615 bytes)"><big><strong><big><big><font
+color="#00FF40">THE COLON</font></big></big></strong></big></h3>
+
+<blockquote>
+  <blockquote>
+    <p align="center" dynamicanimation="flyBottom"
+    style="position: relative !important; left: 10000 !important"><font color="#FFFF00">&quot;When
+    we are young, we tend to regard the ability to use a colon much as a budding pianist
+    regards the ability to play with crossed hands:&nbsp; many of us, when we are older,
+    regard to as a proof of literary skill, maturity, even of sophistication: and many whether
+    young, not so young, or old, employ it gauchely, haphazardly, or at best
+    inconsistently.&quot;<br>
+    --Eric Partridge</font></p>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <li><p align="left"><big><font color="#00FFFF"><strong><big>A colon is an introductory mark.
+    </big></strong>It is used to direct your reader's attention <u>forward</u> .</font></big></p>
+  </li>
+  <li><p align="left"><strong><big><font color="#00FFFF">Before a colon you must have a
+    complete statement. Do not use a colon after </font><font color="#00FF40"><em>are</em></font><font
+    color="#00FFFF"> or </font><font color="#00FF40"><em>include</em></font><font
+    color="#00FFFF"> or</font><font color="#00FF40"> <em>such as.</em></font></big></strong></p>
+  </li>
+</ul>
+
+<p align="center"><strong><font color="#800080" face="Bell MT"><span
+style="color: rgb(0,0,255); background-color: rgb(255,255,0)"><big>Hint--&nbsp; When you
+type, leave two spaces after a colon</big></span></font></strong></p>
+
+<ul>
+  <li><h2 align="left"><font color="#00FF00"><span style="color: rgb(255,255,0)"><big>Colons
+    can introduce the following:</big></span></font></h2>
+  </li>
+  <li><p align="left"><span style="color: rgb(255,255,0)"><big><font color="#00FFFF"><big>A
+    list </big>&nbsp; </font><font color="#00FF00">&quot;I came home loaded with supplies: a
+    tent, back pack, and food.&quot;</font></big></span></p>
+  </li>
+  <li><p align="left"><span style="color: rgb(255,255,0)"><big><big><font color="#00FFFF">A
+    quotation </font></big><font color="#00FF00">&nbsp; &quot;The author begins his essay with
+    an attention-grabbing line:&nbsp; &quot;My mother spent her summer sitting naked on the
+    rock.&quot;</font></big></span></p>
+  </li>
+  <li><p align="left"><span style="color: rgb(255,255,0)"><big><font color="#00FFFF"><big>An
+    example </big></font><font color="#00FF00">&quot;I love to eat legumes: for example, beans
+    and lentils.&quot;</font></big></span></p>
+  </li>
+  <li><p align="left"><span style="color: rgb(255,255,0)"><big><big><font color="#00FFFF">An
+    emphatic assertion</font><font color="#00FF00"> </big>&nbsp; &quot;This is the bottom
+    line:&nbsp; I refuse to work.&quot;</font></big></span></p>
+  </li>
+  <li><p align="left"><span style="color: rgb(255,255,0)"><big><big><font color="#00FFFF">A
+    subtitle </font></big><font color="#00FF00">&nbsp; &quot;Pablo Picasso:&nbsp; The Playful
+    Artist&quot;&nbsp; </font></big></span></p>
+  </li>
+</ul>
+
+<p align="right">&nbsp;</p>
+
+<ul>
+  <li><h3 align="left"><font color="#00FFFF">Use a colon to link independent clauses when the
+    second clause illustrates, interprets, or explains the first.</font></h3>
+  </li>
+</ul>
+
+<p align="center"><font color="#00FF40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>
+<big>I am a man who at the precocious age of thirty-five experienced an astonishing
+revelation: it is better to be a success than a failure.</big></strong></font></p>
+
+<ul>
+  <li><h3 align="left"><font color="#00FFFF">Use a colon after an independent clause that
+    introduces a series.</font></h3>
+  </li>
+</ul>
+
+<p align="center"><font color="#00FF40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em> </em><big><strong>The
+following constitute a basic personal reference library: a desk dictionary, an almanac, a
+thesaurus, an atlas, and an English handbook.</strong></big></font></p>
+
+<ul>
+  <li><h4 align="left"><font color="#00FFFF"><big>Use a colon after an independent clause to
+    draw attention to an appositive.</big></font></h4>
+  </li>
+</ul>
+
+<p align="center"><font color="#00FF40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><big>During
+the Mideast talks, public attention was focused on one think: peace.</big></strong></font></p>
+
+<ul>
+  <li><h4 align="left"><font color="#00FFFF"><big>Use a colon after an independent clause to
+    introduce a direct quotation.</big></font></h4>
+  </li>
+</ul>
+
+<p align="center"><font color="#00FF40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><big>Roberta
+remembered the Chinese proverb tacked on the wall: &quot;I hear and I forget. I see and I
+&nbsp;remember. I do and I understand.&quot;</big></strong></font></p>
+
+<ul>
+  <li><h4 align="left"><font color="#00FFFF"><big>Use a colon to mark separations between the
+    following elements.</big></font></h4>
+  </li>
+</ul>
+
+<p align="center"><font color="#00FF40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><big>Salutation
+and body of business letter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dear Manger:</big></strong></font></p>
+
+<p align="center"><strong><big><font color="#00FF40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Chapter and verse in a biblical citation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ruth
+2:3</font></big></strong></p>
+
+<p align="center"><strong><big><font color="#00FF40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Title and Subtitle &nbsp;&nbsp;&nbsp; <em>The Army of the Potomac: A Stillness at
+Appomattox</em></font></big></strong></p>
+
+<h3 align="left"><font color="#00FFFF"><big><strong>MISUSE OF COLONS
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</strong></big></font></h3>
+
+<ul>
+  <li><h4 align="left"><font color="#00FFFF"><big>Remember that a complete independent clause
+    must always precede a colon.&nbsp; Do<u><strong> not</strong></u> use a colon to separate
+    a verb and its object, a verb and its complement, or a preposition and its object.</big><br>
+    </font></h4>
+  </li>
+</ul>
+
+<p align="center"><font color="#00FF40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><big>&nbsp;&nbsp;
+We need to buy: lettuce, peppers, onion, cucumbers, and carrots.</big></strong></font></p>
+
+<p align="center"><strong><big><font color="#00FF40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The candidates for Student Association&nbsp; President are: Steven Holden, Julie Dwire,
+and Amy&nbsp;Besette.</font></big></strong></p>
+
+<p align="center"><strong><big><font color="#00FF40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The vendors had an interesting selection of: reed baskets, alpaca sweaters, silver
+jewelry, and terra cotta pots.</font></big></strong></p>
+</body>
+</html>

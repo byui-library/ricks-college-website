@@ -1,0 +1,132 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>B283 Quiz #7</title>
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- //BEGIN SCRIPT
+function scorequiz(form) {
+ tally=0
+ if(form.Q1.value!=null && form.Q1.value=="*") {tally=tally+1}
+ if(form.Q2.value!=null && form.Q2.value=="*") {tally=tally+1}
+ if(form.Q3.value!=null && form.Q3.value=="*") {tally=tally+1}
+ if(form.Q4.value!=null && form.Q4.value=="*") {tally=tally+1}
+ if(form.Q5.value!=null && form.Q5.value=="*") {tally=tally+1}
+ 
+ form.SCORE.value =eval(tally)
+}
+
+function clearquiz(form) {
+ tally=0
+ form.Q1.value="?"
+ form.Q2.value="?"
+ form.Q3.value="?"
+ form.Q4.value="?"
+ form.Q5.value="?"
+ 
+ form.SCORE.value =eval(tally)
+}
+
+function msg() {
+ alert("Your quiz tally is being e-mailed to the instructor. Thank you!")
+ }
+// -->
+</SCRIPT>
+
+<body>
+
+<p align="center"><b><font size="1">| <a href="../default.htm"> HOME</a> | <a href="../b283quizzes.htm"> B283 Quizzes</a> |
+<a href="b283syllabus.htm">B283 Syllabus</a> |</font></b></p>
+
+<h1 align="center"><b>ONLINE QUIZ #7</b></h1>
+<p align="center">CHAPTER 13 READING</p>
+<hr width="65%" size="4" noshade color="#000000">
+<Form name="quiz1" method="post" enctype="text/plain" 
+ onLoad="clearquiz(this.form)" onsubmit="return false">
+<table border="0" width="100%">
+  <tr>
+    <td width="28%" align="right">
+Please enter your name:&nbsp;</td>
+    <td width="72%"><INPUT TYPE="text" NAME="Name" VALUE="" size="40"></td>
+  </tr>
+  <tr>
+    <td width="28%" align="right">
+Please enter your Email address:&nbsp;</td>
+    <td width="72%"><input type="text" name="email" value="" size="40"></td>
+  </tr>
+</table>
+<p><br>
+</p>
+<hr>
+
+1. In many lines of business, trade credit terms are so firmly set by tradition
+that a unique policy is difficult for a small firm to implement.
+<ol>
+<INPUT TYPE="radio" NAME="Q1" value="*True" onclick=Q1.value="*">True<br>
+<INPUT TYPE="radio" NAME="Q1" value="False" onclick=Q1.value="F">False<br>
+</ol>
+
+2. Bank credit cards are widely accepted by retailers who desire to offer credit
+but do not have their own credit cards.
+<ol>
+<INPUT TYPE="radio" NAME="Q2" value="True" onclick=Q2.value="*">True<br>
+<INPUT TYPE="radio" NAME="Q2" value="*False" onclick=Q2.value="F">False<br>
+</ol>
+
+3. The Widget Company sells 1,000 widgets annually at a price of $35 each.&nbsp;
+If the company's pricing policies adhere to a 40 percent markup of selling
+price, the cost of each widget is?
+<ol>
+<INPUT TYPE="radio" NAME="Q3" value="$14" onclick=Q3.value="A">$14<br>
+<INPUT TYPE="radio" NAME="Q3" value="*$21" onclick=Q3.value="*">$21<br>
+<INPUT TYPE="radio" NAME="Q3" value="$28" onclick=Q3.value="C">$28<br>
+<INPUT TYPE="radio" NAME="Q3" value="none of the above" onclick=Q3.value="D">None
+of the above<br>
+</ol>
+ 
+4. Setting prices for products or services using a particular competitor as a
+model of reference is known as a ________________. 
+<ol>
+<INPUT TYPE="radio" NAME="Q4" value="variable pricing strategy" onclick=Q4.value="A">variable
+pricing strategy.<br>
+<INPUT TYPE="radio" NAME="Q4" value="flexible pricing strategy" onclick=Q4.value="B">flexible
+pricing strategy<br>
+<INPUT TYPE="radio" NAME="Q4" value="*follow-the-leader pricing strategy" onclick=Q4.value="*">follow-the-leader
+pricing strategy<br>
+<INPUT TYPE="radio" name="Q4" value="price lining strategy" onclick=Q4.value="D">price
+lining strategy</ol>
+
+5. Hollywood Amusement, a small independent movie theater, decreased the price
+of admission from $5 to $4.&nbsp; Prior to the price decrease, the business sold
+1,000 tickets each month.&nbsp; If the change in sales is attributable only to
+the change in price, Hollywood Amusement faces _____________ for its movie
+tickets.
+<ol>
+<p>
+<INPUT TYPE="radio" NAME="Q5" value="inelastic demand" onclick=Q5.value="A">inelastic
+demand<br>
+<INPUT TYPE="radio" NAME="Q5" value="constant demand" onclick=Q5.value="B">constant
+demand<br>
+<INPUT TYPE="radio" NAME="Q5" value="variable demand" onclick=Q5.value="C">variable
+demand<br>
+<INPUT TYPE="radio" name="Q5" value="*elastic dmenad" onclick=Q5.value="*">elastic
+demand</p>
+</ol>
+
+<hr>
+
+<B>Your Quiz Score is:  </B><INPUT  NAME="SCORE" TYPE="text" size="4">
+<p><INPUT TYPE="reset" NAME="reset" VALUE="Clear Quiz" onclick=clearquiz(this.form)>
+<INPUT TYPE="submit" VALUE="Send Quiz to Instructor" onclick=scorequiz(this.form)>
+</p>
+<p><INPUT TYPE="button" NAME="submit" VALUE="Compute Quiz tally" onclick=scorequiz(this.form)>
+
+<BR><BR>
+</p>
+</form>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+
+<HTML>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<TITLE>Class File Display/download</TITLE>
+
+<BODY BGCOLOR="FFFFFF">
+<FORM METHOD="POST" onsubmit="return false">
+<H2 align=center><I>Class File Display/download</I></h2>
+<hr><table width="100%"><tr><td>Class Code:
+<INPUT TYPE="text" NAME= "CODE" SIZE=5 VALUE="" maxlength="5">&nbsp;&nbsp;</td><td>
+Faculty ID#: (required)<INPUT TYPE="password" NAME="IDNO" SIZE=9 VALUE="" maxlength="9"></td><td>
+<small>(Faculty can display<br>
+ only their own classes.)</small></td></tr></table>
+<table border="1"><tr><td>Select Display type:</td><td>
+<span style="background-color: #FFFF00">These
+      pages are best printed using Netscape.</span>
+</td></tr><tr><td>
+<b><font color="#0000FF">Web Page:</font></b></td><td>
+<INPUT TYPE="radio" NAME="DWN" VALUE="P" CHECKED>
+<b>Information Grid </b>
+<br>
+<INPUT TYPE="radio" NAME="DWN" VALUE="L">
+<b>Class Roll</b><small> (Name and SSN only)&nbsp;&nbsp;&nbsp; Number of cells
+:</small><input type="text" size=2 name="WIDTH"
+maxlength=2 value = "10">
+    </td></tr><tr><td colspan="2">
+<b><font color="#0000FF">Downloadable text:</font></b> <small> <br>
+ After clicking SUBMIT the data
+will appear on your browser.  Click on <b> File </b> on your browser's
+tool bar, then <b> Save as</b>, which will allow you to save it to a
+file on your PC.  The default name will be </small><small>&quot;<i>SRRCLASST.PGM</i>.&quot;&nbsp;
+Change the name and directory then click&nbsp; OK. <font color="#FF00FF">  The file will have a
+blank line at the first, which will have to be deleted using an editor
+such as &quot;Notepad&quot; before importing the file to your PC application.</font></small><br>
+<INPUT TYPE="radio" NAME="DWN" VALUE="C">
+ <b>Comma Separated Variables (CSV) </b> <small>for import to most
+spreadsheets, Databases, and Word processors.&nbsp;</small>
+<br>
+<INPUT TYPE="radio" NAME="DWN" VALUE="D"> <b>Text </b>
+ <small> (Name, 4 digits of SSN, and local phone only)</small>
+<br>
+<INPUT TYPE="radio" NAME="DWN" VALUE="M">  <b>Micrograde</b> <small>
+ (Last name, first name, and 4 digits of SSN only separated by TABs)
+</small>
+<br>
+<INPUT TYPE="radio" NAME="DWN" VALUE="E">  <b>E-mail address</b><small>
+ (Name and E-mail Address for import to Groupwise address book)</small>
+<br><INPUT TYPE="radio" NAME="DWN" VALUE="Q"><b>E-mail address</b>
+<small>(E-mail Address only for "Copy and paste" to E-mail program)
+</small></td></tr></table>
+
+<font color="#0000FF">Indicate the data you wish: (For information Grid, Class Roll, and
+CSV only)</font>
+<INPUT TYPE="submit" VALUE="Submit">
+<table width="100%" border="1"><tr><td>
+    <INPUT Type="CHECKBOX" name="ssn4">
+    Last 4 digits of&nbsp; ID number
+<br><INPUT Type="CHECKBOX" name="name" >
+    Student Name (Last First Middle)
+<br><INPUT Type="CHECKBOX" name="nameF" checked> Student Name
+(First Middle Last)
+<br><INPUT Type="CHECKBOX" name="nameP"> Preferred name
+<br><INPUT Type="CHECKBOX" name="PICT" checked> Photo (not for CSV)
+<br><INPUT Type="CHECKBOX" name="LADR"> Local address
+<br><INPUT Type="CHECKBOX" name="LPHN"> Local phone
+</td><td valign="top">
+    <INPUT Type="CHECKBOX" name="EMAILX"> College Email address<br>
+    <INPUT Type="CHECKBOX" name="EMAILP"> Permanent Email address
+<br><INPUT Type="CHECKBOX" name="HADR"> Home address
+<br><INPUT Type="CHECKBOX" name="MADR"> Mailing address
+<br><INPUT Type="CHECKBOX" name="HPHN"> Home phone
+<br><INPUT Type="CHECKBOX" name="MAJR"> Major
+<br><INPUT Type="CHECKBOX" name="FPIC"> Faculty Picture
+in the heading (not for CSV)
+<br>&nbsp;       
+
+</td></tr><tr><td colspan = "2">
+<font color="#0000FF">
+Select the sort order you wish:</font>
+</td></tr><tr><td>
+<input type="radio" name="ORDER" value="N" checked>  Alphabetically by name
+<br><input type="radio" name="ORDER" value="S">  ID number 
+</td>
+<td>
+<input type="radio" name="COLLATE" value="F" checked> Forward&nbsp;<br>
+<input type="radio" name="COLLATE" value="R">  Reverse 
+</td></tr></table>
+
+</BODY>
+</HTML>

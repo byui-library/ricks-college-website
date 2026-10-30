@@ -1,6 +1,6 @@
 /*
 Cross browser marquee script- 
-© Dynamic Drive (www.dynamicdrive.com)
+Â© Dynamic Drive (www.dynamicdrive.com)
 For full source code, installation instructions,
 100's more DHTML scripts, and Terms Of
 Use, visit dynamicdrive.com

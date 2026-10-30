@@ -91,7 +91,7 @@
 1 SEX F
 1 BIRT
 2 DATE 15 DEC 1859
-2 PLAC R²stanga,Sweden
+2 PLAC RÂ²stanga,Sweden
 1 BAPL
 2 DATE 21 NOV 1897
 1 FAMS @F2@
@@ -233,7 +233,7 @@
 1 SEX M
 1 BIRT
 2 DATE 1788
-2 PLAC Kµttinge,Birker²d,Denmark
+2 PLAC KÂµttinge,BirkerÂ²d,Denmark
 1 DEAT
 2 DATE 1863
 2 PLAC Copenhagen,Denmark
@@ -850,7 +850,7 @@
 1 BIRT
 2 DATE 29 NOV 1849
 1 DEAT
-2 PLAC Hêaslèov
+2 PLAC HÃªaslÃ¨ov
 1 FAMS @F17@
 1 FAMC @F15@
 1 CHAN
@@ -869,10 +869,10 @@
 2 DATE 11 SEP 1999
 3 TIME 15:33:21
 0 @I71@ INDI
-1 NAME Pµr /Svensen/
-2 GIVN Pµr
+1 NAME PÂµr /Svensen/
+2 GIVN PÂµr
 2 SURN Svensen
-2 _AKA Pµr Olsen
+2 _AKA PÂµr Olsen
 1 SEX M
 1 BIRT
 2 DATE 21 JUN 1854

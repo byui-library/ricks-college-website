@@ -1,0 +1,61 @@
+#include <iostream.h>
+
+const int STACKSIZE (32);
+
+class Stack
+{
+    private:
+      int location;
+      int stack[STACKSIZE];
+    public:
+      Stack (void);
+      void push (const int ITEM);
+      int pop (void);
+};
+
+Stack::Stack (void)
+{
+    location = 0;
+}
+
+void Stack::push (const int ITEM)
+{
+    stack[location] = ITEM;
+    ++location;
+}
+
+int Stack::pop (void)
+{
+    --location;
+    return (stack[location]);
+}
+
+void main (void)
+{
+   int value;
+
+   Stack aStack;
+   aStack.push (1);
+   Stack bStack;
+   bStack.push (2);
+   Stack cStack;
+   cStack.push (3);
+   Stack dStack;
+   value = dStack.pop ();
+   value = cStack.pop ();
+   dStack.push (4);
+   value = aStack.pop ();
+   bStack.unlock ();
+   cStack.lock ();
+   cStack.push (5);
+   value = aStack.pop ();
+   dStack.lock ();
+   bStack.unlock ();
+   dStack.push (6);
+   cStack.unlock ();
+   cStack.push (7);
+   value = aStack.pop ();
+   value = dStack.pop ();
+   value = bStack.pop ();
+   value = cStack.pop ();
+}

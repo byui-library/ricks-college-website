@@ -1,0 +1,601 @@
+.mstheme
+{
+	nav-banner-image: url(astonbnr.gif);
+	separator-image: url(astonrul.gif);
+	list-image-1: url(astonbu1.gif);
+	list-image-2: url(astonbu2.gif);
+	list-image-3: url(astonbu3.gif);
+	navbutton-horiz-pushed: url(astonhbs.gif);
+	navbutton-horiz-normal: url(astonhb.gif);
+	navbutton-horiz-hovered: url(astonhbh.gif);
+	navbutton-vert-pushed: url(astonvbs.gif);
+	navbutton-vert-normal: url(astonvb.gif);
+	navbutton-vert-hovered: url(astonvbh.gif);
+	navbutton-home-normal: url(astonhom.gif);
+	navbutton-home-hovered: url(astonhomh.gif);
+	navbutton-home-pushed: url(blhomep.gif);
+	navbutton-up-normal: url(astonup.gif);
+	navbutton-up-hovered: url(astonuph.gif);
+	navbutton-up-pushed: url(blupp.gif);
+	navbutton-prev-normal: url(astonpre.gif);
+	navbutton-prev-hovered: url(astonpreh.gif);
+	navbutton-prev-pushed: url(blprevp.gif);
+	navbutton-next-normal: url(astonnxt.gif);
+	navbutton-next-hovered: url(astonnxth.gif);
+	navbutton-next-pushed: url(blnextp.gif);
+}
+.mstheme-bannertxt
+{
+	font-family: Arial, Helvetica;
+	font-size: 6;
+	color: rgb(255,255,204);
+}
+.mstheme-horiz-navtxt
+{
+	font-family: Arial, Helvetica;
+	font-size: 2;
+	font-weight: bold;
+	color: rgb(255,255,204);
+}
+.mstheme-vert-navtxt
+{
+	font-family: Arial, Helvetica;
+	font-size: 2;
+	font-weight: bold;
+	color: rgb(255,255,204);
+}
+.mstheme-navtxthome
+{
+	font-family: Arial, Helvetica;
+	font-size: 1;
+	color: rgb(255,255,204);
+}
+.mstheme-navtxtup
+{
+	font-family: Arial, Helvetica;
+	font-size: 1;
+	color: rgb(255,255,204);
+}
+.mstheme-navtxtprev
+{
+	font-family: Arial, Helvetica;
+	font-size: 1;
+	color: rgb(255,255,204);
+}
+.mstheme-navtxtnext
+{
+	font-family: Arial, Helvetica;
+	font-size: 1;
+	color: rgb(255,255,204);
+}
+UL
+{ 
+	list-style-image: url('astonbu1.gif');
+}
+UL UL
+{
+	list-style-image: url('astonbu2.gif');
+}
+UL UL UL
+{
+	list-style-image: url('astonbu3.gif');
+}
+a:link
+{
+	color: rgb(153,51,0);
+}
+a:visited
+{
+	color: rgb(204,102,51);
+}
+a:active
+{
+	color: rgb(102,0,0);
+}
+body
+{
+	color: rgb(0,0,0);
+	background-color: rgb(255,255,255);
+}
+h1
+{
+	color: rgb(0,0,0);
+}
+h2, marquee
+{
+	color: rgb(0,0,0);
+}
+h3
+{
+	color: rgb(0,0,0);
+}
+h4
+{
+	color: rgb(0,0,0);
+}
+h5
+{
+	color: rgb(0,0,0);
+}
+h6
+{
+	color: rgb(0,0,0);
+}
+HR
+{
+	color: rgb(0,0,0);
+}
+BUTTON 
+{
+	background-color: rgb(0,0,0);	
+	border-color: rgb(102,102,102);
+	color: white;
+}
+LABEL, .MSTHEME-LABEL
+{
+	color: rgb(0,0,0);
+}
+TEXTAREA
+{
+	border-color: rgb(51,51,51);
+	color: black;
+}
+FIELDSET
+{
+	border-color: rgb(51,51,51); 
+	color: black;
+}
+LEGEND
+{
+	color: rgb(0,0,0);
+}
+SELECT
+{
+	border-color: rgb(51,51,51); 
+	color: black;
+}
+TABLE
+{
+	table-border-color-light: rgb(102,102,102);
+	table-border-color-dark: rgb(51,51,51);
+	border-color: rgb(51,51,51);
+	color: rgb(0,0,0);
+}
+CAPTION 
+{
+	color: rgb(0,0,0);
+}
+TH
+{
+	color: rgb(0,0,0);
+	border-color: rgb(51,51,51);
+}
+TD
+{
+	border-color: rgb(51,51,51);
+}.mstheme-bannertxt A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-bannertxt A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-bannertxt A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-bannertxt-g
+{
+	font-family: Arial, Helvetica;
+	font-size: 6;
+	color: rgb(204,204,153);
+	background-image: url('stonbnr.gif');
+}
+.mstheme-bannertxt-g A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-bannertxt-g A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-bannertxt-g A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-bannertxt-s
+{
+	font-family: Arial, Helvetica;
+	font-size: 6;
+	color: rgb(204,204,153);
+
+}
+.mstheme-bannertxt-s A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-bannertxt-s A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-bannertxt-s A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-horiz-navtxt A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-horiz-navtxt A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-horiz-navtxt A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-horiz-navtxt-g
+{
+	font-family: Arial, Helvetica;
+	font-size: 2;
+	color: rgb(204,204,153);
+	background-image: url('stonhb.gif');
+}
+.mstheme-horiz-navtxt-g A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-horiz-navtxt-g A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-horiz-navtxt-g A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-horiz-navtxt-gs
+{
+	font-family: Arial, Arial, Helvetica;
+	font-size: 2;
+	color: rgb(204,204,153);
+	background-image: url('stonhbs.gif');
+}
+.mstheme-horiz-navtxt-gs A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-horiz-navtxt-gs A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-horiz-navtxt-gs A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxthome A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxthome A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxthome A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxthome-g
+{
+	font-family: Arial, Helvetica;
+	font-size: 1;
+	color: rgb(204,204,153);
+	background-image: url('stonhom.gif');
+}
+.mstheme-navtxthome-g A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxthome-g A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxthome-g A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtnext A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtnext A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtnext A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtnext-g
+{
+	font-family: Arial, Helvetica;
+	font-size: 1;
+	color: rgb(204,204,153);
+	background-image: url('stonnxt.gif');
+}
+.mstheme-navtxtnext-g A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtnext-g A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtnext-g A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtprev A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtprev A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtprev A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtprev-g
+{
+	font-family: Arial, Helvetica;
+	font-size: 1;
+	color: rgb(204,204,153);
+	background-image: url('stonpre.gif');
+}
+.mstheme-navtxtprev-g A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtprev-g A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtprev-g A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtup A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtup A:link 
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtup A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtup-g
+{
+	font-family: Arial, Helvetica;
+	font-size: 1;
+	color: rgb(204,204,153);
+	background-image: url('stonup.gif');
+}
+.mstheme-navtxtup-g A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtup-g A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-navtxtup-g A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-topbar-font A:active
+{
+	color: rgb(255,255,204);
+}
+.mstheme-topbar-font A:link
+{
+	color: rgb(255,255,204);
+}
+.mstheme-topbar-font A:visited
+{
+	color: rgb(255,255,204);
+}
+.mstheme-topbar-font-g
+{
+	font-family: Arial, Helvetica;
+	font-size: 1;
+	color: rgb(255,255,204);
+	background-image: url('stonglbu.gif');
+}
+.mstheme-topbar-font-g A:active
+{
+	color: rgb(255,255,204);
+}
+.mstheme-topbar-font-g A:link
+{
+	color: rgb(255,255,204);
+}
+.mstheme-topbar-font-g A:visited
+{
+	color: rgb(255,255,204);
+}
+.mstheme-vert-navtxt A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-vert-navtxt A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-vert-navtxt A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-vert-navtxt-g
+{
+	font-family: Arial, Helvetica;
+	font-size: 2;
+	color: rgb(204,204,153);
+	background-image: url('stonvb.gif');
+}
+.mstheme-vert-navtxt-g A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-vert-navtxt-g A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-vert-navtxt-g A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme-vert-navtxt-gs
+{
+	font-family: Arial, Helvetica;
+	font-size: 2;
+	color: rgb(204,204,153);
+	background-image: url('stonvbs.gif');
+}
+.mstheme-vert-navtxt-gs A:active
+{
+	color: rgb(204,204,153);
+}
+.mstheme-vert-navtxt-gs A:link
+{
+	color: rgb(204,204,153);
+}
+.mstheme-vert-navtxt-gs A:visited
+{
+	color: rgb(204,204,153);
+}
+.mstheme
+{
+	navbutton-background-color: rgb(255,255,255);
+	top-bar-button: url(stonglbu.gif);
+}
+.mstheme-topbar-font
+{
+	font-family: Arial, Helvetica;
+	font-size: 1;
+	color: rgb(255,255,204);
+}
+body
+{
+	font-family: Arial, Helvetica;
+	
+}
+h1
+{
+	font-family: Arial, Helvetica;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24pt;
+}
+h2
+{
+	font-family: Arial, Helvetica;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 18pt;
+}
+h3
+{
+	font-family: Arial, Helvetica;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 14pt;
+}
+h4
+{
+	font-family: Arial, Helvetica;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 12pt;
+}
+h5
+{
+	font-family: Arial, Helvetica;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 10pt;
+}
+h6
+{
+	font-family: Arial, Helvetica;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 8pt;
+}
+BUTTON 
+{
+	border-style: solid;
+	border-width: 1pt;
+	font-size: 8pt;
+	font-family: Arial;
+	font-style: normal; 
+}
+LABEL, .MSTHEME-LABEL
+{
+	font-size: 8pt;
+	font-family: Arial;
+	font-style: normal; 
+}
+TEXTAREA
+{
+	border-style: solid;
+	font-size: 8pt;
+	font-family: Arial;
+	font-style: normal 
+}
+FIELDSET
+{
+	border-style: solid;
+	border-width: 1pt;
+	font-size: 8pt;
+	font-family: Arial;
+	font-style: normal; 
+}
+LEGEND
+{
+	font-size: 8pt;
+	font-family: Arial;
+	font-style: normal; 
+}
+SELECT
+{
+	border-style: solid;
+	font-size: 8pt;
+	font-family: Arial;
+	font-style: normal 
+}
+TABLE
+{
+	font-family: Arial;
+	font-style: normal; 
+}
+CAPTION 
+{
+	font-size: 14pt;
+	font-family: Arial;
+	font-style: Normal; 
+}
+TH
+{
+	font-family: Arial;
+	font-style: normal; 
+}
+MARQUEE
+{
+	font-size: 14pt;
+	font-family: Arial;
+}

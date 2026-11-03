@@ -1,0 +1,170 @@
+Pinewood Derby Simulator Requirements
+=====================================
+
+Nonfunctional requirements (constraints)
+----------------------------------------
+- Provide instructions as a readme.txt file including, but not limited to,
+  how to compile and start the Pinewood Derby Simulator.
+- The simulator shall be written in C++.
+
+Functional requirements
+-----------------------
+   Interface
+01 - Provide a menu interface; at a minimum, the menu shall provide the
+     following options:
+     - Display credits
+     - Display basic instructions
+     - Design and save cars
+     - Setup tournament
+     - Execute tournament
+02 - The "display credits" option shall output credits (i.e., software
+     designers and programmers)
+03 - The "display basic instructions" option shall output basic instructions
+     regarding how to run the simulator
+04 - The "design and save cars" option shall allow the user to design and
+     save multiple cars
+05 - The "setup tournament" option shall provide two options: Select cars
+     and Select race schedule 
+06   - The "select cars" suboption shall allow the user to select the cars
+       to compete for the best of show and races
+07     - A list of previously designed and saved cars shall be presented
+         to the user
+08     - The user shall select from this list
+09   - The "select race schedule" shall allow the user to select either
+       single elimination or double elimination
+10   - The simulator shall not allow the execution of the tournament
+       until after the user has selected cars and a race schedule
+11 - The "execute tournament" option shall display tournament results;
+     two options shall be provided: Display best of show and Display
+     race results
+12   - The "display best of show" suboption shall display the best of
+       show winners
+13   - The "display race results" option shall display the results of
+       each race and the race tournament winner
+
+   Design and save multiple cars
+14 - The user shall be able to design multiple cars
+15 - The simulator shall provide eight pre-designed cars for the user to
+     choose from; the characteristics of the pre-designed cars are left to
+     the designer
+     - The user shall be able to modify the following characteristics:
+16     - Wheel type
+17     - Axle type
+18     - Extra weight
+19     - Weight location
+20     - Color
+21     - Paint job
+22     - Who helped
+23     - Lubrication
+24     - Extras (e.g., spoiler, fins, decals)
+25 - Each characteristic shall have three options (for example, three
+     quality levels of poor, average, and excellent)
+26 - Each option for each characteristic shall be assigned values to be
+     used in determining best of show and success in the race; the actual
+     values are left to the designer
+27 - Each option of each characteristic shall have an associated cost in
+     points
+28 - The user shall have a limited quantity of points to "spend" on the
+     modifications; the actual amount is to be determined by the designer
+29 - The user shall not have enough points to build the "perfect" car
+30 - Each option of each characteristic shall have an associated weight
+     (in ounces); the actual weights are to be determined by the designer
+31 - The simulator shall not allow any car to exceed 5.0 ounces
+32 - The user shall be able to save each car using a user-specified name
+33 - The user-specified name for a car shall not exceed 16 characters.
+34 - The user shall be able to retrieve any saved car in subsequent
+     executions of the simulator by selecting a name from a software-
+     generated list of saved cars; there shall be a maximum of 64 cars
+35 - The user shall be able to delete any previously-designed car by
+     selecting its name from a software-generated list of saved cars
+36 - Deleting a car removes both the car in memory and the car saved to
+     disk
+
+   Determine and award "best of show"
+37 - The best of show shall be determined by summing the best of show points
+     of each user-selected option of each characteristic
+38 - The best of show sum shall be further modified by "judge bias" - there
+     shall be a 10% chance that additional points are added to the sum; the
+     actual quantity of points is left to the designer
+39 - Ties shall be broken by random selection
+40 - The simulator shall award first, second, and third places for best of
+     show
+
+   Schedule races in a tournament
+   - A tournament is one or more rounds of races. A tournament is complete
+     when there is only one car with no losses.
+41 - The last car in the tournament without any losses is the winner of the
+     tournament.
+   - A round is one or more races. A round is complete when each car (still)
+     in the tournament has raced at least once.
+   - A race is a single match between two cars.
+42 - The simulator shall perform all scheduling; no user intervention shall
+     be permitted
+43 - Only user-designed (modified) cars shall compete in a tournament
+44 - Only user-selected cars shall compete in a tournament
+45 - There shall be a minimum of four user-selected cars to race in a
+     tournament and a maximum of 64 cars
+46 - Races shall be executed using exactly two lanes
+47 - There shall be exactly two cars for each race
+48 - No car shall race alone
+49 - Single elimination race schedule: winners move on, losers are out
+   - Double Elimination race schedule
+50   - Cars without a loss compete only with other cars that have no losses
+51   - Cars with one loss compete only with other cars that have one loss
+52   - Cars with two losses are out
+
+   Execute scheduled races
+53 - Each race shall consist of summing the race success points of each
+     user-selected option of each characteristic; the car with the larger
+     sum after factoring in random mishaps wins
+54 - Ties shall be broken with the toss of a virtual coin
+55 - Each car in every race shall be subject to a randomly selected mishap
+56   - The probability of the occurence of a random mishap shall be 10%
+57   - The random mishap shall be selected from the following list:
+       - negative mishaps
+         - spontaneous combustion
+         - lightning strike
+         - wheels fall off
+         - explosion
+         - paint peels
+       - positive mishaps
+         - good luck
+         - burst of speed
+         - push from Brother Twitchell
+58   - A negative mishap shall decrease the sum of race success points
+       by up to 10%
+59   - A positive mishap shall increase the sum of race success points
+       by up to 10%
+
+   Output
+   - For the best of show output
+60   - the car names of the first-, second-, and third-place winners (in
+       that order)
+61   - the sum of best of show points for each winning car
+   - For each race output
+62   - the round number (1 for the first round, 2 for the second round,
+       etc.)
+63   - the race number (1 for the first race, 2 for the second race, etc.)
+64   - random mishaps and the cars impacted
+65   - the race results consisting of
+       - car names
+       - sum of race success points for each car
+       - an indication if the car was the winner or loser
+66 - After the final race, output the name of the tournament winner
+
+Change log
+----------
+10/02 34 - added maximum of 64 cars
+10/02 43 - added clarification of user-modified cars
+10/02 45 - added maximum of 64 cars
+10/02 58 - modified to "up to 10%"
+10/02 59 - modified to "up to 10%"
+10/04 2nd bullet after 41 - deleted "or more"
+11/18 1st bullet after 41 - deleted " but no more than twice. At
+                            most one car shall race twice in a round"
+11/20 39 - replaced "with the toss of a virtual coin" with
+           "by random selection"
+11/20 clarification: the system command may be used for file i/o
+                     (and nothing else)
+11/20 clarification: time functions may be used to seed the random
+                     number generator

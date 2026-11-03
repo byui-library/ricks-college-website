@@ -15,7 +15,7 @@ A restored copy of the Ricks College website (www.ricks.edu) as it stood between
 ## Where it came from
 
 - **A backup of the college's web server**, about 11,000 files.
-- **About 1,060 files recovered from the Internet Archive's [Wayback Machine](https://web.archive.org/)**. These are pages and images the backup's pages linked to but the backup didn't contain.
+- **About 5,600 files recovered from the Internet Archive's [Wayback Machine](https://web.archive.org/)**. These are pages and images the backup's pages linked to but the backup didn't contain, plus the images and pages that those recovered pages link to, followed up to four links away from the backup.
 
 Pages keep their original late-1990s look. The restoration changed only what modern browsers can't handle:
 - Links were made to work offline from their original server.
@@ -27,6 +27,8 @@ Pages keep their original late-1990s look. The restoration changed only what mod
 ## Known gaps
 
 The backup was incomplete. Many images and pages, including most faculty and staff pages and many per-folder copies of shared images, weren't preserved anywhere. Some links and images in the archive are therefore broken.
+
+A faculty art-history slide collection (`ricks-1997/Ricks/employee/DAVISR/HumPix/`) is only partly restored: about 1,500 of its 2,500 slides are included so far.
 
 ## How it's built
 

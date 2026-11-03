@@ -1,0 +1,274 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+<!--
+ function emailCheck (emailStr) 
+{
+  var emailPat=/^(.+)@(.+)$/
+  var specialChars="\\(\\)<>@,;:\\\\\\\"\\.\\[\\]"
+  var validChars="\[^\\s" + specialChars + "\]"
+  var quotedUser="(\"[^\"]*\")"
+  var ipDomainPat=/^\[(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\]$/
+  var atom=validChars + '+'
+  var word="(" + atom + "|" + quotedUser + ")"
+  var userPat=new RegExp("^" + word + "(\\." + word + ")*$")
+  var domainPat=new RegExp("^" + atom + "(\\." + atom +")*$")
+  
+  var matchArray=emailStr.match(emailPat)
+  if (matchArray==null) 
+  {
+   alert("Email address seems incorrect (check @ and .'s)")
+   return false
+  }
+  var user=matchArray[1]
+  var domain=matchArray[2]
+
+  if (user.match(userPat)==null) 
+  {
+    alert("The username doesn't seem to be valid.")
+    return false
+  }
+
+   var IPArray=domain.match(ipDomainPat)
+   if (IPArray!=null) 
+   {
+     for (var i=1;i<=4;i++) 
+     {
+       if (IPArray[i]>255) 
+       {
+	 alert("Destination IP address is invalid!")
+	 return false
+ 	}
+      }
+    return true
+}
+
+var domainArray=domain.match(domainPat)
+if (domainArray==null) 
+{
+   alert("The domain name doesn't seem to be valid.")
+   return false
+}
+ 
+var atomPat=new RegExp(atom,"g")
+var domArr=domain.match(atomPat)
+var len=domArr.length
+if (domArr[domArr.length-1].length<2 || 
+    domArr[domArr.length-1].length>3) 
+{
+ 
+   alert("The email address must end in a three-letter domain, or two letter country.")
+   return false
+}
+
+if (len<2) 
+{
+   var errStr="This address is missing a hostname!"
+   alert(errStr)
+   return false
+}
+return true;
+}
+ function sign_mentor ()
+ {
+  var su = document.m_sign
+  if (su.fname.value == "")
+  {
+   alert ("Please enter your first name")
+   return false
+  }
+  if (su.lname.value == "")
+  {
+   alert ("Please enter your last name")
+   return false
+  }
+  if (su.ssn1.value == "" || su.ssn2.value == "" || su.ssn3.value == "")
+  {
+   alert ("Please enter your social security number!")
+   return false
+  }
+  else
+  {
+   if (isNaN (parseInt (su.ssn1.value)) ||
+       isNaN (parseInt (su.ssn1.value)) ||
+       isNaN (parseInt (su.ssn1.value)))
+   {
+    alert ("Enter numeric social security")
+    return false;
+   }
+  }
+  if (su.m_address.value == "")
+  {
+   alert ("Please enter your address")
+   return false
+  }
+  if (su.m_city.value == "")
+  {
+   alert ("Please enter the city name")
+   return false
+  }
+  if (su.m_state.value == "")
+  {
+   alert ("Please enter the state name")
+   return false
+  }
+  var zip = parseInt ()
+  if (su.m_state.value == "")
+  {
+   alert ("Please enter the state name")
+   return false
+  }
+  if (su.email.value == "")
+  {
+   alert ("Please enter your email address")
+   return false
+  }
+  else if (!emailCheck (su.email.value))
+   return false
+  su.indusJobs.value = su.industry_jobs.options[su.industry_jobs.selectedIndex].text  
+ 
+ }
+-->
+</script>
+</head>
+<body bgcolor = efefef align=center>
+<center>
+<font color="maroon" size=4 face="arial narrow"><b>Student Sign up for Mentors</b></font>
+<hr width=100% color="maroon">
+</center>
+
+<br>
+
+<form name=m_sign method=get onsubmit="return false">
+<table align=center width=100% border=0 cellpadding=1 cellspacing=1 bgcolor=efefef>
+<tr>
+ <td><font face="arial narrow">First Name</font></td>
+ <td><input type=text name=fname value="" size=30></td>
+</tr>
+<tr>
+ <td><font face="arial narrow">Last Name</font></td>
+ <td><input type=text name=lname value="" size=30></td>
+</tr>
+<tr>
+ <td><font face="arial narrow">SSN</font></td>
+ <td><input type=text name=ssn1 value="" size=3 maxlength=3>- 
+ <input type=text name=ssn2 value="" size=2 maxlength=2>-
+ <input type=text name=ssn3 value="" size=4 maxlength=4></td>
+</tr>  
+<tr>
+ <td><font face="arial narrow">Address </font></td>
+ <td><input type=text name=m_address value="" size=50></td>
+</tr>
+<tr>
+ <td><font face="arial narrow">City</font></td>
+ <td><input type=text name=m_city value="" size=20></td>
+</tr>
+<tr>
+ <td><font face="arial narrow">State</font></td>
+ <td><input type=text name=m_state value="" size=2 maxlength=2></td>
+</tr>
+
+<tr>
+ <td><font face="arial narrow">Zip Code</font></td>
+ <td><input type=text name=m_zip value="" size=5 maxlength=5></td>
+</tr> 
+
+<tr>
+ <td><font face="arial narrow">Phone</font></td>
+ <td><input type=text name=m_hPhone value="" size=3 maxlength=3>- 
+ <input type=text name=m_hCode value="" size=3 maxlength=3>-
+ <input type=text name=m_Phone value="" size=4 maxlength=4></td>
+</tr>  
+<tr>
+ <td><font face="arial narrow">Email</font></td>
+ <td><input type=type name=email value=""><b>&nbsp;</b></td>
+</tr> 
+<tr>
+ <td align colspan=2>
+ <br>
+ Select on of the industry [job] combinations below, we will assign you a mentor who has similar industry and job experience.   
+ </td>
+</tr> 
+<tr>
+  <td>Industry -- Job</td>
+   <td><select name=industry_jobs>
+       
+      <option value="153&Hancey&Douglas &76&13&Owner&Automobile&208-356-4183&208-356-3636&Work&dougcar@aol.com&Madison Ford-Mercury, Inc."> Automobile&nbsp;[Owner]
+       
+      <option value="21&Lowe&Marcus&46&17&Executive&Computer Software Development&000-000-0000&408-557-8515&Work&mlowe@newmoon.com&New Moon Systems"> Computer Software Development&nbsp;[Executive]
+       
+      <option value="191&McLean&Daniel&10&24&Administrator&Education - University/College&812-299-0663&812-237-2185&Work&d-mclean@indstate.edu&Department of Recreation and Sport Management"> Education - University/College&nbsp;[Administrator]
+       
+      <option value="76&Cason&Robert&38&24&Editor/Publisher/Writer&Education - University/College&801-991-4302&915-747-6687&Home&rcason@utep.edu&University of Texas - El Paso"> Education - University/College&nbsp;[Editor/Publisher/Writer]
+       
+      <option value="145&MacKenzie&John&78&24&Programmer&Education - University/College&208-356-7598&208-496-1192&Work&mackenziej@byui.edu&BYU-IDaho"> Education - University/College&nbsp;[Programmer]
+       
+      <option value="176&Sanns&Aaron&86&24&Recruiter&Education - University/College&208-496-1092&000-00-000&Work&sanns@byui.edu&BYU-Idaho"> Education - University/College&nbsp;[Recruiter]
+       
+      <option value="181&Berger&Shane&20&29&Banker&Financial Services&208-356-8570&208-356-3955&Work&sberger@bhive.org&Beehive Federal Credit Union"> Financial Services&nbsp;[Banker]
+       
+      <option value="175&Stout&David&70&35&Merchandiser/Buyer&Food Services&479-631-7778&479-277-7832&Work&David.Stout@samsclub.com&Wal-Mart Stores, Inc."> Food Services&nbsp;[Merchandiser/Buyer]
+       
+      <option value="171&Shand&Daniel&78&43&Programmer&Health Services&440-235-5261&216-485-4478&Work&dshand@pcsigroup.com&Park City Solutions iServices Group"> Health Services&nbsp;[Programmer]
+       
+      <option value="182&Clark&Jon&56&45&Health Care Administrator&Health Services - Hospital Admin.&801-424-1204&801-585-1494&Work&jon.clark@hsc.utah.edu&University of Utah Hospital"> Health Services - Hospital Admin.&nbsp;[Health Care Administrator]
+       
+      <option value="20&Lindley&Corey&46&47&Executive&Household Comsumer Products&801-221-9800&801-345-5000&Work&clindley@nuskin.com&Nu Skin Enterprises"> Household Comsumer Products&nbsp;[Executive]
+       
+      <option value="154&Seely&Chet&93&47&Sales/Marketing Specialist&Household Comsumer Products&208-524-8691&208-535-2391&Work&cselly@melaleuca.com&Melaleuca, Inc."> Household Comsumer Products&nbsp;[Sales/Marketing Specialist]
+       
+      <option value="151&Knutson&Thomas&46&55&Executive&Manufacturing&208-524-9005&208-522-0700&Work&knutsont@melaleuca.com&Melaleuca, Inc."> Manufacturing&nbsp;[Executive]
+       
+      <option value="17&LeBlanc&David&67&55&Manager&Manufacturing&000-000-0000&000-000-0000&Work&dleblanc@lincolnelectric.com.mx&Lincoln Electric Mexicana, S.A. de C.V."> Manufacturing&nbsp;[Manager]
+       
+      <option value="169&Stenberg&Michael&74&55&Operations Manager&Manufacturing&208-852-0289&435-258-2431&Work&michael.stenberg@alcoa.com&Presto Products/Alcoa Consumer"> Manufacturing&nbsp;[Operations Manager]
+       
+      <option value="146&Rodney&James&79&55&Personnel/Human Resource Specialist&Manufacturing&208-542-5446&208-522-0700&Work&rlacey@melaleuca.com&Melaleuca, Inc"> Manufacturing&nbsp;[Personnel/Human Resource Specialist]
+       
+      <option value="67&Adair&Lori&93&55&Sales/Marketing Specialist&Manufacturing&505-598-5124&505-566-0206&Work&ladair@imsvans.com&Independent Mobility Systems, Inc."> Manufacturing&nbsp;[Sales/Marketing Specialist]
+       
+      <option value="150&Barrot&Tyrie &19&56&Attorney&Marketing&208-528-8419&208-535-2342&Work&tbarrott@melaleuca.com&Melaleuca, Inc."> Marketing&nbsp;[Attorney]
+       
+      <option value="19&Lee&Ronald&93&56&Sales/Marketing Specialist&Marketing&208-524-7227&208-522-1800&Work&rlee@idahonews.com&Post Register"> Marketing&nbsp;[Sales/Marketing Specialist]
+       
+      <option value="177&Hill&Brent&8&4&Accounting - Tax Accountant&Public Accounting - Local&208-356-7495&208-356-3677&Work&bhill@ruddco.com&Rudd & Company"> Public Accounting - Local&nbsp;[Accounting - Tax Accountant]
+       
+      <option value="180&Sutton&Randy&8&4&Accounting - Tax Accountant&Public Accounting - Local&208-356-3409&208-356-3452&Work&rds@ssscpa.net&Schwendiman Sutton and Simmons"> Public Accounting - Local&nbsp;[Accounting - Tax Accountant]
+       
+      <option value="152&Ballou&Rich T&38&66&Editor/Publisher/Writer&Publishing/Printing&208-356-5441&208-356-5441&Work&rballou@rexburgstandardjournal.com&Rexburg Standard Journal"> Publishing/Printing&nbsp;[Editor/Publisher/Writer]
+       
+      <option value="183&Dunn&Jonathan&36&69&Director&Real Estate - Development&479-271-0806&479-273-4447&Work&j5dunn@wal-mart.com&Wal-Mart Stores, Inc."> Real Estate - Development&nbsp;[Director]
+       
+      <option value="170&Wuensche&JC&17&74&Analyst - Hardware/Software Systems&Retail&479-271-7661&479-277-3049&Work&Jay.Wuensche@wal-mart.com&Wal-Mart Stores Inc."> Retail&nbsp;[Analyst - Hardware/Software Systems]
+       
+      <option value="147&Richards&Chad&36&74&Director&Retail&208-13-2677&208-535-2388&Work&crichards@melaleuca.com&Melaleuca, Inc."> Retail&nbsp;[Director]
+       
+      <option value="166&Tureman&Pauline&36&74&Director&Retail&479-254-0497&479-273-8577&Work&Pauline.Tureman@wal-mart.com&Wal-Mart Stores"> Retail&nbsp;[Director]
+       
+      <option value="162&Severson&Gary&70&74&Merchandiser/Buyer&Retail&000-00-0000&479-277-7901&Work&gary.severson@wal-mart.com&Wal-Mart Stores"> Retail&nbsp;[Merchandiser/Buyer]
+       
+      <option value="178& Black&Scott&70&74&Merchandiser/Buyer&Retail&479-464-0848&479-273-4366&Work&Scott.Black@wal-mart.com&Wal-Mart Stores, Inc."> Retail&nbsp;[Merchandiser/Buyer]
+       
+      <option value="179&Henrie&Douglas&70&74&Merchandiser/Buyer&Retail&479-273-5989&479-277-9346&Work&adhenri@wal-mart.com&Wal-Mart Stores, Inc."> Retail&nbsp;[Merchandiser/Buyer]
+       
+      <option value="174&Farnsworth&Ross&89&74&Retailer&Retail&479-271-6054&479-277-1574&Select home or work&ross.farnsworth@wal-mart.com&Wal-Mart Stores, Inc."> Retail&nbsp;[Retailer]
+       
+      <option value="184&Sederholm&Shawn&89&74&Retailer&Retail&479-631-6879&479-277-9459&Work&Shawn.sederholm@wal-mart.com&Wal-Mart Stores, Inc."> Retail&nbsp;[Retailer]
+       
+      <option value="160&Nye&Matt&67&79&Manager&Travel/Tourism&208-529-4961&208-535-2319&Work&mnye@melaleuca.com&Melaleuca Executive Travel"> Travel/Tourism&nbsp;[Manager]
+    
+   </select></td>
+   </tr>
+</table>
+<br>
+<center>
+<input type=hidden name=indusJobs>
+<input type=submit name=register value="Register">
+</center>
+</form>
+
+<hr width=100% color="maroon">
+</body>
+</html>

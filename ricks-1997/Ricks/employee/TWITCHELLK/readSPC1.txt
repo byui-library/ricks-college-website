@@ -1,0 +1,16 @@
+#include <fstream>
+
+void main (void)
+{
+   const int SUBGROUP_COUNT (100);
+   const int SAMPLE_COUNT (5);
+   int dataValues[SUBGROUP_COUNT][SAMPLE_COUNT];
+
+   // open the file containing the data values
+   ifstream secondFile ("/home/twitchellk/examples/spc1.txt");
+   for (int i = 0; i < SUBGROUP_COUNT; ++i)
+      for (int j = 0; j < SAMPLE_COUNT; ++j)
+         secondFile >> dataValues[i][j];
+   secondFile.close (); // close the input file
+}
+

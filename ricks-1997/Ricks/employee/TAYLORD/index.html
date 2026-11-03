@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="../../../_archive/compat.js"></script>
+<title></title>
+
+<!-- 3-D Menu -->
+<style>
+.menulines{
+border:2.5px solid #F0F0F0;
+}
+
+.menulines a{
+text-decoration:none;
+color:black;
+}
+</style>
+
+<style>
+.menuline a{
+text-decoration:underline;
+color:silver;
+}
+</style>
+
+<script language="JavaScript1.2">
+
+function over_effect(e,state){
+if (document.all)
+source4=event.srcElement
+else if (document.getElementById)
+source4=e.target
+if (source4.className=="menulines")
+source4.style.borderStyle=state
+else{
+while(source4.tagName!="TABLE"){
+source4=document.getElementById? source4.parentNode : source4.parentElement
+if (source4.className=="menulines")
+source4.style.borderStyle=state
+}
+}
+}
+
+</script>
+
+
+<!--Pop Windows-->
+
+<style>
+<!--
+
+.menuskin{
+position:absolute;
+width:165px;
+background-color:#F0F0F0;
+border:2px solid silver;
+font:normal 12px Verdana;
+line-height:18px;
+z-index:100;
+visibility:hidden;
+}
+
+.menuskin a{
+text-decoration:none;
+color:black;
+padding-left:10px;
+padding-right:10px;
+}
+
+#mouseoverstyle{
+background-color:highlight;
+}
+
+#mouseoverstyle a{
+color:white;
+}
+-->
+</style>
+
+<script language="JavaScript1.2">
+var linkset=new Array()
+
+linkset[0]='<div class="menuitems"><a href="Music Technology.html"><font face="Arial Narrow" size="2">Music Technology</font></a></div>'
+linkset[0]+='<div class="menuitems"><a href="Aural Skills 3.html"><font face="Arial Narrow" size="2">Aural Skills 3</font></a></div>'
+linkset[0]+='<div class="menuitems"><a href="Percussion Ensemble.html"><font face="Arial Narrow" size="2">Percussion Ensemble</font></a></div>'
+linkset[0]+='<div class="menuitems"><a href="Percussion Methods.html"><font face="Arial Narrow" size="2">Percussion Methods</font></a></div>'
+linkset[0]+='<div class="menuitems"><a href="Basic Theory.html"><font face="Arial Narrow" size="2">Basic Theory</font></a></div>'
+
+linkset[1]='<div class="menuitems"><a href="coming soon.html"><font face="Arial Narrow" size="2">Mallet Ensemble</font></a></div>'
+linkset[1]+='<div class="menuitems"><a href="coming soon.html"><font face="Arial Narrow" size="2">Percussion Ensemble</font></a></div>'
+linkset[1]+='<div class="menuitems"><a href="coming soon.html"><font face="Arial Narrow" size="2">Viking Pep Band-Percussion</font></a></div>'
+
+linkset[2]='<div class="menuitems"><a href=""><font face="Arial Narrow" size="2">Education</font></a></div>'
+linkset[2]+='<div class="menuitems"><a href=""><font face="Arial Narrow" size="2">Family</font></a></div>'
+
+linkset[3]='<div class="menuitems"><a href=""><font face="Arial Narrow" size="2">Class Description</font></a></div>'
+linkset[3]+='<div class="menuitems"><a href=""><font face="Arial Narrow" size="2">Syllabus</font></a></div>'
+
+linkset[4]='<div class="menuitems"><a href="Percussion Main Page.html"><font face="Arial Narrow" size="2">Homepage</font></a></div>'
+linkset[4]+='<div class="menuitems"><a href="percussion studies handbook.pdf"><font face="Arial Narrow" size="2">Percussion Studies Handbook</font></a></div>'
+
+var ie4=document.all&&navigator.userAgent.indexOf("Opera")==-1
+var ns6=document.getElementById&&!document.all
+var ns4=document.layers
+
+function showmenu(e,which){
+
+if (!document.all&&!document.getElementById&&!document.layers)
+return
+
+clearhidemenu()
+
+menuobj=ie4? document.all.popmenu : ns6? document.getElementById("popmenu") : ns4? document.popmenu : ""
+menuobj.thestyle=(ie4||ns6)? menuobj.style : menuobj
+
+if (ie4||ns6)
+menuobj.innerHTML=which
+else{
+menuobj.document.write('<layer name=gui bgColor=#F6E6E6 width=165 onmouseover="clearhidemenu()" onmouseout="hidemenu()">'+which+'</layer>')
+menuobj.document.close()
+}
+
+menuobj.contentwidth=(ie4||ns6)? menuobj.offsetWidth : menuobj.document.gui.document.width
+menuobj.contentheight=(ie4||ns6)? menuobj.offsetHeight : menuobj.document.gui.document.height
+eventX=ie4? event.clientX : ns6? e.clientX : e.x
+eventY=ie4? event.clientY : ns6? e.clientY : e.y
+
+
+var rightedge=ie4? document.body.clientWidth-eventX : window.innerWidth-eventX
+var bottomedge=ie4? document.body.clientHeight-eventY : window.innerHeight-eventY
+
+if (rightedge<menuobj.contentwidth)
+
+menuobj.thestyle.left=ie4? document.body.scrollLeft+eventX-menuobj.contentwidth : ns6? window.pageXOffset+eventX-menuobj.contentwidth : eventX-menuobj.contentwidth
+else
+
+menuobj.thestyle.left=ie4? document.body.scrollLeft+eventX : ns6? window.pageXOffset+eventX : eventX
+
+if (bottomedge<menuobj.contentheight)
+menuobj.thestyle.top=ie4? document.body.scrollTop+eventY-menuobj.contentheight : ns6? window.pageYOffset+eventY-menuobj.contentheight : eventY-menuobj.contentheight
+else
+menuobj.thestyle.top=ie4? document.body.scrollTop+event.clientY : ns6? window.pageYOffset+eventY : eventY
+menuobj.thestyle.visibility="visible"
+return false
+}
+
+function contains_ns6(a, b) {
+
+while (b.parentNode)
+if ((b = b.parentNode) == a)
+return true;
+return false;
+}
+
+function hidemenu(){
+if (window.menuobj)
+menuobj.thestyle.visibility=(ie4||ns6)? "hidden" : "hide"
+}
+
+function dynamichide(e){
+if (ie4&&!menuobj.contains(e.toElement))
+hidemenu()
+else if (ns6&&e.currentTarget!= e.relatedTarget&& !contains_ns6(e.currentTarget, e.relatedTarget))
+hidemenu()
+}
+
+function delayhidemenu(){
+if (ie4||ns6||ns4)
+delayhide=setTimeout("hidemenu()",500)
+}
+
+function clearhidemenu(){
+if (window.delayhide)
+clearTimeout(delayhide)
+}
+
+function highlightmenu(e,state){
+if (document.all)
+source_el=event.srcElement
+else if (document.getElementById)
+source_el=e.target
+if (source_el.className=="menuitems"){
+source_el.id=(state=="on")? "mouseoverstyle" : ""
+}
+else{
+while(source_el.id!="popmenu"){
+source_el=document.getElementById? source_el.parentNode : source_el.parentElement
+if (source_el.className=="menuitems"){
+source_el.id=(state=="on")? "mouseoverstyle" : ""
+}
+}
+}
+}
+
+if (ie4||ns6)
+document.onclick=hidemenu
+
+</script>
+
+</head>
+
+
+<body background="background.jpg">
+<table width="750" cellspacing="0" cellpadding="0">
+
+<tr>
+<td>
+<font face="lucida sans, arial narrow" size="1" color="silver">
+&nbsp&nbsp&nbspBRIGHAM YOUNG UNIVERISTY-IDAHO
+</font>
+</td>
+
+<td rowspan="2" align="right" valing="bottom">
+<font face="lucida sans, arial narrow" size="6" color="silver">
+PERCUSSION&nbsp
+</font>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<font face="lucida sans, arial narrow" size="5" color="white">
+&nbspDEPARTMENT OF MUSIC
+</font>
+</td>
+</tr>
+</table>
+
+
+<br />
+<br />
+<br />
+<br />
+
+
+<table width="750" border="0" cellspacing="0" cellpadding="0" onMouseover="over_effect(event,'outset')" onMouseout="over_effect(event,'solid')" onMousedown="over_effect(event,'inset')" onMouseup="over_effect(event,'outset')" style="background-color:#F0F0F0">
+
+<tr>
+<td class="menulines" align="center">
+<font face="Arial Narrow" size="2">
+<a href="../../../../ricks-2000/Default.htm">
+BYU-I Home
+</a>
+</font>
+</td>
+
+<td class="menulines" align="center">
+<font face=" Arial Narrow" size="2">
+<a href="classes.html" onMouseover="showmenu(event,linkset[0])" onMouseout="delayhidemenu()">
+Classes
+</a>
+</font>
+</td>
+
+
+<td class="menulines" align="center">
+<font face="Arial Narrow"  size="2">
+<a href="performance.html" onMouseover="showmenu(event,linkset[1])" onMouseout="delayhidemenu()">
+Performance Groups
+</a>
+</font>
+</td>
+
+<!--
+<td class="menulines" align="center">
+<font face="Arial Narrow" size="2" color="silver">
+<a href="#" onMouseover="showmenu(event,linkset[2])" onMouseout="delayhidemenu()">
+Personal
+</a>
+</font>
+</td>
+-->
+
+<td class="menulines" align="center">
+<font face="Arial Narrow" size="2">
+<a href="percussion main page.html" onMouseover="showmenu(event,linkset[4])" onMouseout="delayhidemenu()">
+Percussion Program
+</a>
+</font>
+</td>
+
+<td class="menulines" align="center">
+<font face="Arial Narrow" size="2" color="silver">
+<a href="https://web.archive.org/web/1998/http://www.byui.edu/Music/home">
+Music Department
+</a>
+</font>
+</td> 
+
+</tr>
+</table>
+
+
+<table>
+
+<tr>
+<td>
+ <table background="welcome.jpg" width="230" height="250">
+ <tr>
+ <td align="right" valign="bottom" class="menuline">
+ <font face="arial narrow" size="2" color="silver">
+ OFFICE PHONE: 208-496-1291
+ <br />
+ E-MAIL:&nbsp&nbsp<a href="mailto:taylord@byui.edu">TAYLORD@BYUI.EDU</a>
+ <br />
+ <a href="https://web.archive.org/web/1998/http://spencer.byui.edu/cgidev2p/SRRFACNA.PGM?user=TAYLORD&term=200208">CLASS SCHEDULE</a>
+ </td>
+ </font>
+ </tr>
+ </table>
+</td>
+
+<td align="RIGHT" valign="top" WIDTH="225">
+<img src="TextTaylor3.jpg" />
+</td>
+
+<td align="left" valign="bottom">
+<img src="Taylor Pic3.jpg" />
+</td>
+
+</tr>
+</table>
+
+<div id="popmenu" class="menuskin" onMouseover="clearhidemenu();highlightmenu(event,'on')" onMouseout="highlightmenu(event,'off');dynamichide(event)">
+</div>
+
+</body>
+</html>

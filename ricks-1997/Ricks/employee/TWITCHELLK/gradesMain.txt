@@ -1,0 +1,37 @@
+void main (void)
+/***********************************************************************
+* Invokes functions to output instructions to the user
+* (outputInstructions), get input from the user (getInput), check the
+* user's input for errors (noErrors), calculate the grade given the
+* user's input (calculateLetterGrade and calculateGradeSign), and
+* output the results (output).
+* -- outputInstructions outputs user instructions
+* -- getInput returns false if the user specifies to quit; otherwise
+*    it returns true. getInput also returns the integer grade entered
+*    by the user
+* -- noErrors returns true if the user's input is valid; otherwise
+*    it returns false
+* -- calculateLetterGrade returns a character representing the letter
+*    grade, given the user input
+* -- calculateGradeSign returns a character representing the grade
+*    sign (+, -, or null), given the user input
+* -- output outputs the results to the user
+***********************************************************************/
+{
+   int userInput;
+   char letterGrade;
+   char gradeSign;
+
+   outputInstructions ();
+   while (getInput (userInput))
+   {
+      // we have input from the user
+      if (noErrors (userInput))
+      {
+         // we have valid input from the user
+         letterGrade = calculateLetterGrade (userInput);
+         gradeSign = calculateGradeSign (userInput);
+         output (userInput, letterGrade, gradeSign);
+      }
+   }
+}

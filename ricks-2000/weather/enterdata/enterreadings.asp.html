@@ -1,0 +1,861 @@
+<script>
+
+var x = 0;
+var y = 0;
+var WindowOpen = 0;
+var currDate;
+
+
+function IsOpen()
+{
+	if(WindowOpen)
+	{
+		calendarWindow.close();
+		WindowOpen = 0;
+	}
+	
+}
+
+ns4 = (document.layers)? true:false
+ie4 = (document.all)? true:false
+
+// Microsoft Stupidity Check.
+if (ie4) 
+{	
+	if (navigator.userAgent.indexOf('MSIE 5')>0) 
+	{
+		ie5 = true;
+	} 
+	else 
+	{
+		ie5 = false; 
+	}
+} 
+else 
+{
+	ie5 = false;
+}
+
+if ( (ns4) || (ie4) ) 
+{
+	document.onmousemove = mouseMove
+	if (ns4) document.captureEvents(Event.MOUSEMOVE)
+}
+function mouseMove(e) 
+{
+	if (ns4) {x=e.pageX; y=e.pageY;}
+	if (ie4) {x=event.x; y=event.y;}
+	if (ie5) {x=event.x+document.body.scrollLeft; y=event.y+document.body.scrollTop;}
+}
+
+function makeArray(n) 
+{
+	this.length = n;
+	return this;
+}
+
+function init () 
+{
+
+	today = currDate;
+
+	currMonth       = today.getMonth();
+	msPerDay 	      = 24*60*60*1000;
+	cookieString    = "dispMonth="+currMonth+";";
+	document.cookie = cookieString;
+	startOfString   = document.cookie.indexOf("dispMonth");
+	countbegin      = document.cookie.indexOf("=",startOfString) + 1;
+	countend        = document.cookie.indexOf(";",countbegin);
+	if (countend == -1) 
+	{
+		countend = document.cookie.length;
+	}
+
+	dispMonth     = eval ("document.cookie.substring(countbegin,countend)");
+	firstOfMonth  = new Date(today.getYear(),dispMonth,1);
+	monthName     = new makeArray(12);
+	monthName[1]  = "Jan";
+	monthName[2]  = "Feb";
+	monthName[3]  = "Mar";
+	monthName[4]  = "Apr";
+	monthName[5]  = "May";
+	monthName[6]  = "Jun";
+	monthName[7]  = "Jul";
+	monthName[8]  = "Aug";
+	monthName[9]  = "Sep";
+	monthName[10] = "Oct";
+	monthName[11] = "Nov";
+	monthName[12] = "Dec";
+}
+
+function openCalendar (dateFldname, dateStr) 
+{
+	var strtPos = 0;
+	var endPos = dateStr.indexOf('/', strtPos);
+	var tmpMonth = dateStr.substring(strtPos, endPos);
+	strtPos = endPos+1;
+	endPos = dateStr.indexOf('/', strtPos);
+	var tmpDate = dateStr.substring(strtPos, endPos);
+	strtPos = endPos+1;
+	var tmpYear = dateStr.substring(strtPos, 10);
+
+	/* document.forms[0].End_Date.value = tmpMonth + '/' + tmpDate + '/' + tmpYear; */
+
+	currDate = new Date(tmpYear, tmpMonth-1, tmpDate);
+	
+	x = x-155;
+	y = y+125;
+	
+	init();
+	dateFld  = dateFldname;
+	windowOptions  = "left="+x+",top="+y+",toolbar=no,location=no,directories=no,status=no,menubar=no,resizable=yes,copyhistory=yes,dependent=yes,width=150,height=150";
+	calendarWindow = this.open("","calendarWindow",windowOptions);
+	calendarWindow.callingForm = this;
+	redraw();
+}
+
+function redraw() 
+{
+	calendarWindow.callingForm = this;
+
+	temyr = today.getYear();
+
+	if (temyr < 50)
+	   temyr = temyr + 2000;
+	   
+	else if (temyr < 100)
+		temyr = temyr + 1900;
+	
+	tempyr = new String(temyr);
+	
+	if ( tempyr.length == 3 ) 
+	{  
+		var tempYear = temyr + 1900;
+	} 
+	else 
+	{
+		var tempYear = temyr;
+	}
+	
+
+	firstOfMonth = new Date(tempYear,dispMonth,1);
+	calendarWindow.document.open();
+	calTitle = "<TITLE>Calendar</TITLE>";
+	calendarWindow.document.write(calTitle);
+	drawCalendar(firstOfMonth);
+	calendarWindow.document.write(htmlBuffer);
+	calendarWindow.document.close();
+	calendarWindow.callingForm = this;
+	calendarWindow.focus();
+}
+
+function fillDate(filler) 
+{
+	var time=new Date(filler);
+	var lmonth=time.getMonth() + 1;
+	var date=time.getDate();
+	var year=time.getYear();
+	if (year < 2000)    // Y2K Fix, Isaac Powell
+	year = year + 1900;
+	filler =  lmonth + '/' + date + '/' + year;
+
+	eval("document.forms[0]."+dateFld+".value = filler");
+   	eval("document.forms[0]."+dateFld+".focus()");
+   	eval("document.forms[0]."+dateFld+".blur()");
+
+	calendarWindow.close();
+}
+
+function changeMonth (increment) 
+{
+	nextMonth = dispMonth;
+	if (increment == 1) 
+	{
+		nextMonth++ ;
+	} 
+	else 
+	{
+		nextMonth-- ;
+	}
+	
+	dispMonth = nextMonth;
+	document.cookie="dispMonth="+nextMonth;
+	redraw();
+}
+
+function drawCalendar (theDate) 
+{
+	WindowOpen = 1;
+	monthNum = theDate.getMonth() + 1;
+	htmlBuffer  = "<HTML>";
+	htmlBuffer += "<BODY topmargin='0' leftmargin='0' marginheight='0' marginwidth='0' style='border-style:none;'>";
+	htmlBuffer += "<style type='text/css'> <!-- a {  text-decoration: none} --> </style>";
+	htmlBuffer += "<FORM>";
+	htmlBuffer += "<CENTER><TABLE BORDER='0' WIDTH='100%' cellspacing='0' cellpadding='0'><TR BGCOLOR='#6666FF'>";
+	htmlBuffer += "<TD ALIGN=RIGHT><a href='javascript:callingForm.changeMonth(-1)'><img src='prev.gif' border='0'></a></TD>";
+	htmlBuffer += "<TD ALIGN=CENTER COLSPAN='5'><FONT COLOR='WHITE'><B> ";
+	htmlBuffer += monthName[monthNum];
+	temyr = theDate.getYear();
+	
+	if (temyr < 2000)
+		temyr = temyr + 1900;
+	
+	tempyr = new String(temyr);
+	
+	if ( tempyr.length == 3 ) 
+	{  
+		var tempYear = temyr + 1900;
+	} 
+	else 
+	{
+		var tempYear = temyr;
+	}
+	
+	htmlBuffer += " " + tempYear;
+	htmlBuffer += "</B></FONT></TD><TD ALIGN=RIGHT><a href='javascript:callingForm.changeMonth(1)'><img src='next.gif' border='0'></a></TD>";
+	htmlBuffer += "</TR><TR BGCOLOR='#E8E8E8'>";
+	htmlBuffer += "<TD ALIGN=CENTER>S</TD><TD ALIGN=CENTER>M</TD><TD ALIGN=CENTER>T</TD><TD ALIGN=CENTER>W</TD><TD ALIGN=CENTER>T</TD><TD ALIGN=CENTER>F</TD><TD ALIGN=CENTER>S</TD></TR><TR BGCOLOR='#E8E8E8'>";
+	drawBody(theDate,tempYear);
+	htmlBuffer += "</TR></TABLE>";
+	htmlBuffer += "</BODY></HTML>";
+}
+
+function drawBody (theDate,theYear) 
+{
+
+	var TodayDate = currDate;
+
+	thisMonth = theDate.getMonth();
+	thisDate  = theDate.getDate();
+	Today   = TodayDate.getDate();
+	TodayMonth = TodayDate.getMonth();
+	firstSunday(theDate);
+	for (w=0; w<6; w++) 
+	{
+		for (d=0; d<7; d++) 
+		{
+			date = theDate.getDate();
+			htmlBuffer   += "<TD ALIGN=CENTER>";
+			if (theDate.getMonth() != thisMonth) 
+			{
+				htmlBuffer += "<BR>";
+			}
+			else 
+			{
+				sendvalue = (thisMonth+1) + "/" + date + "/" + theYear
+				htmlBuffer += "<a href=javascript:callingForm.fillDate('" + sendvalue  + "')>"
+				
+				if((Today == date)&&(TodayMonth == thisMonth))
+				{
+					htmlBuffer += "<font color='red'>"
+				}
+				
+				htmlBuffer += date;
+				
+				if((Today == date)&&(TodayMonth == thisMonth))
+				{
+					htmlBuffer += "</font>"
+				}
+					
+				htmlBuffer += "</a>";
+			}
+			
+			newTime = theDate.getTime() + msPerDay;
+			theDate.setTime(newTime);
+			if (theDate.getHours() != 23) 
+			{
+				theDate.setTime(newTime + 3600000);
+			} 
+		}
+	
+		htmlBuffer += "</TD><TR BGCOLOR='#E8E8E8'>";
+	}
+	
+	htmlBuffer += "</FORM>";
+}
+
+function firstSunday (fromDate) 
+{
+	while (fromDate.getDay() != 0) 
+	{
+		newTime = fromDate.getTime() - msPerDay;
+		fromDate.setTime(newTime);
+	}
+}
+
+//-->
+
+</script><SCRIPT LANGUAGE="JavaScript">
+
+function getDaysReadings()
+{
+	document.forms[0].action = "enterreadings.asp.html";
+	document.forms[0].submit();
+}
+
+function saveData()
+{
+	var ok = true;
+	
+	// verify that no fields are blank
+	if 	(document.forms[0].MaxAirTmp.value == "")
+	{
+		alert("You must enter a value for Maximum Air Temperature");
+       document.forms[0].MaxAirTmp.focus();
+		ok = false;
+	}	
+	else if (document.forms[0].MinAirTmp.value == "")
+	{
+  		alert("You must enter a value for Minimum Air Temperature");
+       document.forms[0].MinAirTmp.focus();
+		ok = false;
+	}	
+
+  	else if (document.forms[0].Precip.value == "")
+	{
+  		alert("You must enter a value for Precipitation");
+       document.forms[0].Precip.focus();
+		ok = false;
+	}	
+
+   	else if (document.forms[0].SnwAccum.value == "")
+	{   	
+		alert("You must enter a value for Snow Accumulation");
+       document.forms[0].SnwAccum.focus();
+		ok = false;
+	}	
+
+	else if (document.forms[0].SnwOnGrnd.value == "")
+	{
+		alert("You must enter a value for Snow on Ground");
+       document.forms[0].SnwOnGrnd.focus();
+		ok = false;
+	}	
+
+	else if (document.forms[0].CurrWndMiles.value == "")
+	{
+		alert("You must enter a value for Today's Wind Miles");
+       document.forms[0].CurrWndMiles.focus();
+		ok = false;
+	}	
+	
+	else if (document.forms[0].PrevWndMiles.value == "")
+	{
+		alert("You must enter a value for Yesterday's Wind Miles");
+       document.forms[0].PrevWndMiles.focus();
+		ok = false;
+	}	
+
+	else if (document.forms[0].MaxWndGust.value == "")
+	{
+		alert("You must enter a value for Maximum Wind Gust");
+       document.forms[0].MaxWndGust.focus();
+		ok = false;
+	}	
+
+	else if (document.forms[0].MaxSoilTmp.value == "")
+	{
+		alert("You must enter a value for Maximum Soil Temperature");
+       document.forms[0].MaxSoilTmp.focus();
+		ok = false;
+	}
+		
+	else if (document.forms[0].MinSoilTmp.value == "")
+	{
+		alert("You must enter a value for Minimum Soil Temperature");
+       document.forms[0].MinSoilTmp.focus();
+		ok = false;
+	}	
+
+	else if (document.forms[0].FrstDpth.value == "")
+	{
+		alert("You must enter a value for Frost Depth");
+       document.forms[0].FrstDpth.focus();
+		ok = false;
+	}	
+	
+  	else if (document.forms[0].Evap.value == "")
+	{
+  		alert("You must enter a value for Evaporation");
+       document.forms[0].Evap.focus();
+		ok = false;
+	}	
+
+	if (ok)
+	   document.forms[0].action = "saveReadings.asp";
+	else
+		document.forms[0].action = ""; 
+		
+	return(ok);	
+}
+
+function clrFlds()
+{
+	document.forms[0].MaxAirTmp.value = "";
+	document.forms[0].MinAirTmp.value = "";
+	document.forms[0].Precip.value = "";
+	document.forms[0].SnwAccum.value = "";
+	document.forms[0].SnwOnGrnd.value = "";
+	document.forms[0].CurrWndMiles.value = "";
+	document.forms[0].WndSpd.value = "";
+	document.forms[0].MaxWndGust.value = "";
+	document.forms[0].MaxSoilTmp.value = "";
+	document.forms[0].MinSoilTmp.value = "";
+	document.forms[0].FrstDpth.value = "";
+	document.forms[0].Evap.value = "";
+	
+	document.forms[0].Reading_Date.focus();
+}
+
+function cvtTrace(inputValue)
+{
+	var inputStr = inputValue.toString();
+	inputStr = inputStr.toUpperCase();
+	inputStr = inputStr.slice(0,1);
+	if (inputStr == "T")
+		tmpValue = 0.001;
+	else
+	   tmpValue = inputValue;
+	   
+	return(tmpValue);   
+}
+
+function isNumber(inputVal)
+{
+   inputStr = inputVal.toString()
+   var decPntCnt = 0;
+   for (var i=0; i<inputStr.length; i++)
+   {
+  	   var oneChar = inputStr.charAt(i);
+
+  	   if (oneChar == ".")
+  	   	   decpntCnt ++;
+  	   
+  	   else if (oneChar == "-")
+  	   {
+   	      if (i > 0)
+             return false;
+          
+   	      else if (inputStr.length == 1)
+		      return false;                    
+  	   }	
+  	      
+  	   	else if (oneChar < "0"  ||  oneChar > "9") 
+	      return false;
+	}
+ 
+   if (decPntCnt <= 1)
+      return true; 
+   else
+   		return false;
+}
+
+
+function validateMaxAirTmp()
+{
+	var ok = true;
+	
+	if (!isNumber(document.forms[0].MaxAirTmp.value))
+		ok =  false;
+
+   if ((parseFloat(document.forms[0].MaxAirTmp.value) < -60) || 
+       (parseFloat(document.forms[0].MaxAirTmp.value) > 115))
+		ok =  false; 
+   
+   if (!ok)
+   {
+      window.alert("Invalid value specified for Maximum Air Temperature");
+      document.forms[0].MaxAirTmp.focus();
+	}
+}
+
+
+function validateMinAirTmp()
+{	
+	var ok = true;
+	
+	if (!isNumber(document.forms[0].MinAirTmp.value))
+		ok =  false;
+
+	else if ((parseFloat(document.forms[0].MinAirTmp.value) < -60) || 
+            (parseFloat(document.forms[0].MinAirTmp.value) > 115))
+		ok =  false;
+
+   if (!ok)
+   {
+      window.alert("Invalid value specified for Minimum Air Temperature");
+      document.forms[0].MinAirTmp.focus();
+      return false;
+	}
+	
+	if (parseFloat(document.forms[0].MinAirTmp.value) > parseFloat(document.forms[0].MaxAirTmp.value))
+   {
+      window.alert("Minimum Air Temperature is greater that Maximum Air Temperature");
+      document.forms[0].MinAirTmp.focus();
+      return false;
+	}
+}
+
+
+function validatePrecip()
+{	
+	var ok = true;
+
+   var elmntValue = cvtTrace(document.forms[0].Precip.value);
+   document.forms[0].Precip.value = elmntValue;
+
+   if (!isNumber(document.forms[0].Precip.value))
+		ok =  false;
+
+   if ((parseFloat(document.forms[0].Precip.value) < 0) || 
+       (parseFloat(document.forms[0].Precip.value) > 15))
+		ok =  false;
+   if (!ok)
+   {
+      window.alert("Invalid value specified for Precipitation");
+      document.forms[0].Precip.focus();
+      return false;
+	}
+}
+
+
+function validateSnwAccum()
+{	
+	var ok = true;
+
+   var elmntValue = cvtTrace(document.forms[0].SnwAccum.value);
+   document.forms[0].SnwAccum.value = elmntValue;
+
+   if (!isNumber(document.forms[0].SnwAccum.value))
+		ok =  false;
+
+   if ((parseFloat(document.forms[0].SnwAccum.value) < 0) || 
+       (parseFloat(document.forms[0].SnwAccum.value) > 200))
+		ok =  false;
+   if (!ok)
+   {
+      window.alert("Invalid value specified for Snow Accumulation");
+      document.forms[0].SnwAccum.focus();
+      return false;
+	}
+}
+
+
+function validateSnwOnGrnd()
+{	
+	var ok = true;
+
+   var elmntValue = cvtTrace(document.forms[0].SnwOnGrnd.value);
+   document.forms[0].SnwOnGrnd.value = elmntValue;
+
+   if (!isNumber(document.forms[0].SnwOnGrnd.value))
+		ok =  false;
+	
+   if ((parseFloat(document.forms[0].SnwOnGrnd.value) < 0) || 
+       (parseFloat(document.forms[0].SnwOnGrnd.value) > 200))
+		ok =  false;
+
+   if (!ok)
+   {
+      window.alert("Invalid value specified for Snow on Ground");
+      document.forms[0].SnwOnGrnd.focus();
+      return false;
+	}
+}
+
+
+function calcWndSpd()
+{
+	var ok = true;
+
+	if (!isNumber(document.forms[0].CurrWndMiles.value))
+		ok =  false;
+		
+   if ((parseFloat(document.forms[0].CurrWndMiles.value) < 0) || 
+       (parseFloat(document.forms[0].CurrWndMiles.value) > 10240))
+		ok =  false;
+
+   if (!ok)
+   {
+      window.alert("Invalid value specified for Todays Wind Speed");
+      document.forms[0].CurrWndMiles.focus();
+      return false;
+	}
+	
+	if (!isNumber(document.forms[0].PrevWndMiles.value))
+		ok =  false;
+
+   if ((parseFloat(document.forms[0].PrevWndMiles.value) < 0) || 
+       (parseFloat(document.forms[0].PrevWndMiles.value) > 10240))
+		ok =  false;
+
+   if (!ok)
+   {
+      window.alert("Invalid value specified for Yesterdays Wind Speed");
+      document.forms[0].PrevWndMiles.focus();
+      return false;
+	}	
+	
+	if (document.forms[0].CurrWndMiles.value != "")
+	{
+		var tmpSpd;
+		if (document.forms[0].PrevWndMiles.value >= 10000)
+			tmpSpd = ( (parseFloat(document.forms[0].PrevWndMiles.value) - 10000) + 
+       	          parseFloat(document.forms[0].CurrWndMiles.value)) / 24;
+		else
+   			tmpSpd = (parseFloat(document.forms[0].CurrWndMiles.value) - 
+       	          parseFloat(document.forms[0].PrevWndMiles.value)) / 24;
+
+   		tmpSpd = tmpSpd * 100;
+   		tmpSpd = Math.round(tmpSpd)/100;
+   		document.forms[0].WndSpd.value = tmpSpd;
+   	}		
+}
+
+
+
+function validateMaxWndGust()
+{	
+	var ok = true;
+
+	if (!isNumber(document.forms[0].MaxWndGust.value))
+		ok =  false;
+
+   if ((parseFloat(document.forms[0].MaxWndGust.value) < 0) || 
+       (parseFloat(document.forms[0].MaxWndGust.value) > 300))
+		ok =  false;
+
+   if (!ok)
+   {
+      window.alert("Invalid value specified for Maximum Wind Gust");
+      document.forms[0].MaxWndGust.focus();
+      return false;
+	}
+}
+
+
+function validateMaxSoilTmp()
+{	
+	var ok = true;
+
+	if (!isNumber(document.forms[0].MaxSoilTmp.value))
+		ok =  false;
+
+   if ((parseFloat(document.forms[0].MaxSoilTmp.value) < -60) || 
+       (parseFloat(document.forms[0].MaxSoilTmp.value) > 115))
+		ok =  false;
+
+   if (!ok)
+   {
+      window.alert("Invalid value specified for Maximum Soil Temperature");
+      document.forms[0].MaxSoilTmp.focus();
+      return false;
+	}
+}
+
+
+function validateMinSoilTmp()
+{	
+	var ok = true;
+
+	if (!isNumber(document.forms[0].MinSoilTmp.value))
+		ok =  false;
+		
+	if ((parseFloat(document.forms[0].MinSoilTmp.value) < -60) || 
+        (parseFloat(document.forms[0].MinSoilTmp.value) > 115))
+		ok =  false;
+
+   if (!ok)
+   {
+      window.alert("Invalid value specified for Minimum Soil Temperature");
+      document.forms[0].MinSoilTmp.focus();
+      return false;
+	}
+
+	if (parseFloat(document.forms[0].MinSoilTmp.value) > parseFloat(document.forms[0].MaxSoilTmp.value))
+   {
+      window.alert("Minimum Soil Temperature is greater that Maximum Soil Temperature");
+      document.forms[0].MinSoilTmp.focus();
+      return false;
+	}
+}
+	
+	
+function validateFrstDpth()
+{	
+	var ok = true;
+
+	if (!isNumber(document.forms[0].FrstDpth.value))
+		ok =  false;
+			
+   if ((parseFloat(document.forms[0].FrstDpth.value) < 0) || 
+       (parseFloat(document.forms[0].FrstDpth.value) > 120))
+		ok =  false;
+
+   if (!ok)
+   {
+      window.alert("Invalid value specified for Frost Depth");
+      document.forms[0].FrstDpth.focus();
+      return false;
+	}
+}
+
+
+function validateEvap()
+{	
+	var ok = true;
+
+	if (!isNumber(document.forms[0].Evap.value))
+		ok =  false;
+
+   if ((parseFloat(document.forms[0].Evap.value) < 0) || 
+       (parseFloat(document.forms[0].Evap.value) > 12))
+		ok =  false;
+
+   if (!ok)
+   {
+      window.alert("Invalid value specified for Evaporation");
+      document.forms[0].Evap.focus();
+      return false;
+	}
+}
+	
+</SCRIPT>
+
+<html>
+
+<head>
+<script src="../../_archive/compat.js"></script>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Enter Ricks College Weather Data</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+
+
+<form name="enterForm" method="POST" action="">
+
+<table border="0" width="504" cellspacing="0" cellpadding="0" height="305">
+    <tr>
+        <td width="168" align="center" valign="baseline" height="52">
+<img border="0" src="../images/smallRCLogo.jpg">
+        </td>
+        <td width="303" valign="middle" height="52" colspan="3">
+<b><font face="Times New Roman" size="4">Enter Ricks College Weather Data</font></b>
+        </td>
+    </tr>
+    
+    <tr>        
+    <td width="168" align="right" valign="baseline" height="26">
+<font face="Arial" size="2"><b>Date&nbsp;&nbsp;</b></font>
+        </td>
+        <td width="52" valign="baseline" height="26">
+        <input type = "text" name ="Reading_Date" value="11/30/2002" size="10" tabindex="1" onblur="javascript:getDaysReadings()">
+        </td>    
+        <td width="52" valign="baseline" height="26">
+        <a href="javascript:openCalendar('Reading_Date', document.forms[0].Reading_Date.value)" ><img src="../calendar.gif" border="0" align="absbottom" vspace="1"></a>
+        </td>    
+        <td width="200" valign="baseline" height="26">
+        </td>    
+    </tr>
+    
+    <tr>
+      <td width="168" align="right" height="35" valign="baseline"><font face="Arial" size="2"><br>
+        <b> Air
+      Temperature</b> </font><font face="Arial" size="1">(F)&nbsp;&nbsp;</font></td>
+      <td width="50" valign="baseline" align="left" height="35"><font face="Arial" size="1">Maximum<br>
+        </font><input type="text" name="MaxAirTmp" size="10" value="" tabindex="2" onblur="javascript:validateMaxAirTmp()"></td>
+      <td width="54" valign="baseline" align="left" height="35"><font face="Arial" size="1">Minimum<br>
+        </font><input type="text" name="MinAirTmp" size="10" value="" tabindex="3" onblur="javascript:validateMinAirTmp()"></td>
+      <td width="200" valign="baseline" align="left" height="35">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="168" align="right" height="11" valign="baseline"><font face="Arial" size="2"><b>Precipitation</b>
+        </font><font face="Arial" size="1">(in)&nbsp;&nbsp;</font></td>
+      <td width="50" valign="baseline" align="left" height="11"><input type="text" name="Precip" size="10" value="" tabindex="4" onblur="javascript: validatePrecip()"></td>
+      <td width="54" valign="baseline" align="left" height="11"></td>
+      <td width="200" valign="baseline" align="left" height="11"></td>
+    </tr>
+    <tr>
+      <td width="168" align="right" height="40" valign="baseline"><font face="Arial" size="2"><br>
+        <b>Snow</b> </font><font face="Arial" size="1">(in)&nbsp;</font><font face="Arial" size="2">&nbsp;</font></td>
+      <td width="50" valign="baseline" align="left" height="40"><font face="Arial" size="1">Accumulation<br>
+        </font><input type="text" name="SnwAccum" size="10" value="" tabindex="5"  onblur="javascript: validateSnwAccum()"></td>
+      <td width="54" valign="baseline" align="left" height="40"><font face="Arial" size="1">On
+        Ground</font><input type="text" name="SnwOnGrnd" size="10" value="" tabindex="6"  onblur="javascript: validateSnwOnGrnd()"></td>
+      <td width="200" valign="baseline" align="left" height="40">&nbsp;
+        <font face="Arial" size="1"><br>
+        </font></td>
+    </tr>
+    <tr>
+      <td width="168" align="right" height="44" valign="baseline"><font face="Arial" size="2"><br>
+        <b>
+        Wind</b> </font><font face="Arial" size="1">(miles)&nbsp;&nbsp;</font></td>
+      <td width="50" valign="baseline" align="left" height="44"><font face="Arial" size="1">Today<br>
+        </font><input type="text" name="CurrWndMiles" size="10" value="" tabindex="7" onchange="javascript:calcWndSpd()"></td>
+      <td width="54" valign="baseline" align="left" height="44"><font face="Arial" size="1">Yesterday<br>
+        </font><input type="text" name="PrevWndMiles" size="10" value="" onchange="javascript:calcWndSpd()"></td>
+        <input type="hidden" name="oldPrevWndMiles" value="">
+      <td width="200" valign="baseline" align="left" height="44"><font face="Arial" size="1">Wind
+        Speed (mph)<br>
+        </font><input type="text" name="WndSpd" size="10" readonly value=""></td>
+    </tr>
+    <tr>
+      <td width="168" align="right" height="16" valign="baseline"><font face="Arial" size="2">
+        <b>
+        Max. Wind Gust</b> </font><font face="Arial" size="1">(mph)&nbsp;&nbsp;</font></td>
+      <td width="50" valign="baseline" align="left" height="16"><input type="text" name="MaxWndGust" size="10" value="" tabindex="8" onblur="javascript: validateMaxWndGust()">  
+      </td>
+      <td width="54" valign="baseline" align="left" height="16">  
+      </td>
+      <td width="200" valign="baseline" align="left" height="16"></td>
+    </tr>
+    <tr>
+      <td width="168" align="right" height="33" valign="baseline"><font face="Arial" size="2"><br>
+        <b> Soil
+        Temperature</b> </font><font face="Arial" size="1">(F)&nbsp;&nbsp;</font></td>
+      <td width="50" valign="baseline" align="left" height="33"><font face="Arial" size="1">Maximum<br></font>
+      <input type="text" name="MaxSoilTmp" size="10" value="" tabindex="9" onblur="javascript: validateMaxSoilTmp()">  
+      </td>
+      <td width="54" valign="baseline" align="left" height="33"><font face="Arial" size="1">Minimum</font><input type="text" name="MinSoilTmp" size="10" value="" tabindex="10" onblur="javascript: validateMinSoilTmp()">  
+      </td>
+      <td width="200" valign="baseline" align="left" height="33"><font face="Arial" size="1"><br>
+        </font></td>
+    </tr>
+    <tr>
+      <td width="168" align="right" height="28" valign="baseline"><font face="Arial" size="2"><b>Frost Depth</b>
+        </font><font face="Arial" size="1"><i>(</i>cm)&nbsp;&nbsp;</font></td>
+      <td width="50" valign="baseline" align="left" height="28">
+      <input type="text" name="FrstDpth" size="10" value="" tabindex="11" onblur="javascript: validateFrstDpth()">  
+      </td>
+      <td width="54" valign="baseline" align="left" height="28"></td>
+      <td width="200" valign="baseline" align="left" height="28"></td>
+    </tr>
+    <tr>
+      <td width="168" align="right" height="26" valign="baseline"><font face="Arial" size="2"><b>Evaporation</b>
+        </font><font face="Arial" size="1">(in)&nbsp;&nbsp;</font></td>
+      <td width="50" valign="baseline" align="left" height="26">
+      <input type="text" name="Evap" size="10" value="" tabindex="12" onblur="javascript: validateEvap()">  
+      </td>
+      <td width="54" valign="baseline" align="left" height="26"></td>
+      <td width="200" valign="baseline" align="left" height="26"></td>
+    </tr>
+    <tr>
+      <td width="168" align="right" height="38" valign="bottom"><font color="#FF0000" face="Arial" size="2"><b>&nbsp;&nbsp;&nbsp; </b></font></td>
+      <td width="82" valign="baseline" align="right" height="38"><input type="submit" value="Save" name="B1" tabindex="13"  onfocus="javascript:saveData()"></td>
+      <td width="85" valign="baseline" align="left" height="38"><b><font color="#FF0000" face="Arial" size="2">
+        <input type="button" value="Clear" name="Clear" tabindex="14" onclick="javascript:clrFlds()"></font> </b></td>
+      <td width="146" valign="baseline" align="left" height="38"><font color="#FF0000"><b></b></font></td>
+    </tr>
+  </table>
+</form>
+
+</body>
+
+</html>
+
+

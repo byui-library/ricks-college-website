@@ -1,0 +1,829 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<script src="../_archive/compat.js"></script>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./registrarcalendar_files/filelist.xml">
+<link rel=Edit-Time-Data href="./registrarcalendar_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>RO-Registrar Calendar</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>mar97021</o:Author>
+  <o:LastAuthor>mar97021</o:LastAuthor>
+  <o:Revision>49</o:Revision>
+  <o:TotalTime>117</o:TotalTime>
+  <o:Created>2002-03-11T17:20:00Z</o:Created>
+  <o:LastSaved>2002-04-02T17:07:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>937</o:Words>
+  <o:Characters>5344</o:Characters>
+  <o:Company>BYU-IDAHO</o:Company>
+  <o:Lines>44</o:Lines>
+  <o:Paragraphs>10</o:Paragraphs>
+  <o:CharactersWithSpaces>6562</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-font-kerning:0pt;
+	font-weight:bold;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:18.0pt;
+	mso-bidi-font-size:15.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:white;
+	mso-text-animation:none;
+	text-decoration:none;
+	text-underline:none;
+	text-decoration:none;
+	text-line-through:none;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:white;
+	mso-text-animation:none;
+	text-decoration:none;
+	text-underline:none;
+	text-decoration:none;
+	text-line-through:none;}
+p
+	{margin-right:0in;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:1896549406;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2137921824 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+<script language="JavaScript">
+<!--
+floatX=1;
+floatY=1;
+layerwidth=11;
+layerheight=25;
+align="center";
+valign="bottom";
+delayspeed=3;
+
+// This script is copyright (c) Henrik Petersen, NetKontoret
+// Feel free to use this script on your own pages as long as you do not change it.
+// It is illegal to distribute the script as part of a tutorial / script archive.
+// Updated version available at: http://www.echoecho.com/toolfloatinglayer.htm
+// This comment and the 4 lines above may not be removed from the code.
+
+IE4=(document.all);
+NS4=(document.layers);
+
+function adjust() {
+if (NS4) {
+if (lastX==-1 || delayspeed==0)
+{
+lastX=window.pageXOffset + floatX;
+lastY=window.pageYOffset + floatY;
+}
+else
+{
+dx=Math.abs(window.pageXOffset+floatX-lastX);
+dy=Math.abs(window.pageYOffset+floatY-lastY);
+d=Math.sqrt(dx*dx+dy*dy);
+c=Math.round(d/10);
+if (window.pageXOffset+floatX>lastX) {lastX=lastX+delayspeed+c;}
+if (window.pageXOffset+floatX<lastX) {lastX=lastX-delayspeed-c;}
+if (window.pageYOffset+floatY>lastY) {lastY=lastY+delayspeed+c;}
+if (window.pageYOffset+floatY<lastY) {lastY=lastY-delayspeed-c;}
+}
+document.layers['floatlayer'].pageX = lastX;
+document.layers['floatlayer'].pageY = lastY;
+}
+else if (IE4){
+if (lastX==-1 || delayspeed==0)
+{
+lastX=document.body.scrollLeft + floatX;
+lastY=document.body.scrollTop + floatY;
+}
+else
+{
+dx=Math.abs(document.body.scrollLeft+floatX-lastX);
+dy=Math.abs(document.body.scrollTop+floatY-lastY);
+d=Math.sqrt(dx*dx+dy*dy);
+c=Math.round(d/10);
+if (document.body.scrollLeft+floatX>lastX) {lastX=lastX+delayspeed+c;}
+if (document.body.scrollLeft+floatX<lastX) {lastX=lastX-delayspeed-c;}
+if (document.body.scrollTop+floatY>lastY) {lastY=lastY+delayspeed+c;}
+if (document.body.scrollTop+floatY<lastY) {lastY=lastY-delayspeed-c;}
+}
+document.all['floatlayer'].style.posLeft = lastX;
+document.all['floatlayer'].style.posTop = lastY;
+} 
+setTimeout('adjust()',50);
+}
+
+function define()
+{
+if (NS4) 
+{ 
+if (align=="left") {floatX=ifloatX};
+if (align=="right") {floatX=window.innerWidth-ifloatX-layerwidth-20};
+if (align=="center") {floatX=Math.round((window.innerWidth-20)/2)-Math.round(layerwidth/2)};
+if (valign=="top") {floatY=ifloatY};
+if (valign=="bottom") {floatY=window.innerHeight-ifloatY-layerheight};
+if (valign=="center") {floatY=Math.round((window.innerHeight-20)/2)-Math.round(layerheight/2)};
+}
+if (IE4) 
+{
+if (align=="left") {floatX=ifloatX};
+if (align=="right") {floatX=document.body.offsetWidth-ifloatX-layerwidth-20}
+if (align=="center") {floatX=Math.round((document.body.offsetWidth-20)/2)-Math.round(layerwidth/2)}
+if (valign=="top") {floatY=ifloatY};
+if (valign=="bottom") {floatY=document.body.offsetHeight-ifloatY-layerheight}
+if (valign=="center") {floatY=Math.round((document.body.offsetHeight-20)/2)-Math.round(layerheight/2)}
+}
+}
+//-->
+</script>
+
+<script>
+<!--
+function land(ref, target)
+{
+lowtarget=target.toLowerCase();
+if (lowtarget=="_self") {window.location=loc;}
+else {if (lowtarget=="_top") {top.location=loc;}
+else {if (lowtarget=="_blank") {window.open(loc);}
+else {if (lowtarget=="_parent") {parent.location=loc;}
+else {parent.frames[target].location=loc;};
+}}}
+}
+function jump(menu)
+{
+ref=menu.choice.options[menu.choice.selectedIndex].value;
+splitc=ref.lastIndexOf("*");
+target="";
+if (splitc!=-1)
+{loc=ref.substring(0,splitc);
+target=ref.substring(splitc+1,1000);}
+else {loc=ref; target="_self";};
+if (ref != "") {land(loc,target);}
+}
+//-->
+</script>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<!--Beginning of Top and Left NavBar-->
+<script>
+        appName = "Registrar Calendar"
+</script>
+<LINK href="../../ricks-2000/navbar/sitenavbar11.css" type=text/css rel=stylesheet><script src="../navbar/sitenavbar.js"></script>
+
+<body lang=EN-US link=white vlink=white style='tab-interval:.5in'
+alink="#c0c0c0">
+
+<div class=Section1>
+
+<table border=1 cellspacing=0 cellpadding=0 align=left width=192
+ bgcolor="#002a54" style='width:2.0in;mso-cellspacing:0in;background:#002A54;
+ border:solid windowtext .5pt;mso-table-anchor-vertical:paragraph;mso-table-anchor-horizontal:
+ column;mso-table-left:left;mso-padding-alt:0in 0in 0in 0in'>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <h1><span style='color:white'>Students<o:p></o:p></span></h1>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="AcademicPolicies.htm">Academic
+  Policies</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="ASPP.htm">Academic Suspension/
+  Petition<span style="mso-spacerun: yes">  </span>Procedures</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="%2B-classes.htm">Adding and Dropping
+  Classes</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="AddressNameChange.htm">Address/Name Change</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="ChangePIN.htm">Change PIN</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="DisplayClassSchedule.htm">Display
+  Class Schedule</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="SFrequentlyAskedQuestions.htm">Frequently
+  Asked Questions</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="GraduationInformation.htm">Graduation
+  Information</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="ParentGuardianGradeRequest.htm">Parent/Guardian
+  Grade Request</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="registrarcalendar.htm">Registrar
+  Calendar</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="RegistrationInstructions.htm">Registration</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="StudentPrivacy.htm">Student Privacy</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="StudentVerification.htm">Student
+  Verification</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="TranscriptRequest.htm">Transcript
+  Request</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="TransferCreditInformation.htm">Transfer
+  Credit Information</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="WithdrawalInstructions.htm">Withdrawal
+  Instructions</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <h1><span style='color:white'>Faculty<o:p></o:p></span></h1>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="RegistrarsOfficeStudentData.htm">Registrar’s
+  Office Student Data</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:white'><a href="Organizational%20Chart.htm">Registrar’s
+  Office Staff</a><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;background:white;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:Arial;color:black'><a href="default.htm"><span style='color:black'>Registrar
+  Home</span></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p align=center style='text-align:center'><span style='font-size:36.0pt'>Registration
+Schedule<br>
+</span><span style='font-size:18.0pt'>Summer Terms 2002</span></p>
+
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><blockqoute></span>
+
+<p class=MsoNormal><span style='font-size:13.5pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;April
+8<span style='mso-tab-count:1'>      </span> <span style='mso-tab-count:1'>         </span><span
+style="mso-spacerun: yes"> </span>90 or more credits<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:13.5pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;April
+10<span style="mso-spacerun: yes">        
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;80 or more credits<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;April
+12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="mso-spacerun: yes">        
+</span>64 or more credits<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;April
+15<span style="mso-spacerun: yes">        
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;52 or more credits<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;April
+17<span style="mso-spacerun: yes">        
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;44 or more credits<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;April
+19<span style="mso-spacerun: yes">        
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32 or more credits<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+style="mso-spacerun: yes">  </span>April 22<span style="mso-spacerun:
+yes">              </span>24 or more credits<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;April
+24<span style="mso-spacerun: yes">              </span>16 or more credits<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;April
+26<span style="mso-spacerun: yes">              </span>12 or more credits<o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style="mso-spacerun: yes">                      
+</span>April 29<span style="mso-spacerun: yes">              </span>1 or more
+credits<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May
+1<span style="mso-spacerun: yes">         
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All remaining students who have been<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cleared
+for admissions (new freshmen)</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:2.0in;text-indent:.5in'>1.<span
+style="mso-spacerun: yes">  </span>Registration for both Summer Terms will
+begin April 8.<u2:p></u2:p></p>
+
+<p class=MsoNormal style='margin-left:2.0in;text-indent:.5in'>2.<span
+style="mso-spacerun: yes">  </span>Credit hours include cumulative and current.<u2:p></u2:p><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:2.5in'><u2:p></u2:p>3.<span
+style="mso-spacerun: yes">  </span>Add/drop dates and withdrawal dates will be
+determined by the start/stop date of<span style="mso-spacerun: yes">   
+</span>the class.</p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:13.5pt'><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<div align=center>
+
+<table border=0 cellspacing=0 cellpadding=0 width=759 style='width:569.2pt;
+ mso-cellspacing:0in;mso-padding-alt:3.75pt 3.75pt 3.75pt 3.75pt'>
+ <tr>
+  <td valign=top style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p align=center style='text-align:center'><script  src="../../ricks-2000/registrarsoffice/LeftNavBar.js">
+  </script><a name=RSW2002><span style='font-size:36.0pt'><!--End of Top and Left Nav Bars-->Registration
+  Schedule</span></a><span style='font-size:36.0pt'><br>
+  </span><span style='font-size:18.0pt'>Fall 2002</span> </p>
+  <div class=MsoNormal align=center style='text-align:center'>
+  <hr size=2 width="100%" align=center>
+  </div>
+  <blockqoute>
+  <p class=MsoNormal><span style='font-size:13.5pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June
+  10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="mso-spacerun: yes">        
+  </span>&nbsp;95 or more credits<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June
+  12 <span style="mso-spacerun:
+  yes">        </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;80 or more credits<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June
+  14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="mso-spacerun: yes">        
+  </span>&nbsp;70 or more credits<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June
+  17<span style="mso-spacerun: yes">        
+  </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60 or more credits<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June
+  19<span style="mso-spacerun: yes">        
+  </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50 or more credits<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June
+  21 <span style="mso-spacerun:
+  yes">        </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;40 or more credits<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+  style="mso-spacerun: yes">  </span>June 24<span style="mso-spacerun:
+  yes">               </span>30 or more credits<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June
+  26<span style="mso-spacerun: yes">               </span>20 or more credits<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June
+  28<span style="mso-spacerun: yes">               </span>12 or more credits<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-size:13.5pt'><span style="mso-spacerun:
+  yes">                       </span>July 1<span style="mso-spacerun: yes"> 
+  </span><span style="mso-spacerun: yes">                </span>1 or more
+  credits<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July
+  3<span style="mso-spacerun: yes">         
+  </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All remaining students
+  who have been<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cleared
+  for admissions (new freshmen)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September
+  11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding classes will end at 5:00 p.m.</span>
+  <o:p></o:p></p>
+  </blockqoute>
+  <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <ol style='margin-top:0in' start=1 type=1>
+   <li class=MsoNormal style='mso-list:l0 level1 lfo3;tab-stops:list .5in'>There
+       will no longer be a separate application for students who come on the
+       block.</li>
+   <li class=MsoNormal style='mso-list:l0 level1 lfo3;tab-stops:list .5in'>There
+       will no longer be a separate registration time for students coming on
+       the block.</li>
+   <li class=MsoNormal style='mso-list:l0 level1 lfo3;tab-stops:list .5in'>Students
+       will register by credit level for all classes offered during a semester
+       regardless of the starting time of the class.</li>
+   <li class=MsoNormal style='mso-list:l0 level1 lfo3;tab-stops:list .5in'>Students
+       may still initiate their studies in October or March, but will apply and
+       register at the same time as the other students.<span
+       style="mso-spacerun: yes">  </span>Such students will be classified as
+       full-time if they take 6 or more credits on the block.</li>
+   <li class=MsoNormal style='mso-list:l0 level1 lfo3;tab-stops:list .5in'>Academic
+       deadlines will be coordinated with the stat/stop dates of each class.</li>
+   <li class=MsoNormal style='mso-list:l0 level1 lfo3;tab-stops:list .5in'>There
+       will be no financial reimbursements if a student drops below a full-time
+       load during the semester, unless there is a complete withdrawal from all
+       classes. </li>
+   <li class=MsoNormal style='mso-list:l0 level1 lfo3;tab-stops:list .5in'>Registration
+       for classes will be as follows:</li>
+  </ol>
+  <p class=MsoNormal><span style="mso-spacerun: yes">                         
+  </span>Winter Semester: December</p>
+  <p class=MsoNormal><span style="mso-spacerun: yes">                          
+  </span>Summer Terms:<span style="mso-spacerun: yes">  </span>April</p>
+  <p class=MsoBodyText2 align=left style='text-align:left'><a name=TWSF2001><span
+  style="mso-spacerun: yes">                           </span>Fall
+  Semester:<span style="mso-spacerun: yes">     </span>June<br>
+  <br style='mso-special-character:line-break'>
+  <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+  <![endif]></a></p>
+  <p class=MsoNormal align=center style='text-align:center'><span
+  style='mso-bookmark:TWSF2001'><span style='font-size:36.0pt'>Test Week
+  Schedule</span></span><span style='font-size:36.0pt'><br>
+  </span><span style='font-size:18.0pt'>Winter 2002</span></p>
+  <div class=MsoNormal align=center style='text-align:center'>
+  <hr size=2 width="100%" align=center>
+  </div>
+  <p class=MsoNormal style='margin-bottom:12.0pt'>1. Instructors are required
+  to give a final exam or meet the class according to the schedule listed
+  below. NOTE: For classes which do not start on the hour, schedule tests for
+  the full hour in which the class meets. For example, if a class meets M W
+  9:35 - 10:50, schedule the test for the time reserved for classes meeting M W
+  10:00 - 10:50.<br>
+  <br>
+  2. In cases where you have conflicting examinations, or more than three
+  examinations in one day, individual arrangements for alternative tests times
+  should be made with the Instructor.<br>
+  <br>
+  3. Final exams for any classes not fitting this schedule, including those
+  which meet one day per week, should be given during the last class period or
+  at another time arranged by the Instructor.<br>
+  <br>
+  4. Travel plans are not considered to be extenuating circumstances for
+  adjusting your test schedule any exceptions must be approved by Max
+  Checketts, Assistant Academic Vice President.</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <div align=center>
+  <table border=0 cellspacing=0 cellpadding=0 style='mso-cellspacing:0in;
+   border:outset 1.5pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+   <tr>
+    <td width=95 valign=top style='width:71.25pt;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'><b>Time</b></p>
+    </td>
+    <td width=168 valign=top style='width:1.75in;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'><b>April 24<br>
+    Wednesday<o:p></o:p></b></p>
+    </td>
+    <td width=198 valign=top style='width:148.5pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'><b>April 25<br>
+    Thursday<o:p></o:p></b></p>
+    </td>
+    <td width=156 valign=top style='width:117.0pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'><b>April 26<br>
+    Friday<o:p></o:p></b></p>
+    </td>
+   </tr>
+   <tr>
+    <td width=95 valign=top style='width:71.25pt;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>7:30 - 9:00</p>
+    </td>
+    <td width=168 valign=top style='width:1.75in;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 2:00<br>
+    <br>
+    Day Class Met<br>
+    MW, MF, MWF,<br>
+    <span style="mso-spacerun: yes"> </span>WF</p>
+    </td>
+    <td width=198 valign=top style='width:148.5pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 8:00<br>
+    <br>
+    Day Class Met<br>
+    MW, MF, MWF, MWTF, WT, WF</p>
+    </td>
+    <td width=156 valign=top style='width:117.0pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 11:00<br>
+    <br>
+    Day Class Met<br>
+    MW, MF, MWF, MTWF, WT, WF</p>
+    </td>
+   </tr>
+   <tr>
+    <td width=95 valign=top style='width:71.25pt;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>9:10 - 10:40</p>
+    </td>
+    <td width=168 valign=top style='width:1.75in;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 3:00<br>
+    <br>
+    Day Class Met<br>
+    MW, MF, MWF, MWTF, WT, W</p>
+    </td>
+    <td width=198 valign=top style='width:148.5pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 8:00<br>
+    <br>
+    Day Class Met<br>
+    TT, MTT, MTTF, MTWT, MTWF, Daily</p>
+    </td>
+    <td width=156 valign=top style='width:117.0pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 11:00<br>
+    <br>
+    Day Class Met<br>
+    TT, MTT, MTTF, MTWT, MTWF, Daily</p>
+    </td>
+   </tr>
+   <tr>
+    <td width=95 valign=top style='width:71.25pt;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>10:50-12:20</p>
+    </td>
+    <td width=168 valign=top style='width:1.75in;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met at: 12:00<br>
+    <br>
+    Day Class Met<br>
+    MW, MF, MWF, MWTF, WT, W</p>
+    </td>
+    <td width=198 valign=top style='width:148.5pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met at: 3:00<br>
+    <br>
+    Day Class Met<br>
+    TT, MTT, MTTF, MTWT, MTWF, Daily</p>
+    </td>
+    <td width=156 valign=top style='width:117.0pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 9:00<br>
+    <br>
+    Day Class Met<br>
+    MW, MF, MWF, MTWF, WT, WF</p>
+    </td>
+   </tr>
+   <tr>
+    <td width=95 valign=top style='width:71.25pt;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>12:30 - 2:00</p>
+    </td>
+    <td width=168 valign=top style='width:1.75in;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 4:00<br>
+    <br>
+    Day Class Met<br>
+    MW, MF, MWF, MTWF, WT, WF</p>
+    </td>
+    <td width=198 valign=top style='width:148.5pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 9:00<br>
+    <br>
+    Day Class Met<br>
+    TT, MTT, MTTF, MTWT, MTWF, Daily</p>
+    </td>
+    <td width=156 valign=top style='width:117.0pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 12:00<br>
+    <br>
+    Day Class Met<br>
+    TT, MTT, MTTF, MTWT, MTWF, Daily</p>
+    </td>
+   </tr>
+   <tr>
+    <td width=95 valign=top style='width:71.25pt;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>2:10 - 3:40</p>
+    </td>
+    <td width=168 valign=top style='width:1.75in;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met at: 4:00<br>
+    <br>
+    Day Class Met<br>
+    TT, MTT, MTTF, MTWT, MTWF, Daily</p>
+    </td>
+    <td width=198 valign=top style='width:148.5pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 10:00<br>
+    <br>
+    Day Class Met<br>
+    MW, MF, MWF, MTWF, WT, WF</p>
+    </td>
+    <td width=156 valign=top style='width:117.0pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 1:00<br>
+    <br>
+    Day Class Met<br>
+    MW, MF, MWF, MTWF, WT, WF</p>
+    </td>
+   </tr>
+   <tr>
+    <td width=95 valign=top style='width:71.25pt;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>3:50 - 5:20</p>
+    </td>
+    <td width=168 valign=top style='width:1.75in;border:inset .75pt;padding:
+    1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met at 7:00<br>
+    <br>
+    Day Class Met<br>
+    MW, MF, MWF, MWTF, WT, WF, TT, MTT, MTTF, MTWT, MTWF, Daily</p>
+    </td>
+    <td width=198 valign=top style='width:148.5pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 10:00<br>
+    <br>
+    Day Class Met<br>
+    TT, MTT, MTTF, MTWT, MTWF, Daily</p>
+    </td>
+    <td width=156 valign=top style='width:117.0pt;border:inset .75pt;
+    padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+    <p align=center style='text-align:center'>Class Met At: 1:00<br>
+    <br>
+    Day Class Met<br>
+    TT, MTT, MTTF, MTWT, MTWF, Daily</p>
+    </td>
+   </tr>
+  </table>
+  </div>
+  <p class=MsoNormal align=center style='text-align:center'><o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><script>
+                           if (NS4) {document.write('<LAYER NAME="floatlayer" LEFT="'+floatX+'" TOP="'+floatY+'">');}
+                           if (IE4) {document.write('<div id="floatlayer" style="position:absolute; left:'+floatX+'; top:'+floatY+';">');}
+</script></p>
+
+<form>
+
+<p class=MsoNormal><SELECT NAME="choice" onChange="jump(this.form)">
+<OPTION VALUE="">CHOOSE A CALENDAR
+<OPTION VALUE="registrarcalendar.htm">TOP OF PAGE
+<OPTION SELECTED VALUE="#RSW2002">Registration Schedule - Fall 2002
+<OPTION VALUE="registrarcalendar.htm">Registration Schedule - Summer 2002
+<OPTION VALUE="#TWSF2001">Test Week Schedule - Winter 2002
+</SELECT></p>
+
+</form>
+
+<p class=MsoNormal><span style='display:none;mso-hide:all'><script>
+                           if (NS4) 
+                           {
+                           document.write('</LAYER>');
+                           }
+                           if (IE4) 
+                           {
+                           document.write('</DIV>');
+                           }
+                           ifloatX=floatX;
+                           ifloatY=floatY;
+                           define();
+                           window.onresize=define;
+                           lastX=-1;
+                           lastY=-1;
+                           adjust();
+</script></span></p>
+
+</div>
+
+</body>
+
+</html>

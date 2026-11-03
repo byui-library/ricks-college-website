@@ -1,0 +1,106 @@
+body {
+   background: White;
+   background-color : White;
+   margin: 0px;
+   margin-bottom: 0px;
+   margin-left: 0px;
+   margin-right: 0px;
+   margin-top: 0px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10pt;
+}
+
+td, p {
+   font-family : Arial, Helvetica, sans-serif;
+   font-size : 10pt;
+}
+
+th {
+   font-family : Arial, Helvetica, sans-serif;
+   font-size : 10pt;
+}
+
+.nav, A.nav, A.nav:hover, A.nav:visited, A.nav:link, A.nav:focus {
+   color : White;
+   text-decoration : none;
+   font-family : Arial, Helvetica, sans-serif;
+   font-size : 9pt;
+}
+
+.navdrop, A.navdrop, A.navdrop:visited, A.navdrop:link, A.navdrop:focus {
+   color : White;
+   text-decoration : none;
+   line-height : 12pt;
+   font-family : Arial, Helvetica, sans-serif;
+   font-size : 9pt;
+   width : 100%;
+}
+
+A.navdrop:hover {
+   color : Black;
+   text-decoration : none;
+   line-height : 12pt;
+   font-family : Arial, Helvetica, sans-serif;
+   font-size : 9pt;
+   background-color : #F5EDAF;
+   width : 99%;
+}
+
+.crumb,  A.crumb, A.crumb:hover, A.crumb:visited, A.crumb:link, A.crumb:focus {
+   color : Black;
+   font-family : Arial, Helvetica, sans-serif;
+   font-size : 9pt;
+   font-style : normal;
+   line-height : 12pt;
+   text-decoration : none;
+}
+
+.App A.App, A.App:hover, A.App:visited, A.App:link, A.App:focus {
+   font-size : 17pt;
+   font-style : normal;
+   font-family : "Arial Narrow", Arial, Helvetica, sans-serif;
+   font-weight: bold;
+   left : 10px;
+   color : Black;
+   text-decoration : none;
+   line-height : 25pt;
+}
+
+#tabdiv {
+   z-index : 2;
+   visibility : show;
+}
+
+#poptextdiv {
+   visibility : hide;
+   visibility : hidden;
+   position : absolute;
+   top : 77px;
+   left:  0px;
+   z-index : 0;
+   color : White;
+   border-color : Black;
+   background-color : Black;
+   color : Black;
+   z-index : 1;
+   font-family : Arial, Helvetica, Sans-Serif;
+   font-size : 9pt;
+   font-color : White;
+}
+
+#poptextdiv2 {
+   visibility : hide;
+   visibility : hidden;
+   position : absolute;
+   top : 47px;
+   left:  0px;
+   z-index : 0;
+   color : White;
+   border-color : Black;
+   background-color : Black;
+   color : Black;
+   z-index : 1;
+   font-family : Arial, Helvetica, Sans-Serif;
+   font-size : 9pt;
+   font-color : White;
+}

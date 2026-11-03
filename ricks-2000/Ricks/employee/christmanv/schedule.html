@@ -1,0 +1,671 @@
+<html>
+
+	<head>
+<script src="../../../_archive/compat.js"></script>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<meta name="generator" content="Microsoft FrontPage 4.0">
+		<title>Schedule</title>
+		<csscriptdict>
+			<script><!--
+CSStopExecution = false;
+CSInit = new Array;
+function CSScriptInit() {
+idxArray = new Array;
+for(var i=0;i<CSInit.length;i++)
+	idxArray[i] = i;
+CSAction2(CSInit, idxArray);
+}
+CSAg = window.navigator.userAgent; CSBVers = parseInt(CSAg.charAt(CSAg.indexOf("/")+1),10);
+function IsIE() { return CSAg.indexOf("MSIE") > 0;}
+function CSIEStyl(s) { return document.all.tags("div")[s].style; }
+function CSNSStyl(s) { return CSFindElement(s,0); }
+function CSFindElement(n,ly) { if (CSBVers < 4) return document[n];
+	var curDoc = ly ? ly.document : document; var elem = curDoc[n];
+	if (!elem) { for (var i=0;i<curDoc.layers.length;i++) {
+		elem = CSFindElement(n,curDoc.layers[i]); if (elem) return elem; }}
+	return elem;
+}
+function CSButtonReturn () {
+	var bAgent = window.navigator.userAgent; 
+	var bAppName = window.navigator.appName;
+	if ((bAppName.indexOf("Explorer") >= 0) && (bAgent.indexOf("Mozilla/3") >= 0) && (bAgent.indexOf("Mac") >= 0))
+		return false; // follow link
+	else return true; // follow link
+}
+CSIm = new Object();
+function CSIShow(n,i) {
+	if (document.images) {
+		if (CSIm[n]) {
+			var img = (!IsIE()) ? CSFindElement(n,0) : document[n];
+			if (img && typeof(CSIm[n][i].src) != "undefined") {img.src = CSIm[n][i].src;}
+			if(i != 0)
+				self.status = CSIm[n][3];
+			else
+				self.status = " ";
+			return true;
+		}
+	}
+	return false;
+}
+function CSILoad(action) {
+	im = action[1];
+	if (document.images) {
+		CSIm[im] = new Object();
+		for (var i=2;i<5;i++) {
+			if (action[i] != '') { CSIm[im][i-2] = new Image(); CSIm[im][i-2].src = action[i]; }
+			else CSIm[im][i-2] = 0;
+		}
+		CSIm[im][3] = action[5];
+	}
+}
+CSStopExecution = false;
+
+function CSAction(array) { 
+	return CSAction2(CSAct, array);
+}
+function CSAction2(fct, array) { 
+	var result;
+	for (var i=0;i<array.length;i++) {
+		if(CSStopExecution) return false; 
+		var actArray = fct[array[i]];
+		var tempArray = new Array;
+		for(var j=1;j<actArray.length;j++) {
+			if((actArray[j] != null) && (typeof(actArray[j]) == "object") && (actArray[j].length == 2)) {
+				if(actArray[j][0] == "VAR") {
+					tempArray[j] = CSStateArray[actArray[j][1]];
+				}
+				else {
+					if(actArray[j][0] == "ACT") {
+						tempArray[j] = CSAction(new Array(new String(actArray[j][1])));
+					}
+				else
+					tempArray[j] = actArray[j];
+				}
+			}
+			else
+				tempArray[j] = actArray[j];
+		}			
+		result = actArray[0](tempArray);
+	}
+	return result;
+}
+CSAct = new Object;
+
+// --></script>
+		</csscriptdict>
+		<csactiondict>
+		<script><!--
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button',/*URL*/'images/rickslogo.gif',/*URL*/'',/*URL*/'','');
+
+// --></script>
+		</csactiondict>
+	</head>
+
+	<body bgcolor="#FFFFFF" onload="CSScriptInit();" background="images/Background.gif">
+		<table cool width="1097" height="435" border="0" cellpadding="0" cellspacing="0" gridx="16" showgridx usegridx gridy="16" showgridy usegridy>
+			<tr height="1" cntrlrow>
+				<td width="1" height="1"></td>
+				<td width="1" height="1"><font size="6"><spacer type="block" width="3" height="1"><center><b><i>Schedule</i></b></center></font></td>
+				<td width="7" height="1"><spacer type="block" width="3" height="1"></td>
+				<td width="222" height="1"><spacer type="block" width="109" height="1"></td>
+				<td width="315" height="1"><spacer type="block" width="13" height="1"></td>
+				<td width="4" height="1"><spacer type="block" width="13" height="1"></td>
+				<td width="187" height="1"><spacer type="block" width="336" height="1"></td>
+				<td width="345" height="1"><spacer type="block" width="617" height="1"></td>
+			</tr>
+			<tr height="64">
+				<td width="1" height="33"><spacer type="block" width="1" height="64"></td>
+				<td width="189" height="21" colspan="1" rowspan="2" valign="top" align="left" xpos="6"><center><a href="default.htm">Van Christman<br>
+						Home</a></center></td>
+				<td width="345" height="33"></td>
+			</tr>
+			<tr height="40">
+				<td width="1" height="1"><spacer type="block" width="1" height="40"></td>
+				<td width="1" height="1"></td>
+				<td width="119" height="1"></td>
+				<td width="315" height="1"></td>
+			</tr>
+			<tr height="24">
+				<td width="1" height="9"><spacer type="block" width="1" height="24"></td>
+				<td width="1090" height="9" colspan="7" valign="top" align="left" xpos="0">
+					<hr size="2" width="560">
+				</td>
+			</tr>
+			<tr height="370">
+				<td width="1" height="370"><spacer type="block" width="1" height="370"></td>
+				<td width="233" height="370" colspan="3" rowspan="1" valign="top" align="left" xpos="0"><img border="0" src="images/working.jpg" width="200" height="299">&nbsp;
+                </td>
+				<td width="315" height="370">
+                  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Fall
+                  2001 Schedule<o:p>
+                  </o:p>
+                  </span></p>
+                  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Van
+                  Christman<o:p>
+                  </o:p>
+                  </span></p>
+                  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">&nbsp;<o:p>
+                  </o:p>
+                  </span></p>
+                  <table border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt">
+                    <tr>
+                      <td width="82" valign="top" style="width:61.6pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="100" valign="top" style="width:75.3pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Monday<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="101" valign="top" style="width:75.55pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Tuesday<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="108" valign="top" style="width:80.9pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Wednesday<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="103" valign="top" style="width:77.15pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Thursday<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="96" valign="top" style="width:72.3pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Friday<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="82" valign="top" style="width:61.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">8:00<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="100" valign="top" style="width:75.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">&nbsp;<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="101" valign="top" style="width:75.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="108" valign="top" style="width:80.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="103" valign="top" style="width:77.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="96" valign="top" style="width:72.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="82" valign="top" style="width:61.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">9:00<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="100" valign="top" style="width:75.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#FF9900;padding:0in 5.4pt 0in 5.4pt">
+                        &nbsp;
+                      </td>
+                      <td width="101" valign="top" style="width:75.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#FF9900;padding:0in 5.4pt 0in 5.4pt">
+                        &nbsp;
+                      </td>
+                      <td width="108" valign="top" style="width:80.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#FF9900;padding:0in 5.4pt 0in 5.4pt">
+                        &nbsp;
+                      </td>
+                      <td width="103" valign="top" style="width:77.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#FF9900;padding:0in 5.4pt 0in 5.4pt">
+                        &nbsp;
+                      </td>
+                      <td width="96" valign="top" style="width:72.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#FF9900;padding:0in 5.4pt 0in 5.4pt">
+                        &nbsp;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="82" valign="top" style="width:61.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">10:00<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="100" valign="top" style="width:75.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:yellow;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BS
+                        100<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BEN
+                        124<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="101" rowspan="2" valign="top" style="width:75.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:silver;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BS
+                        250<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BEN
+                        124<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="108" valign="top" style="width:80.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:yellow;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BS
+                        100<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BEN
+                        124<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="103" rowspan="2" valign="top" style="width:77.15pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:silver;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BS
+                        250<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BEN
+                        124<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="96" valign="top" style="width:72.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:yellow;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BS
+                        100<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BEN
+                        124<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="82" valign="top" style="width:61.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">11:00<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="100" valign="top" style="width:75.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Lunch<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="108" valign="top" style="width:80.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:red;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Office<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="96" valign="top" style="width:72.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:red;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Office<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="82" valign="top" style="width:61.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">12:00<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="100" rowspan="5" valign="top" style="width:75.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#CC99FF;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">&nbsp;<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">&nbsp;<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BS
+                        118<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BEN
+                        122<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">&nbsp;<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">&nbsp;<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="101" rowspan="2" valign="top" style="width:75.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BS
+                        250L<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BEN
+                        122<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="108" valign="top" style="width:80.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Lunch<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="103" valign="top" style="width:77.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:red;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Office<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="96" rowspan="5" valign="top" style="width:72.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#CC99FF;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">&nbsp;<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">&nbsp;<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Quest<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BS
+                        118<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BEN
+                        122<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="82" valign="top" style="width:61.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">1:00<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="108" valign="top" style="width:80.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="103" valign="top" style="width:77.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Lunch<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="82" valign="top" style="width:61.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">2:00<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="101" valign="top" style="width:75.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#00CCFF;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Devotional<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="108" valign="top" style="width:80.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="103" valign="top" style="width:77.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#00CCFF;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Forum<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="82" valign="top" style="width:61.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">3:00<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="101" rowspan="2" valign="top" style="width:75.55pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  background:#CCFFCC;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BS
+                        250L<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">BEN
+                        122<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="108" valign="top" style="width:80.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="103" valign="top" style="width:77.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="82" valign="top" style="width:61.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">4:00<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="108" valign="top" style="width:80.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="103" valign="top" style="width:77.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="82" valign="top" style="width:61.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Evening<o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="100" valign="top" style="width:75.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">&nbsp;<o:p>
+                        </o:p>
+                        </span></p>
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="101" valign="top" style="width:75.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="108" valign="top" style="width:80.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="103" valign="top" style="width:77.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                      <td width="96" valign="top" style="width:72.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+                        <p class="MsoNormal" align="center" style="text-align:center">&nbsp;<span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                        </o:p>
+                        </span></p>
+                      </td>
+                    </tr>
+                  </table>
+                  <p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt">&nbsp;<o:p>
+                  </o:p>
+                  </span></p>
+                  <p class="MsoNormal" align="left"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+                  </o:p>
+                  </span></p>
+                  <p>&nbsp;</td>
+				<td width="540" height="370" colspan="3" rowspan="1" valign="top" align="left" xpos="128">
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

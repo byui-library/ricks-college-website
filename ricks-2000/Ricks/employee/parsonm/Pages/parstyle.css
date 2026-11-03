@@ -1,0 +1,57 @@
+/* External Style Sheet */
+
+a
+     {
+     text-decoration: none;
+     }
+a:visited
+     {
+     color: blue;
+     }
+a:hover
+     {
+     color: red;
+     }
+
+img
+     {
+     border-width: 0px;
+     }
+h1
+     {
+     color: #1144bb;
+     }
+p.indent
+	{margin-top: 0in;
+	margin-right: 0in;
+	margin-bottom: 0in;
+	margin-left: .5in;
+	text-indent: -.5in;
+	horizontal-align: middle}
+body
+     {
+     background-image: url("../image/burlap.jpg");
+     font-family: "Times Roman", serif;
+     font-weight: lighter;
+     font-size: small;
+     }
+table
+     {
+     font-family: "Times Roman", serif;
+     font-weight: light;
+     font-size: small;
+     }
+.text
+     {
+     font-family: Times Roman, serif;
+     font-size: 16pt;
+     }
+
+.back1
+     {
+     background-image: url("../image/bblue.jpg");
+     }
+.back 
+     {
+     background-image: url("../image/swrl.jpg");
+     }

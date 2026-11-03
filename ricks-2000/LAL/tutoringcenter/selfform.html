@@ -1,0 +1,316 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>
+TUTOR'S SELF-ASSESSMENT
+</title>
+<script>
+<!--
+function check (form)
+{
+	var alertMessage = "You must answer the following questions:\n"
+      doAlert = false
+      for (i = 1; i <= 19; ++i)
+	{
+      	skipped = true
+		for (j = 0; j < 5; ++j)
+			if (eval("form.A" + i + "[" + j  + "].checked"))
+				skipped = false
+		if (skipped)
+		{
+			if (doAlert)
+				alertMessage += ", "
+			doAlert = true
+			alertMessage += i
+		}
+	}
+
+	if (form.name.value == "")
+	{
+		if (doAlert)
+			alertMessage += "\nYou must also supply your name"
+		else
+		{
+			alertMessage = "You must supply your name"
+	            doAlert = true
+		}
+		form.name.focus()
+	}
+	if (doAlert)
+		alert (alertMessage)
+	return (!doAlert)
+}
+//-->
+</script>
+</head>
+<body bgcolor="#ccffcc">
+<h3 align=center><b><u>TUTOR’S SELF-ASSESSMENT</u></b></h3>
+<p style="margin-left: 50px; margin-right: 50px;">
+<u>DIRECTIONS</u>:  Think about your <b>tutoring sessions during the past week</b>. In fact try to visualize yourself in one of those sessions, which you feel is <b>representative of your tutoring style</b> as you read and respond to each of the questions below. Read each question and then select the response that best indicates how often you do what is asked. Please <b>be honest</b>, one purpose of this self-assessment is to help you to improve your tutoring.<br>
+<br>
+<b>Select the best answer and then click the submit button at the bottom.</b>
+</p>
+<form method=post onsubmit="return false">
+<input type=hidden name=sender value=none>
+<input type=hidden name=subject value="Tutor Self Assessment">
+<table><tr>
+<td>Tutor's Name:</td>
+<td><input type=text name=name></td>
+</tr>
+<tr>
+</tr></table>
+<table>
+<tr>
+<td colspan=5>
+<hr>1. To show an interest in and a concern for the learner, am I on time for my appointment and ready to promptly begin?
+<input type=hidden name=Q1 value="To show an interest in and a concern for the learner, am I on time for my appointment and ready to promptly begin?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A1 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A1 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A1 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A1 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A1 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>2. To make the learner feel welcome, do I appear approachable and not as if the learner is intruding on or interrupting me?
+<input type=hidden name=Q2 value="To make the learner feel welcome, do I appear approachable and not as if the learner is intruding on or interrupting me?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A2 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A2 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A2 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A2 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A2 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>3. To make the learner feel welcome, do I greet the learner by name and ask how she/he is doing before quickly asking the learner what questions she/he has or what she/he would like to do?
+<input type=hidden name=Q3 value="To make the learner feel welcome, do I greet the learner by name and ask how she/he is doing before quickly asking the learner what questions she/he has or what she/he would like to do?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A3 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A3 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A3 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A3 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A3 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>4. To help the learner to plan for the course and to help me plan for the sessions, do I discuss the course syllabus with the learner so that we are both clear on the assignments and requirements?
+<input type=hidden name=Q4 value="To help the learner to plan for the course and to help me plan for the sessions, do I discuss the course syllabus with the learner so that we are both clear on the assignments and requirements?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A4 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A4 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A4 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A4 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A4 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>5. To help the learner to become a more effective learner, do I model my thinking process out load when solving problems or answering questions so the learner knows what I am doing and why?
+<input type=hidden name=Q5 value="To help the learner to become a more effective learner, do I model my thinking process out load when solving problems or answering questions so the learner knows what I am doing and why?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A5 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A5 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A5 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A5 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A5 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>6. To encourage the learner to participate as much as possible, do I frequently ask the learner to summarize, explain, give examples, or perform a task after I give a short explanation or demonstrations?
+<input type=hidden name=Q6 value="To encourage the learner to participate as much as possible, do I frequently ask the learner to summarize, explain, give examples, or perform a task after I give a short explanation or demonstrations?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A6 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A6 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A6 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A6 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A6 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>7. To increase the learner's confidence: do I decrease the number of prompts or hints as the learner begins to respond correctly?
+<input type=hidden name=Q7 value="To increase the learner's confidence: do I decrease the number of prompts or hints as the learner begins to respond correctly?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A7 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A7 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A7 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A7 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A7 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>8. To maintain the learner's concentration and to avoid confusing the learner, do I focus on only one ideas or skill at a time?
+<input type=hidden name=Q8 value="To maintain the learner's concentration and to avoid confusing the learner, do I focus on only one ideas or skill at a time?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A8 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A8 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A8 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A8 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A8 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>9. To insure that the learner knows and understands the vocabulary of the course, do I periodically ask the learner to define a term and give examples?
+<input type=hidden name=Q9 value="To insure that the learner knows and understands the vocabulary of the course, do I periodically ask the learner to define a term and give examples?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A9 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A9 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A9 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A9 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A9 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>10. To be sensitive to the feelings of the learner, do I avoid telling the learner, "I know how you feel" when he/she is feeling highly emotional (e.g., angry, sad, frustrated, depressed, etc…)?
+<input type=hidden name=Q10 value="To be sensitive to the feelings of the learner, do I avoid telling the learner, 'I know how you feel' when he/she is feeling highly emotional (e.g., angry, sad, frustrated, depressed, etc…)?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A10 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A10 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A10 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A10 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A10 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>11. To insure the learner understands, do I try to ask questions in different ways rather than wording the questions the same way each time?
+<input type=hidden name=Q11 value="To insure the learner understands, do I try to ask questions in different ways rather than wording the questions the same way each time?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A11 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A11 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A11 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A11 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A11 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>12. To maintain the learner's trust, do I admit when I am not sure or don't know the answer to his/her question?
+<input type=hidden name=Q12 value="To maintain the learner's trust, do I admit when I am not sure or don't know the answer to his/her question?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A12 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A12 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A12 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A12 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A12 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>13. To maintain the learner's trust, do I keep any commitments I make to him/her about bringing in materials, finding requested answers or information, preparing supplementary exercises or arranging special meetings?
+<input type=hidden name=Q13 value="To maintain the learner's trust, do I keep any commitments I make to him/her about bringing in materials, finding requested answers or information, preparing supplementary exercises or arranging special meetings?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A13 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A13 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A13 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A13 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A13 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>14. To maintain the learner's trust, do I avoid revealing personal information about a learner to other tutors, students, or friends?
+<input type=hidden name=Q14 value="To maintain the learner's trust, do I avoid revealing personal information about a learner to other tutors, students, or friends?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A14 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A14 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A14 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A14 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A14 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>15. To encourage the learner to do as much of the thinking as possible, do I ask follow-up questions which require the learner to complete, clarify, expand, or support his/her initial response?
+<input type=hidden name=Q15 value="To encourage the learner to do as much of the thinking as possible, do I ask follow-up questions which require the learner to complete, clarify, expand, or support his/her initial response?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A15 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A15 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A15 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A15 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A15 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>16. To respect the needs of the learner, do I work at the learner's pace rather than trying to cover as much material as possible in the limited time available?
+<input type=hidden name=Q16 value="To respect the needs of the learner, do I work at the learner's pace rather than trying to cover as much material as possible in the limited time available?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A16 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A16 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A16 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A16 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A16 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>17. To avoid confusing and frustrating the learner, do I try to make sure the learner has mastered (knows, understands, can do) the information/concept/procedure/skill before going on to the next topic/problem by quizzing the learner?
+<input type=hidden name=Q17 value="To avoid confusing and frustrating the learner, do I try to make sure the learner has mastered (knows, understands, can do) the information/concept/ procedure/skill before going on to the next topic/problem by quizzing the learner?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A17 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A17 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A17 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A17 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A17 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>18. To help the learner remember the material covered, do I quiz the learner or have him/her review at the end of the session?
+<input type=hidden name=Q18 value="To help the learner remember the material covered, do I quiz the learner or have him/her review at the end of the session?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A18 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A18 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A18 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A18 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A18 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+<tr>
+<td colspan=5>
+<hr>19. To encourage the learner to return for the next session and to give him/her a feeling of achievement and accomplishment, do I again comment on the learner's efforts, performance, and progress, discuss what the learner might work on before the next session, and invite the learner back?
+<input type=hidden name=Q19 value="To encourage the learner to return for the next session and to give him/her a feeling of achievement and accomplishment, do I again comment on the learner's efforts, performance, and progress, discuss what the learner might work on before the next session, and invite the learner back?">
+</td>
+</tr>
+<tr>
+<td><input type=radio name=A19 value="0;_X_Always___Most of the time___Sometimes___Rarely___Never">Always</td>
+<td><input type=radio name=A19 value="1;___Always_X_Most of the time___Sometimes___Rarely___Never">Most of the time</td>
+<td><input type=radio name=A19 value="2;___Always___Most of the time_X_Sometimes___Rarely___Never">Sometimes</td>
+<td><input type=radio name=A19 value="3;___Always___Most of the time___Sometimes_X_Rarely___Never">Rarely</td>
+<td><input type=radio name=A19 value="4;___Always___Most of the time___Sometimes___Rarely_X_Never">Never</td>
+</tr>
+</table>
+<hr>
+<input type="submit" value="Submit Assessment">
+</form>
+<center>QUESTIONS PREPARED BY HOWARD R. MASUDA</center>
+</body>
+</html>

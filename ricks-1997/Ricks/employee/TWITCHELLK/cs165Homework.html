@@ -1,0 +1,1191 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>CS165 - Object Oriented Software Development Homework</TITLE>
+</HEAD>
+<BODY>
+
+<H2>CS165 - Object Oriented Software Development<BR>Homework<HR></H2>
+
+<P>
+
+<FONT SIZE="-1">
+<A HREF="#00">00</A> |
+<A HREF="#01">01</A> |
+<A HREF="#02">02</A> |
+<A HREF="#03">03</A> |
+<A HREF="#04">04</A> |
+<A HREF="#05">05</A> | 
+<A HREF="#06">06</A> |
+<A HREF="#07">07</A> |
+<A HREF="#08">08</A> |
+<A HREF="#09">09</A> |
+<A HREF="#10">10</A> |
+<A HREF="#11">11</A> |
+<A HREF="#12">12</A> |
+<A HREF="#13">13</A> |
+<A HREF="#14">14</A> |
+<A HREF="#15">15</A> |
+<A HREF="#16">16</A> 
+</FONT>
+
+<H4>General Instructions</H4>
+<UL>
+<LI>All assignments except 00 and 07 shall be submitted electronically.
+	Copy files to /home/twitchellk/cs165/hw##/,
+	where ## is the two-digit homework number
+	(be sure to include leading zeros when necessary).
+	It is best to use <B>submit165t</B> to submit your homework
+	when there is only <i>one</i> file per extension to submit.
+	However, you may also use the Linux copy command (cp)
+	to copy your files to the homework directory;
+	this is required if you are submitting <i>multiple</i> files with
+	the same extension.
+	Examples where whateverYouNamedIt is your file to be submitted
+	and yourUserID is your user ID):
+<UL>
+<LI>submit165t whatever.cpp
+<LI>cp whatever.cpp /home/twitchellk/cs165/hw##/yourUserID.cpp
+<LI>submit165t whatever.txt
+<LI>cp whatever.txt /home/twitchellk/cs165/hw##/yourUserID.txt
+</UL>
+<LI>All assignments shall be submitted as ASCII text files
+	(e.g., submit the source code, not the executable).
+<LI>The name of the submitted file shall have the appropriate extension
+	(i.e., C++ source code files shall be submitted using the .cpp
+	extension and text files with the .txt extension).
+<LI>Homework shall neither be submitted using e-mail nor diskette
+	(or other media).
+<LI>Make sure your submitted program satisfies all specified requirements.
+	Whenever possible, test your program using the software test bed.
+	Example where ## is the two-digit homework number and
+	whatever.cpp is the file containing your program:
+<UL>
+<LI>bed cs165/hw## whatever.cpp
+</UL>
+<LI>Output shall <b>exactly match</b> the examples, with the only variation being
+	output values that are calculated from input values.
+<LI>Homework 07 shall be submitted on paper (except the work log,
+	which shall be submitted electronically).
+	If you submit your homework after I leave for the day,
+	you do so at your own risk.
+	I am not responsible for homework assignments I do not receive.
+<LI>Homeworks 01, 07, and 14 are group assignments.
+	<b>The grades for these assignments are based on the product from the group,
+	<i>not</i> on individual contributions.</b>
+	I reserve the right to adjust grades (downward) for group members who do
+	not contribute their fair share to the overall product.
+<LI>Each line in each submitted file shall be less than 80 characters long.
+<LI>All programs shall include error handling,
+	shall execute without uncaught exceptions, and
+	shall terminate gracefully.
+<LI>Each program shall be written in C++.
+<LI>Whenever the homework specifies that the program is to loop until the
+	user specifies to quit, the input from the user shall be the word "quit".
+	Nothing more, nothing less, and definitely nothing else.
+<LI>For <b>all</b> character input (including "quit"),
+	you must allow for the input of any case, including mixed case.
+<LI>You may <B><A NAME="restrictions">not</A></B>
+	use the following in your programs:
+<UL>
+<LI>the system function
+<LI>any time function
+</UL>
+<LI>Use C++ I/O (e.g., cout); do not use C I/O (e.g., printf).
+<LI>Each program shall compile and execute using ROM 272 (Linux) lab computers.
+<LI>Source code shall conform to <A HREF="style.html">style guidelines</A>.
+<LI>Placing a portion of your source code in a header (.h) file is discouraged.
+
+</UL>
+<HR>
+
+<TABLE>
+<TR VALIGN="top">
+<TD>
+<A NAME="00"><FONT SIZE="+3"><B>00</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Scriptures in Class</B></font><BR>
+<I>50 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Each class shall start with at least one brief presentation of a scripture.
+You are required to present <B>two</B> scriptures from the
+Standard Works during the semester.
+Each scripture (one or more verses) shall be pertinent
+to our class, to our course of study,
+or to life at Brigham Young University-Idaho.
+Just as Nephi, you are encouraged to
+"liken all scriptures unto us" (1 Nephi 19:23).
+Each scripture shall be one that has not been presented before in this class.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+You will be penalized for presenting a duplicate scripture.
+Please note that the start of class is not delayed to
+wait for you or your scripture.
+If you are late to class or unprepared on your assigned day,
+you will not deliver a scripture on that day.
+The standard late penalty applies each time you are scheduled
+to provide a scripture but do not.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Information to help you successfully complete
+this homework assignment is available at
+<a href="https://web.archive.org/web/1998/http://joshua.byui.edu/cgi-bin/twitchellk/scriptures/studentTracker.pl?class=CS165">
+http://joshua.byui.edu/cgi-bin/twitchellk/scriptures/studentTracker.pl?class=CS165</a>
+<i>(on campus only)</i>.
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="01"><FONT SIZE="+3"><B>01</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Pinewood Derby Simulator Requirements</B></font><BR>
+<I>150 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Work with others in groups to specify requirements
+for a pinewood derby simulator.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://web.archive.org/web/1998/http://joshua.byui.edu/~twitchellk/cs165hw01groups.txt">
+Group assignments</a> (on campus only).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The requirements specification shall consist of bulleted lists,
+with brief descriptions, in the following categories:
+<OL>
+<LI>Design and save multiple cars.
+<LI>Determine and award "best of show" (first-, second-, and third-place).
+<LI>Schedule races in a tournament (one track with a maximum of five lanes;
+	a minimum of two different types of race schedules).
+<LI>Execute scheduled races, including random mishaps.
+<LI>Output: results of each race in the tournament <b>and</b>
+	tournament winners (first-, second-, and third-place).
+</OL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Include the names of group members.
+For <b>each</b> group member, indicate the
+total amount of time spent working on the requirements
+(in hours and minutes) and the percentage of
+total effort for that group member.
+Each group member shall submit a
+<a href="workLog.html">work log</a>.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Submit one set of requirements per group.
+<i>(Use the user ID of one group member.)</i>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Reference material is available at
+<a href="https://web.archive.org/web/1998/http://directory.google.com/Top/Kids_and_Teens/People_and_Society/Organizations/Personal_Development/Scouting/Resources/Pinewood_Derby/">Google</a> and
+<a href="https://web.archive.org/web/1998/http://dir.yahoo.com/Recreation/Outdoors/Scouting/Boy_Scouts_of_America/Pinewood_Derbies/">Yahoo</a>.
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="02"><FONT SIZE="+3"><B>02</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Hello World!</B></font><BR>
+<I>25 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Output the text "Hello world!",
+your name, your major, and where you are from.
+Be sure to document your program as specified in
+the <a href="style.html">Elements of Style</a>.
+Use the template files located at
+/home/twitchellk/examples/style/cpp.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Example:
+<PRE>
+   Hello world!
+   My name is Brother Twitchell.
+   My major is Computer Science.
+   I am from Blackfoot, Idaho.
+</PRE>
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="03"><FONT SIZE="+3"><B>03</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Statistical Process Control Design</B></font><BR>
+<I>150 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Statistical Process Control (SPC) is a quality control technique
+typically used to monitor a manufacturing process.
+One goal of SPC is to detect changes in the manufacturing process.
+Early detection of process changes enable operators to take
+corrective action before "bad" product is created.
+A common SPC approach is to plot data on an average (X-bar) and
+range (R) chart.
+The chart is monitored for out-of-control conditions.
+<i>(Additional information is available at the
+<a href="https://web.archive.org/web/1998/http://www.sytsma.com/tqmtools/charts.html">Common
+Control Chart Cookbook</a>.)</i>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The first step to creating an X-bar (average) and R (range) chart
+is to gather data regarding how the process is currently operating.
+Sample measurements are taken and averaged to determine an X-bar
+value.
+This group of sample measurements is referred to as a sample subgroup.
+The difference between the largest and smallest values in a
+sample subgroup determines the corresponding R value.
+Typically there are three to five sample measurements in a sample
+subgroup.
+This homework assignment uses five.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+A minimum of twenty sample subgroups are used to determine the overall
+process average (X-double bar) and average range (R-bar).
+X-double bar is the average of the subgroup averages.
+R-bar is the average of the ranges.
+This homework assignment uses 25 sample subgroups.
+These data are also used to determine upper- and lower-control limits.
+It is expected that each X-bar and R value falls within these
+control limits.
+An X-bar or R value that falls outside of the control limits signals
+an out-of-control condition.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The distance between the average (X-double bar or R-bar) and a
+control limit is divided equally into three zones.
+The zone closest to the average is referred to as zone <b>C</b>.
+<i>(Please note the correction from zone A to zone C.)</i>
+The next zone moving out from the average and toward the control
+limits is referred to zone B.
+The zone closest to the control limits (and most distant from the average)
+is referred to as zone <b>A</b>.
+<i>(Please note the correction from zone C to zone A.)</i>
+The locations of X-bar and R values in these zones are used to
+determine out-of-control conditions.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Design software to "set up" an X-bar and R chart and then report
+out-of-control conditions.
+Your design shall consist of pseudocode as described in
+<a href="design.html">Software Design</a>.
+<OL>
+<LI>Determine X-bar and R for each of the 25 subgroups in
+	<a href="spc0.txt">/home/twitchellk/examples/spc0.txt</a>.
+	You will use the code in
+	<a href="readSPC0.txt">/home/twitchellk/examples/readSPC0.cpp</a>
+	to read the data values into your program.
+	Incorporate what this code does into your design.
+<LI>Using the calculated X-bar and R values,
+	calculate X-double bar and R-bar.
+<LI>Using the calculated X-double bar and R-bar,
+	calculate the upper and lower control limits (UCL and LCL)
+	for both the averages (X-bar) and ranges (R).
+	<i>Note that the values of the constants in the following equations
+	vary with the number of samples in the subgroup.
+	These constants should not be used if the number of samples
+	in the subgroup is something other than five.</i>
+<UL>
+<LI>X-bar UCL = X-double bar + (0.577 * R-bar)<br>
+	X-bar LCL = X-double bar - (0.577 * R-bar)
+<LI>R UCL = 2.114 * R-bar<br>
+	R LCL = 0.0 * R-bar
+</UL>
+<LI>Process the data values in
+	<a href="spc1.txt">/home/twitchellk/examples/spc1.txt</a>
+	and report out-of-control conditions.
+	Out-of-control conditions apply to both averages <b>and</b>
+	ranges.
+	You will use the code in
+	<a href="readSPC1.txt">/home/twitchellk/examples/readSPC1.cpp</a>
+	to read the data values into your program.
+	Incorporate what this code does into your design.
+	Out-of-control conditions include the following:
+	<UL>
+   <LI>Fifteen consecutive values in zones C;
+		no zones A or zones B values in this interval.
+   <LI>For any five consecutive values,
+		four values are in zones B or beyond.
+		The first value in this series is in zone B or beyond.
+   <LI>For any three consecutive values,
+		two values are in zones A or beyond.
+		The first value in this series is in zone A or beyond.
+   <LI>A run of seven consecutive values up or down.
+   <LI>A run of consecutive eight values all greater than
+		or all less than X-double bar or R-bar.
+   <LI>A series of five consecutive values alternating
+		above and below X-double bar or R-bar.
+   <LI>A value outside the control limits.
+   <LI><i>Clarification: if a value falls on the boundary line
+      between zones, count it as belonging to the zone
+      closest to the average. Thus a value on the boundary line
+      between zones C and B would be counted as belonging to
+      zone C. A single value on the control limit line, either upper or
+      lower, is not counted by itself as being out-of-control.</i>
+   </UL>
+<LI>Process the following values as integers.
+		Round values; do not truncate.
+		Do not round intermediate values.
+<UL>
+<LI>Round each X-bar value.
+<LI>Round X-double bar and R-bar.
+<LI>Round each UCL and LCL.
+<LI>Round zone values.
+	Calculate the zone values from the center line (X-double bar or R-bar).
+</UL>
+<LI>Report each out of control condition in the order in which first detected.
+</OL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Given the data values in
+<a href="spc0.txt">/home/twitchellk/examples/spc0.txt</a>,
+the following are the values your program should calculate.
+The program does not need to output these values.
+<PRE>
+   X-bar UCL    = 31
+   X-bar zone B = 29
+   X-bar zone C = 27
+   X-double bar = 25
+   X-bar zone C = 23
+   X-bar zone B = 21
+   X-bar LCL    = 19
+
+   R UCL        = 21
+   R zone B     = 17
+   R zone C     = 14
+   R bar        = 10
+   R zone C     =  6
+   R zone B     =  3
+   R LCL        =  0
+</PRE>
+&nbsp;&nbsp;&nbsp;&nbsp;
+For each out-of-control condition, output the following message.
+Replace ## with the subgroup number (0-99).
+<PRE>
+   Out-of-control condition detected starting at subgroup ##
+</PRE>
+Follow the above message with an explicit statement
+of the out-of-control condition (these statements follow).
+Specify if the out-of-control condition is in the X-bar or R chart.
+<PRE>
+      Fifteen consecutive values in zones C in the X-bar chart
+      Four out of five successive values in zones B or beyond in the X-bar chart
+      Two out of three successive values in zones A or beyond in the X-bar chart
+      A run of seven values up in the X-bar chart
+      A run of seven values down in the X-bar chart
+      A run of eight values all greater than X-double bar
+      A run of eight values all less than X-double bar
+      A series of five values alternating above and below X-double bar
+      A value outside the control limits in the X-bar chart
+
+      Fifteen consecutive values in zones C in the R chart
+      Four out of five successive values in zones B or beyond in the R chart
+      Two out of three successive values in zones A or beyond in the R chart
+      A run of seven values up in the R chart
+      A run of seven values down in the R chart
+      A run of eight values all greater than R-bar
+      A run of eight values all less than R-bar
+      A series of five values alternating above and below R-bar
+      A value outside the control limits in the R chart
+</PRE>
+The following are the messages generated from processing
+<a href="spc1.txt">/home/twitchellk/examples/spc1.txt</a>:
+<PRE>
+Out-of-control condition detected starting at subgroup 0
+   A run of seven values up in the X-bar chart
+Out-of-control condition detected starting at subgroup 8
+   A run of seven values down in the X-bar chart
+Out-of-control condition detected starting at subgroup 14
+   Two out of three successive values in zones A or beyond in the X-bar chart
+Out-of-control condition detected starting at subgroup 13
+   Four out of five successive values in zones B or beyond in the X-bar chart
+Out-of-control condition detected starting at subgroup 14
+   Four out of five successive values in zones B or beyond in the R chart
+Out-of-control condition detected starting at subgroup 20
+   Four out of five successive values in zones B or beyond in the X-bar chart
+Out-of-control condition detected starting at subgroup 30
+   Two out of three successive values in zones A or beyond in the R chart
+Out-of-control condition detected starting at subgroup 30
+   Two out of three successive values in zones A or beyond in the X-bar chart
+Out-of-control condition detected starting at subgroup 32
+   A value outside the control limits in the X-bar chart
+Out-of-control condition detected starting at subgroup 29
+   Four out of five successive values in zones B or beyond in the X-bar chart
+Out-of-control condition detected starting at subgroup 29
+   Four out of five successive values in zones B or beyond in the R chart
+Out-of-control condition detected starting at subgroup 33
+   A value outside the control limits in the R chart
+Out-of-control condition detected starting at subgroup 33
+   Two out of three successive values in zones A or beyond in the R chart
+Out-of-control condition detected starting at subgroup 34
+   Two out of three successive values in zones A or beyond in the X-bar chart
+Out-of-control condition detected starting at subgroup 34
+   Four out of five successive values in zones B or beyond in the X-bar chart
+Out-of-control condition detected starting at subgroup 34
+   Four out of five successive values in zones B or beyond in the R chart
+Out-of-control condition detected starting at subgroup 36
+   Two out of three successive values in zones A or beyond in the R chart
+Out-of-control condition detected starting at subgroup 40
+   Two out of three successive values in zones A or beyond in the R chart
+Out-of-control condition detected starting at subgroup 39
+   Four out of five successive values in zones B or beyond in the R chart
+Out-of-control condition detected starting at subgroup 41
+   Four out of five successive values in zones B or beyond in the X-bar chart
+Out-of-control condition detected starting at subgroup 45
+   A value outside the control limits in the R chart
+Out-of-control condition detected starting at subgroup 44
+   Two out of three successive values in zones A or beyond in the R chart
+Out-of-control condition detected starting at subgroup 44
+   Four out of five successive values in zones B or beyond in the R chart
+Out-of-control condition detected starting at subgroup 49
+   A value outside the control limits in the X-bar chart
+Out-of-control condition detected starting at subgroup 49
+   A value outside the control limits in the R chart
+Out-of-control condition detected starting at subgroup 49
+   Two out of three successive values in zones A or beyond in the X-bar chart
+Out-of-control condition detected starting at subgroup 49
+   Two out of three successive values in zones A or beyond in the R chart
+Out-of-control condition detected starting at subgroup 51
+   A value outside the control limits in the X-bar chart
+Out-of-control condition detected starting at subgroup 51
+   A value outside the control limits in the R chart
+Out-of-control condition detected starting at subgroup 49
+   Four out of five successive values in zones B or beyond in the R chart
+Out-of-control condition detected starting at subgroup 54
+   A series of five values alternating above and below X-double bar
+Out-of-control condition detected starting at subgroup 56
+   Four out of five successive values in zones B or beyond in the R chart
+Out-of-control condition detected starting at subgroup 60
+   A series of five values alternating above and below R-bar
+Out-of-control condition detected starting at subgroup 61
+   Four out of five successive values in zones B or beyond in the X-bar chart
+Out-of-control condition detected starting at subgroup 65
+   A value outside the control limits in the R chart
+Out-of-control condition detected starting at subgroup 64
+   A run of eight values all greater than R-bar
+Out-of-control condition detected starting at subgroup 65
+   A run of eight values all greater than X-double bar
+Out-of-control condition detected starting at subgroup 72
+   Four out of five successive values in zones B or beyond in the R chart
+Out-of-control condition detected starting at subgroup 74
+   A run of eight values all less than X-double bar
+Out-of-control condition detected starting at subgroup 74
+   A run of eight values all less than R-bar
+Out-of-control condition detected starting at subgroup 83
+   Fifteen consecutive values in zones C in the X-bar chart
+Out-of-control condition detected starting at subgroup 84
+   Fifteen consecutive values in zones C in the R chart
+</PRE>
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="04"><FONT SIZE="+3"><B>04</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Grades</B></font><BR>
+<I>100 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Output the letter grade given an integer between 0 and 100 (inclusive).
+Use the following grading scale:<BR>
+<TABLE>
+<TR>
+<TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	A - nineties and one hundred
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	B - eighties
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	C - seventies
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	D - sixties
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	F - 59 and below
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	If the final (units) digit is 7-9,
+		output a "+" (e.g., 88 is a B+).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	If the final (units) digit is 0-2,
+		output a "-" (e.g., 61 is a D-).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	There is no A+, F+, or F-.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Hints:
+<UL>
+<LI>to allocate memory for a string, declare a character array (e.g., char input[32])
+<LI>read the string as you would an integer (i.e., cin &gt;&gt; input)
+<LI>use strcmp to compare strings
+<LI>tolower and toupper work on single characters only
+<LI>use atoi to convert (ASCII) text to an integer
+<LI>'\0' is the null character
+</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Continue to accept input until the user specifies to quit.
+Assume integer input (other than "quit").
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The program shall utilize functions.
+Use the main function supplied in
+<a href="gradesMain.txt">/home/twitchellk/examples/gradesMain.cpp</a>.
+You may not modify the supplied main function.
+Note that the names of some of your functions are dictated
+by the supplied main function.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is shown in <B>bold</B>):
+<PRE>
+   Enter a numeric grade ranging from 0 to 100
+      ("quit" terminates the program)
+   Numeric grade: <B>100</B>
+   The letter grade for 100 is A
+   Numeric grade: <B>72</B>
+   The letter grade for 72 is C-
+   Numeric grade: <B>-1</B>
+   Error: -1 is not a valid numeric grade
+   Numeric grade: <B>101</B>
+   Error: 101 is not a valid numeric grade
+   Numeric grade: <B>Quit</B>
+</PRE>
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="05"><FONT SIZE="+3"><B>05</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Statistical Process Control</B></font><BR>
+<I>250 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Implement the design completed for homework <A HREF="#03">03</A>.
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="06"><FONT SIZE="+3"><B>06</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Date and Time Calculator Algorithm Design</B></font><BR>
+<I>150 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Design an algorithm (<b>not</b> a program) to perform
+	the addition and subtraction of date-time groups.
+The date-time group shall consist of integers for the year,
+	month, day, hour (using a 24-hour clock), minute, and second.
+The date-time group could represent an actual date and time,
+	such as August 29, 2002 at 16:24:19,
+	or it could represent a quantity of time,
+	such as one year, two months, three days, four hours,
+	five minutes, and six seconds.
+At least one date-time group must represent an actual date.
+No date shall be before January 1, 1753.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Valid values for an actual date and time are as follows:
+<UL>
+<LI>year &gt; 1752
+<LI>0 &lt; month &lt; 13
+<LI>0 &lt; day &lt;
+	<i>1 + (maximum number of days for the specified month and year)</i>
+<LI>-1 &lt; hour &lt; 24
+<LI>-1 &lt; minute &lt; 60
+<LI>-1 &lt; second &lt; 60
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Valid values for a quantity of time are as follows:
+<UL>
+<LI>year &gt; -1
+<LI>-1 &lt; month &lt; 12
+<LI>-1 &lt; day &lt; 31
+<LI>-1 &lt; hour &lt; 24
+<LI>-1 &lt; minute &lt; 60
+<LI>-1 &lt; second &lt; 60
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The algorithm should do the following:
+<table border=1>
+<tr valign=top>
+<td></td>
+<td><b>First Operand</b></td>
+<td><b>Operation</b></td>
+<td><b>Second Operand</b></td>
+<td><b>Result</b></td>
+</tr>
+<tr valign=top>
+<td align=right>&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td>November 1, 2003<br>20:29:25</td>
+<td>Addition</td>
+<td>August 29, 2002<br>16:24:19</td>
+<td>Error - cannot add two actual dates</td>
+</tr>
+<tr valign=top>
+<td align=right>2</td>
+<td>November 1, 2003<br>16:24:19</td>
+<td>Subtraction</td>
+<td>August 29, 2002<br>20:29:25</td>
+<td>1 year, 2 months, 2 days,<br>19 hours, 54 minutes, and 54 seconds</td>
+</tr>
+<tr valign=top>
+<td align=right>3</td>
+<td>August 29, 2002<br>16:24:19</td>
+<td>Subtraction</td>
+<td>November 1, 2003<br>20:29:25</td>
+<td>Error - the end date cannot be before the start date</td>
+</tr>
+<tr valign=top>
+<td align=right>4</td>
+<td>February 28, 2000<br>16:24:19</td>
+<td>Addition</td>
+<td>2 years, 6 months, 3 days,<br>9 hours, 38 minutes, and 50 seconds</td>
+<td>September 1, 2002<br>02:03:09</td>
+</tr>
+<tr valign=top>
+<td align=right>5</td>
+<td>September 2, 2002<br>12:19:13</td>
+<td>Subtraction</td>
+<td>2 year, 10 months, 4 days,<br>18 hours, 40 minutes, and 50 seconds</td>
+<td>October 28, 1999<br>17:38:23</td>
+</tr>
+<tr valign=top>
+<td align=right>6</td>
+<td>1 year, 11 months, 30 days,<br>23 hours, 59 minutes, and 59 seconds</td>
+<td>Addition</td>
+<td>August 29, 2002<br>16:24:19</td>
+<td>August 29, 2004<br>16:24:18</td>
+</tr>
+<tr valign=top>
+<td align=right>7</td>
+<td>1 year, 2 months, 3 days,<br>4 hours, 5 minutes, and 6 seconds</td>
+<td>Subtraction</td>
+<td>August 29, 2002<br>16:24:19</td>
+<td>Error - subtraction requires the first operand to be an actual date</td>
+</tr>
+<tr valign=top>
+<td align=right>8</td>
+<td>1 year, 2 months, 3 days,<br>4 hours, 5 minutes, and 6 seconds</td>
+<td>Addition</td>
+<td>1 year, 2 months, 3 days,<br>4 hours, 5 minutes, and 6 seconds</td>
+<td>Error - one operand must be an actual date</td>
+</tr>
+<tr valign=top>
+<td align=right>9</td>
+<td>1 year, 2 months, 3 days,<br>4 hours, 5 minutes, and 6 seconds</td>
+<td>Subtraction</td>
+<td>1 year, 2 months, 3 days,<br>4 hours, 5 minutes, and 6 seconds</td>
+<td>Error - one operand must be an actual date</td>
+</tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The accuracy of your algorithms (for year, month, and day)
+can be verified by comparing results from your algorithm
+with answers supplied by the Personal Ancestral File (version 5.2)
+date calculator.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Design (and submit) at least <b>two</b> separate and unique alternatives.
+Use pseudocode.
+<i>Clarification: only one alternative for error checking is required.
+Provide two alternative algorithms for adding and subtracting date-time groups.</i>
+Specify which algorithm you would prefer to implement and why.
+The designs shall be detailed; no miracles!
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Demonstrate that each algorithm is correct
+	for each of the nine examples above by 
+<OL>
+<LI>numbering each major intermediate step in the designs and
+<LI>showing (and submitting) the calculations specified for that
+	intermediate step <b>and</b> the results of those calculations.
+</OL>
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="07"><FONT SIZE="+3"><B>07</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Pinewood Derby Simulator High-level Design</B></font><BR>
+<I>250 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Work with others in groups to design a pinewood derby simulator.
+Base your design on the <a href="cs165PDSrequirements.txt">
+Pinewood Derby Simulator Requirements</a>.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://web.archive.org/web/1998/http://joshua.byui.edu/~twitchellk/cs165hw07groups.txt">
+Group assignments</a> (on campus only).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The design shall include a class diagram and CRC cards.
+Each class shall be represented on the class diagram and on a CRC card.
+You may use 3x5 or 4x6 cards for CRC cards.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Supply additional text to enhance understanding of your design.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Provide requirements-design traceability.
+For each numbered requirement, specify the class,
+class attributes, <b>and</b>
+class operations that satisfy that requirement.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Submit the design and traceability information, one per group, on paper.
+Include the names of group members.
+For <b>each</b> group member, indicate the
+total amount of time spent working on the design
+(in hours and minutes) and the percentage of
+total effort for that group member.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Each person in the group shall submit a work log as a .txt file.
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="08"><FONT SIZE="+3"><B>08</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Date and Time Calculator, Version 1</B></font><BR>
+<I>250 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Build a program to read a date-time group,
+	an operation (addition or subtraction), and
+	a second date-time group from the user.
+Each date-time group shall consist of integers as specified in
+	homework <A HREF="#06">06</A>, entered in the order of
+	month, day, year, hour, minute, and second.
+Perform the operation and output the results (including error messages).
+Implement the design completed for homework <A HREF="#06">06</A>.
+Use a structure to hold the date and time; do not use a class.
+Loop until the user specifies to quit by entering a zero (0);
+	the user shall not be required to enter anything more
+	than a zero to terminate the program.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<i>
+Clarifications:
+<UL>
+<LI>Order of error checking: verify that the operator is correct
+	<b>before</b> checking the operands. The only valid operators are
+	"+" and "-". If an invalid operator is specified, output
+	"Error - invalid operator".
+<LI>If a year, month, day, hour, minute, <b>or</b> second is invalid
+	(in either operand), output "Error - invalid input".
+<LI>When appropriate, use "year(s)," "month(s)," "day(s),"
+	"hour(s)," "minute(s)," and "second(s)" in output.
+<LI>Note the change in wording from
+	"Error - at least one operand must be an actual date" to
+	"Error - one operand must be an actual date"
+<LI>It is valid perform subtraction on identical operands.
+	Note the change in wording from
+	"Error - subtraction requires the start date to be before the end date" to
+	"Error - the end date cannot be before the start date"
+</UL>
+</i>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is shown in <b>bold</b>):
+<PRE>
+   Enter date/time expression using the following format
+      mm dd yyyy hh mm ss operator mm dd yyyy hh mm ss
+   where mm, dd, yyyy, hh, mm, and ss are integers representing
+      the month, day, year, hour, minute, and second
+   and where operator is either + or - (for addition or subtraction)
+   Input: <b>11 1 2003 20 29 25 * 8 29 2002 16 24 19</b>
+   Error - invalid operator
+   Input: <b>11 1 -2003 16 24 19 - 8 29 2002 20 29 25</b>
+   Error - invalid input
+   Input: <b>11 1 2003 16 24 19 - 2 29 2002 20 29 25</b>
+   Error - invalid input
+   Input: <b>11 1 2003 20 29 25 + 8 29 2002 16 24 19</b>
+   Error - cannot add two actual dates
+   Input: <b>11 1 2003 16 24 19 - 8 29 2002 20 29 25</b>
+   1 year(s), 2 month(s), 2 day(s), 19 hour(s), 54 minute(s), and 54 second(s)
+   Input: <b>8 29 2002 16 24 19 - 11 1 2003 20 29 25</b>
+   Error - the end date cannot be before the start date
+   Input: <b>2 28 2000 16 24 19 + 6 3 2 9 38 50</b>
+   September 1, 2002 02:03:09
+   Input: <b>9 2 2002 12 19 13 - 10 4 2 18 40 50</b>
+   October 28, 1999 17:38:23
+   Input: <b>11 30 1 23 59 59 + 8 29 2002 16 24 19</b>
+   August 29, 2004 16:24:18
+   Input: <b>2 3 1 4 5 6 - 8 29 2002 16 24 19</b>
+   Error - subtraction requires the first operand to be an actual date
+   Input: <b>2 3 1 4 5 6 + 2 3 1 4 5 6</b>
+   Error - one operand must be an actual date
+   Input: <b>2 3 1 4 5 6 - 2 3 1 4 5 6</b>
+   Error - one operand must be an actual date
+   Input: <b>0</b>
+</PRE>
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="09"><FONT SIZE="+3"><B>09</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Object Oriented Hello World!</B></font><BR>
+<I>100 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a class named Hello.
+The constructor shall output "Hello " followed by the string passed to the constructor.
+The destructor shall output "Goodbye cruel " followed by the same string.
+Provide six member functions to store a name, store a major, store a location,
+output "My name is " followed by the stored name,
+output "My major is " followed by the stored major, and
+output "I am from " followed by the stored location.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+From main(), instantiate a hello object with the string "world!"
+Send six messages to your object to
+<OL>
+<LI>set your name (pass your name from main()),
+<LI>set your major (pass your major from main()),
+<LI>set where you are from (pass the location from main()),
+<LI>display your name,
+<LI>display your major, and
+<LI>display where you are from.
+</OL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Example:
+<PRE>
+   Hello world!
+   My name is Brother Twitchell.
+   My major is Computer Science.
+   I am from Blackfoot, Idaho.
+   Goodbye cruel world!
+</PRE>
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="10"><FONT SIZE="+3"><B>10</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Stack Lock and Unlock</B></font><BR>
+<I>150 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Build a program to demonstrate the use of stacks.
+Start with the code at
+<a href="stackCode.txt">/home/twitchellk/examples/stackCode.cpp</a>.
+<i>While you may (and should) add documentation to the supplied code,
+you may <b>not</b> modify <b>any</b> of the executable code in main.</i>
+Exactly match the output specified in
+<a href="stackOutput.txt">/home/twitchellk/examples/stackOutput.txt</a>.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Modify the supplied code such that each instance
+of the Stack class (object) can access a single stack –
+not one stack per instance, but one stack period.
+Any instance of the class can lock the stack
+for its own exclusive use and unlock it later.
+The object that locked the stack is the only one that can push values
+onto the stack, pop values off of the stack, and unlock the stack.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Modify or create member functions to perform the
+push, pop, lock, and unlock functions.
+These functions also output information regarding their operations.
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="11"><FONT SIZE="+3"><B>11</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Date and Time Calculator, Version 2</B></font><BR>
+<I>100 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Modify your source code for homework <A HREF="#08">08</A>
+	to be object oriented (i.e., remove the structure and
+	implement a class).
+Overload the stream insertion (&lt;&lt;), addition (+),
+	and subtraction (-) operators.
+No friends.
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="12"><FONT SIZE="+3"><B>12</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Date and Time Calculator, Version 3</B></font><BR>
+<I>100 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Modify your source code for homework <A HREF="#11">11</A>
+	to accept as input a command to quit or a date-time in the
+	following format: mm/dd/yyyy hh:mm:ss.
+There shall be only one prompt for the date-time group or
+	quit command (i.e., input a single string).
+Continue to accept and process input until the user specifies to quit.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<i>
+Clarifications:
+<ol>
+<li>Leading zeroes are not required for input and
+	the absence of leading zeroes is <b>not</b> an error.
+<li>Required spaces in input include between the date and time and
+	on either side of the operator.
+</ol>
+</i>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Example (examples from previous versions also apply):
+<PRE>
+   Enter date/time expression using the following format
+      mm/dd/yyyy hh:mm:ss operator mm/dd/yyyy hh:mm:ss
+   where mm, dd, yyyy, hh, mm, and ss are integers representing
+      the month, day, year, hour, minute, and second
+   and where operator is either + or - (for addition or subtraction)
+   Input: <b>10/31/2002 15:04:11 + 0/0/0 0:0:</b>
+   Error - invalid input
+   Input: <b>10/31/2002 15:04:11 + 0/0/0 0::1</b>
+   Error - invalid input
+   Input: <b>10/31/2002 15:04:11 + 0/0/0 :0:1</b>
+   Error - invalid input
+   Input: <b>10/31/2002 15:04:11 + 0/0/ 0:0:1</b>
+   Error - invalid input
+   Input: <b>10/31/2002 15:04:11 + 0//0 0:0:1</b>
+   Error - invalid input
+   Input: <b>10/31/2002 15:04:11 + /0/0 0:0:1</b>
+   Error - invalid input
+   Input: <b>10/31/2002 15:04:11 0/0/0 0:0:1</b>
+   Error - invalid input
+   Input: <b>10/31/2002 15:04: + 0/0/0 0:0:1</b>
+   Error - invalid input
+   Input: <b>10/31/2002 15::11 + 0/0/0 0:0:1</b>
+   Error - invalid input
+   Input: <b>10/31/2002 :04:11 + 0/0/0 0:0:1</b>
+   Error - invalid input
+   Input: <b>10/31/ 15:04:11 + 0/0/0 0:0:1</b>
+   Error - invalid input
+   Input: <b>10//2002 15:04:11 + 0/0/0 0:0:1</b>
+   Error - invalid input
+   Input: <b>/31/2002 15:04:11 + 0/0/0 0:0:1</b>
+   Error - invalid input
+   Input: <b>10+31/2002 15:04:11 + 0/0/0 0:0:1</b>
+   Error - invalid input
+   Input: <b>10/31/2002 15:04:11 + 0/0/0 0-0:1</b>
+   Error - invalid input
+   Input: <b>10.31.2002 15:04:11 + 0.0.0 0:0:1</b>
+   Error - invalid input
+   Input: <b>10/31/2002 15;04;11 + 0/0/0 0;0;1</b>
+   Error - invalid input
+   Input: <b>Quit</b>
+</PRE>
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="13"><FONT SIZE="+3"><B>13</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Multiplication Table</B></font><BR>
+<I>150 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Build an object-oriented program that accepts as input
+	the minimum and maximum numbers for a multiplication table
+	or the command to quit.
+Continue to accept and process input until
+	the user specifies to quit.
+The minimum number is the smallest number
+that is used to create a product.
+The maximum number is the largest number
+that is used to create a product.
+Calculate and output the calculated values (products)
+for the multiplication table.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Assuming that the user input is one for the minimum and
+twelve for the maximum,
+the table should be formatted to look <i>exactly</i> like the table in
+<a href="fancyTable.txt">/home/twitchellk/examples/fancyTable.txt</a>.
+Use I/O functions or manipulators to format the table.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Remember to provide full error detection and handling.
+Assume integer input.
+No product shall exceed three characters.
+Negative numbers are valid for minimum and maximum numbers.
+The maximum number cannot be less than the minimum number.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Example (user input is shown in <b>bold</b>):
+<PRE>
+Enter minimum and maximum OR quit: <b>1 12</b>
+      /-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----\
+      |   1 |   2 |   3 |   4 |   5 |   6 |   7 |   8 |   9 |  10 |  11 |  12 |
+/-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|   1 |   1 |   2 |   3 |   4 |   5 |   6 |   7 |   8 |   9 |  10 |  11 |  12 |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|   2 |   2 |   4 |   6 |   8 |  10 |  12 |  14 |  16 |  18 |  20 |  22 |  24 |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|   3 |   3 |   6 |   9 |  12 |  15 |  18 |  21 |  24 |  27 |  30 |  33 |  36 |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|   4 |   4 |   8 |  12 |  16 |  20 |  24 |  28 |  32 |  36 |  40 |  44 |  48 |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|   5 |   5 |  10 |  15 |  20 |  25 |  30 |  35 |  40 |  45 |  50 |  55 |  60 |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|   6 |   6 |  12 |  18 |  24 |  30 |  36 |  42 |  48 |  54 |  60 |  66 |  72 |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|   7 |   7 |  14 |  21 |  28 |  35 |  42 |  49 |  56 |  63 |  70 |  77 |  84 |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|   8 |   8 |  16 |  24 |  32 |  40 |  48 |  56 |  64 |  72 |  80 |  88 |  96 |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|   9 |   9 |  18 |  27 |  36 |  45 |  54 |  63 |  72 |  81 |  90 |  99 | 108 |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|  10 |  10 |  20 |  30 |  40 |  50 |  60 |  70 |  80 |  90 | 100 | 110 | 120 |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|  11 |  11 |  22 |  33 |  44 |  55 |  66 |  77 |  88 |  99 | 110 | 121 | 132 |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+|  12 |  12 |  24 |  36 |  48 |  60 |  72 |  84 |  96 | 108 | 120 | 132 | 144 |
+\-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----/
+Enter minimum and maximum OR quit: <b>31 31</b>
+      /-----\
+      |  31 |
+/-----+-----+
+|  31 | 961 |
+\-----+-----/
+Enter minimum and maximum OR quit: <b>9 -9</b>
+Error: minimum must be less than or equal to maximum
+Enter minimum and maximum OR quit: <b>-10 10</b>
+Error: product cannot exceed three characters
+Enter minimum and maximum OR quit: <b>1 32</b>
+Error: product cannot exceed three characters
+Enter minimum and maximum OR quit: <b>-9 12</b>
+Error: product cannot exceed three characters
+Enter minimum and maximum OR quit: <b>Quit</b>
+</PRE>
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="14"><FONT SIZE="+3"><B>14</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Pinewood Derby Simulator</B></font><BR>
+<I>600 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Work with others in groups to program a pinewood derby simulator
+using the design developed in homework <a href="#07">07</a> and
+satisfying the requirements specified for homework <a href="#01">01</a>.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://web.archive.org/web/1998/http://joshua.byui.edu/~twitchellk/cs165hw14groups.txt">
+Group assignments</a> (on campus only).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Submit the C++ files to the subdirectory created for your group
+in /home/twitchellk/cs165/hw14/.
+Provide any other required files and subdirectories.
+Do <b>not</b> provide any cars other than the predefined cars
+required by the requirements specification.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Other deliverables:
+<UL>
+<LI>Provide requirements-code traceability.
+For each numbered requirement, specify the class with its fields
+and/or methods that satisfy that requirement.
+<LI>Provide user instructions including how to compile and execute
+your program (in the readme.txt file).
+<LI>Include the names of group members.
+<LI>Each group member shall provide a
+	<a href="workLog.html">work log</a>.
+<LI>For each group member, indicate the percentage
+of total effort for that group member.
+</UL>
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="15"><FONT SIZE="+3"><B>15</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Bank</B></font><BR>
+<I>250 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Build an object-oriented program to process a list of bank transactions.
+Transactions include creating accounts, making deposits and withdrawals,
+adding accumulated interest, and deducting accumulated fees.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+The following rules apply:
+<UL>
+<LI>A bounced check costs $25 and is deducted immediately from the checking account balance.
+<LI>There is a fee for each check (checking account withdrawal).
+Each checking account may use a different fee.
+The fees are charged as part of an update (see below).
+<LI>Savings accounts accrue interest.
+Each savings account may have a different interest rate.
+Interest is credited as part of an update (see below).
+<LI>Interest is charged for loans.
+Each loan may have a different interest rate.
+Interest is charged as part of an update (see below).
+<LI>An attempt is made to withdraw more money than is available in a savings or checking account
+shall be rejected and a message indicating such shall be output.
+<LI>There is no maximum limit on the amount loaned.
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+The transaction file uses the following symbols: s, c, l, t, and u.
+<UL>
+<LI><B>s</B> - Create a new savings account.
+An account number, a name, an initial balance, and the interest rate are supplied.
+<LI><B>c</B> - Create a new checking account.
+An account number, a name, an initial balance, and the fee for each processed check are supplied.
+<LI><B>l</B> - Create a new loan account.
+An account number, a name, an initial balance, and the interest rate are supplied.
+<LI><B>t</B> - Perform a transaction. An account number and the amount of the transaction are supplied.
+<UL>
+<LI>For savings accounts, a positive value is a deposit and a negative value is a withdrawal.
+<LI>For checking accounts, a positive value is a deposit and a negative value represents a check.
+<LI>For loan accounts, a positive value represents a payment on the loan and
+a negative value represents the borrowing of additional money.
+</UL>
+<LI><B>u</B> - perform an update. An account number is supplied.
+<UL>
+<LI>For savings accounts, calculate and add interest earned.
+<LI>For checking accounts, calculate and deduct the fee for each check.
+<LI>For loan accounts, calculate and add the interest charged to the outstanding loan balance.
+</UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;
+Use the list of transactions contained in
+<a href="bank.txt">/home/ket/examples/bank.txt</a>.
+Use C++ file I/O to process this file.
+There is no user input.
+All transactions shall be processed in a single loop.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Create a base class named Account.
+Created derived classes named Savings, Checking, and Loan.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+The output from your program shall exactly match the output contained in
+<a href="bankOutput.txt">/home/ket/examples/bankOutput.txt</a>.
+</TD>
+</TR>
+<TR><TD COLSPAN=2><HR></TD></TR>
+<TR VALIGN="top">
+<TD>
+<A NAME="16"><FONT SIZE="+3"><B>16</B></FONT></A>
+</TD>
+<TD>
+<font size="+1"><B>Normal Distribution</B></font><BR>
+<I>300 points</I>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;
+Build an object-oriented simulation of the probability demonstration
+	given in class.
+Use linked lists.
+There is no user input.
+Output the number of "balls" in each leaf (final) node.
+</TD>
+</TR>
+</TABLE>
+
+<HR>
+
+<table>
+<tr valign=bottom>
+<td>
+<FONT SIZE="-1">
+<b><a href="default.htm">Kevin E. Twitchell</a></b><BR>
+<A href="../../../../ricks-2000/Default.htm">BYU-Idaho</A><BR>
+ROM 271<BR>
+Rexburg, ID 83460-0515<BR>
+</FONT>
+</td>
+<td>
+</td>
+<td>
+<FONT SIZE="-1">
+<A HREF="mailto:TwitchellK@byui.edu">
+TwitchellK@byui.edu</A><BR>
+208-496-1938 voice<BR>
+208-496-5938 fax
+</FONT>
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>

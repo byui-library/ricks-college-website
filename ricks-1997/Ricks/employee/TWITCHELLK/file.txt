@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+
+open (INPUT, "file.pl"); # opens the file
+                         # INPUT is the filehandle
+                         # "file.pl" is the name of the file
+@fileContents = <INPUT>; # since this is list context,
+                         #    the entire file is read into an array
+close INPUT;             # closes the file

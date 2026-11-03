@@ -15,7 +15,7 @@ A restored copy of the Ricks College website (www.ricks.edu) as it stood between
 ## Where it came from
 
 - **A backup of the college's web server**, about 11,000 files.
-- **About 5,600 files recovered from the Internet Archive's [Wayback Machine](https://web.archive.org/)**. These are pages and images the backup's pages linked to but the backup didn't contain, plus the images and pages that those recovered pages link to, followed up to four links away from the backup.
+- **About 7,000 files recovered from the Internet Archive's [Wayback Machine](https://web.archive.org/)**. These are pages and images the backup's pages linked to but the backup didn't contain, plus whatever those recovered pages link to, followed until the Archive had nothing more. About 900 of them come from the college's other web servers, such as the library (`www.lib.ricks.edu`) and course servers (`cbt.ricks.edu`). Each era keeps those in a `_sites/<server name>/` folder.
 
 Pages keep their original late-1990s look. The restoration changed only what modern browsers can't handle:
 - Links were made to work offline from their original server.

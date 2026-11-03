@@ -1,0 +1,297 @@
+ <!-- FileName="Connection_cf_dsn.htm" "" -->
+<!-- Type="CFDSN" -->
+<!-- Catalog="" -->
+<!-- Schema="" -->
+<!-- HTTP="true" -->
+
+
+<html>
+<head>
+<script language="javascript">
+function checkForm(thisform)
+        {
+        returnval=true;
+        for (var j=0; j<(thisform.elements.length); j++)
+                {
+                indx = thisform.elements[j].name.indexOf('_required');
+                if (indx != -1)
+                        {
+                        fieldname=thisform.elements[j].name.substring(0,indx);
+                        if (thisform.elements[fieldname].value.length == 0)
+                                {
+                                alert(thisform.elements[j].value);
+                                j = (thisform.elements.length);
+                                returnval = false;
+                                }
+                        }
+                }
+        return returnval;
+        }
+
+
+</script>
+<title>McKay Library Survey</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="file:///C|/myfiles/LibNew/lee.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<form METHOD="POST" name="form1" onsubmit="return false">
+  <table width="693" border="0">
+    <tr> 
+      <td> Thank you for taking the new library web site out for a test drive. 
+        We hope you enjoyed what you saw. Would you please take a moment to provide 
+        us with some feedback about your experience? </td>
+    </tr>
+  </table>
+  <br>
+  <table border="0" width="470">
+    <tr> 
+      <td> <b> <i> First we need to know just a little bit about you: </i> </b> 
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table border="0" width="629" height="61">
+    <tr valign="top"> 
+      <td width="257" height="49" rowspan="2"> 
+        <p> What is your status at BYUI? </p>
+        <p> 
+          <select name="status">
+            <option>Freshman </option>
+            <option>Sophomore </option>
+            <option>Junior </option>
+            <option>Senior </option>
+            <option>Independent Study Student</option>
+            <option>Non-Library Faculty </option>
+            <option>Non-Library University Employee </option>
+            <option>Library Faculty </option>
+            <option>Library Employee </option>
+            <option>Alumni </option>
+            <option>Not affiliated with BYU </option>
+          </select>
+        </p>
+      </td>
+      <td width="150" height="49" rowspan="2"> 
+        <p> What is your age? </p>
+        <p> 
+          <select name="age">
+            <option> Under 21 </option>
+            <option> 21-25 </option>
+            <option> 26-30 </option>
+            <option> 31-35 </option>
+            <option> 36-40 </option>
+            <option> 41-45 </option>
+            <option> Over 45 </option>
+          </select>
+        </p>
+      </td>
+      <td width="208" height="21"> 
+        <p> What is your gender? </p>
+      </td>
+    </tr>
+    <tr valign="top"> 
+      <td width="208" height="24"> 
+        <p> 
+          <input type="radio" name="gender" value="Male">
+          Male <br>
+          <input type="radio" name="gender" value="Female">
+          Female </p>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table border="0" width="641">
+    <tr> 
+      <td> 
+        <p> <i> <b> Now 10 questions about your library web site experience: </b> 
+          </i> </p>
+        <p> <b> 1. How often do you access the library&#146;s web page? </b> </p>
+      </td>
+    </tr>
+  </table>
+  <p> 
+    <select name="HowOften">
+      <option> Daily </option>
+      <option> Weekly </option>
+      <option> Monthly </option>
+      <option> Several times a year </option>
+      <option> Rarely </option>
+    </select>
+    <br>
+  </p>
+  <table border="0" width="585">
+    <tr> 
+      <td> <b> 2. Library access: </b> </td>
+    </tr>
+  </table>
+  <br>
+  <table border="0" width="605" height="26">
+    <tr valign="top"> 
+      <td height="44" width="26">&nbsp; </td>
+      <td height="44" width="277"> <b> a. For what reason do you most often use 
+        the McKay Library Website? </b> </td>
+      <td height="44" width="288"> <b> b. What type of material do you most often 
+        look for? </b> </td>
+    </tr>
+    <tr> 
+      <td width="26">&nbsp; </td>
+      <td width="277"> 
+        <select name="AccessReason">
+          <option> Work on a class assignment </option>
+          <option> Work on personal research </option>
+          <option> Find recreational reading </option>
+          <option> Find out about library events, hours, etc. </option>
+          <option> Other </option>
+        </select>
+      </td>
+      <td width="288"> 
+        <select name="MaterialType">
+          <option> Books </option>
+          <option> Articles in journals or newspapers </option>
+          <option> Audio/visual (music, video, etc.) </option>
+          <option> Government publications </option>
+          <option> Archives, special collections </option>
+          <option> Other </option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <p> 
+    <!--
+<select name="select4">
+      <option>Fulfill class assignments</option>
+      <option>Do personal research</option>
+      <option>To locat a book, article, journal, video, etc.</option>
+      <option>To access electronic materials (e-journals, e-books, images, etc.)</option>
+      <option>To renew a book I've checked out</option>
+      <option>To find out about library policies, hours, locations or personnel</option>
+      <option>Simply for browsing</option>
+    </select>
+-->
+  </p>
+  <table border="0" width="697" cellpadding="3">
+    <tr valign="top"> 
+      <td height="59" width="240"> <b> 3. In the past, have you been able to find 
+        the information you have needed through the web site? </b> </td>
+      <td height="59" width="246"> <b> 4. In general, how would you rate your 
+        overall experience in using the NEW website? </b> </td>
+      <td height="59" width="197"> 
+        <p> <b> 5. How did the new site compare to the old site in helping you 
+          find the information you wanted? </b> </p>
+      </td>
+    </tr>
+    <tr valign="top"> 
+      <td width="240"> 
+        <select name="InformationFound">
+          <option>Always </option>
+          <option>Usually</option>
+          <option>Sometimes </option>
+          <option>Rarely</option>
+          <option>Never </option>
+          <option>I've never used the old site </option>
+        </select>
+      </td>
+      <td width="246"> 
+        <select name="RateExp">
+          <option> Outstanding </option>
+          <option> Good </option>
+          <option> Fair </option>
+          <option> Poor </option>
+          <option> The old site is much better </option>
+        </select>
+      </td>
+      <td width="197"> 
+        <select name="NewVsOld">
+          <option> Much easier </option>
+          <option> Somewhat easier </option>
+          <option> About the same </option>
+          <option> Somewhat more difficult </option>
+          <option> Much more difficult </option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table border="0" width="713" height="45">
+    <tr> 
+      <td width="330" valign="top"> <b> 6. Did you have any trouble navigating 
+        the website? <br>
+        </b> 
+        <table border="0" cellpadding="3" width="250">
+          <tr> 
+            <td width="24" align="right"> 
+              <input type="radio" name="NavTrouble" value="No">
+            </td>
+            <td width="42"> No </td>
+            <td width="43" align="right"> 
+              <input type="radio" name="NavTrouble" value="Yes">
+            </td>
+            <td width="84" align="left"> Yes </td>
+            <td width="41" align="left">&nbsp; </td>
+          </tr>
+          <tr> 
+            <td colspan="3" align="right"> <i> If yes, please explain: </i> </td>
+            <td colspan="2"> 
+              <input type="text" name="expNavTrouble">
+            </td>
+          </tr>
+        </table>
+        <b> </b> </td>
+      <td width="373" valign="top"> <b> 7. Did you find adequate assistance in 
+        doing your research? <br>
+        </b> 
+        <table border="0" cellpadding="3" width="250">
+          <tr> 
+            <td width="24" align="right"> 
+              <input type="radio" name="AdequateAssistance" value="Yes">
+            </td>
+            <td width="42"> Yes </td>
+            <td width="43" align="right"> 
+              <input type="radio" name="AdequateAssistance" value="No">
+            </td>
+            <td width="84" align="left"> No </td>
+            <td width="41" align="left">&nbsp; </td>
+          </tr>
+          <tr> 
+            <td colspan="3" align="right"> <i> If no, please explain: </i> </td>
+            <td colspan="2"> 
+              <input type="text" name="expAdequateAssistance">
+            </td>
+          </tr>
+        </table>
+        <b> </b> </td>
+    </tr>
+  </table>
+  <br>
+  <table border="0" width="704" cellpadding="3">
+    <tr valign="top"> 
+      <td width="201"> 
+        <p> <b> 8. What did you like best about the new web site? </b> </p>
+      </td>
+      <td width="188"> <b> 9. What did you like least about the new web site? 
+        </b> </td>
+      <td width="289"> <b> 10. Please give us any additional comments you might 
+        have regarding the new Library Web Site: </b> </td>
+    </tr>
+    <tr valign="top"> 
+      <td width="201"> 
+        <textarea name="LikeBest">
+</textarea>
+      </td>
+      <td width="188"> 
+        <textarea name="LikeLeast">
+</textarea>
+      </td>
+      <td width="289"> 
+        <textarea name="addComments">
+</textarea>
+      </td>
+    </tr>
+  </table>
+  <p> 
+    <input type="submit" name="Submit" value="Submit">
+  </p>
+  <input type="hidden" name="MM_insert" value="true">
+</form>
+</body>
+</html>

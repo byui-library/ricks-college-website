@@ -1,0 +1,199 @@
+BODY
+{
+    MARGIN-TOP: 0px;
+    FONT-SIZE: 8pt;
+    MARGIN-LEFT: 0px;
+    MARGIN-RIGHT: 0px;
+    FONT-FAMILY: Arial
+}
+.SilverBG
+{
+    BORDER-RIGHT: 1pt groove;
+    BORDER-TOP: 1pt groove;
+    FONT-SIZE: 8pt;
+    BORDER-LEFT: 1pt groove;
+    COLOR: black;
+    BORDER-BOTTOM: 1pt groove;
+    FONT-FAMILY: Arial, Helvetica, SansSerif;
+    BACKGROUND-COLOR: #eeeeee
+}
+.ScrollableTable
+{
+    BORDER-RIGHT: thin;
+    BORDER-TOP: thin;
+    FONT-SIZE: 8pt;
+    BORDER-LEFT: thin;
+    BORDER-BOTTOM: thin;
+    FONT-FAMILY: Arial, helvetica, SansSerif
+}
+.NoBorder
+{
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    FONT-SIZE: 8pt;
+    BORDER-LEFT: medium none;
+    BORDER-BOTTOM: medium none;
+    FONT-FAMILY: Arial, Helvetica, SansSerif
+}
+.StdButton
+{
+    FONT-SIZE: 8pt;
+    WIDTH: 80pt;
+    FONT-FAMILY: Arial
+}
+A:visited
+{
+    COLOR: blue;
+    TEXT-DECORATION: underline
+}
+SELECT
+{
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Arial, helvetica, SansSerif
+}
+.BlueBgTH
+{
+    FONT-SIZE: 9pt;
+    COLOR: white;
+    FONT-FAMILY: Arial, Helvetica, SansSerif;
+    BACKGROUND-COLOR: #002854
+}
+.ThinBorder
+{
+    BORDER-RIGHT: thin ridge;
+    BORDER-TOP: medium none;
+    FONT-SIZE: 8pt;
+    BORDER-LEFT: thin ridge;
+    COLOR: black;
+    BORDER-BOTTOM: thin ridge;
+    FONT-FAMILY: Arial, helvetica, SansSerif;
+    BACKGROUND-COLOR: #eeeeee
+}
+.BlueFont
+{
+    FONT-SIZE: 8pt;
+    COLOR: blue;
+    FONT-FAMILY: arial, helvetica, SansSerif
+}
+.BlackFont
+{
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Arial, Helvetica, SansSerif
+}
+.Readonly
+{
+    FONT-SIZE: 8pt;
+    WIDTH: 150px;
+    FONT-FAMILY: Arial, Helvetica, 'Sans Serif';
+    BACKGROUND-COLOR: #d7d3cd;
+    READONLY: TRUE
+}
+.TabNone
+{
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-BOTTOM: thin ridge;
+    BACKGROUND-COLOR: transparent
+}
+A:hover
+{
+    COLOR: #002a54;
+    TEXT-DECORATION: underline
+}
+A:link
+{
+    COLOR: blue;
+    TEXT-DECORATION: underline
+}
+A
+{
+    COLOR: blue;
+    TEXT-DECORATION: underline
+}
+.NoTab
+{
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-BOTTOM: medium none;
+    BACKGROUND-COLOR: white
+}
+.TabLeftSelected
+{
+    BORDER-RIGHT: thin ridge;
+    BORDER-TOP: thin ridge;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 8pt;
+    BORDER-LEFT: thin ridge;
+    CURSOR: hand;
+    FONT-FAMILY: Arial, helvetica, SansSerif;
+    HEIGHT: 20pt;
+    BACKGROUND-COLOR: #eeeeee;
+    TEXT-ALIGN: center
+}
+.TabLeftNotSelected
+{
+    BORDER-RIGHT: thin ridge;
+    BORDER-TOP: thin ridge;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 8pt;
+    BORDER-LEFT: thin ridge;
+    CURSOR: hand;
+    COLOR: white;
+    BORDER-BOTTOM: thin ridge;
+    FONT-FAMILY: Arial, SansSerif;
+    HEIGHT: 20pt;
+    BACKGROUND-COLOR: #002a54;
+    TEXT-ALIGN: center
+}
+.TabNotSelected
+{
+    BORDER-RIGHT: thin ridge;
+    BORDER-TOP: thin ridge;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 8pt;
+    CURSOR: hand;
+    COLOR: white;
+    BORDER-BOTTOM: thin ridge;
+    FONT-FAMILY: Arial, helvetica, SansSerif;
+    HEIGHT: 20pt;
+    BACKGROUND-COLOR: #002a54;
+    TEXT-ALIGN: center
+}
+.TabSelected
+{
+    BORDER-RIGHT: thin ridge;
+    BORDER-TOP: thin ridge;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 8pt;
+    BORDER-LEFT: thin;
+    CURSOR: default;
+    COLOR: black;
+    FONT-FAMILY: Arial, helvetica, SansSerif;
+    HEIGHT: 20pt;
+    BACKGROUND-COLOR: #eeeeee;
+    TEXT-ALIGN: center
+}
+.AdminSiteLogo
+{
+    FLOAT: left;
+    POSITION: absolute;
+    TOP: 120px
+}
+.BrownBlackText
+{
+    COLOR: black;
+    BACKGROUND-COLOR: #e8dbb3;
+    FONT-VARIANT: normal
+}
+.SilverBG1
+{
+    FONT-SIZE: 8pt;
+    WIDTH: 80pt;
+    COLOR: black;
+    FONT-FAMILY: Arial, Helvitica, SansSerif;
+    BACKGROUND-COLOR: #eeeeee
+}

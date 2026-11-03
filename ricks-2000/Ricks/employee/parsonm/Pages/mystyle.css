@@ -1,0 +1,65 @@
+/* External Style Sheet */
+
+a
+     {
+     text-decoration: none;
+     color: blue;
+     }
+a:visited
+     {
+     color: blue;
+     }
+a:hover
+     {
+     color: red;
+     }
+img
+     {
+     border-width: 0px;
+     }
+h1
+     {
+     color: blue;
+     }
+p.indent
+	{margin-top: 0in;
+	margin-right: 0in;
+	margin-bottom: 0in;
+	margin-left: .5in;
+	text-indent: -.5in;
+	horizontal-align: middle}
+body
+     {
+     background-image: url("../image/bblue.jpg");
+     font-family: "Times Roman", serif;
+     font-weight: lighter;
+     font-size: small;
+     color: rgb(0,0,0);
+     }
+table
+     {
+     font-family: "Times Roman", serif;
+     font-weight: light;
+     font-size: small;
+     }
+.text
+     {
+     font-family: Times Roman, serif;
+     font-size: 16pt;
+     }
+
+.text2
+     {
+     font-family: serif;
+     font-size: 21pt;
+     color: rgb(50,50,250)
+     }
+
+.back1
+     {
+     background-color:#eebb88;
+     }
+.back 
+     {
+     background-image: url("../image/bblue.jpg");
+     }

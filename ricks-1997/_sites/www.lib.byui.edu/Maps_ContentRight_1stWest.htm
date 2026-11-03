@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>1st Floor West Wing Map</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="Styles.css" type="text/css">
+<script language='javascript'>
+var naar = location.href.substring(location.href.lastIndexOf("/")+1);
+
+if ((top != self.parent) || (top == self))
+{
+	top.location.replace('Maps.htm' + naar);
+}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="500" align="left">
+  <tr>
+    <td> 
+      <h1>1st Floor West Wing Map</h1>
+      <p><img src="images/Map1stWest.gif" width="412" height="525" border="0" usemap="#Map"> 
+      </p>
+      <p><b>NOTE:</b> Click on certain parts of the map for more information on 
+        library services. </p>
+    </td>
+  </tr>
+</table>
+<map name="Map"> 
+  <area shape="poly" coords="132,232,133,293,182,293,182,318,212,318,212,254,163,254,163,233" href="Services_ContentRight.htm#Circulation">
+  <area shape="rect" coords="168,201,224,252" href="Services_ContentRight.htm#Reserve">
+  <area shape="rect" coords="184,63,212,183" href="Services_ContentRight.htm#Computers">
+  <area shape="rect" coords="143,402,224,448" href="Services_ContentRight.htm#Computers">
+  <area shape="rect" coords="206,350,265,401" href="Services_ContentRight.htm#Reference">
+</map>
+</body>
+</html>

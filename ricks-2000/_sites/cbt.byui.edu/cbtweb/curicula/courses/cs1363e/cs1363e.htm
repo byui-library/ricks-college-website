@@ -1,0 +1,353 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>TCP/IP Network Design</TITLE></HEAD>
+
+<SCRIPT>
+<!--
+//CBTWEB.JS
+var sStudent_id="";
+var bIsCGI=0;
+var sScript="cgi";
+var bLspanInstalled=0;
+var bBrazilInstalled=0;
+var bJapanInstalled=0;
+var bItalianInstalled=0;
+var bFinnishInstalled=0;
+var bFrenchInstalled=0;
+var bGermanInstalled=0;
+var bEnglishInstalled=0;
+var sDefaultLang="english";
+var zaccess=0;
+var selfreg=0;
+var password=0;
+var studid = top.sStudent_id;
+top.bliveplayed=0;
+
+var bHasLiveplay=1;
+var bHasDownload=0;
+
+
+function a(txt) {self.status = txt}
+function b() {self.status = ''}
+
+function WriteButtons()
+{
+	if ((bHasLiveplay == 1) | (bHasDownload == 1))
+	{
+		document.write('<P><CENTER>');
+		if (bIsCGI==1) 
+		{
+			var nShowButtons=0;
+			if(studid == "0")
+				nShowButtons=1;
+			else {
+				if(studid == "")
+					nShowButtons=2;
+			}
+			if (nShowButtons == 2) // Page book marked or navigated to directly
+			{
+				document.write('<A HREF="../../../../../index.htm"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/logbtn.gif"></A>');
+			}
+			else {
+				if (nShowButtons == 1) // Anonymous Access
+				{
+					document.write('<A HREF="../../../logon.htm"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/logbtn.gif"></A>');
+				}
+				else 
+				{
+					if (bHasLiveplay == 1)
+					{
+						document.write("<FORM METHOD=POST onsubmit="return false">");
+						document.write('<INPUT TYPE="image" IMG WIDTH=118 HEIGHT=25 BORDER=0 ALT="Play the course" SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/liveplay.gif">');
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"coursename\" VALUE=\"" + coursename +"\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"coursecode\" VALUE=\"" + coursecode + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"studir\" VALUE=\"" + studid + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"slanguage\" VALUE=\"" + sLanguage + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"ypager\" VALUE=\"" + Ypage + "\">");
+					}
+
+					if ((bHasLiveplay == 1) & (bHasDownload == 1))
+					{	
+						document.write('<IMG WIDTH=4 HEIGHT=25 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/gap.gif">');
+					}
+					if ((bHasDownload == 1))
+					{	
+						document.write('<A HREF="'+Zpage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/download.gif"></A>');
+					}	
+					if (bHasLiveplay == 1)
+					{
+						document.write("</FORM>");
+					}
+				}
+			}
+		}
+		if (bIsCGI==0) {
+			if ((bHasLiveplay == 1))
+			{
+				document.write('<A HREF="'+Ypage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 ALT="Play the Course" SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/liveplay.gif"></A>');
+			}
+			
+			if ((bHasLiveplay == 1) & (bHasDownload == 1))
+			{	
+				document.write('<IMG WIDTH=4 HEIGHT=25 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/gap.gif">');
+			}
+			
+			if ((bHasDownload == 1))
+			{	
+				document.write('<A HREF="'+Zpage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/download.gif"></A>');
+			}
+		}
+		document.write('</CENTER>');
+	}
+	document.write('<BR>');
+}	
+function WriteLangButton(sLangPg, sLangDir)
+{
+	if (sLanguage != sLangDir) {
+		if (sLangPg.length > 0) 
+		{
+			document.write ('<A HREF="');
+			document.write (sLangPg);
+			document.write ('"><IMG WIDTH=83 HEIGHT=15 BORDER=0 SRC="../../../../../');
+			document.write (sLangDir);
+			document.write ('/cbtweb/images/lang.gif"></A>');
+		}
+	}
+}
+function WriteLangButtons()
+{
+	if (bEnglishInstalled==1) {
+		WriteLangButton(EnglishPg, "english");
+	}
+
+	if (bFrenchInstalled==1) {
+		WriteLangButton(FrenchPg, "french");
+	}
+
+	if (bFinnishInstalled==1) {
+		WriteLangButton(FinnishPg, "finnish");
+	}
+
+	if (bGermanInstalled==1) {		
+		WriteLangButton(GermanPg, "german");
+	}
+
+	if (bBrazilInstalled==1) {
+		WriteLangButton(BrazilPg, "brazil");
+	}
+
+	if (bLspanInstalled==1) {
+		WriteLangButton(LspanPg, "lspan");
+	}
+
+	if (bItalianInstalled==1) {
+		WriteLangButton(ItalianPg, "italian");
+	}
+}
+function WriteLevel(nLevel)
+{
+	var i=0;
+	alert(nLevel);
+	for (i=0;i<nLevel;i++)
+	{
+		document.write ('../');
+	}
+}
+function WriteLogonLangButton(sLangPg, sLangDir, nLevel)
+{
+	if (nLevel == "undefined")
+		nLevel = 2;
+
+	if (sLanguage != sLangDir) {
+		document.write ('<A HREF="');
+		WriteLevel(nLevel);
+		document.write (sLangDir);
+		document.write ('/cbtweb/');
+		document.write (sLangPg);
+		document.write ('">\n<IMG WIDTH=83 HEIGHT=15 BORDER=0 SRC="');
+		WriteLevel(nLevel);
+		document.write (sLangDir);
+		document.write ('/cbtweb/images/lang.gif"></A>');
+		WriteLevel(nLevel);
+	}
+}
+function WritePageLangButtons( sPage )
+{
+	WriteLogonLangButtons( sPage );
+}
+function WriteLogonLangButtons( sPage )
+{
+	if (sPage != "not defined")
+		sPage = "logon.htm";
+
+	if (bEnglishInstalled==1) {
+		WriteLogonLangButton(sPage, "english");
+	}
+
+	if (bFrenchInstalled==1) {
+		WriteLogonLangButton(sPage, "french");
+	}
+
+	if (bFinnishInstalled==1) {
+		WriteLogonLangButton(sPage, "finnish");
+	}
+
+	if (bGermanInstalled==1) {		
+		WriteLogonLangButton(sPage, "german");
+	}
+
+	if (bBrazilInstalled==1) {
+		WriteLogonLangButton(sPage, "brazil");
+	}
+
+	if (bLspanInstalled==1) {
+		WriteLogonLangButton(sPage, "lspan");
+	}
+
+	if (bItalianInstalled==1) {
+		WriteLogonLangButton(sPage, "italian");
+	}
+}
+
+function GotoHRef(sRef)
+{
+		location.href = sRef;
+		top.sStudent_id = "0";
+}
+//ENDCBTWEB.JS
+// -->
+</SCRIPT>
+
+
+<SCRIPT>
+<!--
+
+
+// set by page generation (Ger)
+var Ypage="../cs1363e/cs1363ey.htm";
+var Zpage="../cs1363e/cs1363ez.htm";
+var coursename = "TCP/IP Network Design";
+var coursecode = "cs1363e";
+var sLanguage="english";
+
+// if variable length is empty button will not appear
+// Path to be in format "../../../../../[language]/cbtweb/curicula/courses/[coursefolder].htm"
+// e.g. "../../../../../french/cbtweb/curicula/courses/fmsobe/fmsobe.htm"
+
+var FrenchPg="";
+var GermanPg="";	
+var LspanPg="";
+var BrazilPg="";
+var JapanPg="";
+var FinnishPg="";
+var EnglishPg="";
+var ItalianPg="";
+	
+// -->
+</SCRIPT>
+
+<BODY BGCOLOR="#FFFFFF">
+
+<P>
+<CENTER><NOBR><IMG WIDTH=561 HEIGHT=34 BORDER=0 SRC="../../../images/cischdr.gif"><BR><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/endc1.gif"><A HREF="../../../catalog.htm#csmodel"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/contnbtn.gif"></A><A HREF="../../cid.htm"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/planbtn.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/spacbar1.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/spacbar1.gif"></A><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/endc2.gif"></NOBR><BR><BR></A>
+
+
+<SCRIPT>
+<!--
+WriteButtons();WriteLangButtons();
+// -->
+</SCRIPT>
+<CENTER><H2><CENTER>TCP/IP Network Design</H2></CENTER>
+
+<P>
+
+<CENTER><TABLE WIDTH=475 CELLSPACING=4 CELLPADDING=8 BORDER=4>
+<TR><TD  VALIGN=TOP WIDTH=167>
+<H3>General Information</H3>
+
+<DL>
+<DT>
+<B>Course Duration<BR> </B>4 hours<BR>
+
+<DT>
+<BR>
+<B>Audience<BR> </B>Internetwork designers and system engineers, with experience of implementing networks; those studying for the Cisco Internetwork Design exam; and those preparing for the Cisco Certified Design Professional certification or the Cisco Certified Internetwork Expert certification, or both<BR><BR>
+
+<DT>
+<B>Prerequisites<BR> </B>
+All previous courses in the <I>Cisco CID</I> curriculum; a knowledge of the <I>Cisco IOS 11.3: ICRC</I> and <I>Cisco IOS 11.3: ACRC</I> curricula; a working knowledge of and hands-on experience with multiprotocol internetworks
+<BR><BR>
+
+</DL>
+
+<P></TD><TD VALIGN=TOP ROWSPAN=3 WIDTH=166>
+<H3>Topics Covered</H3>
+<UL>
+<LI>Overview
+<LI>Routing
+<LI>TCP/IP addressing choices
+<LI>TCP/IP address management
+<LI>Implementing security
+<LI>Firewalls
+<LI>Hands-on: Enabling firewall functions
+<LI>Address translation
+<LI>Operating features
+<LI>Hands-on: Identifying routing protocols
+<LI>Implementation considerations
+<LI>Hands-on: Diagnosing network problems
+<LI>Summarization and convergence
+<LI>Route redistribution
+</UL>
+
+
+</TD><TR><TD VALIGN=TOP WIDTH=167>
+<H3>Course Aim</H3>
+<P>
+To discuss the implementation of TCP/IP in an internetwork, the methods used to choose appropriate routing protocols, and the efficient implementation of OSPF, IGRP, and EIGRP<BR>
+</TD></TR>
+
+
+<TR><TD VALIGN=TOP WIDTH=167>
+<H3>Learning Objectives</H3>
+<P>
+After taking this course, the student should be able to
+<UL>
+<LI>implement TCP/IP addressing and show how to manage addresses and subnets efficiently in an internetwork<BR><BR>
+<LI>identify the main features of internetwork addressing<BR><BR>
+<LI>discuss considerations that affect the role of routers and the choice of routing protocol in internetwork design<BR><BR>
+<LI>outline the importance of a good security policy, including the use of firewalls<BR><BR>
+<LI>identify the considerations for protocol filtering in firewall systems<BR><BR>
+<LI>outline the main features of address translation<BR><BR>
+<LI>choose the appropriate routing protocol based on network requirements<BR><BR>
+<LI>discuss the different elements of switching processes<BR><BR>
+<LI>discuss the operation and configuration of IP routing protocols<BR><BR>
+<LI>describe routing issues - such as summarization, convergence, and redistribution - that will affect internetwork operation
+</UL>
+
+</TD></TR>
+</TABLE>
+</CENTER>
+
+
+<P>
+<BR><BR>
+<P>
+<CENTER><B>Course Incorporates: </B>Test, hands-on exercises</CENTER>
+<HR><BR><CENTER>
+<SCRIPT>
+<!--
+WriteButtons();WriteLangButtons();
+// -->
+</SCRIPT>
+
+
+<BR><BR>
+
+
+<CENTER><NOBR><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/endc1.gif"><A HREF="../../../catalog.htm#csmodel"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/contnbtn.gif"></A><A HREF="../../cid.htm"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/planbtn.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/spacbar1.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/spacbar1.gif"></A><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/endc2.gif"></NOBR><BR>
+<BR><BR>
+</CENTER>
+</BODY>
+
+</HTML>

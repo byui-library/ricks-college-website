@@ -1,0 +1,14 @@
+body {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; text-decoration: none}
+h1 {  font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #000000; text-decoration: none}
+td { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; text-decoration: none }
+h2 { font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #000000; text-decoration: none }
+a {  font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #000066; text-decoration: underline}
+h3 { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #000000; text-decoration: none }
+h4 {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000}
+.h2 {  font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #000000}
+.h3 { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #000000 }
+.h4 { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000 }
+.h1 { font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #000000 }
+.citation { text-indent: -6ex; margin-left: 10ex; font-family: "Courier New", Courier, mono }
+.instructor { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #000000; background-color: #CCCCCC; clip: rect( ); padding-top: 5px; padding-bottom: 5px }
+hr {  color: #666666}

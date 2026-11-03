@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<SCRIPT>
+<!--
+//Start Primary Page language buttons
+var bLspanInstalled=0;
+var bBrazilInstalled=0;
+var bJapanInstalled=0;
+var bItalianInstalled=0;
+var bFinnishInstalled=0;
+var bFrenchInstalled=0;
+var bGermanInstalled=0;
+var bEnglishInstalled=0;
+var sDefaultLang="english";
+var sLanguage="english";
+
+function WritePrimaryLangButton(sLangPg, sLangDir)
+{
+	if (sLanguage != sLangDir) {
+		document.write ('<A HREF="../../');
+		document.write (sLangDir);
+		document.write ('/cbtweb/');
+		document.write (sLangPg);
+		document.write ('"><IMG WIDTH=83 HEIGHT=15 BORDER=0 SRC="../../');
+		document.write (sLangDir);
+		document.write ('/cbtweb/images/lang.gif"></A>');
+	}
+}
+
+function WritePrimaryLangButtons()
+{
+	if (bEnglishInstalled==1) {
+		WritePrimaryLangButton("aboutcbt.htm", "english");
+	}
+	if (bFrenchInstalled==1) {
+		WritePrimaryLangButton("aboutcbt.htm", "french");
+	}
+	if (bFinnishInstalled==1) {
+		WritePrimaryLangButton("aboutcbt.htm", "finnish");
+	}
+	if (bGermanInstalled==1) {		
+		WritePrimaryLangButton("aboutcbt.htm", "german");
+	}
+	if (bBrazilInstalled==1) {
+		WritePrimaryLangButton("aboutcbt.htm", "brazil");
+	}
+	if (bLspanInstalled==1) {
+		WritePrimaryLangButton("aboutcbt.htm", "lspan");
+	}
+	if (bItalianInstalled==1) {
+		WritePrimaryLangButton("aboutcbt.htm", "italian");
+	}
+}
+//End Primary Page Language Buttons
+// -->
+</SCRIPT>
+<TITLE>About SmartForce</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<CENTER>
+  <IMG WIDTH=552 HEIGHT=90 BORDER=0 SRC="images/astrip.gif" USEMAP="#ASTRIP-map"><BR>
+  <BR>
+  <map name="ASTRIP-map">
+    <area shape="rect" coords="467,69,530,85" href="whatsnew.htm" title="" alt="What's New">
+    <area shape="rect" coords="418,69,466,85" href="feedback.htm" title="" alt="Feedback">
+    <area shape="rect" coords="331,69,417,85" href="support.htm" title="" alt="Customer Support">
+    <area shape="rect" coords="238,70,329,86" href="partners.htm" title="" alt="Strategic Partners">
+    <area shape="rect" coords="188,70,239,85" href="aboutus.htm" title="" alt="About Us">
+    <area shape="rect" coords="125,70,187,85" href="catalog.htm" title="" alt="Courseware">
+    <area shape="rect" coords="48,70,125,85" href="../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/getstart.htm" title="" alt="Getting Started">
+    <area shape="rect" coords="15,69,47,84" href="index.htm" title="" alt="Home">
+<area shape="rect" coords="48,70,124,86" href="../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/getstart.htm" title="">
+  </map>
+</CENTER>
+<CENTER>
+<SCRIPT>
+<!--
+WritePrimaryLangButtons();
+// -->
+</SCRIPT></CENTER>
+<HR>
+<font size="2"> 
+<h2>About SmartForce</h2>
+Headquartered in Redwood City, California, and with a Development Centre in Dublin, 
+Ireland, SmartForce is widely recognized as the leader in technology-based education. 
+SmartForce's integrated approach to learning&#151;e-Learning&#151;provides the 
+enterprise with a complete learning environment from career planning to Internet-delivered 
+courseware and mentoring. 
+<p>Formerly known as CBT Systems, SmartForce was the first to form content development 
+  partnerships with leading IT software vendors. It has the most comprehensive 
+  roster of such alliances in the industry, including partnerships with Cisco, 
+  Microsoft, Intel, and SAP. The company has also formed the Internet Security 
+  Training Consortium with a number of vendors, including IBM, Sun Microsystems, 
+  Netscape, and Network Associates, to address the Internet security training 
+  needs of enterprises worldwide. 
+<p> SmartForce markets its e-Learning solution through a direct sales force of 
+  more than 200 to Fortune 3000 companies and other major US and international 
+  organizations in a wide variety of industries, including manufacturing, technology, 
+  telecommunications, utilities, financial services, and healthcare. 
+<p> The company focuses on global solutions for its larger customers, which range 
+  from totally outsourced virtual corporate universities to partnerships with 
+  other training providers to create an integrated enterprise learning environment. 
+<p>SmartForce also markets its solutions to a broad array of small and medium-sized 
+  businesses, as well as government agencies and educational institutions. In 
+  addition, through its destination Web site, <a href="https://web.archive.org/web/2001/http://www.smartforce.com">My SmartForce</a>, and its telesales force, SmartForce markets its e-Learning offerings directly 
+  to individuals. 
+<hr>
+<center>
+  <img width=521 height=25 border=0 src="images/astr.gif" usemap="#ASTR-map"> 
+  <BR>
+  <MAP NAME="ASTR-map">
+    <AREA SHAPE="RECT" COORDS="452,5,515,21" HREF="whatsnew.htm" alt="What's New">
+    <AREA SHAPE="RECT" COORDS="404,3,452,19" HREF="feedback.htm" alt="Feedback">
+    <AREA SHAPE="RECT" COORDS="317,3,404,19" HREF="support.htm" alt="Customer Support">
+    <AREA SHAPE="RECT" COORDS="225,3,317,19" HREF="partners.htm" alt="Strategic Partners">
+    <AREA SHAPE="RECT" COORDS="175,3,226,19" HREF="aboutus.htm" alt="About Us">
+    <AREA SHAPE="RECT" COORDS="112,4,174,20" HREF="catalog.htm" alt="Courseware">
+    <AREA SHAPE="RECT" COORDS="34,3,112,19" HREF="../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/getstart.htm" alt="Getting Started">
+    <AREA SHAPE="RECT" COORDS="4,3,35,19" HREF="index.htm" alt="Home">
+  </MAP> 
+</center>
+</font> 
+</BODY></HTML>

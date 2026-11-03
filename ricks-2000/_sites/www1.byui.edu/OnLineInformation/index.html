@@ -1,0 +1,130 @@
+<!--This page is the home page for the Online Information.  It was created to give students the ability to ask questions from the help desk and receive their answer by e-mail.  Those questions that are deemed worthy will be put permanantly on the web for other students to see.-->
+
+
+
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<SCRIPT language="JavaScript">
+<!--
+
+function validQuestion() {
+  var returnVal, errors = ""
+  var eMail = /^\w+@\w+\.\w{1,3}$/i;
+  var question = /./;
+
+  if (question.test(document.postQues.question.value)) {
+    returnVal = true
+  } else {
+    errors += '-must enter a question\n';
+    returnVal = false
+  }
+
+  if (eMail.test(document.postQues.email.value)) {
+    returnVal = true
+  } else {
+    errors += '-must enter e-mail address';
+    returnVal = false
+  }
+
+   if (errors) alert ('The following errors occurred:\n' + errors)
+   return returnVal
+}
+
+function validSearch() {
+  var returnVal
+  if (document.search.searchStr.value == "") {
+    alert ("You must enter a keyword to search")
+    returnVal = false
+    document.search.searchStr.focus()
+  } else {
+    returnVal = true
+  }
+  return returnVal
+}
+
+//-->
+</SCRIPT>
+<!--This is the navbar at the top of the page-->
+<script src="../webstyle/OnlineInformationSectionStyle/LSH.js"></script><!--ENDLARGESECTIONHEADER-->
+<script>
+href1 = 'default.asp'
+href2 = 'view_db.asp'
+href3 = 'post.asp'
+href4 = ''
+href5 = ''
+
+title1 = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online Information Home'
+title2 = 'Read F.A.Q.'
+title3 = 'Submit a Question'
+title4 = ''
+title5 = ''
+</script>
+<script src="../../../navbar/anothertanbar.js"></script><!--ENDFLAG-->
+<TITLE>Online Information -- Frequently Asked Questions (F.A.Q.) </TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="sastyle.css">
+<style>
+.title
+{	font-size:21pt;
+	font-family:times new roman;
+	color:#00183A;
+}
+.text
+{	font-size:17pt;
+	font-family:times new roman;
+	color:#00183A;
+}
+.question
+{	font-size:15pt;
+	font-weight:normal;
+	font-family:times new roman;
+	color:#00183A;
+}
+.info
+{ 	font-size:16;
+	font-family:times new roman;
+	color:#00183A;
+	text-align:center;
+	vertical-align:top;
+}
+.altext
+{
+font-size:12.5;
+color:#00183A;
+}
+</style>
+</HEAD>
+<body leftMargin=0 topMargin=0 marginwidth=0 marginheight=0 bottommargin=0 rightmargin=0 valign=top><TABLE border=0 cellspacing=0 cellpadding=0 width=100% align=center>
+	<tr>
+		<td width=20 rowspan=30>&nbsp;</td>
+		<br>
+	</tr>
+	<tr>
+		<!--Here you can conduct a search of the database-->
+		
+	</tr>
+	<TR>
+		<td valign="top" colspan=2><table cellspacing=0 cellpadding=0 border=0 width="100%">
+			<tr>
+				<td class="info" align=center><b>Campus Operator /<br>Campus Security<br>(208) 496-2011<br>Mon-Sun<br>24hr<br>&nbsp;</td>
+				<td width=15 align=center valign=top><img src="bar.gif" height=100></td>
+				<td class="info" valign=top align=center><b>Manwaring Center<br>Information Desk<br>(208) 496-2200<br>
+
+<!--This code displays the correct hours for the Online Information-->
+			
+				Mon-Thur&nbsp;&nbsp;8 a.m. - 9 p.m.<br>
+			
+				Fri-Sat&nbsp;&nbsp;8 a.m. - 10 p.m.
+			</td>
+
+				<td width=15 align=center valign=top><img src="bar.gif" height=100></td>
+				<td class="info" align=center><b>Public Relations<br>Kimball Bldg. 260<br>(208) 496-1150<br>Mon-Fri<br>8 a.m. - 5 p.m.</b><br>&nbsp;</td>
+			</tr></table></td>
+	</tr>
+	<tr>
+		<td></td>
+		
+	</tr>
+</table>
+</BODY>
+</HTML>

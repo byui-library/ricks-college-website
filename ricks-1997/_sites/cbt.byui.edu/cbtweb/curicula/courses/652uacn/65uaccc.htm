@@ -1,0 +1,343 @@
+<HTML><HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><TITLE>Understanding and Applying Internet Concepts: Connecting to the Net</TITLE></HEAD>
+
+<SCRIPT>
+<!--
+//CBTWEB.JS
+var sStudent_id="";
+var bIsCGI=0;
+var sScript="cgi";
+var bLspanInstalled=0;
+var bBrazilInstalled=0;
+var bJapanInstalled=0;
+var bItalianInstalled=0;
+var bFinnishInstalled=0;
+var bFrenchInstalled=0;
+var bGermanInstalled=0;
+var bEnglishInstalled=0;
+var sDefaultLang="english";
+var zaccess=0;
+var selfreg=0;
+var password=0;
+var studid = top.sStudent_id;
+top.bliveplayed=0;
+
+var bHasLiveplay=1;
+var bHasDownload=0;
+
+
+function a(txt) {self.status = txt}
+function b() {self.status = ''}
+
+function WriteButtons()
+{
+	if ((bHasLiveplay == 1) | (bHasDownload == 1))
+	{
+		document.write('<P><CENTER>');
+		if (bIsCGI==1) 
+		{
+			var nShowButtons=0;
+			if(studid == "0")
+				nShowButtons=1;
+			else {
+				if(studid == "")
+					nShowButtons=2;
+			}
+			if (nShowButtons == 2) // Page book marked or navigated to directly
+			{
+				document.write('<A HREF="../../../../../index.htm"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/logbtn.gif"></A>');
+			}
+			else {
+				if (nShowButtons == 1) // Anonymous Access
+				{
+					document.write('<A HREF="../../../logon.htm"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/logbtn.gif"></A>');
+				}
+				else 
+				{
+					if (bHasLiveplay == 1)
+					{
+						document.write("<FORM METHOD=POST onsubmit="return false">");
+						document.write('<INPUT TYPE="image" IMG WIDTH=118 HEIGHT=25 BORDER=0 ALT="Play the course" SRC="../../../images/liveplay.gif">');
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"coursename\" VALUE=\"" + coursename +"\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"coursecode\" VALUE=\"" + coursecode + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"studir\" VALUE=\"" + studid + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"slanguage\" VALUE=\"" + sLanguage + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"ypager\" VALUE=\"" + Ypage + "\">");
+					}
+
+					if ((bHasLiveplay == 1) & (bHasDownload == 1))
+					{	
+						document.write('<IMG WIDTH=4 HEIGHT=25 BORDER=0 SRC="../../../images/gap.gif">');
+					}
+					if ((bHasDownload == 1))
+					{	
+						document.write('<A HREF="'+Zpage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/download.gif"></A>');
+					}	
+					if (bHasLiveplay == 1)
+					{
+						document.write("</FORM>");
+					}
+				}
+			}
+		}
+		if (bIsCGI==0) {
+			if ((bHasLiveplay == 1))
+			{
+				document.write('<A HREF="'+Ypage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 ALT="Play the Course" SRC="../../../images/liveplay.gif"></A>');
+			}
+			
+			if ((bHasLiveplay == 1) & (bHasDownload == 1))
+			{	
+				document.write('<IMG WIDTH=4 HEIGHT=25 BORDER=0 SRC="../../../images/gap.gif">');
+			}
+			
+			if ((bHasDownload == 1))
+			{	
+				document.write('<A HREF="'+Zpage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/download.gif"></A>');
+			}
+		}
+		document.write('</CENTER>');
+	}
+	document.write('<BR>');
+}	
+function WriteLangButton(sLangPg, sLangDir)
+{
+	if (sLanguage != sLangDir) {
+		if (sLangPg.length > 0) 
+		{
+			document.write ('<A HREF="');
+			document.write (sLangPg);
+			document.write ('"><IMG WIDTH=83 HEIGHT=15 BORDER=0 SRC="../../../../../');
+			document.write (sLangDir);
+			document.write ('/cbtweb/images/lang.gif"></A>');
+		}
+	}
+}
+function WriteLangButtons()
+{
+	if (bEnglishInstalled==1) {
+		WriteLangButton(EnglishPg, "english");
+	}
+
+	if (bFrenchInstalled==1) {
+		WriteLangButton(FrenchPg, "french");
+	}
+
+	if (bFinnishInstalled==1) {
+		WriteLangButton(FinnishPg, "finnish");
+	}
+
+	if (bGermanInstalled==1) {		
+		WriteLangButton(GermanPg, "german");
+	}
+
+	if (bBrazilInstalled==1) {
+		WriteLangButton(BrazilPg, "brazil");
+	}
+
+	if (bLspanInstalled==1) {
+		WriteLangButton(LspanPg, "lspan");
+	}
+
+	if (bItalianInstalled==1) {
+		WriteLangButton(ItalianPg, "italian");
+	}
+}
+function WriteLevel(nLevel)
+{
+	var i=0;
+	alert(nLevel);
+	for (i=0;i<nLevel;i++)
+	{
+		document.write ('../');
+	}
+}
+function WriteLogonLangButton(sLangPg, sLangDir, nLevel)
+{
+	if (nLevel == "undefined")
+		nLevel = 2;
+
+	if (sLanguage != sLangDir) {
+		document.write ('<A HREF="');
+		WriteLevel(nLevel);
+		document.write (sLangDir);
+		document.write ('/cbtweb/');
+		document.write (sLangPg);
+		document.write ('">\n<IMG WIDTH=83 HEIGHT=15 BORDER=0 SRC="');
+		WriteLevel(nLevel);
+		document.write (sLangDir);
+		document.write ('/cbtweb/images/lang.gif"></A>');
+		WriteLevel(nLevel);
+	}
+}
+function WritePageLangButtons( sPage )
+{
+	WriteLogonLangButtons( sPage );
+}
+function WriteLogonLangButtons( sPage )
+{
+	if (sPage != "not defined")
+		sPage = "logon.htm";
+
+	if (bEnglishInstalled==1) {
+		WriteLogonLangButton(sPage, "english");
+	}
+
+	if (bFrenchInstalled==1) {
+		WriteLogonLangButton(sPage, "french");
+	}
+
+	if (bFinnishInstalled==1) {
+		WriteLogonLangButton(sPage, "finnish");
+	}
+
+	if (bGermanInstalled==1) {		
+		WriteLogonLangButton(sPage, "german");
+	}
+
+	if (bBrazilInstalled==1) {
+		WriteLogonLangButton(sPage, "brazil");
+	}
+
+	if (bLspanInstalled==1) {
+		WriteLogonLangButton(sPage, "lspan");
+	}
+
+	if (bItalianInstalled==1) {
+		WriteLogonLangButton(sPage, "italian");
+	}
+}
+
+function GotoHRef(sRef)
+{
+		location.href = sRef;
+		top.sStudent_id = "0";
+}
+//ENDCBTWEB.JS
+// -->
+</SCRIPT>
+
+
+<SCRIPT>
+<!--
+
+
+// set by html editing dept
+var Ypage="../652uacn/652uaccy.htm";
+var Zpage="../652uacn/652uaccz.htm";
+var coursename = "Understanding and Applying Internet Concepts: Connecting to the Net";
+var coursecode = "652uacc";
+var sLanguage="english";
+
+// if variable length is empty button will not appear
+// Path to be in format "../../../../../[language]/cbtweb/curicula/courses/[coursefolder].htm"
+// e.g. "../../../../../french/cbtweb/curicula/courses/fmsobe/fmsobe.htm"
+
+var FrenchPg="";
+var GermanPg="";	
+var LspanPg="";
+var BrazilPg="";
+var JapanPg="";
+var FinnishPg="";
+var EnglishPg="";
+var ItalianPg="";
+	
+// -->
+</SCRIPT>
+
+<BODY BGCOLOR="#FFFFFF">
+
+<P>
+<CENTER><NOBR><IMG WIDTH=561 HEIGHT=34 BORDER=0 SRC="../../../images/corechdr.gif"><BR><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../images/endc1.gif"><A HREF="../../../catalog.htm#csmodel"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/contnbtn.gif"></A><A HREF="../../corcon2.htm"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/planbtn.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/spacbar1.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/spacbar1.gif"></A><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../images/endc2.gif"></NOBR></A>
+</CENTER>
+<CENTER><SCRIPT>
+<!--
+WriteButtons();
+// -->
+</SCRIPT><CENTER><H2>Understanding and Applying Internet Concepts: Connecting to the Net</H2></CENTER>
+
+<P>
+<CENTER><TABLE WIDTH=475 CELLSPACING=4 CELLPADDING=8 BORDER=4>
+<TR><TD  VALIGN=TOP WIDTH=35%>
+<H3>General Information</H3>
+
+<DL>
+<DT>
+<DD><B>Course Duration: </B>4 hours<BR><BR>
+
+<DT>
+<DD><B>Audience: </B><BR>
+Internet service providers, IS personnel, system integrators, resellers, WWW consultants, 
+CNEs, CNIs, MCNEs, support personnel, network administrators<BR><BR>
+
+<DT>
+<DD><B>Prerequisites: </B><BR>
+The course <I>Understanding and Applying Internet Concepts: The Basics</I><BR><BR>
+</DL>
+
+</TD><TD  VALIGN=TOP ROWSPAN=3 WIDTH=166>
+<H3>Topics Covered</H3>
+
+<UL>
+<LI>Getting started
+<LI>Internet addressing<BR>
+<LI>Registering a domain name<BR>
+<LI>Setting up the environment
+<LI>Connectivity<BR>
+<LI>Setting up e-mail
+<LI>Firewalls<BR>
+
+<LI>Virus protection<BR>
+
+<LI>ISPs</UL>
+
+</TD></TR>
+
+<TR><TD VALIGN=TOP WIDTH=167>
+<H3>Course Aim</H3>
+
+<P>
+To show how to configure and connect an organization's network to the Internet<BR>
+
+</TD></TR>
+
+<TR><TD VALIGN=TOP WIDTH=167>
+<H3>Learning Objectives</H3>
+
+<P>
+After taking this course, the user should be able to
+<UL>
+<LI>outline the main considerations when connecting a network to the Internet<BR>
+
+<LI>list the types of connection an Internet service provider (ISP) can provide<BR>
+
+<LI>describe how to upgrade an organization's internal e-mail system to accommodate Internet e-mail<BR>
+
+<LI>outline how to set up a secure Internet presence<BR>
+
+<LI>list what needs to be considered when selecting an ISP</UL>
+
+</TD></TR>
+
+</TABLE>
+</CENTER>
+<P>
+<CENTER><BR><BR>
+</CENTER>
+
+<B>Course Incorporates: </B>Test, hands-on exercises<BR>
+
+<HR><CENTER><SCRIPT>
+<!--
+WriteButtons();
+// -->
+</SCRIPT>
+
+<CENTER> <BR></CENTER><CENTER><NOBR><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../images/endc1.gif"><A HREF="../../../catalog.htm#csmodel"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/contnbtn.gif"></A><A HREF="../../corcon2.htm"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/planbtn.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/spacbar1.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/spacbar1.gif"></A><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../images/endc2.gif"></NOBR><BR>
+</CENTER>
+</BODY>
+
+</HTML>
+
+
+

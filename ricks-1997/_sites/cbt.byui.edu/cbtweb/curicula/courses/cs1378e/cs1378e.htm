@@ -1,0 +1,352 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>Cisco BCRAN: Frame Relay and Traffic Flow</TITLE></HEAD>
+
+<SCRIPT>
+<!--
+//CBTWEB.JS
+var sStudent_id="";
+var bIsCGI=0;
+var sScript="cgi";
+var bLspanInstalled=0;
+var bBrazilInstalled=0;
+var bJapanInstalled=0;
+var bItalianInstalled=0;
+var bFinnishInstalled=0;
+var bFrenchInstalled=0;
+var bGermanInstalled=0;
+var bEnglishInstalled=0;
+var sDefaultLang="english";
+var zaccess=0;
+var selfreg=0;
+var password=0;
+var studid = top.sStudent_id;
+top.bliveplayed=0;
+
+var bHasLiveplay=1;
+var bHasDownload=0;
+
+
+function a(txt) {self.status = txt}
+function b() {self.status = ''}
+
+function WriteButtons()
+{
+	if ((bHasLiveplay == 1) | (bHasDownload == 1))
+	{
+		document.write('<P><CENTER>');
+		if (bIsCGI==1) 
+		{
+			var nShowButtons=0;
+			if(studid == "0")
+				nShowButtons=1;
+			else {
+				if(studid == "")
+					nShowButtons=2;
+			}
+			if (nShowButtons == 2) // Page book marked or navigated to directly
+			{
+				document.write('<A HREF="../../../../../index.htm"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/logbtn.gif"></A>');
+			}
+			else {
+				if (nShowButtons == 1) // Anonymous Access
+				{
+					document.write('<A HREF="../../../logon.htm"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/logbtn.gif"></A>');
+				}
+				else 
+				{
+					if (bHasLiveplay == 1)
+					{
+						document.write("<FORM METHOD=POST onsubmit="return false">");
+						document.write('<INPUT TYPE="image" IMG WIDTH=118 HEIGHT=25 BORDER=0 ALT="Play the course" SRC="../../../images/liveplay.gif">');
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"coursename\" VALUE=\"" + coursename +"\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"coursecode\" VALUE=\"" + coursecode + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"studir\" VALUE=\"" + studid + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"slanguage\" VALUE=\"" + sLanguage + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"ypager\" VALUE=\"" + Ypage + "\">");
+					}
+
+					if ((bHasLiveplay == 1) & (bHasDownload == 1))
+					{	
+						document.write('<IMG WIDTH=4 HEIGHT=25 BORDER=0 SRC="../../../images/gap.gif">');
+					}
+					if ((bHasDownload == 1))
+					{	
+						document.write('<A HREF="'+Zpage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/download.gif"></A>');
+					}	
+					if (bHasLiveplay == 1)
+					{
+						document.write("</FORM>");
+					}
+				}
+			}
+		}
+		if (bIsCGI==0) {
+			if ((bHasLiveplay == 1))
+			{
+				document.write('<A HREF="'+Ypage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 ALT="Play the Course" SRC="../../../images/liveplay.gif"></A>');
+			}
+			
+			if ((bHasLiveplay == 1) & (bHasDownload == 1))
+			{	
+				document.write('<IMG WIDTH=4 HEIGHT=25 BORDER=0 SRC="../../../images/gap.gif">');
+			}
+			
+			if ((bHasDownload == 1))
+			{	
+				document.write('<A HREF="'+Zpage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/download.gif"></A>');
+			}
+		}
+		document.write('</CENTER>');
+	}
+	document.write('<BR>');
+}	
+function WriteLangButton(sLangPg, sLangDir)
+{
+	if (sLanguage != sLangDir) {
+		if (sLangPg.length > 0) 
+		{
+			document.write ('<A HREF="');
+			document.write (sLangPg);
+			document.write ('"><IMG WIDTH=83 HEIGHT=15 BORDER=0 SRC="../../../../../');
+			document.write (sLangDir);
+			document.write ('/cbtweb/images/lang.gif"></A>');
+		}
+	}
+}
+function WriteLangButtons()
+{
+	if (bEnglishInstalled==1) {
+		WriteLangButton(EnglishPg, "english");
+	}
+
+	if (bFrenchInstalled==1) {
+		WriteLangButton(FrenchPg, "french");
+	}
+
+	if (bFinnishInstalled==1) {
+		WriteLangButton(FinnishPg, "finnish");
+	}
+
+	if (bGermanInstalled==1) {		
+		WriteLangButton(GermanPg, "german");
+	}
+
+	if (bBrazilInstalled==1) {
+		WriteLangButton(BrazilPg, "brazil");
+	}
+
+	if (bLspanInstalled==1) {
+		WriteLangButton(LspanPg, "lspan");
+	}
+
+	if (bItalianInstalled==1) {
+		WriteLangButton(ItalianPg, "italian");
+	}
+}
+function WriteLevel(nLevel)
+{
+	var i=0;
+	alert(nLevel);
+	for (i=0;i<nLevel;i++)
+	{
+		document.write ('../');
+	}
+}
+function WriteLogonLangButton(sLangPg, sLangDir, nLevel)
+{
+	if (nLevel == "undefined")
+		nLevel = 2;
+
+	if (sLanguage != sLangDir) {
+		document.write ('<A HREF="');
+		WriteLevel(nLevel);
+		document.write (sLangDir);
+		document.write ('/cbtweb/');
+		document.write (sLangPg);
+		document.write ('">\n<IMG WIDTH=83 HEIGHT=15 BORDER=0 SRC="');
+		WriteLevel(nLevel);
+		document.write (sLangDir);
+		document.write ('/cbtweb/images/lang.gif"></A>');
+		WriteLevel(nLevel);
+	}
+}
+function WritePageLangButtons( sPage )
+{
+	WriteLogonLangButtons( sPage );
+}
+function WriteLogonLangButtons( sPage )
+{
+	if (sPage != "not defined")
+		sPage = "logon.htm";
+
+	if (bEnglishInstalled==1) {
+		WriteLogonLangButton(sPage, "english");
+	}
+
+	if (bFrenchInstalled==1) {
+		WriteLogonLangButton(sPage, "french");
+	}
+
+	if (bFinnishInstalled==1) {
+		WriteLogonLangButton(sPage, "finnish");
+	}
+
+	if (bGermanInstalled==1) {		
+		WriteLogonLangButton(sPage, "german");
+	}
+
+	if (bBrazilInstalled==1) {
+		WriteLogonLangButton(sPage, "brazil");
+	}
+
+	if (bLspanInstalled==1) {
+		WriteLogonLangButton(sPage, "lspan");
+	}
+
+	if (bItalianInstalled==1) {
+		WriteLogonLangButton(sPage, "italian");
+	}
+}
+
+function GotoHRef(sRef)
+{
+		location.href = sRef;
+		top.sStudent_id = "0";
+}
+//ENDCBTWEB.JS
+// -->
+</SCRIPT>
+
+
+<SCRIPT>
+<!--
+
+
+// set by html editing dept
+var Ypage="../cs1378e/cs1378ey.htm";
+var Zpage="../cs1378e/cs1378ez.htm";
+var coursename = "Cisco BCRAN: Frame Relay and Traffic Flow";
+var coursecode = "cs1378e";
+var sLanguage="english";
+
+// if variable length is empty button will not appear
+// Path to be in format "../../../../../[language]/cbtweb/curicula/courses/[coursefolder].htm"
+// e.g. "../../../../../french/cbtweb/curicula/courses/fmsobe/fmsobe.htm"
+
+var FrenchPg="";
+var GermanPg="";	
+var LspanPg="";
+var BrazilPg="";
+var JapanPg="";
+var FinnishPg="";
+var EnglishPg="";
+var ItalianPg="";
+	
+// -->
+</SCRIPT>
+
+<BODY BGCOLOR="#FFFFFF">
+
+<P>
+<CENTER><NOBR><IMG WIDTH=561 HEIGHT=34 BORDER=0 SRC="../../../images/cischdr.gif"><BR><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../images/endc1.gif"><A HREF="../../../catalog.htm#csmodel"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/contnbtn.gif"></A><A HREF="../../bcran.htm"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/planbtn.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/spacbar1.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/spacbar1.gif"></A><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../images/endc2.gif"></NOBR><BR><BR></A>
+
+
+<SCRIPT>
+<!--
+WriteButtons();WriteLangButtons();
+// -->
+</SCRIPT>
+<CENTER><H2><CENTER>Cisco BCRAN: Frame Relay and Traffic Flow</H2></CENTER>
+
+<P>
+
+<CENTER><TABLE WIDTH=475 CELLSPACING=4 CELLPADDING=8 BORDER=4>
+<TR><TD  VALIGN=TOP WIDTH=167>
+<H3>General Information</H3>
+
+<DL>
+<DT>
+<B>Course Duration<BR> </B>4 hours<BR>
+
+<DT>
+<BR>
+<B>Audience<BR> </B>Network administrators, network specialists, and technicians, who configure and support remote access networks<BR><BR>
+
+<DT>
+<B>Prerequisites<BR> </B>
+The <I>Cisco IOS 11.3: ICRC</I> curriculum; all preceding courses in the <I>Cisco BCRAN</I> curriculum
+<BR><BR>
+
+</DL>
+
+<P></TD><TD VALIGN=TOP ROWSPAN=3 WIDTH=166>
+<H3>Topics Covered</H3>
+<UL>
+<LI>Frame Relay overview
+<LI>Frame Relay operation
+<LI>Configuring Frame Relay
+<LI>Hands-on: Configuring the branch-office router 
+<LI>Subinterfaces overview
+<LI>Configuring subinterfaces
+<LI>Traffic shaping
+<LI>Configuring traffic shaping
+<LI>Hands-on: Configuring the central-site router
+<LI>EIGRP and OSPF over Frame Relay
+<LI>Routing considerations
+<LI>Dial backup
+<LI>Dial backup with dialer profiles
+<LI>Hands-on: Configuring dial backup
+</UL>
+
+
+</TD><TR><TD VALIGN=TOP WIDTH=167>
+<H3>Course Aim</H3>
+<P>
+To explain the operation and configuration of Frame Relay and introduce the student to router traffic shaping and, specifically, Frame Relay traffic shaping<BR>
+</TD></TR>
+
+
+<TR><TD VALIGN=TOP WIDTH=167>
+<H3>Learning Objectives</H3>
+<P>
+After taking this course, the student should be able to
+<UL>
+<LI>discuss the operation of Frame Relay<BR><BR>
+<LI>describe the configuration of Frame Relay on Cisco routers<BR><BR>
+<LI>summarize the commands used to configure Frame Relay<BR><BR>
+<LI>configure subinterfaces on Frame Relay connections<BR><BR>
+<LI>discuss the implementation of and considerations for routing protocols over a Frame Relay network<BR><BR>
+<LI>explain traffic shaping<BR><BR>
+<LI>configure traffic shaping over a Frame Relay network between a central site and a branch office<BR><BR>
+<LI>show how to monitor and verify the operation of a Frame Relay network
+</UL>
+
+</TD></TR>
+</TABLE>
+</CENTER>
+
+
+<P>
+<BR><BR>
+<P>
+<CENTER><B>Course Incorporates: </B>Test, hands-on exercises</CENTER>
+
+<HR><BR><CENTER>
+<SCRIPT>
+<!--
+WriteButtons();WriteLangButtons();
+// -->
+</SCRIPT>
+
+
+<BR><BR>
+
+
+<CENTER><NOBR><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../images/endc1.gif"><A HREF="../../../catalog.htm#csmodel"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/contnbtn.gif"></A><A HREF="../../bcran.htm"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/planbtn.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/spacbar1.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../images/spacbar1.gif"></A><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../images/endc2.gif"></NOBR><BR>
+<BR><BR>
+</CENTER>
+</BODY>
+
+</HTML>

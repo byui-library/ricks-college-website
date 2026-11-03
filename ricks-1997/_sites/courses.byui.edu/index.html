@@ -1,0 +1,82 @@
+<HTML><HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><!--set cookie-->
+<SCRIPT language='JavaScript'><!--
+document.cookie = "session_id=@@6d390dcb6eaca31079e9876887a36006; path=/;";
+
+// Begin JavaScript 
+if(!document.cookie) {
+   var agt=navigator.userAgent.toLowerCase(); 
+   var is_major = parseInt(navigator.appVersion); 
+   var is_minor = parseFloat(navigator.appVersion); 
+
+    // Note: Opera and WebTV spoof Navigator. 
+    var is_nav  = ((agt.indexOf('mozilla')!=-1) && (agt.indexOf('spoofer')==-1) 
+                && (agt.indexOf('compatible') == -1) && (agt.indexOf('opera')==-1) 
+                && (agt.indexOf('webtv')==-1)); 
+    var is_nav2 = (is_nav && (is_major == 2)); 
+    var is_nav3 = (is_nav && (is_major == 3)); 
+    var is_nav4 = (is_nav && (is_major == 4)); 
+    var is_nav4up = (is_nav && (is_major >= 4)); 
+    var is_navonly      = (is_nav && ((agt.indexOf(";nav") != -1) || 
+                          (agt.indexOf("; nav") != -1)) ); 
+    var is_nav5 = (is_nav && (is_major == 5)); 
+    var is_nav5up = (is_nav && (is_major >= 5)); 
+
+    var is_ie   = (agt.indexOf("msie") != -1); 
+    var is_ie3  = (is_ie && (is_major < 4)); 
+    var is_ie4  = (is_ie && (is_major == 4) && (agt.indexOf("msie 5.0")==-1) ); 
+    var is_ie4up  = (is_ie  && (is_major >= 4)); 
+    var is_ie5  = (is_ie && (is_major == 4) && (agt.indexOf("msie 5.0")!=-1) ); 
+    var is_ie5up  = (is_ie  && !is_ie3 && !is_ie4); 
+
+    // KNOWN BUG: On AOL4, returns false if IE3 is embedded browser 
+    // or if this is the first browser window opened.  Thus the 
+    // variables is_aol, is_aol3, and is_aol4 aren't 100% reliable. 
+    var is_aol   = (agt.indexOf("aol") != -1); 
+    var is_aol3  = (is_aol && is_ie3); 
+    var is_aol4  = (is_aol && is_ie4); 
+
+    var is_opera = (agt.indexOf("opera") != -1); 
+    var is_webtv = (agt.indexOf("webtv") != -1); 
+
+    var intro_dir = "This installation of Blackboard 5 requires the acceptance of a cookie by your browser software. ";
+    intro_dir += "The cookie is used to ensure that you <I>and only you</I> are able to access information in the courses, assessments, gradebooks and other features which are appropriate for you. <P>";
+    intro_dir += "The system has been unable to place the cookie. This may be because cookies are disabled in your browser.<P> To enable cookies in your browser:<ol>";
+
+    var nn4dir = "<LI>Select <I>Preferences</I> from your browser's Edit Menu. <LI>Select <I>Advanced</I> from the list in the left-hand pane of the dialog box. ";
+    nn4dir += "<LI>Under the <I>Cookies</I> box, select either of the first two options ('Accept all cookies' or 'Accept only cookies that get sent back to ";
+    nn4dir += "the originating server')<LI>Click 'Ok' to close the dialog box. ";
+
+    var ie5dir = "<LI>Select <I>Internet Options</I> from your browser's Tools Menu <LI>Select the <I>Security</I> Tab, and click on the 'Custom Level' button. ";
+    ie5dir += "<LI>Scroll down to the 'Cookies' Section, and select either of the last two options under 'Allow Per-Session Cookies (not stored)' - either 'Enable' or 'Prompt'. ";
+    ie5dir += "<LI>Click 'Ok' to Close the Security Settings dialog box. ";
+    ie5dir += "<P><B>NOTE</B> Depending on your institution's set-up of Blackboard 5, you may need to repeat steps 3 & 4 for more than one 'Security Zone'. ";
+    ie5dir += "<BR>For example, if you are connecting from a computer inside the same firewall or network as the Blackboard 5 machine, you would select the 'Local Intranet Zone'. ";
+    ie5dir += "<BR>If you are making a connection across the internet from another location, you would select the 'Internet Zone'. <BR>In some cases, you may need to do both.<P>";
+    ie5dir += "<LI>Click 'Apply' and 'Ok' to close the Internet Options dialog box.";
+    var ie4dir = "<LI>Select <I>Internet Options</I> from your browser's Tools Menu <LI>Select the <I>Advanced</I> Tab. ";
+    ie4dir += "<LI>Scroll down to the 'Cookies' Section under 'Security', and select either the first or last option - either 'Prompt before Accepting Cookies' or 'Always Accept Cookies'. ";
+    ie4dir += "<LI>Click 'Apply' and 'Ok' to close the Internet Options dialog box.";
+    var browser_dir = "<LI>Please follow your browser's Help instructions for enabling Session (non-stored) cookies that are sent back to the originating server.";
+    if (is_nav) { browser_dir = nn4dir; }
+    if (is_ie5up) { browser_dir = ie5dir; }
+    if (is_ie4) { browser_dir = ie4dir; }
+    browser_dir += "<LI>Click 'Ok' on this page to return to Blackboard 5.";
+    document.write("<table border='0' width='100%' cellpadding='0' cellspacing='0'><tr><td align='left' width='40'>&nbsp;</td>");
+    document.write("<td align='left' width='100%'><b><font face='Arial, Helvetica, sans-serif' size='4'>Browser Cookies Disabled</font></b><hr size=5 noshade></td></tr></table>");
+    document.write("<table border='0' cellpadding='5' cellspacing='0' width='100%'><tr><td width='20' valign='top'>&nbsp;</td><td width='100%' valign='top'>");
+    document.write("<font face='Arial, Helvetica, sans-serif' size='2'><b>Browser Cookies Disabled</b></font><br>");
+    document.write("<font size='2' face='Arial, Helvetica, sans-serif'>"+intro_dir);
+    document.write(browser_dir);
+    document.write("</font><br></td></tr><tr><td colspan='6' align='center'><form><input type=button value='Ok' onclick='javascript:history.go(-1)'></td></tr></table></form>");
+} else {
+    var href = document.location.href;
+    href = href + "?bbatt=Y";
+    document.location.href = href;
+}
+
+    //END JavaScript
+
+                //--></SCRIPT>
+</HEAD><BODY BGCOLOR='FFFFFF'>
+</BODY><HTML>

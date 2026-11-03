@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<link rel="stylesheet" href="../Pages/mystyle.css" style="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Anfy" content="">
+<title>Brett and Christa Page</title>
+</head>
+
+
+<body class="back">
+ <table width="95%" align="center">
+  <tr>
+   <td><a name="top"><h1 align="right">Brett and Christa Larsen page</h1></a></td>
+   <td></td>
+   <td><a name="top"><p align="right"><a href="../Pages/mypage1.html"><img src="../image/arrow1.gif" alt="Back" /> Back</a></p></a></td>
+  </tr>
+ </table>
+
+
+
+ <table border="0" cellpadding="0" width="90%" align="center">
+   <caption align="center"></caption>
+  <tr>
+   <td width="100%" align="center"><img src="../image/coats.jpg" width="400" height="264" name="photoslider"></td>
+   </td>
+  </tr>
+  <tr>
+   <td width="80%" align="center"><form method="POST" name="rotater">
+      <div align="center"><center><p>
+
+    <script language="JavaScript1.1">
+
+    /*
+    Photo Slider II- By Kevin Adams (kadams@kyk.net)
+    For this script and more
+    Visit http://www.javascriptkit.com
+    */
+
+    var photos=new Array()
+    var text=new Array()
+    var which=0
+    var what=0
+
+    //Change the below variables to reference your own images. You may have as many images in the slider as you wish
+    photos[0]="../image/coats.jpg"
+    photos[1]="../image/cinrole.jpg"
+    photos[2]="../image/aniwed.jpg"
+    photos[3]="../image/sign.jpg"
+    photos[4]="../image/iftemple.jpg"
+    photos[5]="../image/blissfullkiss.jpg"
+    photos[6]="../image/engage.jpg"
+
+    //change coresponding description
+    text[0]="Friends on a cold Rexburg night."
+    text[1]="Its not shake and bake, but I helped."
+    text[2]="At the wedding of a friend."
+    text[3]="Remembering Ricks College."
+    text[4]="Looking at the falls by the Idaho Falls Temple."
+    text[5]="Complete bliss."
+    text[6]="The engagement night.  She said ''yes'':-)."
+
+    window.onload=new Function("document.rotater.description.value=text[0]")
+
+    function backward(){
+    if (which>0){
+    window.status=''
+    which--
+    document.images.photoslider.src=photos[which];
+    what--
+    document.rotater.description.value=text[what];
+    }
+    }
+
+    function forward(){
+    if (which<photos.length-1){
+    which++
+    document.images.photoslider.src=photos[which]
+    what++
+    document.rotater.description.value=text[what];
+    }
+    else window.status='End of gallery'
+    }
+
+    function type()
+	{
+	alert("This textbox will only display default comments")
+	}
+
+
+    </script>
+    <p><input type=text name="description" style="width:400px" size=50>
+
+    <p><input type="button" value="<<Back" name="B2"
+      onClick="backward()"> <input type="button" value="Next>>" name="B1"
+      onClick="forward()"><br>
+      <a href="#" onClick="which=1;what=1;backward();return false"><small>Start Over</small></a></p>
+      </center></div>
+    </form>
+   </td>
+   <td align="center" valign="center"width="50%">
+    
+   </td>
+  </tr>
+ </table>
+<p><a href="https://web.archive.org/web/2001/http://www.anfyteam.com"><img src="ajbut1.gif" alt="This site is Anfy Enhanced" border="0" width="85" height="31"></a></p>
+
+
+</body>
+</html>

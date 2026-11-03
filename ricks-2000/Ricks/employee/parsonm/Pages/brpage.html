@@ -1,0 +1,105 @@
+ <?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mystyle.css" style="text/css" />
+<title>My Personal Page</title>
+</head>
+
+<body>
+ <table width="95%" align="center">
+  <tr>
+   <td width="90%" align="center"><p align="center" class="text2">Welcome to My Page</p></td>
+   <td width="10%" align="center"><a href="mypage1.html"><img     src="../image/arrow1.gif" />Back</a></td>
+  </tr>
+ </table>
+
+
+
+ <table border="0" cellpadding="0" width="90%" align="center">
+   <caption align="center"></caption>
+  <tr>
+   <td width="100%" align="center"><img src="../image/youngb.jpg" width="400" height="264" name="photoslider"></td>
+  </tr>
+  <tr>
+   <td width="100%" align="center"><form method="POST" name="rotater">
+      <div align="center"><center><p>
+
+    <script language="JavaScript1.1">
+
+    /*
+    Photo Slider II- By Kevin Adams (kadams@kyk.net)
+    For this script and more
+    Visit http://www.javascriptkit.com
+    */
+
+    var photos=new Array()
+    var text=new Array()
+    var which=0
+    var what=0
+
+    //Change the below variables to reference your own images. You may have as many images in the slider as you wish
+    photos[0]="../image/youngb.jpg"
+    photos[1]="../image/youngfam.jpg"
+    photos[2]="../image/pyramid.jpg"
+    photos[3]="../image/handsomeblue.jpg"
+    photos[4]="../image/hitrack.jpg"
+    photos[5]="../image/cliff.jpg"
+    photos[6]="../image/bachparty.jpg"
+
+    //change coresponding description
+    text[0]="Me a few years ago."
+    text[1]="Family pictures with the older brothers."
+    text[2]="The human pyramid in Boise, ID"
+    text[3]="The most run down basement apartment in Provo, UT."
+    text[4]="Finishing the 4x800m relay in High School Track"
+    text[5]="Looking off of Angels Landing in Zions National Park."
+    text[6]="The bachelor party the week before the wedding."
+
+    window.onload=new Function("document.rotater.description.value=text[0]")
+
+    function backward(){
+    if (which>0){
+    window.status=''
+    which--
+    document.images.photoslider.src=photos[which];
+    what--
+    document.rotater.description.value=text[what];
+    }
+    }
+
+    function forward(){
+    if (which<photos.length-1){
+    which++
+    document.images.photoslider.src=photos[which]
+    what++
+    document.rotater.description.value=text[what];
+    }
+    else window.status='End of gallery'
+    }
+
+    function type()
+	{
+	alert("This textbox will only display default comments")
+	}
+
+
+    </script>
+    <p><input type=text name="description" style="width:400px" size=50>
+
+    <p><input type="button" value="<<Back" name="B2"
+      onClick="backward()"> <input type="button" value="Next>>" name="B1"
+      onClick="forward()"><br>
+      <a href="#" onClick="which=1;what=1;backward();return false"><small>Start Over</small></a></p>
+      </center></div>
+    </form>
+   </td>
+  </tr>
+ </table>
+
+</body>
+
+</html>

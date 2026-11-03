@@ -1,0 +1,353 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>Cisco DCN: Designing the Network Structure</TITLE></HEAD>
+
+<SCRIPT>
+<!--
+//CBTWEB.JS
+var sStudent_id="";
+var bIsCGI=0;
+var sScript="cgi";
+var bLspanInstalled=0;
+var bBrazilInstalled=0;
+var bJapanInstalled=0;
+var bItalianInstalled=0;
+var bFinnishInstalled=0;
+var bFrenchInstalled=0;
+var bGermanInstalled=0;
+var bEnglishInstalled=0;
+var sDefaultLang="english";
+var zaccess=0;
+var selfreg=0;
+var password=0;
+var studid = top.sStudent_id;
+top.bliveplayed=0;
+
+var bHasLiveplay=1;
+var bHasDownload=0;
+
+
+function a(txt) {self.status = txt}
+function b() {self.status = ''}
+
+function WriteButtons()
+{
+	if ((bHasLiveplay == 1) | (bHasDownload == 1))
+	{
+		document.write('<P><CENTER>');
+		if (bIsCGI==1) 
+		{
+			var nShowButtons=0;
+			if(studid == "0")
+				nShowButtons=1;
+			else {
+				if(studid == "")
+					nShowButtons=2;
+			}
+			if (nShowButtons == 2) // Page book marked or navigated to directly
+			{
+				document.write('<A HREF="../../../../../index.htm"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/logbtn.gif"></A>');
+			}
+			else {
+				if (nShowButtons == 1) // Anonymous Access
+				{
+					document.write('<A HREF="../../../logon.htm"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/logbtn.gif"></A>');
+				}
+				else 
+				{
+					if (bHasLiveplay == 1)
+					{
+						document.write("<FORM METHOD=POST onsubmit="return false">");
+						document.write('<INPUT TYPE="image" IMG WIDTH=118 HEIGHT=25 BORDER=0 ALT="Play the course" SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/liveplay.gif">');
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"coursename\" VALUE=\"" + coursename +"\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"coursecode\" VALUE=\"" + coursecode + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"studir\" VALUE=\"" + studid + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"slanguage\" VALUE=\"" + sLanguage + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"ypager\" VALUE=\"" + Ypage + "\">");
+					}
+
+					if ((bHasLiveplay == 1) & (bHasDownload == 1))
+					{	
+						document.write('<IMG WIDTH=4 HEIGHT=25 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/gap.gif">');
+					}
+					if ((bHasDownload == 1))
+					{	
+						document.write('<A HREF="'+Zpage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/download.gif"></A>');
+					}	
+					if (bHasLiveplay == 1)
+					{
+						document.write("</FORM>");
+					}
+				}
+			}
+		}
+		if (bIsCGI==0) {
+			if ((bHasLiveplay == 1))
+			{
+				document.write('<A HREF="'+Ypage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 ALT="Play the Course" SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/liveplay.gif"></A>');
+			}
+			
+			if ((bHasLiveplay == 1) & (bHasDownload == 1))
+			{	
+				document.write('<IMG WIDTH=4 HEIGHT=25 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/gap.gif">');
+			}
+			
+			if ((bHasDownload == 1))
+			{	
+				document.write('<A HREF="'+Zpage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/download.gif"></A>');
+			}
+		}
+		document.write('</CENTER>');
+	}
+	document.write('<BR>');
+}	
+function WriteLangButton(sLangPg, sLangDir)
+{
+	if (sLanguage != sLangDir) {
+		if (sLangPg.length > 0) 
+		{
+			document.write ('<A HREF="');
+			document.write (sLangPg);
+			document.write ('"><IMG WIDTH=83 HEIGHT=15 BORDER=0 SRC="../../../../../');
+			document.write (sLangDir);
+			document.write ('/cbtweb/images/lang.gif"></A>');
+		}
+	}
+}
+function WriteLangButtons()
+{
+	if (bEnglishInstalled==1) {
+		WriteLangButton(EnglishPg, "english");
+	}
+
+	if (bFrenchInstalled==1) {
+		WriteLangButton(FrenchPg, "french");
+	}
+
+	if (bFinnishInstalled==1) {
+		WriteLangButton(FinnishPg, "finnish");
+	}
+
+	if (bGermanInstalled==1) {		
+		WriteLangButton(GermanPg, "german");
+	}
+
+	if (bBrazilInstalled==1) {
+		WriteLangButton(BrazilPg, "brazil");
+	}
+
+	if (bLspanInstalled==1) {
+		WriteLangButton(LspanPg, "lspan");
+	}
+
+	if (bItalianInstalled==1) {
+		WriteLangButton(ItalianPg, "italian");
+	}
+}
+function WriteLevel(nLevel)
+{
+	var i=0;
+	alert(nLevel);
+	for (i=0;i<nLevel;i++)
+	{
+		document.write ('../');
+	}
+}
+function WriteLogonLangButton(sLangPg, sLangDir, nLevel)
+{
+	if (nLevel == "undefined")
+		nLevel = 2;
+
+	if (sLanguage != sLangDir) {
+		document.write ('<A HREF="');
+		WriteLevel(nLevel);
+		document.write (sLangDir);
+		document.write ('/cbtweb/');
+		document.write (sLangPg);
+		document.write ('">\n<IMG WIDTH=83 HEIGHT=15 BORDER=0 SRC="');
+		WriteLevel(nLevel);
+		document.write (sLangDir);
+		document.write ('/cbtweb/images/lang.gif"></A>');
+		WriteLevel(nLevel);
+	}
+}
+function WritePageLangButtons( sPage )
+{
+	WriteLogonLangButtons( sPage );
+}
+function WriteLogonLangButtons( sPage )
+{
+	if (sPage != "not defined")
+		sPage = "logon.htm";
+
+	if (bEnglishInstalled==1) {
+		WriteLogonLangButton(sPage, "english");
+	}
+
+	if (bFrenchInstalled==1) {
+		WriteLogonLangButton(sPage, "french");
+	}
+
+	if (bFinnishInstalled==1) {
+		WriteLogonLangButton(sPage, "finnish");
+	}
+
+	if (bGermanInstalled==1) {		
+		WriteLogonLangButton(sPage, "german");
+	}
+
+	if (bBrazilInstalled==1) {
+		WriteLogonLangButton(sPage, "brazil");
+	}
+
+	if (bLspanInstalled==1) {
+		WriteLogonLangButton(sPage, "lspan");
+	}
+
+	if (bItalianInstalled==1) {
+		WriteLogonLangButton(sPage, "italian");
+	}
+}
+
+function GotoHRef(sRef)
+{
+		location.href = sRef;
+		top.sStudent_id = "0";
+}
+//ENDCBTWEB.JS
+// -->
+</SCRIPT>
+
+
+<SCRIPT>
+<!--
+
+
+// set by page generation 
+var Ypage="../cs1392e/cs1392ey.htm";
+var Zpage="../cs1392e/cs1392ez.htm";
+var coursename = "Cisco DCN: Designing the Network Structure";
+var coursecode = "cs1392e";
+var sLanguage="english";
+
+// if variable length is empty button will not appear
+// Path to be in format "../../../../../[language]/cbtweb/curicula/courses/[coursefolder].htm"
+// e.g. "../../../../../french/cbtweb/curicula/courses/fmsobe/fmsobe.htm"
+
+var FrenchPg="";
+var GermanPg="";	
+var LspanPg="";
+var BrazilPg="";
+var JapanPg="";
+var FinnishPg="";
+var EnglishPg="";
+var ItalianPg="";
+	
+// -->
+</SCRIPT>
+
+<BODY BGCOLOR="#FFFFFF">
+
+<P>
+<CENTER><NOBR><IMG WIDTH=561 HEIGHT=34 BORDER=0 SRC="../../../images/cischdr.gif"><BR><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/endc1.gif"><A HREF="../../../catalog.htm#csmodel"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/contnbtn.gif"></A><A HREF="../../cisdcn.htm"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/planbtn.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/spacbar1.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/spacbar1.gif"></A><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/endc2.gif"></NOBR><BR><BR></A>
+
+
+<SCRIPT>
+<!--
+WriteButtons();WriteLangButtons();
+// -->
+</SCRIPT>
+<CENTER><H2><CENTER>Cisco DCN: Designing the Network Structure</H2></CENTER>
+
+<P>
+
+<CENTER><TABLE WIDTH=475 CELLSPACING=4 CELLPADDING=8 BORDER=4>
+<TR><TD  VALIGN=TOP WIDTH=167>
+<H3>General Information</H3>
+
+<DL>
+<DT>
+<B>Course Duration<BR> </B>3 hours<BR>
+
+<DT>
+<BR>
+<B>Audience<BR> </B>System engineers and network designers who have a knowledge of internetworking and Cisco products<BR><BR>
+
+<DT>
+<B>Prerequisites<BR> </B>
+The <I>Cisco IOS 11.3: ICRC</I> curriculum; all preceding courses in the <I>Cisco: Designing Cisco Networks</I> curriculum
+<BR><BR>
+
+</DL>
+
+<P></TD><TD VALIGN=TOP ROWSPAN=3 WIDTH=166>
+<H3>Topics Covered</H3>
+<UL>
+<LI>The hierarchical model
+<LI>The redundant model
+<LI>The secure model
+<LI>Hands-on: Network design models
+<LI>Overview
+<LI>Media characteristics
+<LI>Frame size effects
+<LI>Feature effects on performance
+<LI>ISDN
+<LI>Windows NT
+<LI>PIX Firewall
+
+
+</UL>
+
+
+</TD><TR><TD VALIGN=TOP WIDTH=167>
+<H3>Course Aim</H3>
+<P>
+To give the student an understanding of how to develop internetwork topologies, of the main considerations when choosing a router platform, and of Cisco design implementations for ISDN, PIX Firewall, and Windows NT<BR>
+</TD></TR>
+
+
+<TR><TD VALIGN=TOP WIDTH=167>
+<H3>Learning Objectives</H3>
+<P>
+After taking this course, the student should be able to
+<UL>
+<LI>describe the hierarchical network design model and the characteristics of each of its three layers<BR><BR>
+<LI>explain the difference between redundant and secure design and the need for including different types of redundancy in a network design<BR><BR>
+<LI>discuss the concept of a firewall and the benefits of the Cisco PIX Firewall<BR><BR>
+<LI>provide an overview of router performance considerations<BR><BR>
+<LI>identify some of the characteristics and limitations of Ethernet, Token Ring, and FDDI as network media<BR><BR>
+<LI>evaluate how frame size affects your choice of routing platform and identify pps values for a typical network<BR><BR>
+<LI>outline some of the design considerations specific to low-end and mid-range routers and how to optimize network performance<BR><BR>
+<LI>describe ISDN devices, ISDN circuitry, and how ISDN connections can be routed
+contrast ISDN and analog lines<BR><BR>
+<LI>explain some concepts peculiar to Windows Networking and how to use Windows Networking effectively
+</UL>
+
+</TD></TR>
+</TABLE>
+</CENTER>
+
+
+<P>
+<BR><BR>
+<P>
+<CENTER><B>Course Incorporates: </B>Test, hands-on exercises</CENTER>
+
+<HR><BR><CENTER>
+<SCRIPT>
+<!--
+WriteButtons();WriteLangButtons();
+// -->
+</SCRIPT>
+
+
+<BR><BR>
+
+
+<CENTER><NOBR><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/endc1.gif"><A HREF="../../../catalog.htm#csmodel"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/contnbtn.gif"></A><A HREF="../../cisdcn.htm"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/planbtn.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/spacbar1.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/spacbar1.gif"></A><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/endc2.gif"></NOBR><BR>
+<BR><BR>
+</CENTER>
+</BODY>
+
+</HTML>

@@ -1,0 +1,122 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Campus Camera</title>
+<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<style type="text/css"> A {TEXT-DECORATION: none}</style>
+<script language="JavaScript">
+function newWindow(PageName) 
+{
+   parent.newwin=window.open(PageName,'','left=125,top=125,width=650,height=360,resizable=1,status=0,scrollbars=0,toolbar=0,menubar=0');
+}
+
+<!-- hide from JavaScript-challenged browsers
+var x=61
+var y=1;
+function startClock()
+{
+   x = x - y;
+   document.form1.clock.value=x;
+   timerID=setTimeout("startClock()", 1000);
+   if(x < 0)
+   {
+      x = 61;
+      uniq = new Date();
+      uniq = "?"+uniq.getTime();
+      newImage = document.video.src;
+      index = newImage.indexOf("?", 0);
+      if (index > 0)
+      {
+         newImage = newImage.substr(0, index);
+      }
+      document.video.src = newImage+uniq;
+   
+   }
+   
+}
+// done hiding -->
+
+</script>
+<script>
+<!--
+function land(ref, target)
+{
+lowtarget=target.toLowerCase();
+if (lowtarget=="_self") {window.location=loc;}
+else {if (lowtarget=="_top") {top.location=loc;}
+else {if (lowtarget=="_blank") {window.open(loc);}
+else {if (lowtarget=="_parent") {parent.location=loc;}
+else {parent.frames[target].location=loc;};
+}}}
+}
+function jump(menu)
+{
+ref=menu.choice.options[menu.choice.selectedIndex].value;
+splitc=ref.lastIndexOf("*");
+target="";
+if (splitc!=-1)
+{loc=ref.substring(0,splitc);
+target=ref.substring(splitc+1,1000);}
+else {loc=ref; target="_self";};
+if (ref != "") {land(loc,target);}
+}
+//-->
+</script>
+</head>
+
+<body onLoad="startClock()" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0"
+marginwidth="0" marginheight="0">
+<script>
+appName = 'Campus Camera'
+breadcrumb = '<a href="../../Default.htm"><font color="#000000">Home</font></a><img border = "0" src="../../navbar/arrow.gif" alt="">Spori Web Camera</nobr>'
+</script>
+<script src="../../navbar/sitenavbar.js"></script>
+<b><font size = "+1" color = "red">The Spori Web Camera link will soon be removed from the home page.<br>
+To find the Camera visit the Students, Employees or Index page, and click on Campus Web Cam.<br>
+Or find us at our new home <a href = "index.html">http://cameras.byui.edu</a>
+</b></font>
+
+<table border="0" cellpadding="1" cellspacing="0" width="100%">
+  <tr valign="top">
+    <td width="50%" align="center"><font Size="+4">North East Quad</font></td>
+    <td width><form method="post" onsubmit="return false">
+      <p><select name="choice" size="1" onChange="jump(this.form)">
+        <option value>SPORI BUILDING LINKS:</option>
+        <option value="https://web.archive.org/web/2001/http://cameras.byui.edu/sporiShow.html">&nbsp;&nbsp;See the New Building</option>
+        <option value="../../pr/spori/default.htm">&nbsp;&nbsp;Celebrating the Spori</option>
+        <option value="https://web.archive.org/web/2001/http://cameras.byui.edu/sporifuture.html">&nbsp;&nbsp;President Bednar's Comments</option>
+        <option value="https://web.archive.org/web/2001/http://www.byui.edu/News/NewsReleases/sporifire_001129.htm">&nbsp;&nbsp;News Release</option>
+        <option value="https://web.archive.org/web/2001im_/http://cameras.byui.edu/10039_11~20~2000.jpg">&nbsp;&nbsp;Spori Before Demolition</option>
+        <option value="https://web.archive.org/web/2001/http://www.byui.edu/News/NewsReleases/SporiFire/sequence.htm">&nbsp;&nbsp;Spori Photo Gallery</option>
+        <option value="https://web.archive.org/web/2001/http://cameras.byui.edu/sporiburn2.mov">&nbsp;&nbsp;Watch the Spori Fire</option>
+      </select> </p>
+    </form>
+    </td>
+    <td width>
+    </td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr width="100%">
+    <td align="center" width="50%"><form name="form1">
+<!--<h3>***The Spori Web Camera is having technical difficulties.  Please come back at a later time.  We are sorry about this inconvenience and are working hard to fix it.***</h3>-->
+      <div align="center"><center><p><img name="video" src="currentspori.jpg"
+      alt="View from the Spori Web Cam" width="352" height="240"> <br>
+      Page will refresh in <input type="text" name="clock" size="2"> seconds </p>
+      </center></div>
+    </form>
+    </td>
+    <td align="center" width="50%" valign="top"><p align="center"><a
+    href="../../spori/northeast_quad_web_camera_locati.htm"><font
+    color="#060c9e" Size="+2">Camera Location</font></a><br>
+    <img src="campusmap.jpg" alt="Campus map showing the location of the web cam." border="0"
+    width="375" height="226"> <font size="-1">Email ideas on other locations on campus you'd
+    like to view and any suggestions about the web camera to: <a
+    href="javascript:window.newWindow(&quot;http://www.byui.edu/asputilities/mailto.asp?subject=Campus%20Web%20Cameras&amp;to=webcam@byui.edu&quot;)"><b>WebCam@byui.edu</b></a>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>Microsoft Internet Explorer 5.0: Up and Running</TITLE></HEAD>
+
+<SCRIPT>
+<!--
+//CBTWEB.JS
+var sStudent_id="";
+var bIsCGI=0;
+var sScript="cgi";
+var bLspanInstalled=0;
+var bBrazilInstalled=0;
+var bJapanInstalled=0;
+var bItalianInstalled=0;
+var bFinnishInstalled=0;
+var bFrenchInstalled=0;
+var bGermanInstalled=0;
+var bEnglishInstalled=0;
+var sDefaultLang="english";
+var zaccess=0;
+var selfreg=0;
+var password=0;
+var studid = top.sStudent_id;
+top.bliveplayed=0;
+
+var bHasLiveplay=1;
+var bHasDownload=0;
+
+
+function a(txt) {self.status = txt}
+function b() {self.status = ''}
+
+function WriteButtons()
+{
+	if ((bHasLiveplay == 1) | (bHasDownload == 1))
+	{
+		document.write('<P><CENTER>');
+		if (bIsCGI==1) 
+		{
+			var nShowButtons=0;
+			if(studid == "0")
+				nShowButtons=1;
+			else {
+				if(studid == "")
+					nShowButtons=2;
+			}
+			if (nShowButtons == 2) // Page book marked or navigated to directly
+			{
+				document.write('<A HREF="../../../../../index.htm"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/logbtn.gif"></A>');
+			}
+			else {
+				if (nShowButtons == 1) // Anonymous Access
+				{
+					document.write('<A HREF="../../../logon.htm"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../images/logbtn.gif"></A>');
+				}
+				else 
+				{
+					if (bHasLiveplay == 1)
+					{
+						document.write("<FORM METHOD=POST onsubmit="return false">");
+						document.write('<INPUT TYPE="image" IMG WIDTH=118 HEIGHT=25 BORDER=0 ALT="Play the course" SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/liveplay.gif">');
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"coursename\" VALUE=\"" + coursename +"\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"coursecode\" VALUE=\"" + coursecode + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"studir\" VALUE=\"" + studid + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"slanguage\" VALUE=\"" + sLanguage + "\">");
+						document.write("<INPUT TYPE=\"hidden\" NAME=\"ypager\" VALUE=\"" + Ypage + "\">");
+					}
+
+					if ((bHasLiveplay == 1) & (bHasDownload == 1))
+					{	
+						document.write('<IMG WIDTH=4 HEIGHT=25 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/gap.gif">');
+					}
+					if ((bHasDownload == 1))
+					{	
+						document.write('<A HREF="'+Zpage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/download.gif"></A>');
+					}	
+					if (bHasLiveplay == 1)
+					{
+						document.write("</FORM>");
+					}
+				}
+			}
+		}
+		if (bIsCGI==0) {
+			if ((bHasLiveplay == 1))
+			{
+				document.write('<A HREF="'+Ypage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 ALT="Play the Course" SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/liveplay.gif"></A>');
+			}
+			
+			if ((bHasLiveplay == 1) & (bHasDownload == 1))
+			{	
+				document.write('<IMG WIDTH=4 HEIGHT=25 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/gap.gif">');
+			}
+			
+			if ((bHasDownload == 1))
+			{	
+				document.write('<A HREF="'+Zpage+'"><IMG WIDTH=118 HEIGHT=25 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/download.gif"></A>');
+			}
+		}
+		document.write('</CENTER>');
+	}
+	document.write('<BR>');
+}	
+function WriteLangButton(sLangPg, sLangDir)
+{
+	if (sLanguage != sLangDir) {
+		if (sLangPg.length > 0) 
+		{
+			document.write ('<A HREF="');
+			document.write (sLangPg);
+			document.write ('"><IMG WIDTH=83 HEIGHT=15 BORDER=0 SRC="../../../../../');
+			document.write (sLangDir);
+			document.write ('/cbtweb/images/lang.gif"></A>');
+		}
+	}
+}
+function WriteLangButtons()
+{
+	if (bEnglishInstalled==1) {
+		WriteLangButton(EnglishPg, "english");
+	}
+
+	if (bFrenchInstalled==1) {
+		WriteLangButton(FrenchPg, "french");
+	}
+
+	if (bFinnishInstalled==1) {
+		WriteLangButton(FinnishPg, "finnish");
+	}
+
+	if (bGermanInstalled==1) {		
+		WriteLangButton(GermanPg, "german");
+	}
+
+	if (bBrazilInstalled==1) {
+		WriteLangButton(BrazilPg, "brazil");
+	}
+
+	if (bLspanInstalled==1) {
+		WriteLangButton(LspanPg, "lspan");
+	}
+
+	if (bItalianInstalled==1) {
+		WriteLangButton(ItalianPg, "italian");
+	}
+}
+function WriteLevel(nLevel)
+{
+	var i=0;
+	alert(nLevel);
+	for (i=0;i<nLevel;i++)
+	{
+		document.write ('../');
+	}
+}
+function WriteLogonLangButton(sLangPg, sLangDir, nLevel)
+{
+	if (nLevel == "undefined")
+		nLevel = 2;
+
+	if (sLanguage != sLangDir) {
+		document.write ('<A HREF="');
+		WriteLevel(nLevel);
+		document.write (sLangDir);
+		document.write ('/cbtweb/');
+		document.write (sLangPg);
+		document.write ('">\n<IMG WIDTH=83 HEIGHT=15 BORDER=0 SRC="');
+		WriteLevel(nLevel);
+		document.write (sLangDir);
+		document.write ('/cbtweb/images/lang.gif"></A>');
+		WriteLevel(nLevel);
+	}
+}
+function WritePageLangButtons( sPage )
+{
+	WriteLogonLangButtons( sPage );
+}
+function WriteLogonLangButtons( sPage )
+{
+	if (sPage != "not defined")
+		sPage = "logon.htm";
+
+	if (bEnglishInstalled==1) {
+		WriteLogonLangButton(sPage, "english");
+	}
+
+	if (bFrenchInstalled==1) {
+		WriteLogonLangButton(sPage, "french");
+	}
+
+	if (bFinnishInstalled==1) {
+		WriteLogonLangButton(sPage, "finnish");
+	}
+
+	if (bGermanInstalled==1) {		
+		WriteLogonLangButton(sPage, "german");
+	}
+
+	if (bBrazilInstalled==1) {
+		WriteLogonLangButton(sPage, "brazil");
+	}
+
+	if (bLspanInstalled==1) {
+		WriteLogonLangButton(sPage, "lspan");
+	}
+
+	if (bItalianInstalled==1) {
+		WriteLogonLangButton(sPage, "italian");
+	}
+}
+
+function GotoHRef(sRef)
+{
+		location.href = sRef;
+		top.sStudent_id = "0";
+}
+//ENDCBTWEB.JS
+// -->
+</SCRIPT>
+
+
+<SCRIPT>
+<!--
+
+
+// set by page generation (Ger)
+var Ypage="../ie5002e/ie5002ey.htm";
+var Zpage="../ie5002e/ie5002ez.htm";
+var coursename = "Microsoft Internet Explorer 5.0: Up and Running";
+var coursecode = "ie5002e";
+var sLanguage="english";
+
+// if variable length is empty button will not appear
+// Path to be in format "../../../../../[language]/cbtweb/curicula/courses/[coursefolder].htm"
+// e.g. "../../../../../french/cbtweb/curicula/courses/fmsobe/fmsobe.htm"
+
+var FrenchPg="";
+var GermanPg="";	
+var LspanPg="";
+var BrazilPg="";
+var JapanPg="";
+var FinnishPg="";
+var EnglishPg="";
+var ItalianPg="";
+	
+// -->
+</SCRIPT>
+
+<BODY BGCOLOR="#FFFFFF">
+
+<P>
+<CENTER><NOBR><IMG WIDTH=561 HEIGHT=34 BORDER=0 SRC="../../../images/mshdr.gif"><BR><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/endc1.gif"><A HREF="../../../catalog.htm#csmodel"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/contnbtn.gif"></A><A HREF="../../ms_ie4.htm"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/planbtn.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/spacbar1.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/spacbar1.gif"></A><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/endc2.gif"></NOBR><BR><BR></A>
+
+
+<SCRIPT>
+<!--
+WriteButtons();WriteLangButtons();
+// -->
+</SCRIPT>
+<CENTER><H2><CENTER>Microsoft Internet Explorer 5.0: Up and Running</H2></CENTER>
+
+<P>
+
+<CENTER><TABLE WIDTH=475 CELLSPACING=4 CELLPADDING=8 BORDER=4>
+<TR><TD  VALIGN=TOP WIDTH=167>
+<H3>General Information</H3>
+
+<DL>
+<DT>
+<B>Course Duration<BR> </B>4 hours<BR>
+
+<DT>
+<BR>
+<B>Audience<BR> </B>Anyone who wants to use Internet Explorer 5.0 as their default web browser for browsing the Internet or local intranets<BR><BR>
+
+<DT>
+<B>Prerequisites<BR> </B>
+General computer awareness and basic familiarity with browser and Internet technologies
+<BR><BR>
+
+</DL>
+
+<P></TD><TD VALIGN=TOP ROWSPAN=3 WIDTH=166>
+<H3>Topics Covered</H3>
+<UL>
+<LI>Security zones
+<LI>Security features
+<LI>Hands-on: Using security zones
+<LI>Finding information
+<LI>Favorite links and channels
+<LI>Hands-on: Searching the Internet
+<LI>IntelliSense
+<LI>The Windows Radio toolbar
+<LI>Web accessories
+<LI>Hands-on: Adding web accessories
+<LI>Mail and news
+<LI>Internet connections
+<LI>Help
+<LI>Hands-on: Getting help
+</UL>
+
+
+</TD><TR><TD VALIGN=TOP WIDTH=167>
+<H3>Course Aim</H3>
+<P>
+To provide detailed information about advanced Internet Explorer 5.0 browser technologies<BR>
+</TD></TR>
+
+
+<TR><TD VALIGN=TOP WIDTH=167>
+<H3>Learning Objectives</H3>
+<P>
+After taking this course, the student should be able to
+<UL>
+<LI>configure IE 5.0 security features<BR><BR>
+<LI>use digital signatures<BR><BR>
+<LI>explain IntelliSense technology<BR><BR>
+<LI>use the Windows Radio toolbar<BR><BR>
+<LI>describe new web accessories<BR><BR>
+<LI>use mail and news features<BR><BR>
+<LI>identify sources of help
+</UL>
+
+</TD></TR>
+</TABLE>
+</CENTER>
+
+
+<P>
+<BR><BR>
+<P>
+<CENTER><B>Course Incorporates: </B>Test, hands-on exercises</CENTER>
+<HR><BR><CENTER>
+<SCRIPT>
+<!--
+WriteButtons();WriteLangButtons();
+// -->
+</SCRIPT>
+
+
+<BR><BR>
+
+
+<CENTER><NOBR><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/endc1.gif"><A HREF="../../../catalog.htm#csmodel"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/contnbtn.gif"></A><A HREF="../../ms_ie4.htm"><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/planbtn.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/spacbar1.gif"></A><IMG WIDTH=95 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/spacbar1.gif"></A><IMG WIDTH=90 HEIGHT=19 BORDER=0 SRC="../../../../../../../ricks-1997/_sites/cbt.byui.edu/cbtweb/images/endc2.gif"></NOBR><BR>
+<BR><BR>
+</CENTER>
+</BODY>
+
+</HTML>

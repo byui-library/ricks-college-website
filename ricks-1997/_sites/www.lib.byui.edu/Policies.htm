@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>McKay Library Policies</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script langauge="javascript">
+var query = (location.href.indexOf("?")+1);
+var page = 'intro.html'
+if (query)
+{
+	page = location.href.substring(query);
+}
+document.write('<frameset rows="110,*" frameborder="NO" border="0" framespacing="0">');
+document.write('<frame name="Header" scrolling="NO" noresize src="Header.htm" frameborder="NO" >');
+document.write('<frameset rows="25,*" frameborder="NO" border="0" framespacing="0" cols="*">');
+document.write('<frame name="Hierarchy" scrolling="NO" noresize src="Policies_Hierarchy.htm" >');
+document.write('<frameset rows="*,45" frameborder="NO" border="0" framespacing="0" cols="*">');
+document.write('<frameset cols="220,*" rows="*" frameborder="NO" border="0" framespacing="0">');
+document.write('<frame name="ContentLeft" scrolling="AUTO" noresize src="Policies_ContentLeft.htm" frameborder="NO" >');
+document.write('<frame src="Policies_right.htm" frameborder="NO" scrolling="AUTO" name="ContentRight">');
+document.write('</frameset>');
+document.write('<frame name="Footer" src="Footer.htm" frameborder="NO" scrolling="NO">');
+document.write('</frameset>');
+document.write('</frameset>');
+document.write('</frameset>');
+document.write('<noframes> '); 
+document.write('If you do not have frames enabled go to our <a href="textOnly/SiteOverviewTxt.htm">text only page</a>');
+document.write('</body>');
+document.write('</noframes> ');
+</script>
+</head>
+
+</html>

@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="../../../_archive/compat.js"></script>
+<title>Percussion</title>
+
+<style>
+.menulines{
+border:1px solid white;
+}
+
+.menulines a{
+text-decoration:none;
+color:gray;
+}
+</style>
+
+<SCRIPT LANGUAGE="JavaScript">
+function locktrueie(myform){myform.ie.checked=true;}
+function lockfalsenet(myform){myform.nets.checked=true;}
+function goToURL() { window.location = "https://web.archive.org/web/1998/http://www.javascriptsource.com"; }
+
+function nochange(mycheckbox)
+{
+   if (mycheckbox.checked == true){mycheckbox.checked = false;}else{mycheckbox.checked = true;}
+}
+
+</script>
+
+<script language="JavaScript1.2">
+
+function over_effect(e,state){
+if (document.all)
+source4=event.srcElement
+else if (document.getElementById)
+source4=e.target
+if (source4.className=="menulines")
+source4.style.borderStyle=state
+else{
+while(source4.tagName!="TABLE"){
+source4=document.getElementById? source4.parentNode : source4.parentElement
+if (source4.className=="menulines")
+source4.style.borderStyle=state
+}
+}
+}
+
+</script>
+
+</head>
+
+<body bgcolor="#2f2f4f">
+
+<table width="700" align="center">
+<tr>
+<td>
+<font face="lucida sans, lucida, Arial Narrow" size=".5" color="white">
+BRIGHAM YOUNG UNIVERSITY-IDAHO
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="lucida sans, lucida, Arial Narrow" size="6" color="white">
+DEPARTMENT OF MUSIC
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<table bgcolor="white" frame="box"  rules="rows" width="700" height="100" align="center" cellspacing="0" cellpadding="0" onMouseover="over_effect(event,'outset')" onMouseout="over_effect(event,'solid')" onMousedown="over_effect(event,'inset')" onMouseup="over_effect(event,'outset')">
+<tr><td rowspan="12"><img src="bass & xylophone.jpg" width="275" height="210" /></td>
+    <td rowspan="11" width="175">
+    <td width="50"><font face="Arial" size="2" color="silver">Home</font></td>
+    <td rowspan="11" width="125">
+<tr><td class="menulines"><font face="Arial" size="2" align="left"><a href="Percussion Major.html">Percussion Program</a> </font></td></tr>
+<tr><td class="menulines"><font face="Arial" size="2" align="left"><a href="scholarships.html">Scholarship Forms</a> </font></td></tr>
+<tr><td class="menulines"><font face="Arial" size="2" align="left"><a href="Performance Groups.html">Performance Groups</a> </font></td></tr>
+<tr><td class="menulines"><font face="Arial" size="2" align="left"><a href="Private Study.html">Private Study</a></font></td></tr>
+<tr><td class="menulines"><font face="Arial" size="2" align="left"><a href="MasterClass.html">Master Class</a></font></td></tr>
+<tr><td class="menulines"><font face="Arial" size="2" align="left"><a href="Practice Facilities.html">Practice Facilities</a></font></td></tr>
+<tr><td class="menulines"><font face="Arial" size="2" align="left"><a href="Equipment.html">Equipement</a></font></td></tr>
+<tr><td class="menulines"><font face="Arial" size="2" align="left"><a href="../../../music/home/index.html">Music Department</a></font></td></tr>
+<tr><td class="menulines"><font face="Arial" size="2" align="left"><a href="homepage.html">Dr. Taylor's Page</a></font></td></tr>
+<tr><td class="menulines"><font face="Arial" size="2" align="left"><a href="../../../../ricks-2000/Default.htm">BYU-I Home</a></font></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="right">
+<font face="lucida sans, lucida, Arial Narrow" size="20" color="white">
+Percussion
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="lucida sans, lucida, Arial Narrow" size="4" color="WHITE">
+<u>Mission Statement</u>
+</font>
+</td>
+</tr>
+<tr>
+<td>
+
+<script language="JavaScript1.2">
+
+var delay=6500 
+var fcontent=new Array()
+begintag='<font face="Lucida Sans, Arial MT, Lucidas, Arial Narrow" size=2 color=silver>' 
+fcontent[0]="The Percussion Program at Brigham Young University-Idaho is designed to:"
+fcontent[1]="Prepare the percussion major with the skills and experiences essential to succeed in the professional world of percussion."
+fcontent[2]="Provide a rich vocational percussion experience for the amateur percussionist who wishes to play for the inherent joy of playing."
+fcontent[3]="Provide a rewarding introductory experience in percussion for the beginner who is interested in exploring the experiences of the percussion world."
+fcontent[4]="Whatever your special interests, previous experience, or current ability, there is a place for you in the BYU-Idaho percussion program to give you the training, personal growth, and ensemble experience you are seeking."
+fcontent[5]="There are many opportunities for percussionists to perform with the various wind, string, and vocal ensembles on campus."
+closetag='</font>'
+
+var fwidth=500 //set scroller width
+var fheight=70 //set scroller height
+
+
+var ie4=document.all&&!document.getElementById
+var ns4=document.layers
+var DOM2=document.getElementById
+var faderdelay=0
+var index=0
+
+if (DOM2)
+faderdelay=2000
+
+//function to change content
+function changecontent(){
+if (index>=fcontent.length)
+index=0
+if (DOM2){
+document.getElementById("fscroller").style.color="rgb(255,255,255)"
+document.getElementById("fscroller").innerHTML=begintag+fcontent[index]+closetag
+colorfade()
+}
+else if (ie4)
+document.all.fscroller.innerHTML=begintag+fcontent[index]+closetag
+else if (ns4){
+document.fscrollerns.document.fscrollerns_sub.document.write(begintag+fcontent[index]+closetag)
+document.fscrollerns.document.fscrollerns_sub.document.close()
+}
+
+index++
+setTimeout("changecontent()",delay+faderdelay)
+}
+
+
+frame=20;
+hex=255  
+
+function colorfade() {	         	
+
+if(frame>0) {	
+hex-=12; // increase color value
+document.getElementById("fscroller").style.color="rgb("+hex+","+hex+","+hex+")"; // Set color value.
+frame--;
+setTimeout("colorfade()",20);	
+}
+else{
+document.getElementById("fscroller").style.color="rgb(0,0,0)";
+frame=20;
+hex=255
+}   
+}
+
+if (ie4||DOM2)
+document.write('<div id="fscroller" style="width:'+fwidth+';height:'+fheight+';padding:2px"></div>')
+
+window.onload=changecontent
+</script>
+
+
+<ilayer id="fscrollerns" width=&{fwidth}; height=&{fheight};>
+<layer id="fscrollerns_sub" width=&{fwidth}; height=&{fheight}; left=0 top=0>
+</layer>
+</ilayer>
+</td>
+</tr>
+</table>
+
+</BODY>
+</html>
